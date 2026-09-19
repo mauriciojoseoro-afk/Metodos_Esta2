@@ -54,6 +54,8 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -359,7 +361,8 @@ H_0: \mu_1 = \mu_2 = \cdots = \mu_k \quad \text{vs} \quad
 ## ℹ In group 1: `Equipment = Multi-ply`.
 ## Caused by warning in `ks.test.default()`:
 ## ! ties should not be present for the one-sample Kolmogorov-Smirnov test
-## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining warnings.</code></pre>
+## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining
+##   warnings.</code></pre>
 <pre><code>## # A tibble: 4 × 2
 ##   Equipment        ks
 ##   &lt;fct&gt;         &lt;dbl&gt;
@@ -377,7 +380,8 @@ H_0: \mu_1 = \mu_2 = \cdots = \mu_k \quad \text{vs} \quad
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  BestDeadliftKg by factor(Equipment)
-## Kruskal-Wallis chi-squared = 626.13, df = 3, p-value &lt; 0.00000000000000022</code></pre>
+## Kruskal-Wallis chi-squared = 626.13, df = 3, p-value &lt;
+## 0.00000000000000022</code></pre>
 <p>El resultado (<span class="math inline">\(χ²=626.13\)</span>, <span class="math inline">\(gl=3\)</span>, p&lt;0.001) indica que se rechaza la hipótesis nula, existiendo evidencia estadística suficiente para afirmar que al menos un tipo de equipamiento presenta un peso muerto con una distribución significativamente distinta a los demás. Al observar las medianas por grupo, se aprecia que Multi-ply presenta la mediana más alta (251.7 kg), seguido de Wraps (225 kg) y Single-ply (210 kg), mientras que Raw presenta la mediana más baja (195 kg), lo cual es coherente con el mayor nivel de asistencia mecánica que ofrece cada tipo de equipamiento.</p>
 </div>
 </div>
