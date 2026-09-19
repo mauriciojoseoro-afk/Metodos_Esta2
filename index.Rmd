@@ -1,0 +1,32 @@
+--- 
+title: "Analisis exploratorio de datos - Powerlifting Dead Weight Predict"
+author: "Karla Paredes y Mauricio Orozco"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: " "
+---
+
+
+```{r include=FALSE}
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+# Introducción
+
+Este proyecto tiene como propósito realizar un analisis estadístico completo sobre una base de datos de powerlifting, compuesta por 18.900 registros de competidores de este deporte, con variables como edad, sexo, tipo de equipamiento utilizado y los resultados obtenidos en los tres levantamientos principales: sentadilla, press de banca y peso muerto.
+
+El powerlifting es un deporte de fuerza en el que el rendimiento de un atleta depende de varios factores físicos y biomecánicos, entre ellos la edad, el peso corporal y el tipo de equipamiento que utiliza durante la competencia. Entender cómo se relacionan estos factores es importante para fines prácticos, como diseñar estrategias de entrenamiento o estimar el potencial de un atleta en un levantamiento a partir de su desempeño en los demás.
+
+Se realizó un analisis exploratorio de datos (EDA), en el cual se eligio la variable BestDeadliftKg (mejor marca en peso muerto) como variable respuesta del estudio. El objetivo fue analizar su comportamiento de forma individual y su relación con las demas variables del conjunto de datos: edad, sexo, tipo de equipamiento, peso corporal, mejor sentadilla y mejor press de banca. Con esto se busco entender como se distribuye el peso muerto entre los competidores y qué variables parecen influir más en sus resultados. Durante esta etapa tambien se identificaron y corrigieron inconsistencias en los datos, se evaluo la normalidad de las variables numericas mediante pruebas de ajuste, y se llevo a cabo un proceso de ingenieria de caracteristicas para construir nuevas variables a partir de las ya existentes.
+
+
+

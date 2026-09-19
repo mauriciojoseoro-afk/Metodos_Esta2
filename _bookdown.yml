@@ -1,0 +1,15 @@
+book_filename: "bookdown-demo"
+language:
+  ui:
+
+delete_merged_file: true
+rmd_files: [
+  "Introduccion.Rmd",
+  "Objetivos.Rmd",
+  "Metodologia.Rmd",
+  "Marco_Teorico.Rmd",
+  "01-intro.Rmd",
+  "Conclusion_Gen.Rmd",
+  "Bibliografia.Rmd",
+
+]

@@ -1,0 +1,1083 @@
+# Dataset
+
+## Librerias
+```{r librerias, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(Amelia)
+library(moments)
+library(ggplot2)
+library(patchwork)
+library(GGally)
+library(reshape)
+library(car)
+library(ggpubr)
+library(knitr) #Visualización de tablas.
+library(kableExtra) # Estilo
+options(scipen = 999) #Nos permite observar mejor números muy grandes en los diagramas.
+```
+
+
+## Leer dataset
+```{r df}
+df<-read.csv("Data/X_train.csv")
+```
+
+## Mostrar las 10 primeras filas
+```{r primerasfilas}
+head(df, n=10) %>% 
+  kable(caption = " Primeras 5 observaciones del dataset") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+## Estructura de los datos
+```{r str}
+str(df)
+```
+
+Encontramos un total de 18900 observaciones y 9 columnas (variables) en el dataset, sin embargo, utilizaremos aquellas variables que indiquen una posble influencia real en  nuestra variable respuesta. Es decir, no se tomarán en cuenta 'playerId' y 'Name' (variables identificadoras). Por lo tanto, obtenemos 2 variables cualitativas y 5 variables cuantitativas. 
+
+## Solucionar valores inconsistentes
+La variable 'BestSquatKg' está siendo leida como caracter (variable categórica) cuando en realidad es una variable numérica, lo que nos indica que hay una inconsistencia entre los datos. Y tambien presenta algunos valores negativos, lo cual es fisicamente imposible; en bases de datos de powerlifting, es una convención estándar del dominio: cuando un atleta falla sus 3 intentos en un levantamiento, el sistema registra el peso del mejor intento fallido como número negativo, en vez de dejarlo vacío. Como en nuestro estudio son relevantes los levantamientos que fueron exitosos, convertiremos esos valores a 'NA' y posteriormente reemplazaremos utilizando la funcion mutate para bajar las posibilidades de un sesgo mayor. 
+
+```{r corregirchar}
+# convertir a numérico
+issues<- df %>%
+  filter(is.na(as.numeric(BestSquatKg)) & !is.na(BestSquatKg))
+
+issues %>%
+  select(playerId, BestSquatKg)
+```
+
+```{r corregir.}
+df %>%
+  filter(str_detect(BestSquatKg, "\\.\\.")) %>%
+  select(playerId, BestSquatKg)
+
+df <- df %>%
+  mutate(
+    BestSquatKg = str_replace(BestSquatKg, "\\.\\.", "."),  # corrige el doble punto
+    BestSquatKg = as.numeric(BestSquatKg)
+  )
+
+df <- df %>% 
+  mutate(BestSquatKg = ifelse(BestSquatKg < 0, NA, BestSquatKg)) #eliminamos los valores negativos
+
+str(df)
+```
+
+La variable 'BestSquatKg' ahora es leida como numerica.
+
+## Verificamos si los niveles de las variables cualitativas tienen inconsistencias 
+```{r niveles}
+#Niveles
+unique(df$Sex)
+unique(df$Equipment)
+
+```
+No existen inconsistencias en los niveles (Por ejemplo, observaciones como "F" y "f" que indiquen el mismo nivel).
+
+## Verificar si hay datos faltantes
+```{r Datos faltantes}
+df %>% 
+  summarise(across(everything(), ~ sum(is.na(.)),.names="NA_{.col}")) %>% 
+  kable(caption = " Verificar datos faltantes ") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+
+```
+
+### Otra forma de detectar valores faltantes:
+```{r otra forma}
+missmap(df)
+
+```
+
+## Imputacion de datos faltantes
+```{r Rellenar}
+ df %>%  #datos
+  mutate(across( #columnas
+    where(is.numeric), #seleccionar variables numericas
+    ~ ifelse(is.na(.),mean(.,na.rm=TRUE), .) #si hay un na, reemplazar, si no, dejar la variable
+  )) -> df #data limpiada
+```
+
+## Ver si hay datos faltantes nuevamente en el Data Frame limpiado
+```{r datos faltantes 2}
+df %>% 
+  summarise(across(everything(), ~ sum(is.na(.)),.names="NA_{.col}")) %>% 
+  kable(caption = " Verificar exito del dataset limpiado") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+
+```
+
+## Convertir las variables cualitativas en factor.
+```{r factor}
+df$Sex <- factor(df$Sex)
+df$Equipment <- factor(df$Equipment)
+```
+
+
+# Analisis exploratorio de BestDeadliftKg (target)
+
+```{r caracterizaciontarget}
+df %>% 
+  summarise(n=length(BestDeadliftKg),
+            Media=mean(BestDeadliftKg),
+            Ds=sd(BestDeadliftKg),
+            Mediana=median(BestDeadliftKg),
+            RIC=IQR(BestDeadliftKg),
+            Q1=quantile(BestDeadliftKg,0.25),
+            Q3=quantile(BestDeadliftKg,0.75),
+            Mínimo=min(BestDeadliftKg),
+            Máximo=max(BestDeadliftKg),
+            Asim=skewness(BestDeadliftKg),
+            Curtosis=kurtosis(BestDeadliftKg)) %>% 
+  kable(caption = "Caracterización") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+**1. Medidas de tendencia central:**
+
+Media = 201.1228 kg | Mediana = 204.12 kg
+
+Aquí la media y la mediana son muy cercanas entre sí (201.12 vs 204.12), con la media apenas por debajo de la mediana. Esta pequeña diferencia sugiere una distribución bastante simétrica, sin una asimetría marcada hacia ningún lado. El valor "típico" se ubica entonces alrededor de 201–204 kg.
+
+**2. Medidas de dispersión:**
+
+DS = 62.17163 kg | RIC = 97.6425 kg
+
+La desviación estándar representa cerca del 31% de la media, lo cual indica una dispersión moderada-alta. Esto es coherente con un contexto donde existen categorías o rangos amplios entre los distintos casos, por lo que se espera una variabilidad considerable en los valores.
+
+**3. Medidas de posición:**
+
+Q1 = 149.8575 kg | Q3 = 247.5 kg | Mínimo = 18.1 kg | Máximo = 408.23 kg
+
+El 50% central de los datos se ubica entre 149.8575 y 247.5 kg, un rango de unos 97.6425 kg, que corresponde al RIC. El rango total, sin embargo, es mucho más amplio (18.1 a 408.23 kg, casi 390 kg de diferencia), lo que muestra la presencia de valores extremos tanto por debajo como por encima del rango central.
+
+**4. Medidas de forma:**
+
+Asimetría = 0.1097141 | Curtosis = 2.333665
+
+Asimetría (0.1097141): es un valor muy cercano a 0, lo que indica una distribución prácticamente simétrica, con una leve tendencia hacia la derecha. Esto concuerda con lo observado en el punto 1, donde media y mediana son casi iguales.
+
+Curtosis (2.333665): al estar por debajo de 3, indica una distribución platicúrtica, es decir, más "achatada" que una distribución normal, con colas más ligeras y una concentración de datos menos pronunciada alrededor de la media. En conjunto, ambas medidas de forma sugieren una distribución cercana a la simetría, aunque más aplanada que la normal.
+
+
+## Grafico tipo histograma
+
+```{r}
+df %>% 
+  ggplot(aes(x=BestDeadliftKg))+
+geom_histogram(aes(y=after_stat(density)),
+                binwidth=14,
+                fill="#797bb0",
+                color="white",
+                alpha=0.6,)+
+  geom_density(color="darkblue",linewidth=1.2)+
+  labs(title='Distribucion del peso muerto levantado por cada individuo (kg)',
+       x='Peso muerto',
+       y='densidad')+
+  theme_bw()
+  
+```
+ 
+La distribución es aproximadamente simétrica (por su valor de asimetría), con una asimetría leve hacia la derecha (sesgo positivo pequeño). La mayor concentración de datos está entre los 150 y 250 kg aproximadamente, con el pico más alto ubicado alrededor de los 200-230 kg. Se observa también un pico secundario, más pequeño, cerca de los 130-150 kg, esto es coherente con la curtosis de 2.3337, que indica una distribución platicúrtica (ligeramente más aplanada que una normal, sin una concentración muy marcada en un solo punto). El valor de asimetría (0.1097), que al estar muy cerca de 0 confirma que el estiramiento hacia los valores altos es leve y no pronunciado.
+
+
+## Grafico de cajas y bigotes
+
+```{r Boxplot, message=FALSE}
+df %>% 
+  ggplot(aes(x = "", y = BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20, size=3, color='green3')+ #colocar un punto en la media
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+El boxplot muestra la caja central entre 149.86 y 247.5 kg (Q1-Q3), con la mediana muy cerca de la media y ligeramente por encima de ella, lo cual es consistente con la asimetría leve y casi simétrica ya identificada. Los bigotes van aproximadamente de 18 a 390 kg, y se observan algunos puntos atípicos por encima de 390 kg (hasta cerca de 400-410 kg), que corresponden a los valores más altos del peso muerto, probablemente de atletas en categorías de peso pesado o superpesado. Estos pocos outliers hacia arriba son coherentes con la ligera cola derecha observada en el histograma.
+
+
+# Variables independientes (caracteristicas)
+```{r Variables independientes}
+df %>%   
+  select(where(is.numeric),-BestDeadliftKg,-playerId) %>% 
+  pivot_longer(
+    cols=everything(), #llaves y valores para cambiar la posicion del encabezado
+    names_to='variable',
+    values_to='valor'
+    )  %>%
+  group_by(variable) %>% 
+  summarise(n=length(valor),
+            media=mean(valor),
+            sd=sd(valor),
+            mediana=median(valor),
+            RIC=IQR(valor),
+            Q1=quantile(valor,0.25),
+            Q3=quantile(valor,0.75),
+            minimo=min(valor),
+            maximo=max(valor),
+            asim=skewness(valor),
+            curtosis=kurtosis(valor)) %>% 
+  kable(caption = "Caracterización") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+### Veamos el análisis de cada variable independiente
+
+**Age (Edad)**
+
+Media = 29.66 años | Mediana = 26.5 años. La media está claramente por encima de la mediana, y con una asimetría alta (1.33) y curtosis elevada (4.74), esto indica una distribución bastante asimétrica hacia la derecha: la mayoría de competidores son jóvenes (20-30 años), pero hay una cola de atletas de mayor edad (hasta 83 años) que estira la media hacia arriba.
+
+**BestBenchKg (Press banca)**
+
+Media = 116.96 kg | Mediana = 115 kg, muy cercanas entre sí. Asimetría moderada (0.645) indica un sesgo positivo leve-moderado: la mayoría levanta entre 72.5 y 150 kg (RIC), con una cola hacia valores altos (hasta 425 kg). Curtosis cercana a 3 (3.62) sugiere una forma similar a la normal.
+
+**BestSquatKg (Sentadilla)**
+
+Media = 179.17 kg | Mediana = 175.0 kg, también cercanas. Asimetría moderada (0.605), similar al press banca: sesgo positivo leve, con la mayoría entre 125 y 222.5 kg y una cola hacia valores altos (hasta 500 kg). Curtosis (3.46) muy cercana a la normal.
+
+**BodyweightKg (Peso corporal)**
+
+Media = 85.43 kg | Mediana = 82.1 kg. Asimetría moderada-alta (0.795) muestra un sesgo positivo más marcado que en las otras variables: hay competidores con pesos corporales notablemente altos (hasta 201 kg, categoría superpesado) que estiran la distribución hacia la derecha. Curtosis (3.88) indica una distribución levemente más apuntada que la normal (leptocúrtica).
+
+
+## Graficos de las variables independientes
+
+```{r}
+# 'Age'
+  df %>% 
+  ggplot(aes(x =" ",y = Age))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p1
+
+# 'BestBenchKg'
+  df %>% 
+  ggplot(aes(x =" ",y = BestBenchKg ))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p2
+
+# 'BestSquatKg'
+  df %>% 
+  ggplot(aes(x =" ",y = BestSquatKg ))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p3
+  
+# 'BodyweightKg'
+  df %>% 
+  ggplot(aes(x =" ",y = BodyweightKg))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p4
+  
+  p1+p2+p3+p4
+```
+
+**Age (Edad)**
+
+La caja central va de 21.5 a 34.5 años (Q1-Q3), con la mediana (26.5) por debajo de la media (29.66 años), señal de sesgo hacia la derecha. Se observan numerosos puntos atípicos por encima de 55 años, extendiéndose hasta los 83 años, lo que confirma la asimetría positiva alta (1.33) ya identificada: la mayoría de competidores son jóvenes, pero hay una cola larga de atletas mayores.
+
+**BestBenchKg (Press banca)**
+
+La caja va de 72.5 a 150 kg, con la mediana (115) muy cerca de la media (116.96), reflejando la asimetría moderada. Hay bastantes outliers por encima de 270 kg, llegando hasta 425 kg, lo que genera una cola derecha notoria, aunque el cuerpo central de los datos está bien concentrado.
+
+**BestSquatKg (Sentadilla)**
+
+Comportamiento muy similar al press banca: caja entre 125 y 222.5 kg, mediana (175) y media (179.17) cercanas. Los outliers aparecen por encima de 370 kg y llegan hasta 500 kg, consistentes con la asimetría moderada (0.605) y una cola derecha por atletas de fuerza superior.
+
+**BodyweightKg (Peso corporal)**
+
+Caja entre 67.7 y 98.97 kg, con la mediana (82.1) por debajo de la media (85.43), y el punto de mayor cantidad de outliers de las cuatro variables, comenzando desde ~150 kg hasta 201 kg. Esto es coherente con la asimetría moderada-alta (0.795), la más marcada entre las tres variables de fuerza/peso, reflejando la presencia de categorías superpesadas.
+
+
+
+# Analisis Exploratorio Bivariado
+Realizaremos un análisis entre nuestra variable respuesta 'BestDeadliftKg' (mejor peso muerto) y las demás variales numéricas.
+
+
+## Peso muerto vs Edad
+
+```{r}
+df %>%
+  ggplot(aes(x=Age,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Edad',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la Edad y el Peso muerto')
+```
+
+El peso muerto no muestra una tendencia lineal clara con la edad: aumenta hasta los 20-35 años y luego disminuye, sugiriendo una relación no lineal
+
+## Peso muerto vs Mejor Sentadilla
+
+```{r}
+df %>%
+  ggplot(aes(x=BestSquatKg,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Mejor Sentadilla',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la Mejor Sentadilla y el Peso muerto')
+```
+
+Se observa una tendencia creciente y muy marcada: a mayor peso en sentadilla, mayor peso muerto, con poca dispersión entre los puntos.
+
+## Peso muerto vs Peso corporal
+
+```{r}
+df %>%
+  ggplot(aes(x=BodyweightKg,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Peso corporal',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el Peso corporal y el Peso muerto')
+```
+
+Existe una tendencia creciente, aunque con más dispersión que en los otros levantamientos, indicando una relación más débil.
+
+## Peso muerto vs Mejor press banca
+
+```{r}
+df %>%
+  ggplot(aes(x=BestBenchKg,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Mejor press banca',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el Mejor Press Banca y el Peso muerto')
+```
+
+Se observa una tendencia creciente y bien definida, similar a la sentadilla.
+
+# Variables categoricas 'Sex' y 'Equipament'
+
+
+## Diagrama de barras: Frecuencia de la variable 'Sex'
+
+```{r tablaSex }
+tabla_sexo <- df %>% 
+  count(Sex,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_sexo %>% 
+  ggplot(aes(x=Sex,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribución de la variable Sex')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw()
+```
+
+Se observa que la muestra está compuesta mayoritariamente por atletas de sexo masculino (12,771; 67.6%), mientras que las mujeres representan el 32.4% (6,129), evidenciando un desbalance entre ambos grupos.
+
+
+## Comparacion entre peso muerto y sexo (tabla)
+
+```{r}
+df %>%
+  group_by(Sex) %>%
+  summarise(
+    n = n(),
+    promedio = mean(BestDeadliftKg),
+    mediana  = median(BestDeadliftKg),
+    ds       = sd(BestDeadliftKg)
+  )
+```
+### Comparacion entre peso muerto y sexo (Caja de bigotes)
+```{r biboxplot}
+df %>% 
+ggplot(aes(x=Sex, y=BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0", color="black",outlier.color="darkred")+
+  stat_summary(fun=mean, geom='point', shape=20, size=3, color="green")+
+  labs(title = "Peso muerto segun sexo", x = "Sexo", y = "Peso muerto (Kg)") +
+  theme_bw()
+```
+
+Los hombres presentan una mediana de peso muerto considerablemente más alta (230 kg) que las mujeres (137.5 kg), con mayor dispersión (DS=48.93 vs 29.89). La media (punto verde) se ubica cerca de la mediana en ambos grupos, indicando distribuciones relativamente simétricas, y se observan algunos outliers en rojo oscuro en ambos sexos.
+
+## Diagrama de barras: Frecuencia de la variable 'Equipament'
+
+```{r tablaEquipment }
+tabla_eq <- df %>% 
+  count(Equipment,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_eq %>% 
+  ggplot(aes(x=Equipment,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribucion de la variable Equipment')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw()
+```
+
+Se observa que la mayoría de los atletas compite en la modalidad Raw (12,277, 65%), seguida por Wraps (3,965, 21%) y Single-ply (2,317, 12.3%), mientras que Multi-ply representa una minoría muy reducida (341, 1.8%).
+
+## Comparacion entre peso muerto y equipo (tabla)
+
+```{r}
+df %>%
+  group_by(Equipment) %>%
+  summarise(
+    n = n(),
+    promedio = mean(BestDeadliftKg),
+    mediana  = median(BestDeadliftKg),
+    ds       = sd(BestDeadliftKg)
+  )
+```
+
+### Comparacion entre peso muerto y equipo (Caja de bigotes)
+
+```{r biboxplot1 }
+df %>% 
+ggplot(aes(x=Equipment, y=BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0", color="black",outlier.color="darkred")+
+  stat_summary(fun=mean, geom='point', shape=20, size=3, color="green")+
+  labs(title = "Peso muerto segun equipo", x = "Equipment", y = "Peso muerto (Kg)") +
+  theme_bw()
+```
+
+Se observa que Multi-ply presenta la mediana más alta de peso muerto, seguido de Wraps y Single-ply, mientras que Raw presenta la mediana más baja, coherente con el menor nivel de asistencia mecánica de esta modalidad. Multi-ply también muestra outliers en ambos extremos (uno muy alto y dos bajos), y su caja es más angosta, indicando menor dispersión que los demás grupos. La media (punto verde) se ubica cerca de la mediana en todos los casos, sugiriendo distribuciones relativamente simétricas dentro de cada equipo.
+
+# Variables independientes vs variables independientes:
+
+## variables numéricas vs numéricas
+
+```{r pares, echo=FALSE}
+# Age vs BestSquatKg
+df %>%
+  ggplot(aes(x = Age, y = BestSquatKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Edad vs Sentadilla") +
+  theme_bw() -> p_1
+
+# Age vs BestBenchKg
+df %>%
+  ggplot(aes(x = Age, y = BestBenchKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Edad vs Press banca") +
+  theme_bw()-> p_2
+
+# Age vs BodyweightKg
+df %>%
+  ggplot(aes(x = Age, y = BodyweightKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Edad vs Peso corporal") +
+  theme_bw()-> p_3
+
+# BestSquatKg vs BestBenchKg
+df %>%
+  ggplot(aes(x = BestSquatKg, y = BestBenchKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Sentadilla vs Press banca") +
+  theme_bw()-> p_4
+
+# BestSquatKg vs BodyweightKg
+df %>%
+  ggplot(aes(x = BestSquatKg, y = BodyweightKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Sentadilla vs Peso corporal") +
+  theme_bw()-> p_5
+
+# BestBenchKg vs BodyweightKg
+df %>%
+  ggplot(aes(x = BestBenchKg, y = BodyweightKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Press banca vs Peso corporal") +
+  theme_bw()-> p_6
+
+p_1+p_2+p_3+p_4+p_5+p_6
+
+```
+
+## Variables categoricas vs numéricas 
+
+### Sex vs variables numericas
+
+```{r sexo-todas, echo=FALSE}
+# Sex vs Age
+
+df %>%
+  ggplot(aes(x = Sex, y = Age, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Edad según sexo", x = "Sexo", y = "Edad") +
+  theme_bw() ->b1
+
+# Sex vs BestSquatKg
+df %>%
+  ggplot(aes(x = Sex, y = BestSquatKg, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor sentadilla según sexo", x = "Sexo", y = "Sentadilla (Kg)") +
+  theme_bw()->b2
+
+# Sex vs BodyweightKg
+df %>%
+  ggplot(aes(x = Sex, y = BodyweightKg, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Peso corporal según sexo", x = "Sexo", y = "Peso corporal (Kg)") +
+  theme_bw()->b3
+
+# Sex vs BestBenchKg
+df %>%
+  ggplot(aes(x = Sex, y = BestBenchKg, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor press banca según sexo", x = "Sexo", y = "Press banca (Kg)") +
+  theme_bw()->b4
+
+b1+b2+b3+b4
+```
+
+### Equipamiento vs variables numericas
+
+
+```{r eq-todas, echo=FALSE}
+# Equipment vs Age
+df %>%
+  ggplot(aes(x = Equipment, y = Age, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Edad según equipo", x = "Equipment", y = "Edad") +
+  theme_bw()->e1
+
+# Equipment vs BestSquatKg
+df %>%
+  ggplot(aes(x = Equipment, y = BestSquatKg, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor sentadilla según equipo", x = "Equipment", y = "Sentadilla (Kg)") +
+  theme_bw()->e2
+
+# Equipment vs BodyweightKg
+df %>%
+  ggplot(aes(x = Equipment, y = BodyweightKg, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Peso corporal según equipo", x = "Equipment", y = "Peso corporal (Kg)") +
+  theme_bw()->e3
+
+# Equipment vs BestBenchKg
+df %>%
+  ggplot(aes(x = Equipment, y = BestBenchKg, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor press banca según equipo", x = "Equipment", y = "Press banca (Kg)") +
+  theme_bw()->e4
+
+e1+e2+e3+e4
+```
+
+### Equipamiento vs Sexo
+```{r eq-sexo, echo=FALSE}
+ggplot(df, aes(x = Sex, fill = Equipment)) +
+  geom_bar(position = "stack") +
+  scale_fill_manual(values = c(
+    "Raw" = "lightskyblue2",
+    "Wraps" = "steelblue4",
+    "Single-ply" = "lightskyblue3",
+    "Multi-ply" = "steelblue"
+  )) +
+  labs(
+    title = "Proporción de Equipamiento por Sexo",
+    x = "Sexo",
+    y = "Proporción",
+    fill = "Equipamiento"
+  ) +
+  theme_bw()
+```
+
+# Ingenieria de caracterizacion (feature engineering)
+
+La ingeniería de características (feature engineering) es el proceso de crear nuevas variables a partir de las que ya tenemos, con el fin de que representen mejor la información del dataset. Esto es útil porque, como se vio en la sección anterior, existen variables (como BestSquatKg y BestBenchKg) se mueven de forma muy parecida entre sí (visto en el grafico correspondiente a estas variables), ya que en el fondo ambas miden la fuerza de levantamiento del atleta. Usarlas tal cual en un modelo puede generar redundancia, así que en este caso las vamos a utilizar para crear variables que combinen esta información y que aporten un dato más claro, como por ejemplo conocer cuánto puede levantar (con exito) realmente el atleta, en lugar de manejar los totales por separado.
+
+## Variables seleccionadas
+
+```{r fe_variables, echo=FALSE}
+p_4+p_5+p_6
+```
+
+Se seleccionaron estas variables debido a la tendencia creciente (comportamiento lineal) que se obtuvo en la seccion anterior, donde se comparó cada variable independiente con respecto a las demás. Estas variables son las que presentan mayor riesgo de estar midiendo lo mismo, es decir, generando una multicolinealidad. Esto sirve como base para justificar por qué se crearon variables nuevas en lugar de usar los totales originales.
+
+
+## Nuevas variables: 'upper_lower_total', 'ratio_squat_peso', 'ratio_bench_peso'
+
+```{r ingenieriacaracterizacion}
+df_nuevo <- df %>%
+  mutate(
+    # Fuerza combinada de tren superior + inferior
+    upper_lower_total = BestSquatKg + BestBenchKg,
+    
+    # ratio: cuánto pesa lo que levanta en sentadilla, relativo a su propio peso corporal
+    ratio_squat_peso = BestSquatKg / BodyweightKg,
+    
+    # Ratio: lo mismo para press banca
+    ratio_bench_peso = BestBenchKg / BodyweightKg
+  )
+```
+
+
+### Verificar si no hay valores nulos:
+
+```{r}
+df_nuevo %>%
+  summarise(across(everything(), ~ sum(is.na(.)),.names="NA_{.col}")) %>%
+  kable(caption = " Verificar datos faltantes ") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+
+## Realizamos el resumen estadistico de nuestras nuevas variables
+
+```{r caracterizacionnueva}
+df_nuevo %>% 
+  select(Age, BestDeadliftKg, upper_lower_total, ratio_squat_peso, ratio_bench_peso) %>% 
+  summary() %>%  
+kable(caption = " Dataset luego de realizar feature engineering") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+
+La variable upper_lower_total representa la fuerza combinada del tren superior e inferior del atleta, sumando su mejor sentadilla y su mejor press de banca. Esta variable presenta una media de 296.1 kg y una mediana de 292.5 kg.
+
+Los ratios ratio_squat_peso y ratio_bench_peso expresan cuántos kilogramos levanta el atleta por cada kilogramo de su propio peso corporal, permitiendo comparar la fuerza relativa entre atletas de distinto tamaño corporal. Se observa que la media de ratio_squat_peso es de 2.10, lo que indica que, en promedio, los atletas levantan aproximadamente 2.10 veces su propio peso corporal en sentadilla. La dispersión (DS = 0.61) sugiere que existe una variabilidad moderada en esta capacidad relativa entre los distintos atletas de la muestra.
+
+
+## Veamos los graficos de las variables de nuestro dataframe nuevo.
+
+```{r numericas_i, message=FALSE, echo=FALSE}
+# 'Age'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = Age))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p1
+
+# 'BestDeadliftkg'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p2
+  
+  # 'upper_lower_total'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = upper_lower_total))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p3
+  
+  # 'ratio_squat_peso'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = ratio_squat_peso))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p4
+  
+  # 'ratio_bench_peso'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = ratio_bench_peso))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p5
+  
+  p1+p2+p3+p4+p5
+```
+
+
+```{r categoricas_i, message=FALSE, echo=FALSE}
+
+tabla_sexo <- df_nuevo %>% 
+  count(Sex,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_sexo %>% 
+  ggplot(aes(x=Sex,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribución de la variable Sex')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw() ->g1
+
+tabla_eq <- df %>% 
+  count(Equipment,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_eq %>% 
+  ggplot(aes(x=Equipment,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribución de la variable Equipment')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw()->g2
+
+g1+g2
+```
+
+
+
+## Verificamos el éxito de la ingenieria de caracterizacion
+Comparamos las nuevas variables (y las que no fueron eliminadas) con respecto a nuestra variable respuesta ‘BestDeadliftKg’
+
+```{r, echo=FALSE}
+df_nuevo %>%
+  ggplot(aes(x=Age,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Edad',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la Edad y el Peso muerto') ->c1
+
+df_nuevo %>%
+  ggplot(aes(x=upper_lower_total ,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Fuerza combinada ',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la fuerza combinada y el Peso muerto') ->c2 
+
+df_nuevo %>%
+  ggplot(aes(x=ratio_squat_peso, y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='En sentadilla',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Levantamiento (en sentadilla) relativo al peso corporal - Peso muerto') ->c3
+
+df_nuevo %>%
+  ggplot(aes(x=ratio_bench_peso, y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='En banca',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Levantamiento (en banca) relativo al peso corporal -  Peso muerto') ->c4
+```
+```{r, echo=FALSE}
+c1
+```
+
+Muestra una relación no lineal y una asociación lineal prácticamente nula. La mayor concentración de datos y los valores máximos de peso muerto se ubican en el rango de 20 a 35 años. A partir de los 40–45 años se aprecia una tendencia decreciente en las marcas alcanzadas, junto con una menor densidad de competidores en edades avanzadas. 
+
+```{r, echo=FALSE}
+c2
+```
+
+Muestra una relación lineal positiva sumamente fuerte. A medida que aumenta la fuerza combinada del atleta (sentadilla + banca), el peso muerto levantado incrementa de manera directa y proporcional. Esta variable sintética sintetiza con alta precisión la capacidad de fuerza absoluta total del competidor. 
+
+```{r, echo=FALSE}
+c3
+```
+
+Presenta una tendencia ascendente moderada-alta. Refleja que los atletas con mayor fuerza relativa en el tren inferior (mayor ratio $\text{sentadilla}/\text{peso corporal}$) tienden a lograr marcas más altas en peso muerto.
+
+```{r, echo=FALSE}
+c4
+```
+
+Muestra una asociación positiva moderada-alta. Un mayor rendimiento relativo en el press de banca (ratio $\text{banca}/\text{peso corporal}$) se asocia con un desempeño superior en peso muerto, evidenciando que la fuerza relativa del tren superior guarda una relación estrecha con el levantamiento máximo. 
+
+
+# Tabla de contingencia
+
+Utilizaremos la prueba de independencia chi-cuadrado, ya que se cuenta con una única muestra de atletas (no poblaciones separadas y predefinidas), clasificada según dos variables categóricas: Sexo y Equipamiento. El objetivo es determinar si estas dos variables están asociadas entre sí o si, por el contrario, son independientes.
+
+$$H_0: \text{El sexo del atleta y el tipo de equipamiento utilizado son independientes}$$
+
+$$H_1: \text{El sexo del atleta y el tipo de equipamiento utilizado están asociados (no son independientes)}$$
+
+```{r}
+tabla <- table(df_nuevo$Sex, df_nuevo$Equipment)
+tabla
+```
+
+## Crear tabla de contingencia
+```{r}
+observados <- matrix(c(54, 4272, 787, 1016,
+                        287, 8005, 1530, 2949),
+                      nrow = 2, byrow = TRUE,
+                      dimnames = list(
+                        Sexo = c("F", "M"),
+                        Equipamiento = c("Multi-ply", "Raw", "Single-ply", "Wraps")
+                      )) 
+observados
+```
+
+## Totales por fila, columna y total general
+```{r}
+fila_totales <- rowSums(observados)
+col_totales <- colSums(observados)
+total_general <- sum(observados)
+
+fila_totales
+col_totales
+total_general
+```
+
+## Frecuencias esperadas bajo H0
+```{r}
+esperados <- outer(fila_totales, col_totales, FUN = function(f, c) f * c / total_general)
+dimnames(esperados) <- dimnames(observados)
+esperados
+```
+
+## Estadistico Chi-cuadrado
+```{r}
+chi_cuadrado <- sum((observados - esperados)^2 / esperados)
+chi_cuadrado
+
+df_gl <- (nrow(observados) - 1) * (ncol(observados) - 1)
+df_gl
+
+alpha <- 0.05
+valor_critico <- qchisq(1 - alpha, df_gl)
+valor_critico
+```
+
+## Conclusion
+```{r}
+# comparación
+rechaza_H0 <- chi_cuadrado > valor_critico
+
+if (rechaza_H0) {
+  print("Se rechaza H0: existe una asociacion significativa entre el sexo del atleta y el tipo de equipamiento utilizado.")
+} else {
+  print("No se rechaza H0: no hay evidencia suficiente para afirmar que el sexo y el equipamiento están asociados.")
+}
+```
+ 
+```{r}
+
+valor_p <- pchisq(chi_cuadrado, df_gl, lower.tail = FALSE)
+valor_p
+```
+
+## Verificamos con chisq.test
+```{r}
+chisq.test(observados)
+```
+
+```{r}
+chi_test <- chisq.test(tabla)
+chi_test$expected
+```
+Se aplicó la prueba de independencia chi-cuadrado para evaluar si el sexo del atleta y el tipo de equipamiento utilizado en competencia son independientes. El estadístico calculado ($χ²=160.55$, $gl=3$) supera ampliamente el valor crítico ($χ²=7.81$) para un nivel de significancia α=0.05, resultado que se confirma con un valor p prácticamente nulo. Por lo tanto, se rechaza H0, concluyendo que existe una asociación estadísticamente significativa entre el sexo del atleta y el tipo de equipamiento empleado.
+
+
+# Estadistica paramétrica y no paramétrica
+
+En esta sección realizaremos la estadistica inferencial para responder el objetivo general y los objetivos especificos.
+
+## ¿Existe una diferencia significativa en el peso muerto promedio entre atletas de sexo masculino y femenino?
+
+$$
+H_0: \mu_1 = \mu_2 \quad 
+\text {(el peso muerto promedio es igual entre hombres y mujeres)  } 
+\text{ vs } 
+$$
+$$
+\quad H_1: \mu_1 \neq \mu_2 \text { (el peso muerto promedio difiere entre hombres y mujeres)}
+$$
+
+### Verifiquemos supuestos de normalidad
+
+```{r}
+ks.test(df_nuevo$BestDeadliftKg, "pnorm", mean=mean(df_nuevo$BestDeadliftKg), sd=sd(df_nuevo$BestDeadliftKg))
+```
+La prueba de normalidad de Kolmogorov-Smirnov aplicada sobre la variable de rendimiento en peso muerto (BestDeadliftKg) indicó una desviación estadísticamente significativa de la distribución normal ($D = 0.058$, p < 0.001). En consecuencia, se rechazó la hipótesis nula de normalidad, justificando la selección de pruebas no paramétricas para la comparación de grupos.
+
+Por esta razon, procedemos a utilizar la prueba de Wilcox (para datos no pareados) y realizar la comparacion (utilizando la mediana).
+
+### comparación de grupos con método no paramétrico
+```{r}
+wilcox.test(BestDeadliftKg ~ Sex, data = df_nuevo)
+```
+
+La prueba de suma de rangos de Wilcoxon indicó una diferencia estadísticamente
+significativa en el rendimiento de peso muerto entre hombres y mujeres
+($W = 3967723$, p < 0.001). Dado que el $p\text{-valor} < \alpha$ ($0.05$), se rechaza
+la hipótesis nula $H_0$. Los resultados confirman que la mediana del peso muerto
+levantado por los hombres es significativamente mayor a la alcanzada por las mujeres.
+
+## ¿Existen diferencias significativas en el peso muerto promedio entre los distintos tipos de equipamiento utilizados por los atletas?
+
+$$
+H_0: \mu_1 = \mu_2 = \cdots = \mu_k \quad \text{vs} \quad 
+$$
+$$H_1: \text{ Al menos un tipo de equipamiento presenta un peso muerto promedio diferente a los demás}
+$$
+
+
+
+### Verifiquemos el supuesto de normalidad de la variable 'Equipment'
+
+```{r}
+df_nuevo %>%
+  group_by(Equipment) %>%
+  summarise(ks = ks.test(BestDeadliftKg, "pnorm", 
+                          mean = mean(BestDeadliftKg), 
+                          sd = sd(BestDeadliftKg))$p.value)
+```
+
+Se aplicó la prueba de Kolmogorov-Smirnov para evaluar el supuesto de normalidad de la variable BestDeadliftKg en cada categoría de Equipment. Los resultados muestran que el grupo Multi-ply presenta un valor $p = 0.069$, mayor al nivel de significancia $α = 0.05$, por lo que este grupo individualmente no presenta evidencia de desviación significativa de la normalidad. Sin embargo, los grupos Raw, Single-ply y Wraps presentaron valores p extremadamente pequeños (p < 0.001 en los tres casos), rechazando el supuesto de normalidad. Dado que no se cumple la normalidad en todos los grupos simultáneamente, se descarta el uso de ANOVA (paramétrico) y se opta por una alternativa no paramétrica, es decir, la prueba de Kruskal-Wallis (comprando medianas).
+
+### comparacion de grupos con método no paramétrico
+
+```{r}
+#como NO se cumplen los supuestos utilizamos Kruskal-Wallis
+kruskal.test(BestDeadliftKg ~ factor(Equipment), data = df)
+
+```
+
+El resultado ($χ²=626.13$, $gl=3$, p<0.001) indica que se rechaza la hipótesis nula, existiendo evidencia estadística suficiente para afirmar que al menos un tipo de equipamiento presenta un peso muerto con una distribución significativamente distinta a los demás. Al observar las medianas por grupo, se aprecia que Multi-ply presenta la mediana más alta (251.7 kg), seguido de Wraps (225 kg) y Single-ply (210 kg), mientras que Raw presenta la mediana más baja (195 kg), lo cual es coherente con el mayor nivel de asistencia mecánica que ofrece cada tipo de equipamiento.
+
+
+
+
+# Coeficiente de correlación
+
+En esta sección se analizará la relación entre pares de variables numéricas del estudio mediante un coeficiente de correlación. Se verificará el supuesto de normalidad de las variables seleccionadas, con el fin de determinar si corresponde aplicar el coeficiente de Pearson (en caso de cumplirse la normalidad) o el coeficiente de Spearman (en caso de no cumplirse la normalidad). Este análisis permitirá medir el grado y la dirección de la relación entre la variable respuesta BestDeadliftKg y las variables BodyweightKg y upper_lower_total, identificando así qué predictores presentan mayor relación con el rendimiento en peso muerto.
+
+## Correlación entre peso corporal y mejor peso muerto alcanzado
+
+### Veamos la distribucion entre ambas variables
+```{r}
+df_nuevo %>%
+  ggplot(aes(x = BodyweightKg, y = BestDeadliftKg)) +
+  geom_point(alpha = 0.3, color = 'darkblue') +
+  labs(x = 'Peso corporal (kg)', y = 'Mejor peso muerto (kg)',
+       title = 'Relación entre peso corporal y peso muerto máximo') +
+  theme_bw()
+```
+
+Se observa una tendencia creciente, es decir, a mayor peso corporal, mayor tiende a ser el peso muerto alcanzado (kg).
+
+### Supuesto de normalidad
+
+```{r}
+ks.test(df$BodyweightKg, "pnorm", mean = mean(df$BodyweightKg), sd = sd(df$BodyweightKg))
+ks.test(df$BestDeadliftKg, "pnorm", mean = mean(df$BestDeadliftKg), sd = sd(df$BestDeadliftKg))
+```
+Se aplicó la prueba de Kolmogorov-Smirnov para evaluar el supuesto de normalidad de las variables BodyweightKg y BestDeadliftKg, comparando su distribución contra una distribución normal con la misma media y desviación estándar de los datos. En ambos casos se obtuvo un valor p considerablemente menor a 0.05, por lo que se rechaza la hipótesis nula de normalidad para las dos variables. Es importante señalar que, dado que ambas variables presentan valores registrados con precisión limitada (decimales), se generaron múltiples observaciones con valores iguales, lo que produjo una advertencia de "empates"; esto no invalida el resultado, pero muestra una ligera desviación respecto al supuesto de continuidad exigido por esta prueba. En consecuencia, dado que ninguna de las dos variables cumple el supuesto de normalidad, se requiere aplicar el coeficiente de correlación de Spearman en lugar de Pearson para el análisis respectivo.
+
+
+### Coeficiente de correlación de Spearman
+
+$$
+H_0: ρs= 0 \quad \text{ (no hay relación monótona) vs } 
+$$
+$$
+\quad H_1: ρs \neq 0 \text { (existe relación monótona)}
+$$
+
+```{r}
+cor.test(df$BodyweightKg, df$BestDeadliftKg, method = "spearman", exact = FALSE)
+```
+
+El análisis de correlación de Spearman entre el peso corporal (BodyweightKg) y el mejor peso muerto alcanzado (BestDeadliftKg) mostró un coeficiente ρ=0.6701, lo que indica una correlación positiva moderada-alta; es decir, a mayor peso corporal del atleta, mayor tiende a ser el peso muerto máximo levantado. La prueba de significancia (S=371,210,431,086, p-valor<0.001) permitió rechazar la hipótesis nula de ausencia de relacion monotona, confirmando que la relación observada es estadísticamente significativa.
+
+
+## Correlación entre press banca + sentadilla y mejor peso muerto alcanzado.
+
+### Veamos la distribución entre ambas variables
+```{r}
+df_nuevo %>%
+  ggplot(aes(x = upper_lower_total, y = BestDeadliftKg)) +
+  geom_point(alpha = 0.3, color = 'darkblue') +
+  labs(x = 'Fuerza combinada (sentadilla + banca) en kg', y = 'Mejor peso muerto (kg)',
+       title = 'Relación entre fuerza combinada de tren superior/inferior y peso muerto') +
+  theme_bw()
+```
+
+Se observa una tendencia fuertemente creciente, con los puntos muy pegados a la línea de tendencia — mucho menos dispersos que en el gráfico anterior de BodyweightKg.
+
+### Supuesto de normalidad 
+
+```{r}
+ks.test(df_nuevo$upper_lower_total, "pnorm", mean = mean(df_nuevo$upper_lower_total), 
+        sd = sd(df_nuevo$upper_lower_total))
+ks.test(df_nuevo$BestDeadliftKg, "pnorm", mean = mean(df_nuevo$BestDeadliftKg), 
+        sd = sd(df_nuevo$BestDeadliftKg))
+```
+
+Comparando sus distribuciones contra una distribución normal con la misma media y desviación estándar de los datos, en ambos casos se obtuvo un valor p considerablemente menor a 0.05, por lo que se rechaza la hipótesis nula de normalidad para las dos variables. Por esta razon es necesario optar por el método de Spearman 
+
+### Coeficiente de correlación de Spearman
+
+
+$$
+H_0: ρs= 0 \quad \text{ (no hay relación monótona) vs } 
+$$
+$$
+\quad H_1: ρs \neq 0 \text { (existe relación monótona)}
+$$
+
+```{r}
+cor.test(df_nuevo$upper_lower_total, df_nuevo$BestDeadliftKg, method = "spearman")
+
+```
+El análisis de correlación de Spearman entre la fuerza combinada de tren superior e inferior (upper_lower_total) y el peso muerto máximo alcanzado (BestDeadliftKg) mostró un coeficiente ρ=0.9321, lo que indica una correlación positiva muy alta; es decir, a mayor fuerza combinada de sentadilla y press de banca, mayor es el peso muerto máximo levantado. La prueba de significancia (S=76,417,254,693, p-valor<0.001) permitió rechazar la hipótesis nula de ausencia de correlación, confirmando que la relación observada es estadísticamente significativa. Este resultado es más fuerte que el obtenido con BodyweightKg (ρ=0.6701), es coherente con la naturaleza de la variable upper_lower_total, ya que al combinar dos levantamientos que miden capacidades de fuerza muy parecidas a las del peso muerto, es esperable una asociación más estrecha con la variable respuesta.
+
+
+
+
+
