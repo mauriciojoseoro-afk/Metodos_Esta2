@@ -1,7 +1,7 @@
 book_filename: "bookdown-demo"
 language:
   ui:
-
+output_dir: "docs"
 delete_merged_file: true
 rmd_files: [
   "Introduccion.Rmd",
