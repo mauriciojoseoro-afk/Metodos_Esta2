@@ -54,8 +54,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -326,7 +324,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb3-4"><a href="dataset.html#cb3-4" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb3-5"><a href="dataset.html#cb3-5" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:primerasfilas">Table 5.1: </span><span id="tab:primerasfilas">Table 5.2: </span> Primeras 5 observaciones del dataset
 </caption>
@@ -678,8 +676,7 @@ Raw
 <span id="cb6-2"><a href="dataset.html#cb6-2" tabindex="-1"></a>issues<span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
 <span id="cb6-3"><a href="dataset.html#cb6-3" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(<span class="fu">as.numeric</span>(BestSquatKg)) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(BestSquatKg))</span></code></pre></div>
 <pre><code>## Warning: There was 1 warning in `filter()`.
-## ℹ In argument: `is.na(as.numeric(BestSquatKg)) &amp;
-##   !is.na(BestSquatKg)`.
+## ℹ In argument: `is.na(as.numeric(BestSquatKg)) &amp; !is.na(BestSquatKg)`.
 ## Caused by warning:
 ## ! NAs introducidos por coerción</code></pre>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="dataset.html#cb8-1" tabindex="-1"></a>issues <span class="sc">%&gt;%</span></span>
@@ -759,7 +756,7 @@ Raw
 <span id="cb18-5"><a href="dataset.html#cb18-5" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb18-6"><a href="dataset.html#cb18-6" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>
 (#tab:Datos faltantes)(#tab:Datos faltantes) Verificar datos faltantes
 </caption>
@@ -850,7 +847,7 @@ NA_BestBenchKg
 <span id="cb21-5"><a href="dataset.html#cb21-5" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
 <span id="cb21-6"><a href="dataset.html#cb21-6" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
-<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
 <caption>
 (#tab:datos faltantes 2)(#tab:datos faltantes 2) Verificar exito del dataset limpiado
 </caption>

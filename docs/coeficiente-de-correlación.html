@@ -54,8 +54,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -316,9 +314,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="supuesto-de-normalidad" class="section level3 hasAnchor" number="14.1.2">
 <h3><span class="header-section-number">14.1.2</span> Supuesto de normalidad<a href="coeficiente-de-correlación.html#supuesto-de-normalidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="sourceCode" id="cb80"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb80-1"><a href="coeficiente-de-correlación.html#cb80-1" tabindex="-1"></a><span class="fu">ks.test</span>(df<span class="sc">$</span>BodyweightKg, <span class="st">&quot;pnorm&quot;</span>, <span class="at">mean =</span> <span class="fu">mean</span>(df<span class="sc">$</span>BodyweightKg), <span class="at">sd =</span> <span class="fu">sd</span>(df<span class="sc">$</span>BodyweightKg))</span></code></pre></div>
-<pre><code>## Warning in ks.test.default(df$BodyweightKg, &quot;pnorm&quot;, mean =
-## mean(df$BodyweightKg), : ties should not be present for the one-sample
-## Kolmogorov-Smirnov test</code></pre>
+<pre><code>## Warning in ks.test.default(df$BodyweightKg, &quot;pnorm&quot;, mean = mean(df$BodyweightKg), : ties
+## should not be present for the one-sample Kolmogorov-Smirnov test</code></pre>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
@@ -326,9 +323,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## D = 0.072876, p-value &lt; 0.00000000000000022
 ## alternative hypothesis: two-sided</code></pre>
 <div class="sourceCode" id="cb83"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb83-1"><a href="coeficiente-de-correlación.html#cb83-1" tabindex="-1"></a><span class="fu">ks.test</span>(df<span class="sc">$</span>BestDeadliftKg, <span class="st">&quot;pnorm&quot;</span>, <span class="at">mean =</span> <span class="fu">mean</span>(df<span class="sc">$</span>BestDeadliftKg), <span class="at">sd =</span> <span class="fu">sd</span>(df<span class="sc">$</span>BestDeadliftKg))</span></code></pre></div>
-<pre><code>## Warning in ks.test.default(df$BestDeadliftKg, &quot;pnorm&quot;, mean =
-## mean(df$BestDeadliftKg), : ties should not be present for the one-sample
-## Kolmogorov-Smirnov test</code></pre>
+<pre><code>## Warning in ks.test.default(df$BestDeadliftKg, &quot;pnorm&quot;, mean = mean(df$BestDeadliftKg), :
+## ties should not be present for the one-sample Kolmogorov-Smirnov test</code></pre>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
@@ -376,8 +372,8 @@ H_0: ρs= 0 \quad \text{ (no hay relación monótona) vs }
 <div class="sourceCode" id="cb89"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb89-1"><a href="coeficiente-de-correlación.html#cb89-1" tabindex="-1"></a><span class="fu">ks.test</span>(df_nuevo<span class="sc">$</span>upper_lower_total, <span class="st">&quot;pnorm&quot;</span>, <span class="at">mean =</span> <span class="fu">mean</span>(df_nuevo<span class="sc">$</span>upper_lower_total), </span>
 <span id="cb89-2"><a href="coeficiente-de-correlación.html#cb89-2" tabindex="-1"></a>        <span class="at">sd =</span> <span class="fu">sd</span>(df_nuevo<span class="sc">$</span>upper_lower_total))</span></code></pre></div>
 <pre><code>## Warning in ks.test.default(df_nuevo$upper_lower_total, &quot;pnorm&quot;, mean =
-## mean(df_nuevo$upper_lower_total), : ties should not be present for the
-## one-sample Kolmogorov-Smirnov test</code></pre>
+## mean(df_nuevo$upper_lower_total), : ties should not be present for the one-sample
+## Kolmogorov-Smirnov test</code></pre>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
@@ -406,8 +402,8 @@ H_0: ρs= 0 \quad \text{ (no hay relación monótona) vs }
 \quad H_1: ρs \neq 0 \text { (existe relación monótona)}
 \]</span></p>
 <div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="coeficiente-de-correlación.html#cb95-1" tabindex="-1"></a><span class="fu">cor.test</span>(df_nuevo<span class="sc">$</span>upper_lower_total, df_nuevo<span class="sc">$</span>BestDeadliftKg, <span class="at">method =</span> <span class="st">&quot;spearman&quot;</span>)</span></code></pre></div>
-<pre><code>## Warning in cor.test.default(df_nuevo$upper_lower_total,
-## df_nuevo$BestDeadliftKg, : cannot compute exact p-value with ties</code></pre>
+<pre><code>## Warning in cor.test.default(df_nuevo$upper_lower_total, df_nuevo$BestDeadliftKg, : cannot
+## compute exact p-value with ties</code></pre>
 <pre><code>## 
 ##  Spearman&#39;s rank correlation rho
 ## 
