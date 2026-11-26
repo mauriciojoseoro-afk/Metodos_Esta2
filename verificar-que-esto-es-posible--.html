@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 7 Verificar que esto es posible: ———————————————————————————————- | 01-intro.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 7 Verificar que esto es posible: ———————————————————————————————- | 01-intro.knit" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 7 Verificar que esto es posible: ———————————————————————————————- | 01-intro.knit" />
+  
+  
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="ingenieria-de-caracterizacion-feature-engineering.html"/>
+<link rel="next" href="tabla-de-contingencia.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>1</b> Dataset</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="dataset.html"><a href="dataset.html#leer-dataset"><i class="fa fa-check"></i><b>1.1</b> Leer dataset</a></li>
+<li class="chapter" data-level="1.2" data-path="dataset.html"><a href="dataset.html#mostrar-las-10-primeras-filas"><i class="fa fa-check"></i><b>1.2</b> Mostrar las 10 primeras filas</a></li>
+<li class="chapter" data-level="1.3" data-path="dataset.html"><a href="dataset.html#estructura-de-los-datos"><i class="fa fa-check"></i><b>1.3</b> Estructura de los datos</a></li>
+<li class="chapter" data-level="1.4" data-path="dataset.html"><a href="dataset.html#solucionar-valores-inconsistentes"><i class="fa fa-check"></i><b>1.4</b> Solucionar valores inconsistentes</a></li>
+<li class="chapter" data-level="1.5" data-path="dataset.html"><a href="dataset.html#verificamos-si-los-niveles-de-las-variables-cualitativas-tienen-inconsistencias"><i class="fa fa-check"></i><b>1.5</b> Verificamos si los niveles de las variables cualitativas tienen inconsistencias</a></li>
+<li class="chapter" data-level="1.6" data-path="dataset.html"><a href="dataset.html#verificar-si-hay-datos-faltantes"><i class="fa fa-check"></i><b>1.6</b> Verificar si hay datos faltantes</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="dataset.html"><a href="dataset.html#otra-forma-de-detectar-valores-faltantes"><i class="fa fa-check"></i><b>1.6.1</b> Otra forma de detectar valores faltantes:</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="dataset.html"><a href="dataset.html#imputacion-de-datos-faltantes"><i class="fa fa-check"></i><b>1.7</b> Imputacion de datos faltantes</a></li>
+<li class="chapter" data-level="1.8" data-path="dataset.html"><a href="dataset.html#ver-si-hay-datos-faltantes-nuevamente-en-el-data-frame-limpiado"><i class="fa fa-check"></i><b>1.8</b> Ver si hay datos faltantes nuevamente en el Data Frame limpiado</a></li>
+<li class="chapter" data-level="1.9" data-path="dataset.html"><a href="dataset.html#convertir-las-variables-cualitativas-en-factor."><i class="fa fa-check"></i><b>1.9</b> Convertir las variables cualitativas en factor.</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html"><i class="fa fa-check"></i><b>2</b> Analisis exploratorio de BestDeadliftKg (target)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-tipo-histograma"><i class="fa fa-check"></i><b>2.1</b> Grafico tipo histograma</a></li>
+<li class="chapter" data-level="2.2" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>2.2</b> Grafico de cajas y bigotes</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html"><i class="fa fa-check"></i><b>3</b> Variables independientes (caracteristicas)</a>
+<ul>
+<li class="chapter" data-level="3.0.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#veamos-el-an%C3%A1lisis-de-cada-variable-independiente"><i class="fa fa-check"></i><b>3.0.1</b> Veamos el análisis de cada variable independiente</a></li>
+<li class="chapter" data-level="3.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#graficos-de-las-variables-independientes"><i class="fa fa-check"></i><b>3.1</b> Graficos de las variables independientes</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html"><i class="fa fa-check"></i><b>4</b> Analisis Exploratorio Bivariado</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-edad"><i class="fa fa-check"></i><b>4.1</b> Peso muerto vs Edad</a></li>
+<li class="chapter" data-level="4.2" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-sentadilla"><i class="fa fa-check"></i><b>4.2</b> Peso muerto vs Mejor Sentadilla</a></li>
+<li class="chapter" data-level="4.3" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-peso-corporal"><i class="fa fa-check"></i><b>4.3</b> Peso muerto vs Peso corporal</a></li>
+<li class="chapter" data-level="4.4" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-press-banca"><i class="fa fa-check"></i><b>4.4</b> Peso muerto vs Mejor press banca</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html"><i class="fa fa-check"></i><b>5</b> Variables categoricas ‘Sex’ y ‘Equipament’</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-sex"><i class="fa fa-check"></i><b>5.1</b> Diagrama de barras: Frecuencia de la variable ‘Sex’</a></li>
+<li class="chapter" data-level="5.2" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-equipament"><i class="fa fa-check"></i><b>5.2</b> Diagrama de barras: Frecuencia de la variable ‘Equipament’</a></li>
+<li class="chapter" data-level="5.3" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-tabla"><i class="fa fa-check"></i><b>5.3</b> Comparacion entre peso muerto y sexo (tabla)</a>
+<ul>
+<li class="chapter" data-level="5.3.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-caja-de-bigotes"><i class="fa fa-check"></i><b>5.3.1</b> Comparacion entre peso muerto y sexo (Caja de bigotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-tabla"><i class="fa fa-check"></i><b>5.4</b> Comparacion entre peso muerto y equipo (tabla)</a>
+<ul>
+<li class="chapter" data-level="5.4.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-caja-de-bigotes"><i class="fa fa-check"></i><b>5.4.1</b> Comparacion entre peso muerto y equipo (Caja de bigotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="5.5" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#recopilacion-de-todas-las-graficas"><i class="fa fa-check"></i><b>5.5</b> Recopilacion de todas las graficas</a></li>
+<li class="chapter" data-level="5.6" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#variables-independientes-vs-variables-independientes"><i class="fa fa-check"></i><b>5.6</b> Variables independientes vs variables independientes:</a>
+<ul>
+<li class="chapter" data-level="5.6.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#variables-num%C3%A9ricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>5.6.1</b> variables numéricas vs numéricas</a></li>
+<li class="chapter" data-level="5.6.2" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#variables-categoricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>5.6.2</b> Variables categoricas vs numéricas</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html"><i class="fa fa-check"></i><b>6</b> Ingenieria de caracterizacion (feature engineering)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#variables-seleccionadas"><i class="fa fa-check"></i><b>6.1</b> Variables seleccionadas</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html"><i class="fa fa-check"></i><b>7</b> Verificar que esto es posible: ———————————————————————————————-</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#correlacion-entre-todas-las-variables-numericas-originales"><i class="fa fa-check"></i><b>7.1</b> Correlacion entre todas las variables numericas originales</a></li>
+<li class="chapter" data-level="7.2" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#nuevas-variables-upper_lower_total-ratio_squat_peso-ratio_bench_peso"><i class="fa fa-check"></i><b>7.2</b> Nuevas variables: ‘upper_lower_total’, ‘ratio_squat_peso’, ‘ratio_bench_peso’</a>
+<ul>
+<li class="chapter" data-level="7.2.1" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#verificar-si-no-hay-valores-nulos"><i class="fa fa-check"></i><b>7.2.1</b> Verificar si no hay valores nulos:</a></li>
+<li class="chapter" data-level="7.2.2" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#verificacion-de-correlacion-de-las-nuevas-variables-contra-la-variable-respuesta"><i class="fa fa-check"></i><b>7.2.2</b> Verificacion de correlacion de las nuevas variables contra la variable respuesta</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#realizamos-el-resumen-estadistico-de-nuestras-nuevas-variables"><i class="fa fa-check"></i><b>7.3</b> Realizamos el resumen estadistico de nuestras nuevas variables</a></li>
+<li class="chapter" data-level="7.4" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#veamos-los-graficos-de-las-variables-de-nuestro-dataframe-nuevo."><i class="fa fa-check"></i><b>7.4</b> Veamos los graficos de las variables de nuestro dataframe nuevo.</a></li>
+<li class="chapter" data-level="7.5" data-path="verificar-que-esto-es-posible--.html"><a href="verificar-que-esto-es-posible--.html#verificamos-el-%C3%A9xito-de-la-ingenieria-de-caracterizacion"><i class="fa fa-check"></i><b>7.5</b> Verificamos el éxito de la ingenieria de caracterizacion</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html"><i class="fa fa-check"></i><b>8</b> Tabla de contingencia</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#crear-tabla-de-contingencia"><i class="fa fa-check"></i><b>8.1</b> Crear tabla de contingencia</a></li>
+<li class="chapter" data-level="8.2" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#totales-por-fila-columna-y-total-general"><i class="fa fa-check"></i><b>8.2</b> Totales por fila, columna y total general</a></li>
+<li class="chapter" data-level="8.3" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#frecuencias-esperadas-bajo-h0"><i class="fa fa-check"></i><b>8.3</b> Frecuencias esperadas bajo H0</a></li>
+<li class="chapter" data-level="8.4" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#estadistico-chi-cuadrado"><i class="fa fa-check"></i><b>8.4</b> Estadistico Chi-cuadrado</a></li>
+<li class="chapter" data-level="8.5" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#conclusion"><i class="fa fa-check"></i><b>8.5</b> Conclusion</a></li>
+<li class="chapter" data-level="8.6" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#verificamos-con-chisq.test"><i class="fa fa-check"></i><b>8.6</b> Verificamos con chisq.test</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html"><i class="fa fa-check"></i><b>9</b> Estadistica paramétrica y no paramétrica</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existe-una-diferencia-significativa-en-el-peso-muerto-promedio-entre-atletas-de-sexo-masculino-y-femenino"><i class="fa fa-check"></i><b>9.1</b> ¿Existe una diferencia significativa en el peso muerto promedio entre atletas de sexo masculino y femenino?</a>
+<ul>
+<li class="chapter" data-level="9.1.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-supuestos-de-normalidad"><i class="fa fa-check"></i><b>9.1.1</b> Verifiquemos supuestos de normalidad</a></li>
+</ul></li>
+<li class="chapter" data-level="9.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existen-diferencias-significativas-en-el-peso-muerto-promedio-entre-los-distintos-tipos-de-equipamiento-utilizados-por-los-atletas"><i class="fa fa-check"></i><b>9.2</b> ¿Existen diferencias significativas en el peso muerto promedio entre los distintos tipos de equipamiento utilizados por los atletas?</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html"><i class="fa fa-check"></i><b>10</b> Coeficiente de correlacion</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#correlacion-entre-peso-corporal-y-mejor-peso-muerto-alcanzado"><i class="fa fa-check"></i><b>10.1</b> Correlacion entre peso corporal y mejor peso muerto alcanzado</a>
+<ul>
+<li class="chapter" data-level="10.1.1" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#veamos-la-distribucion-entre-ambas-variables"><i class="fa fa-check"></i><b>10.1.1</b> Veamos la distribucion entre ambas variables</a></li>
+<li class="chapter" data-level="10.1.2" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>10.1.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="10.1.3" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#coeficiente-de-correlacion-de-spearman"><i class="fa fa-check"></i><b>10.1.3</b> Coeficiente de correlacion de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="10.2" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#correlacion-entre-press-banca-sentadilla-y-mejor-peso-muerto-alcanzado."><i class="fa fa-check"></i><b>10.2</b> Correlacion entre press banca + sentadilla y mejor peso muerto alcanzado.</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#veamos-la-distribucion-entre-ambas-variables-1"><i class="fa fa-check"></i><b>10.2.1</b> Veamos la distribucion entre ambas variables</a></li>
+<li class="chapter" data-level="10.2.2" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#supuesto-de-normalidad-1"><i class="fa fa-check"></i><b>10.2.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="10.2.3" data-path="coeficiente-de-correlacion.html"><a href="coeficiente-de-correlacion.html#coeficiente-de-correlacion-de-spearman-1"><i class="fa fa-check"></i><b>10.2.3</b> Coeficiente de correlacion de Spearman</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="verificar-que-esto-es-posible--" class="section level1 hasAnchor" number="7">
+<h1><span class="header-section-number">Chapter 7</span> Verificar que esto es posible: ———————————————————————————————-<a href="verificar-que-esto-es-posible--.html#verificar-que-esto-es-posible--" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="correlacion-entre-todas-las-variables-numericas-originales" class="section level2 hasAnchor" number="7.1">
+<h2><span class="header-section-number">7.1</span> Correlacion entre todas las variables numericas originales<a href="verificar-que-esto-es-posible--.html#correlacion-entre-todas-las-variables-numericas-originales" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="verificar-que-esto-es-posible--.html#cb74-1" tabindex="-1"></a><span class="co">#cor(df$Age, df$BodyweightKg, use = &quot;complete.obs&quot;)</span></span>
+<span id="cb74-2"><a href="verificar-que-esto-es-posible--.html#cb74-2" tabindex="-1"></a><span class="co">#cor(df$Age, df$BestSquatKg, use = &quot;complete.obs&quot;)</span></span>
+<span id="cb74-3"><a href="verificar-que-esto-es-posible--.html#cb74-3" tabindex="-1"></a><span class="co">#cor(df$Age, df$BestBenchKg, use = &quot;complete.obs&quot;)</span></span>
+<span id="cb74-4"><a href="verificar-que-esto-es-posible--.html#cb74-4" tabindex="-1"></a></span>
+<span id="cb74-5"><a href="verificar-que-esto-es-posible--.html#cb74-5" tabindex="-1"></a><span class="co">#cor(df$BodyweightKg, df$BestSquatKg, use = &quot;complete.obs&quot;)</span></span>
+<span id="cb74-6"><a href="verificar-que-esto-es-posible--.html#cb74-6" tabindex="-1"></a><span class="co">#cor(df$BodyweightKg, df$BestBenchKg, use = &quot;complete.obs&quot;)</span></span>
+<span id="cb74-7"><a href="verificar-que-esto-es-posible--.html#cb74-7" tabindex="-1"></a></span>
+<span id="cb74-8"><a href="verificar-que-esto-es-posible--.html#cb74-8" tabindex="-1"></a><span class="co">#cor(df$BestSquatKg, df$BestBenchKg, use = &quot;complete.obs&quot;)</span></span></code></pre></div>
+<p>Age no presenta correlacion relevante con ninguna variable (todas cercanas a 0), por lo que se descarta para la creacion de nuevas variables. Los tres levantamientos (BestSquatKg, BestBenchKg, BestDeadliftKg) presentan correlaciones muy fuertes entre si (&gt; 0.87), y BodyweightKg presenta correlacion fuerte con los tres (~0.64-0.66). Como BestDeadliftKg es la variable respuesta, cualquier variable nueva debe construirse unicamente con BestSquatKg, BestBenchKg y BodyweightKg, sin incluir el target, para evitar fuga de datos.
+# —————————————————————————————————————————–</p>
+</div>
+<div id="nuevas-variables-upper_lower_total-ratio_squat_peso-ratio_bench_peso" class="section level2 hasAnchor" number="7.2">
+<h2><span class="header-section-number">7.2</span> Nuevas variables: ‘upper_lower_total’, ‘ratio_squat_peso’, ‘ratio_bench_peso’<a href="verificar-que-esto-es-posible--.html#nuevas-variables-upper_lower_total-ratio_squat_peso-ratio_bench_peso" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb75"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb75-1"><a href="verificar-que-esto-es-posible--.html#cb75-1" tabindex="-1"></a>df_nuevo <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb75-2"><a href="verificar-que-esto-es-posible--.html#cb75-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb75-3"><a href="verificar-que-esto-es-posible--.html#cb75-3" tabindex="-1"></a>    <span class="co"># Fuerza combinada de tren superior + inferior</span></span>
+<span id="cb75-4"><a href="verificar-que-esto-es-posible--.html#cb75-4" tabindex="-1"></a>    <span class="at">upper_lower_total =</span> BestSquatKg <span class="sc">+</span> BestBenchKg,</span>
+<span id="cb75-5"><a href="verificar-que-esto-es-posible--.html#cb75-5" tabindex="-1"></a>    </span>
+<span id="cb75-6"><a href="verificar-que-esto-es-posible--.html#cb75-6" tabindex="-1"></a>    <span class="co"># ratio: cuánto pesa lo que levanta en sentadilla, relativo a su propio peso corporal</span></span>
+<span id="cb75-7"><a href="verificar-que-esto-es-posible--.html#cb75-7" tabindex="-1"></a>    <span class="at">ratio_squat_peso =</span> BestSquatKg <span class="sc">/</span> BodyweightKg,</span>
+<span id="cb75-8"><a href="verificar-que-esto-es-posible--.html#cb75-8" tabindex="-1"></a>    </span>
+<span id="cb75-9"><a href="verificar-que-esto-es-posible--.html#cb75-9" tabindex="-1"></a>    <span class="co"># Ratio: lo mismo para press banca</span></span>
+<span id="cb75-10"><a href="verificar-que-esto-es-posible--.html#cb75-10" tabindex="-1"></a>    <span class="at">ratio_bench_peso =</span> BestBenchKg <span class="sc">/</span> BodyweightKg</span>
+<span id="cb75-11"><a href="verificar-que-esto-es-posible--.html#cb75-11" tabindex="-1"></a>  )</span></code></pre></div>
+<p><strong>interpretacion sin correlacion</strong>
+La variable upper_lower_total representa la fuerza combinada del tren superior e inferior del atleta, sumando su mejor sentadilla y su mejor press de banca. Según el resumen estadístico, esta variable presenta una media de [X] kg y una mediana de [Y] kg, con una asimetría de [valor], lo que indica que la distribución [es simétrica / tiene cola hacia la derecha, dado que algunos atletas de élite alcanzan totales considerablemente superiores al promedio]. El diagrama de dispersión frente al peso muerto muestra una tendencia claramente creciente: a medida que aumenta la fuerza combinada de sentadilla y banca, el peso muerto también tiende a aumentar, lo cual es coherente desde el punto de vista fisiológico, ya que los tres levantamientos dependen de una capacidad de fuerza general similar del atleta.</p>
+<p>Los ratios ratio_squat_peso y ratio_bench_peso expresan cuántos kilogramos levanta el atleta por cada kilogramo de su propio peso corporal, permitiendo comparar la fuerza relativa entre atletas de distinto tamaño corporal. Se observa que la media de ratio_squat_peso es de [X], lo que indica que, en promedio, los atletas levantan aproximadamente [X] veces su propio peso corporal en sentadilla. La dispersión (DS = [valor]) sugiere que existe una variabilidad [alta/moderada] en esta capacidad relativa entre los distintos atletas de la muestra.</p>
+<p><strong>Interpretacion con correlacion</strong>
+Se construyeron tres variables derivadas: upper_lower_total (suma de sentadilla y press banca), que presentó la correlación más alta con el target (r=0.912), superando incluso a las variables originales; y dos ratios de fuerza relativa al peso corporal (ratio_squat_peso, ratio_bench_peso), que mostraron correlaciones más moderadas (r=0.628 y r=0.677 respectivamente). Esto es coherente con su naturaleza conceptual distinta: mientras upper_lower_total captura la fuerza absoluta del atleta —naturalmente muy ligada al peso muerto—, los ratios capturan la fuerza relativa al tamaño corporal, una dimensión complementaria pero menos directamente asociada al levantamiento máximo en términos absolutos.</p>
+<div id="verificar-si-no-hay-valores-nulos" class="section level3 hasAnchor" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Verificar si no hay valores nulos:<a href="verificar-que-esto-es-posible--.html#verificar-si-no-hay-valores-nulos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb76"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb76-1"><a href="verificar-que-esto-es-posible--.html#cb76-1" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb76-2"><a href="verificar-que-esto-es-posible--.html#cb76-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.)),<span class="at">.names=</span><span class="st">&quot;NA_{.col}&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb76-3"><a href="verificar-que-esto-es-posible--.html#cb76-3" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot; Verificar datos faltantes &quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb76-4"><a href="verificar-que-esto-es-posible--.html#cb76-4" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb76-5"><a href="verificar-que-esto-es-posible--.html#cb76-5" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb76-6"><a href="verificar-que-esto-es-posible--.html#cb76-6" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:unnamed-chunk-11">Table 7.1: </span><span id="tab:unnamed-chunk-11">Table 7.2: </span> Verificar datos faltantes
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+NA_playerId
+</th>
+<th style="text-align:right;">
+NA_Name
+</th>
+<th style="text-align:right;">
+NA_Sex
+</th>
+<th style="text-align:right;">
+NA_Equipment
+</th>
+<th style="text-align:right;">
+NA_Age
+</th>
+<th style="text-align:right;">
+NA_BodyweightKg
+</th>
+<th style="text-align:right;">
+NA_BestSquatKg
+</th>
+<th style="text-align:right;">
+NA_BestDeadliftKg
+</th>
+<th style="text-align:right;">
+NA_BestBenchKg
+</th>
+<th style="text-align:right;">
+NA_upper_lower_total
+</th>
+<th style="text-align:right;">
+NA_ratio_squat_peso
+</th>
+<th style="text-align:right;">
+NA_ratio_bench_peso
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="verificacion-de-correlacion-de-las-nuevas-variables-contra-la-variable-respuesta" class="section level3 hasAnchor" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Verificacion de correlacion de las nuevas variables contra la variable respuesta<a href="verificar-que-esto-es-posible--.html#verificacion-de-correlacion-de-las-nuevas-variables-contra-la-variable-respuesta" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb77"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb77-1"><a href="verificar-que-esto-es-posible--.html#cb77-1" tabindex="-1"></a><span class="co">#cor(df$upper_lower_total, df$BestDeadliftKg, use = &quot;complete.obs&quot;)</span></span></code></pre></div>
+<ul>
+<li>interpretacion</li>
+</ul>
+</div>
+</div>
+<div id="realizamos-el-resumen-estadistico-de-nuestras-nuevas-variables" class="section level2 hasAnchor" number="7.3">
+<h2><span class="header-section-number">7.3</span> Realizamos el resumen estadistico de nuestras nuevas variables<a href="verificar-que-esto-es-posible--.html#realizamos-el-resumen-estadistico-de-nuestras-nuevas-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb78"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb78-1"><a href="verificar-que-esto-es-posible--.html#cb78-1" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span> </span>
+<span id="cb78-2"><a href="verificar-que-esto-es-posible--.html#cb78-2" tabindex="-1"></a>  <span class="fu">select</span>(Age, BestDeadliftKg, upper_lower_total, ratio_squat_peso, ratio_bench_peso) <span class="sc">%&gt;%</span> </span>
+<span id="cb78-3"><a href="verificar-que-esto-es-posible--.html#cb78-3" tabindex="-1"></a>  <span class="fu">summary</span>() <span class="sc">%&gt;%</span>  </span>
+<span id="cb78-4"><a href="verificar-que-esto-es-posible--.html#cb78-4" tabindex="-1"></a><span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot; Dataset luego de realizar feature engineering&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb78-5"><a href="verificar-que-esto-es-posible--.html#cb78-5" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb78-6"><a href="verificar-que-esto-es-posible--.html#cb78-6" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb78-7"><a href="verificar-que-esto-es-posible--.html#cb78-7" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:caracterizacionnueva">Table 7.3: </span><span id="tab:caracterizacionnueva">Table 7.4: </span> Dataset luego de realizar feature engineering
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Age
+</th>
+<th style="text-align:left;">
+BestDeadliftKg
+</th>
+<th style="text-align:left;">
+upper_lower_total
+</th>
+<th style="text-align:left;">
+ratio_squat_peso
+</th>
+<th style="text-align:left;">
+ratio_bench_peso
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Min. : 7.00
+</td>
+<td style="text-align:left;">
+Min. : 18.1
+</td>
+<td style="text-align:left;">
+Min. : 22.7
+</td>
+<td style="text-align:left;">
+Min. :0.1919
+</td>
+<td style="text-align:left;">
+Min. :0.1686
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+1st Qu.:21.50
+</td>
+<td style="text-align:left;">
+1st Qu.:149.9
+</td>
+<td style="text-align:left;">
+1st Qu.:200.0
+</td>
+<td style="text-align:left;">
+1st Qu.:1.6888
+</td>
+<td style="text-align:left;">
+1st Qu.:1.0204
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Median :26.50
+</td>
+<td style="text-align:left;">
+Median :204.1
+</td>
+<td style="text-align:left;">
+Median :292.5
+</td>
+<td style="text-align:left;">
+Median :2.0708
+</td>
+<td style="text-align:left;">
+Median :1.3483
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Mean :29.66
+</td>
+<td style="text-align:left;">
+Mean :201.1
+</td>
+<td style="text-align:left;">
+Mean :296.1
+</td>
+<td style="text-align:left;">
+Mean :2.0994
+</td>
+<td style="text-align:left;">
+Mean :1.3552
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+3rd Qu.:34.50
+</td>
+<td style="text-align:left;">
+3rd Qu.:247.5
+</td>
+<td style="text-align:left;">
+3rd Qu.:370.0
+</td>
+<td style="text-align:left;">
+3rd Qu.:2.4663
+</td>
+<td style="text-align:left;">
+3rd Qu.:1.6372
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+Max. :83.00
+</td>
+<td style="text-align:left;">
+Max. :408.2
+</td>
+<td style="text-align:left;">
+Max. :885.0
+</td>
+<td style="text-align:left;">
+Max. :5.1916
+</td>
+<td style="text-align:left;">
+Max. :3.9689
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>interpretacion</li>
+</ul>
+</div>
+<div id="veamos-los-graficos-de-las-variables-de-nuestro-dataframe-nuevo." class="section level2 hasAnchor" number="7.4">
+<h2><span class="header-section-number">7.4</span> Veamos los graficos de las variables de nuestro dataframe nuevo.<a href="verificar-que-esto-es-posible--.html#veamos-los-graficos-de-las-variables-de-nuestro-dataframe-nuevo." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="01-intro_files/figure-html/numericas_i-1.png" alt="" width="672" />
+<img src="01-intro_files/figure-html/categoricas_i-1.png" alt="" width="672" /></p>
+<ul>
+<li>interpretacion</li>
+</ul>
+</div>
+<div id="verificamos-el-éxito-de-la-ingenieria-de-caracterizacion" class="section level2 hasAnchor" number="7.5">
+<h2><span class="header-section-number">7.5</span> Verificamos el éxito de la ingenieria de caracterizacion<a href="verificar-que-esto-es-posible--.html#verificamos-el-%C3%A9xito-de-la-ingenieria-de-caracterizacion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Comparamos las nuevas variables con respecto a nuestra variable respuesta ‘BestDeadliftKg’</p>
+<div class="sourceCode" id="cb79"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb79-1"><a href="verificar-que-esto-es-posible--.html#cb79-1" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb79-2"><a href="verificar-que-esto-es-posible--.html#cb79-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Age,<span class="at">y=</span>BestDeadliftKg))<span class="sc">+</span></span>
+<span id="cb79-3"><a href="verificar-que-esto-es-posible--.html#cb79-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>,<span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-4"><a href="verificar-que-esto-es-posible--.html#cb79-4" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;Edad&#39;</span>,<span class="at">y=</span><span class="st">&#39;Peso muerto&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-5"><a href="verificar-que-esto-es-posible--.html#cb79-5" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb79-6"><a href="verificar-que-esto-es-posible--.html#cb79-6" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre la Edad y el Peso muerto&#39;</span>) <span class="ot">-&gt;</span>c1</span>
+<span id="cb79-7"><a href="verificar-que-esto-es-posible--.html#cb79-7" tabindex="-1"></a></span>
+<span id="cb79-8"><a href="verificar-que-esto-es-posible--.html#cb79-8" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb79-9"><a href="verificar-que-esto-es-posible--.html#cb79-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>upper_lower_total ,<span class="at">y=</span>BestDeadliftKg))<span class="sc">+</span></span>
+<span id="cb79-10"><a href="verificar-que-esto-es-posible--.html#cb79-10" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>,<span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-11"><a href="verificar-que-esto-es-posible--.html#cb79-11" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;&#39;</span>,<span class="at">y=</span><span class="st">&#39;Peso muerto&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-12"><a href="verificar-que-esto-es-posible--.html#cb79-12" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb79-13"><a href="verificar-que-esto-es-posible--.html#cb79-13" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el  y el Peso muerto&#39;</span>) <span class="ot">-&gt;</span>c2 </span>
+<span id="cb79-14"><a href="verificar-que-esto-es-posible--.html#cb79-14" tabindex="-1"></a></span>
+<span id="cb79-15"><a href="verificar-que-esto-es-posible--.html#cb79-15" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb79-16"><a href="verificar-que-esto-es-posible--.html#cb79-16" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ratio_squat_peso, <span class="at">y=</span>BestDeadliftKg))<span class="sc">+</span></span>
+<span id="cb79-17"><a href="verificar-que-esto-es-posible--.html#cb79-17" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>,<span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-18"><a href="verificar-que-esto-es-posible--.html#cb79-18" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;&#39;</span>,<span class="at">y=</span><span class="st">&#39;Peso muerto&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-19"><a href="verificar-que-esto-es-posible--.html#cb79-19" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb79-20"><a href="verificar-que-esto-es-posible--.html#cb79-20" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el  y el Peso muerto&#39;</span>) <span class="ot">-&gt;</span>c3</span>
+<span id="cb79-21"><a href="verificar-que-esto-es-posible--.html#cb79-21" tabindex="-1"></a></span>
+<span id="cb79-22"><a href="verificar-que-esto-es-posible--.html#cb79-22" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb79-23"><a href="verificar-que-esto-es-posible--.html#cb79-23" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ratio_bench_peso, <span class="at">y=</span>BestDeadliftKg))<span class="sc">+</span></span>
+<span id="cb79-24"><a href="verificar-que-esto-es-posible--.html#cb79-24" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha=</span><span class="fl">0.4</span>,<span class="at">color=</span><span class="st">&#39;darkblue&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-25"><a href="verificar-que-esto-es-posible--.html#cb79-25" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x=</span><span class="st">&#39;&#39;</span>,<span class="at">y=</span><span class="st">&#39;Peso muerto&#39;</span>)<span class="sc">+</span></span>
+<span id="cb79-26"><a href="verificar-que-esto-es-posible--.html#cb79-26" tabindex="-1"></a>  <span class="fu">theme_bw</span>()<span class="sc">+</span></span>
+<span id="cb79-27"><a href="verificar-que-esto-es-posible--.html#cb79-27" tabindex="-1"></a>  <span class="fu">facet_grid</span>(.<span class="sc">~</span><span class="st">&#39;Dispersión entre el  y el Peso muerto&#39;</span>) <span class="ot">-&gt;</span>c4</span>
+<span id="cb79-28"><a href="verificar-que-esto-es-posible--.html#cb79-28" tabindex="-1"></a></span>
+<span id="cb79-29"><a href="verificar-que-esto-es-posible--.html#cb79-29" tabindex="-1"></a>c1<span class="sc">+</span>c2<span class="sc">+</span>c3<span class="sc">+</span>c4</span></code></pre></div>
+<p><img src="01-intro_files/figure-html/unnamed-chunk-13-1.png" alt="" width="672" /></p>
+<p>[ACOMODAR TITULOS DE GRAFICAS]
+-interpretacion</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="ingenieria-de-caracterizacion-feature-engineering.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="tabla-de-contingencia.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": null,
+  "search": false,
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

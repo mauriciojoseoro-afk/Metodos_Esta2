@@ -1,0 +1,28 @@
+---
+title: "Objetivos"
+output: html_document
+date: "2026-09-19"
+---
+
+# Objetivos generales y especificos
+
+## Pregunta Problema
+
+¿Existen diferencias estadísticamente significativas en el rendimiento en peso muerto (BestDeadliftKg) de los atletas de powerlifting según su sexo y el tipo de equipamiento utilizado, y qué relación guarda este rendimiento con otras variables de fuerza y composición corporal?
+
+## Objetivo General
+
+Se desea determinar los factores asociados al rendimiento en peso muerto de los atletas de powerlifting, evaluando tanto las diferencias existentes según su sexo y el tipo de equipamiento utilizado, como la relación entre el peso muerto y otras variables de fuerza y composición corporal.
+
+## Objetivos Especificos
+
+•	Evaluar si la distribución del peso muerto cumple el supuesto de normalidad en cada grupo de comparación.
+
+•	Comparar el peso muerto entre atletas de sexo masculino y femenino.
+
+•	Comparar el peso muerto entre los distintos tipos de equipamiento utilizados (Raw, Wraps, Single-ply, Multi-ply).
+
+•	Determinar si existe asociación entre el sexo del atleta y el tipo de equipamiento utilizado.
+
+•	Evaluar la relación entre el peso corporal, la fuerza combinada (sentadilla + press de banca) y el peso muerto máximo alcanzado.
+

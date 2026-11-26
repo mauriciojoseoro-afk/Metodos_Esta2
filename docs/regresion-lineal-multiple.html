@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>18 Regresion lineal multiple | Bibliografia</title>
+  <meta name="description" content="18 Regresion lineal multiple | Bibliografia" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="18 Regresion lineal multiple | Bibliografia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="18 Regresion lineal multiple | Bibliografia" />
+  
+  
+  
+
+<meta name="author" content="Karla Paredes y Mauricio Orozco" />
+
+
+<meta name="date" content="2026-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="transformaciones-para-mejorar-el-ajuste-del-modelo.html"/>
+<link rel="next" href="presentacion-del-proyecto-video.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html"><i class="fa fa-check"></i><b>2</b> Objetivos generales y especificos</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#pregunta-problema"><i class="fa fa-check"></i><b>2.1</b> Pregunta Problema</a></li>
+<li class="chapter" data-level="2.2" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#objetivo-general"><i class="fa fa-check"></i><b>2.2</b> Objetivo General</a></li>
+<li class="chapter" data-level="2.3" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#objetivos-especificos"><i class="fa fa-check"></i><b>2.3</b> Objetivos Especificos</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="metodologia.html"><a href="metodologia.html"><i class="fa fa-check"></i><b>3</b> Metodologia</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="metodologia.html"><a href="metodologia.html#fuente-de-datos-y-herramientas"><i class="fa fa-check"></i><b>3.1</b> Fuente de datos y herramientas</a></li>
+<li class="chapter" data-level="3.2" data-path="metodologia.html"><a href="metodologia.html#procedimiento"><i class="fa fa-check"></i><b>3.2</b> Procedimiento</a></li>
+<li class="chapter" data-level="3.3" data-path="metodologia.html"><a href="metodologia.html#an%C3%A1lisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>3.3</b> Análisis exploratorio de datos:</a></li>
+<li class="chapter" data-level="3.4" data-path="metodologia.html"><a href="metodologia.html#ingenier%C3%ADa-de-caracter%C3%ADsticas"><i class="fa fa-check"></i><b>3.4</b> Ingeniería de características:</a></li>
+<li class="chapter" data-level="3.5" data-path="metodologia.html"><a href="metodologia.html#verificaci%C3%B3n-de-supuestos"><i class="fa fa-check"></i><b>3.5</b> Verificación de supuestos:</a></li>
+<li class="chapter" data-level="3.6" data-path="metodologia.html"><a href="metodologia.html#pruebas-de-hip%C3%B3tesis"><i class="fa fa-check"></i><b>3.6</b> Pruebas de hipótesis:</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="marco-teorico.html"><a href="marco-teorico.html"><i class="fa fa-check"></i><b>4</b> Marco Teorico</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="marco-teorico.html"><a href="marco-teorico.html#el-powerlifting-como-deporte-de-fuerza"><i class="fa fa-check"></i><b>4.1</b> 1,1 El powerlifting como deporte de fuerza</a></li>
+<li class="chapter" data-level="4.2" data-path="marco-teorico.html"><a href="marco-teorico.html#t%C3%A9cnica"><i class="fa fa-check"></i><b>4.2</b> 1.2 Técnica</a></li>
+<li class="chapter" data-level="4.3" data-path="marco-teorico.html"><a href="marco-teorico.html#press-de-banca"><i class="fa fa-check"></i><b>4.3</b> 1.3 Press de banca</a></li>
+<li class="chapter" data-level="4.4" data-path="marco-teorico.html"><a href="marco-teorico.html#sentadilla"><i class="fa fa-check"></i><b>4.4</b> 1.4 Sentadilla</a></li>
+<li class="chapter" data-level="4.5" data-path="marco-teorico.html"><a href="marco-teorico.html#peso-muerto"><i class="fa fa-check"></i><b>4.5</b> 1.5 Peso muerto</a></li>
+<li class="chapter" data-level="4.6" data-path="marco-teorico.html"><a href="marco-teorico.html#peso-corporal-y-categor%C3%ADas-por-peso"><i class="fa fa-check"></i><b>4.6</b> 1.6 Peso corporal y Categorías por peso</a></li>
+<li class="chapter" data-level="4.7" data-path="marco-teorico.html"><a href="marco-teorico.html#diferencias-de-fuerza-asociadas-al-sexo"><i class="fa fa-check"></i><b>4.7</b> 1.8 Diferencias de fuerza asociadas al sexo</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>5</b> Dataset</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="dataset.html"><a href="dataset.html#librerias"><i class="fa fa-check"></i><b>5.1</b> Librerias</a></li>
+<li class="chapter" data-level="5.2" data-path="dataset.html"><a href="dataset.html#leer-dataset"><i class="fa fa-check"></i><b>5.2</b> Leer dataset</a></li>
+<li class="chapter" data-level="5.3" data-path="dataset.html"><a href="dataset.html#mostrar-las-10-primeras-filas"><i class="fa fa-check"></i><b>5.3</b> Mostrar las 10 primeras filas</a></li>
+<li class="chapter" data-level="5.4" data-path="dataset.html"><a href="dataset.html#estructura-de-los-datos"><i class="fa fa-check"></i><b>5.4</b> Estructura de los datos</a></li>
+<li class="chapter" data-level="5.5" data-path="dataset.html"><a href="dataset.html#solucionar-valores-inconsistentes"><i class="fa fa-check"></i><b>5.5</b> Solucionar valores inconsistentes</a></li>
+<li class="chapter" data-level="5.6" data-path="dataset.html"><a href="dataset.html#verificamos-si-los-niveles-de-las-variables-cualitativas-tienen-inconsistencias"><i class="fa fa-check"></i><b>5.6</b> Verificamos si los niveles de las variables cualitativas tienen inconsistencias</a></li>
+<li class="chapter" data-level="5.7" data-path="dataset.html"><a href="dataset.html#forma-directa-de-verificar-si-hay-datos-faltantes"><i class="fa fa-check"></i><b>5.7</b> Forma directa de verificar si hay datos faltantes</a></li>
+<li class="chapter" data-level="5.8" data-path="dataset.html"><a href="dataset.html#imputacion-de-datos-faltantes"><i class="fa fa-check"></i><b>5.8</b> Imputacion de datos faltantes</a></li>
+<li class="chapter" data-level="5.9" data-path="dataset.html"><a href="dataset.html#ver-si-hay-datos-faltantes-nuevamente-en-el-data-frame-limpiado"><i class="fa fa-check"></i><b>5.9</b> Ver si hay datos faltantes nuevamente en el Data Frame limpiado</a></li>
+<li class="chapter" data-level="5.10" data-path="dataset.html"><a href="dataset.html#convertir-las-variables-cualitativas-en-factor."><i class="fa fa-check"></i><b>5.10</b> Convertir las variables cualitativas en factor.</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html"><i class="fa fa-check"></i><b>6</b> Analisis exploratorio de BestDeadliftKg (target)</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-tipo-histograma"><i class="fa fa-check"></i><b>6.1</b> Grafico tipo histograma</a></li>
+<li class="chapter" data-level="6.2" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>6.2</b> Grafico de cajas y bigotes</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html"><i class="fa fa-check"></i><b>7</b> Variables independientes (caracteristicas)</a>
+<ul>
+<li class="chapter" data-level="7.0.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#veamos-el-an%C3%A1lisis-de-cada-variable-independiente"><i class="fa fa-check"></i><b>7.0.1</b> Veamos el análisis de cada variable independiente</a></li>
+<li class="chapter" data-level="7.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#graficos-de-las-variables-independientes"><i class="fa fa-check"></i><b>7.1</b> Graficos de las variables independientes</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html"><i class="fa fa-check"></i><b>8</b> Analisis Exploratorio Bivariado</a>
+<ul>
+<li class="chapter" data-level="8.1" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-edad"><i class="fa fa-check"></i><b>8.1</b> Peso muerto vs Edad</a></li>
+<li class="chapter" data-level="8.2" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-sentadilla"><i class="fa fa-check"></i><b>8.2</b> Peso muerto vs Mejor Sentadilla</a></li>
+<li class="chapter" data-level="8.3" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-peso-corporal"><i class="fa fa-check"></i><b>8.3</b> Peso muerto vs Peso corporal</a></li>
+<li class="chapter" data-level="8.4" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-press-banca"><i class="fa fa-check"></i><b>8.4</b> Peso muerto vs Mejor press banca</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html"><i class="fa fa-check"></i><b>9</b> Variables categoricas ‘Sex’ y ‘Equipament’</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-sex"><i class="fa fa-check"></i><b>9.1</b> Diagrama de barras: Frecuencia de la variable ‘Sex’</a></li>
+<li class="chapter" data-level="9.2" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-tabla"><i class="fa fa-check"></i><b>9.2</b> Comparacion entre peso muerto y sexo (tabla)</a>
+<ul>
+<li class="chapter" data-level="9.2.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-caja-de-bigotes"><i class="fa fa-check"></i><b>9.2.1</b> Comparacion entre peso muerto y sexo (Caja de bigotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-equipament"><i class="fa fa-check"></i><b>9.3</b> Diagrama de barras: Frecuencia de la variable ‘Equipament’</a></li>
+<li class="chapter" data-level="9.4" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-tabla"><i class="fa fa-check"></i><b>9.4</b> Comparacion entre peso muerto y equipo (tabla)</a>
+<ul>
+<li class="chapter" data-level="9.4.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-caja-de-bigotes"><i class="fa fa-check"></i><b>9.4.1</b> Comparacion entre peso muerto y equipo (Caja de bigotes)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html"><i class="fa fa-check"></i><b>10</b> Variables independientes vs variables independientes:</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#variables-num%C3%A9ricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>10.1</b> variables numéricas vs numéricas</a></li>
+<li class="chapter" data-level="10.2" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#variables-categoricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>10.2</b> Variables categoricas vs numéricas</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#sex-vs-variables-numericas"><i class="fa fa-check"></i><b>10.2.1</b> Sex vs variables numericas</a></li>
+<li class="chapter" data-level="10.2.2" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#equipamiento-vs-variables-numericas"><i class="fa fa-check"></i><b>10.2.2</b> Equipamiento vs variables numericas</a></li>
+<li class="chapter" data-level="10.2.3" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#equipamiento-vs-sexo"><i class="fa fa-check"></i><b>10.2.3</b> Equipamiento vs Sexo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html"><i class="fa fa-check"></i><b>11</b> Ingenieria de caracterizacion (feature engineering)</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#variables-seleccionadas"><i class="fa fa-check"></i><b>11.1</b> Variables seleccionadas</a></li>
+<li class="chapter" data-level="11.2" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#nuevas-variables-upper_lower_total-ratio_squat_peso-ratio_bench_peso"><i class="fa fa-check"></i><b>11.2</b> Nuevas variables: ‘upper_lower_total’, ‘ratio_squat_peso’, ‘ratio_bench_peso’</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#verificar-si-no-hay-valores-nulos"><i class="fa fa-check"></i><b>11.2.1</b> Verificar si no hay valores nulos:</a></li>
+</ul></li>
+<li class="chapter" data-level="11.3" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#realizamos-el-resumen-estadistico-de-nuestras-nuevas-variables"><i class="fa fa-check"></i><b>11.3</b> Realizamos el resumen estadistico de nuestras nuevas variables</a></li>
+<li class="chapter" data-level="11.4" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#veamos-los-graficos-de-las-variables-de-nuestro-dataframe-nuevo."><i class="fa fa-check"></i><b>11.4</b> Veamos los graficos de las variables de nuestro dataframe nuevo.</a></li>
+<li class="chapter" data-level="11.5" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#verificamos-el-%C3%A9xito-de-la-ingenieria-de-caracterizacion"><i class="fa fa-check"></i><b>11.5</b> Verificamos el éxito de la ingenieria de caracterizacion</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html"><i class="fa fa-check"></i><b>12</b> Tabla de contingencia</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#crear-tabla-de-contingencia"><i class="fa fa-check"></i><b>12.1</b> Crear tabla de contingencia</a></li>
+<li class="chapter" data-level="12.2" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#totales-por-fila-columna-y-total-general"><i class="fa fa-check"></i><b>12.2</b> Totales por fila, columna y total general</a></li>
+<li class="chapter" data-level="12.3" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#frecuencias-esperadas-bajo-h0"><i class="fa fa-check"></i><b>12.3</b> Frecuencias esperadas bajo H0</a></li>
+<li class="chapter" data-level="12.4" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#estadistico-chi-cuadrado"><i class="fa fa-check"></i><b>12.4</b> Estadistico Chi-cuadrado</a></li>
+<li class="chapter" data-level="12.5" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#conclusion"><i class="fa fa-check"></i><b>12.5</b> Conclusion</a></li>
+<li class="chapter" data-level="12.6" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#verificamos-con-chisq.test"><i class="fa fa-check"></i><b>12.6</b> Verificamos con chisq.test</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html"><i class="fa fa-check"></i><b>13</b> Estadistica paramétrica y no paramétrica</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existe-una-diferencia-significativa-en-el-peso-muerto-promedio-entre-atletas-de-sexo-masculino-y-femenino"><i class="fa fa-check"></i><b>13.1</b> ¿Existe una diferencia significativa en el peso muerto promedio entre atletas de sexo masculino y femenino?</a>
+<ul>
+<li class="chapter" data-level="13.1.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-supuestos-de-normalidad"><i class="fa fa-check"></i><b>13.1.1</b> Verifiquemos supuestos de normalidad</a></li>
+<li class="chapter" data-level="13.1.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#comparaci%C3%B3n-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico"><i class="fa fa-check"></i><b>13.1.2</b> comparación de grupos con método no paramétrico</a></li>
+</ul></li>
+<li class="chapter" data-level="13.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existen-diferencias-significativas-en-el-peso-muerto-promedio-entre-los-distintos-tipos-de-equipamiento-utilizados-por-los-atletas"><i class="fa fa-check"></i><b>13.2</b> ¿Existen diferencias significativas en el peso muerto promedio entre los distintos tipos de equipamiento utilizados por los atletas?</a>
+<ul>
+<li class="chapter" data-level="13.2.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-el-supuesto-de-normalidad-de-la-variable-equipment"><i class="fa fa-check"></i><b>13.2.1</b> Verifiquemos el supuesto de normalidad de la variable ‘Equipment’</a></li>
+<li class="chapter" data-level="13.2.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#comparacion-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico"><i class="fa fa-check"></i><b>13.2.2</b> comparacion de grupos con método no paramétrico</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html"><i class="fa fa-check"></i><b>14</b> Coeficiente de correlación</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#correlaci%C3%B3n-entre-peso-corporal-y-mejor-peso-muerto-alcanzado"><i class="fa fa-check"></i><b>14.1</b> Correlación entre peso corporal y mejor peso muerto alcanzado</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#veamos-la-distribucion-entre-ambas-variables"><i class="fa fa-check"></i><b>14.1.1</b> Veamos la distribucion entre ambas variables</a></li>
+<li class="chapter" data-level="14.1.2" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>14.1.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="14.1.3" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#coeficiente-de-correlaci%C3%B3n-de-spearman"><i class="fa fa-check"></i><b>14.1.3</b> Coeficiente de correlación de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#correlaci%C3%B3n-entre-press-banca-sentadilla-y-mejor-peso-muerto-alcanzado."><i class="fa fa-check"></i><b>14.2</b> Correlación entre press banca + sentadilla y mejor peso muerto alcanzado.</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#veamos-la-distribuci%C3%B3n-entre-ambas-variables"><i class="fa fa-check"></i><b>14.2.1</b> Veamos la distribución entre ambas variables</a></li>
+<li class="chapter" data-level="14.2.2" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#supuesto-de-normalidad-1"><i class="fa fa-check"></i><b>14.2.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="14.2.3" data-path="coeficiente-de-correlación.html"><a href="coeficiente-de-correlación.html#coeficiente-de-correlaci%C3%B3n-de-spearman-1"><i class="fa fa-check"></i><b>14.2.3</b> Coeficiente de correlación de Spearman</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html"><i class="fa fa-check"></i><b>15</b> Regresión Lineal Simple</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#recapitulando-los-valores-obtenidos"><i class="fa fa-check"></i><b>15.1</b> Recapitulando los valores obtenidos:</a></li>
+<li class="chapter" data-level="15.2" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#estimaci%C3%B3n-de-minimos-cuadrados"><i class="fa fa-check"></i><b>15.2</b> Estimación de minimos cuadrados</a></li>
+<li class="chapter" data-level="15.3" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#estimaci%C3%B3n-de-la-varianza"><i class="fa fa-check"></i><b>15.3</b> Estimación de la varianza</a></li>
+<li class="chapter" data-level="15.4" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#coeficiente-de-determinacion"><i class="fa fa-check"></i><b>15.4</b> Coeficiente de determinacion</a></li>
+<li class="chapter" data-level="15.5" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#intervalos-de-confianza-para-el-modelo-de-regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>15.5</b> Intervalos de confianza para el modelo de regresión lineal simple</a>
+<ul>
+<li class="chapter" data-level="15.5.1" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#intervalo-de-confianza-para-la-pendiente-beta_1"><i class="fa fa-check"></i><b>15.5.1</b> Intervalo de confianza para la pendiente beta_1:</a></li>
+<li class="chapter" data-level="15.5.2" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#intervalo-de-confianza-para-el-intercepto-beta_0"><i class="fa fa-check"></i><b>15.5.2</b> Intervalo de confianza para el intercepto beta_0:</a></li>
+</ul></li>
+<li class="chapter" data-level="15.6" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#intervalo-de-confianza-para-sigma2"><i class="fa fa-check"></i><b>15.6</b> Intervalo de confianza para sigma^2</a></li>
+<li class="chapter" data-level="15.7" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#pruebas-de-hip%C3%B3tesis-1"><i class="fa fa-check"></i><b>15.7</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="15.7.1" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#prueba-de-hip%C3%B3tesis-para-beta1"><i class="fa fa-check"></i><b>15.7.1</b> Prueba de hipótesis para beta1</a></li>
+<li class="chapter" data-level="15.7.2" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#prueba-de-hip%C3%B3tesis-para-beta0"><i class="fa fa-check"></i><b>15.7.2</b> Prueba de hipótesis para beta0:</a></li>
+<li class="chapter" data-level="15.7.3" data-path="regresión-lineal-simple.html"><a href="regresión-lineal-simple.html#prueba-de-hip%C3%B3tesis-para-sigma2"><i class="fa fa-check"></i><b>15.7.3</b> Prueba de hipótesis para sigma^2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html"><i class="fa fa-check"></i><b>16</b> Análisis de los errores</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#supuestos-de-los-errores"><i class="fa fa-check"></i><b>16.1</b> Supuestos de los errores</a>
+<ul>
+<li class="chapter" data-level="16.1.1" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#independencia-de-los-errores"><i class="fa fa-check"></i><b>16.1.1</b> Independencia de los errores</a></li>
+</ul></li>
+<li class="chapter" data-level="16.2" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#normalidad-de-los-errores"><i class="fa fa-check"></i><b>16.2</b> Normalidad de los errores</a></li>
+<li class="chapter" data-level="16.3" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#media-cero-de-los-errores"><i class="fa fa-check"></i><b>16.3</b> Media cero de los errores</a></li>
+<li class="chapter" data-level="16.4" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#varianza-constante-de-los-errores-homocedasticidad"><i class="fa fa-check"></i><b>16.4</b> Varianza constante de los errores (homocedasticidad)</a></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="transformaciones-para-mejorar-el-ajuste-del-modelo.html"><a href="transformaciones-para-mejorar-el-ajuste-del-modelo.html"><i class="fa fa-check"></i><b>17</b> Transformaciones para mejorar el ajuste del modelo</a></li>
+<li class="chapter" data-level="18" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html"><i class="fa fa-check"></i><b>18</b> Regresion lineal multiple</a>
+<ul>
+<li class="chapter" data-level="18.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-de-multicolinealidad"><i class="fa fa-check"></i><b>18.1</b> Analisis de multicolinealidad</a>
+<ul>
+<li class="chapter" data-level="18.1.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#matriz-de-correlaciones"><i class="fa fa-check"></i><b>18.1.1</b> Matriz de correlaciones</a></li>
+<li class="chapter" data-level="18.1.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#ajuste-del-modelo-completo"><i class="fa fa-check"></i><b>18.1.2</b> Ajuste del modelo completo</a></li>
+<li class="chapter" data-level="18.1.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#factor-de-inflacion-de-varianza"><i class="fa fa-check"></i><b>18.1.3</b> Factor de inflacion de varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="18.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#seleccion-del-modelo"><i class="fa fa-check"></i><b>18.2</b> Seleccion del modelo</a>
+<ul>
+<li class="chapter" data-level="18.2.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#seleccion-mediante-el-criterio-aic"><i class="fa fa-check"></i><b>18.2.1</b> Seleccion mediante el criterio AIC</a></li>
+</ul></li>
+<li class="chapter" data-level="18.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-matricial-de-los-coeficientes"><i class="fa fa-check"></i><b>18.3</b> Estimacion matricial de los coeficientes</a>
+<ul>
+<li class="chapter" data-level="18.3.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#construccion-de-la-matriz-de-diseno"><i class="fa fa-check"></i><b>18.3.1</b> Construccion de la matriz de diseno</a></li>
+<li class="chapter" data-level="18.3.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#operaciones-matriciales"><i class="fa fa-check"></i><b>18.3.2</b> Operaciones matriciales</a></li>
+<li class="chapter" data-level="18.3.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-de-los-coeficientes"><i class="fa fa-check"></i><b>18.3.3</b> Estimacion de los coeficientes</a></li>
+<li class="chapter" data-level="18.3.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#interpretacion-de-los-coeficientes"><i class="fa fa-check"></i><b>18.3.4</b> Interpretacion de los coeficientes</a></li>
+</ul></li>
+<li class="chapter" data-level="18.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-de-varianza"><i class="fa fa-check"></i><b>18.4</b> Analisis de varianza</a>
+<ul>
+<li class="chapter" data-level="18.4.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#valores-ajustados-y-residuos"><i class="fa fa-check"></i><b>18.4.1</b> Valores ajustados y residuos</a></li>
+<li class="chapter" data-level="18.4.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#sumas-de-cuadrados"><i class="fa fa-check"></i><b>18.4.2</b> Sumas de cuadrados</a></li>
+<li class="chapter" data-level="18.4.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#coeficiente-de-determinacion-1"><i class="fa fa-check"></i><b>18.4.3</b> Coeficiente de determinacion</a></li>
+<li class="chapter" data-level="18.4.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#grados-de-libertad"><i class="fa fa-check"></i><b>18.4.4</b> Grados de libertad</a></li>
+<li class="chapter" data-level="18.4.5" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#cuadrados-medios"><i class="fa fa-check"></i><b>18.4.5</b> Cuadrados medios</a></li>
+<li class="chapter" data-level="18.4.6" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#tabla-anova"><i class="fa fa-check"></i><b>18.4.6</b> Tabla ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="18.5" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#prueba-de-significancia-global"><i class="fa fa-check"></i><b>18.5</b> Prueba de significancia global</a></li>
+<li class="chapter" data-level="18.6" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-de-la-varianza-residual"><i class="fa fa-check"></i><b>18.6</b> Estimacion de la varianza residual</a></li>
+<li class="chapter" data-level="18.7" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#matriz-de-varianzas-y-covarianzas"><i class="fa fa-check"></i><b>18.7</b> Matriz de varianzas y covarianzas</a>
+<ul>
+<li class="chapter" data-level="18.7.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#errores-estandar"><i class="fa fa-check"></i><b>18.7.1</b> Errores estandar</a></li>
+</ul></li>
+<li class="chapter" data-level="18.8" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#prueba-de-significancia-individual"><i class="fa fa-check"></i><b>18.8</b> Prueba de significancia individual</a></li>
+<li class="chapter" data-level="18.9" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>18.9</b> Intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="18.9.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#verificacion-mediante-las-funciones-de-r"><i class="fa fa-check"></i><b>18.9.1</b> Verificacion mediante las funciones de R</a></li>
+</ul></li>
+<li class="chapter" data-level="18.10" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#diagnostico-de-los-supuestos"><i class="fa fa-check"></i><b>18.10</b> Diagnostico de los supuestos</a>
+<ul>
+<li class="chapter" data-level="18.10.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-grafico-de-los-residuos"><i class="fa fa-check"></i><b>18.10.1</b> Analisis grafico de los residuos</a></li>
+<li class="chapter" data-level="18.10.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#normalidad-de-los-residuos"><i class="fa fa-check"></i><b>18.10.2</b> Normalidad de los residuos</a></li>
+<li class="chapter" data-level="18.10.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#homocedasticidad"><i class="fa fa-check"></i><b>18.10.3</b> Homocedasticidad</a></li>
+</ul></li>
+<li class="chapter" data-level="18.11" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#inferencia-mediante-errores-estandar-robustos"><i class="fa fa-check"></i><b>18.11</b> Inferencia mediante errores estandar robustos</a>
+<ul>
+<li class="chapter" data-level="18.11.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#intervalos-de-confianza-robustos"><i class="fa fa-check"></i><b>18.11.1</b> Intervalos de confianza robustos</a></li>
+</ul></li>
+<li class="chapter" data-level="18.12" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#independencia-de-las-observaciones-y-limitaciones"><i class="fa fa-check"></i><b>18.12</b> Independencia de las observaciones y limitaciones</a></li>
+<li class="chapter" data-level="18.13" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#comparacion-entre-regresion-simple-y-multiple"><i class="fa fa-check"></i><b>18.13</b> Comparacion entre regresion simple y multiple</a></li>
+</ul></li>
+<li class="chapter" data-level="19" data-path="presentacion-del-proyecto-video.html"><a href="presentacion-del-proyecto-video.html"><i class="fa fa-check"></i><b>19</b> Presentacion del Proyecto (Video)</a></li>
+<li class="chapter" data-level="20" data-path="conclusión.html"><a href="conclusión.html"><i class="fa fa-check"></i><b>20</b> Conclusión</a></li>
+<li class="chapter" data-level="21" data-path="bibliografia.html"><a href="bibliografia.html"><i class="fa fa-check"></i><b>21</b> Bibliografia</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bibliografia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regresion-lineal-multiple" class="section level1 hasAnchor" number="18">
+<h1><span class="header-section-number">18</span> Regresion lineal multiple<a href="regresion-lineal-multiple.html#regresion-lineal-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="analisis-de-multicolinealidad" class="section level2 hasAnchor" number="18.1">
+<h2><span class="header-section-number">18.1</span> Analisis de multicolinealidad<a href="regresion-lineal-multiple.html#analisis-de-multicolinealidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="matriz-de-correlaciones" class="section level3 hasAnchor" number="18.1.1">
+<h3><span class="header-section-number">18.1.1</span> Matriz de correlaciones<a href="regresion-lineal-multiple.html#matriz-de-correlaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="regresion-lineal-multiple.html#cb109-1" tabindex="-1"></a>correlaciones_rlm <span class="ot">&lt;-</span> <span class="fu">cor</span>(df_nuevo[, <span class="fu">c</span>(</span>
+<span id="cb109-2"><a href="regresion-lineal-multiple.html#cb109-2" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,</span>
+<span id="cb109-3"><a href="regresion-lineal-multiple.html#cb109-3" tabindex="-1"></a>  <span class="st">&quot;BestSquatKg&quot;</span>,</span>
+<span id="cb109-4"><a href="regresion-lineal-multiple.html#cb109-4" tabindex="-1"></a>  <span class="st">&quot;BestBenchKg&quot;</span>,</span>
+<span id="cb109-5"><a href="regresion-lineal-multiple.html#cb109-5" tabindex="-1"></a>  <span class="st">&quot;BodyweightKg&quot;</span></span>
+<span id="cb109-6"><a href="regresion-lineal-multiple.html#cb109-6" tabindex="-1"></a>)])</span>
+<span id="cb109-7"><a href="regresion-lineal-multiple.html#cb109-7" tabindex="-1"></a></span>
+<span id="cb109-8"><a href="regresion-lineal-multiple.html#cb109-8" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb109-9"><a href="regresion-lineal-multiple.html#cb109-9" tabindex="-1"></a>  <span class="fu">round</span>(correlaciones_rlm, <span class="dv">4</span>),</span>
+<span id="cb109-10"><a href="regresion-lineal-multiple.html#cb109-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Matriz de correlaciones entre predictores&quot;</span></span>
+<span id="cb109-11"><a href="regresion-lineal-multiple.html#cb109-11" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<caption><span id="tab:rlm-correlaciones">Table 18.1: </span>Matriz de correlaciones entre predictores</caption>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Age</th>
+<th align="right">BestSquatKg</th>
+<th align="right">BestBenchKg</th>
+<th align="right">BodyweightKg</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="right">1.0000</td>
+<td align="right">-0.0310</td>
+<td align="right">0.0369</td>
+<td align="right">0.1102</td>
+</tr>
+<tr class="even">
+<td align="left">BestSquatKg</td>
+<td align="right">-0.0310</td>
+<td align="right">1.0000</td>
+<td align="right">0.9057</td>
+<td align="right">0.6473</td>
+</tr>
+<tr class="odd">
+<td align="left">BestBenchKg</td>
+<td align="right">0.0369</td>
+<td align="right">0.9057</td>
+<td align="right">1.0000</td>
+<td align="right">0.6588</td>
+</tr>
+<tr class="even">
+<td align="left">BodyweightKg</td>
+<td align="right">0.1102</td>
+<td align="right">0.6473</td>
+<td align="right">0.6588</td>
+<td align="right">1.0000</td>
+</tr>
+</tbody>
+</table>
+<p>La matriz de correlaciones muestra una asociacion positiva muy fuerte entre BestSquatKg y BestBenchKg, con un coeficiente de correlacion de 0.9057.</p>
+<p>Asimismo, el peso corporal presenta una correlacion de 0.6473 con el mejor levantamiento en sentadilla y de 0.6588 con el mejor press de banca.</p>
+<p>Por otro lado, la edad presenta correlaciones debiles con las demas variables cuantitativas.</p>
+<p>Estos resultados permiten identificar una posible problematica de multicolinealidad entre los levantamientos de sentadilla y press de banca, debido a que ambas variables representan capacidades fisicas estrechamente relacionadas.</p>
+</div>
+<div id="ajuste-del-modelo-completo" class="section level3 hasAnchor" number="18.1.2">
+<h3><span class="header-section-number">18.1.2</span> Ajuste del modelo completo<a href="regresion-lineal-multiple.html#ajuste-del-modelo-completo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="regresion-lineal-multiple.html#cb110-1" tabindex="-1"></a>modelo_completo <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb110-2"><a href="regresion-lineal-multiple.html#cb110-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> Age <span class="sc">+</span> BestSquatKg <span class="sc">+</span></span>
+<span id="cb110-3"><a href="regresion-lineal-multiple.html#cb110-3" tabindex="-1"></a>    BestBenchKg <span class="sc">+</span> BodyweightKg <span class="sc">+</span> Sex <span class="sc">+</span> Equipment,</span>
+<span id="cb110-4"><a href="regresion-lineal-multiple.html#cb110-4" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb110-5"><a href="regresion-lineal-multiple.html#cb110-5" tabindex="-1"></a>)</span>
+<span id="cb110-6"><a href="regresion-lineal-multiple.html#cb110-6" tabindex="-1"></a></span>
+<span id="cb110-7"><a href="regresion-lineal-multiple.html#cb110-7" tabindex="-1"></a><span class="fu">summary</span>(modelo_completo)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = BestDeadliftKg ~ Age + BestSquatKg + BestBenchKg + 
+##     BodyweightKg + Sex + Equipment, data = df_nuevo)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -271.900  -12.375   -0.162   12.833  213.973 
+## 
+## Coefficients:
+##                      Estimate Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)         11.814792   1.542456   7.660   0.0000000000000195 ***
+## Age                  0.001697   0.014630   0.116              0.90767    
+## BestSquatKg          0.587884   0.005823 100.953 &lt; 0.0000000000000002 ***
+## BestBenchKg          0.236613   0.008351  28.334 &lt; 0.0000000000000002 ***
+## BodyweightKg         0.028782   0.009891   2.910              0.00362 ** 
+## SexM                22.716020   0.490923  46.272 &lt; 0.0000000000000002 ***
+## EquipmentRaw        42.397458   1.287959  32.918 &lt; 0.0000000000000002 ***
+## EquipmentSingle-ply 24.348911   1.312613  18.550 &lt; 0.0000000000000002 ***
+## EquipmentWraps      37.753280   1.299570  29.051 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22.32 on 18891 degrees of freedom
+## Multiple R-squared:  0.8712, Adjusted R-squared:  0.8712 
+## F-statistic: 1.597e+04 on 8 and 18891 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<p>El modelo completo presenta un coeficiente de determinacion de 0.8712, lo que indica que aproximadamente el 87.12% de la variabilidad observada en peso muerto es explicada por el conjunto de predictores seleccionados.</p>
+<p>La variable Age presenta un valor p aproximado de 0.908, superior al nivel de significancia del 5%. Por tanto, bajo la inferencia clasica, no existe evidencia suficiente para afirmar que su coeficiente sea diferente de cero en este modelo.</p>
+</div>
+<div id="factor-de-inflacion-de-varianza" class="section level3 hasAnchor" number="18.1.3">
+<h3><span class="header-section-number">18.1.3</span> Factor de inflacion de varianza<a href="regresion-lineal-multiple.html#factor-de-inflacion-de-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="regresion-lineal-multiple.html#cb112-1" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(modelo_completo)</span></code></pre></div>
+<pre><code>##                  GVIF Df GVIF^(1/(2*Df))
+## Age          1.074885  1        1.036767
+## BestSquatKg  6.143340  1        2.478576
+## BestBenchKg  6.946357  1        2.635594
+## BodyweightKg 1.957350  1        1.399053
+## Sex          2.004287  1        1.415728
+## Equipment    1.276476  3        1.041523</code></pre>
+<p>Los resultados confirman la existencia de multicolinealidad importante entre BestSquatKg y BestBenchKg, cuyos valores VIF superan el umbral orientativo de 5.</p>
+<p>En contraste, Age y BodyweightKg presentan valores inferiores a dicho umbral.</p>
+<p>Esta situacion es coherente con la elevada correlacion observada entre ambos levantamientos y respalda la evaluacion de una alternativa que utilice la variable de fuerza combinada construida anteriormente.</p>
+<p>Para las variables categoricas con varios grados de libertad, el GVIF ajustado permite evaluar la inflacion de varianza teniendo en cuenta su dimensionalidad.</p>
+</div>
+</div>
+<div id="seleccion-del-modelo" class="section level2 hasAnchor" number="18.2">
+<h2><span class="header-section-number">18.2</span> Seleccion del modelo<a href="regresion-lineal-multiple.html#seleccion-del-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="regresion-lineal-multiple.html#cb114-1" tabindex="-1"></a>modelo_transformado_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb114-2"><a href="regresion-lineal-multiple.html#cb114-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> <span class="fu">sqrt</span>(upper_lower_total) <span class="sc">+</span></span>
+<span id="cb114-3"><a href="regresion-lineal-multiple.html#cb114-3" tabindex="-1"></a>    Age <span class="sc">+</span> BodyweightKg <span class="sc">+</span> Sex <span class="sc">+</span> Equipment,</span>
+<span id="cb114-4"><a href="regresion-lineal-multiple.html#cb114-4" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb114-5"><a href="regresion-lineal-multiple.html#cb114-5" tabindex="-1"></a>)</span>
+<span id="cb114-6"><a href="regresion-lineal-multiple.html#cb114-6" tabindex="-1"></a></span>
+<span id="cb114-7"><a href="regresion-lineal-multiple.html#cb114-7" tabindex="-1"></a><span class="fu">summary</span>(modelo_transformado_rlm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = BestDeadliftKg ~ sqrt(upper_lower_total) + Age + 
+##     BodyweightKg + Sex + Equipment, data = df_nuevo)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -262.960  -12.457   -0.161   12.627  254.927 
+## 
+## Coefficients:
+##                            Estimate  Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)             -111.292459    1.817111 -61.247 &lt; 0.0000000000000002 ***
+## sqrt(upper_lower_total)   16.109293    0.084126 191.490 &lt; 0.0000000000000002 ***
+## Age                       -0.044974    0.014248  -3.156              0.00160 ** 
+## BodyweightKg               0.028427    0.009694   2.932              0.00337 ** 
+## SexM                      11.600348    0.494614  23.453 &lt; 0.0000000000000002 ***
+## EquipmentRaw              35.371089    1.259905  28.074 &lt; 0.0000000000000002 ***
+## EquipmentSingle-ply       18.041719    1.291529  13.969 &lt; 0.0000000000000002 ***
+## EquipmentWraps            31.616942    1.273126  24.834 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22.03 on 18892 degrees of freedom
+## Multiple R-squared:  0.8744, Adjusted R-squared:  0.8744 
+## F-statistic: 1.879e+04 on 7 and 18892 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="regresion-lineal-multiple.html#cb116-1" tabindex="-1"></a>car<span class="sc">::</span><span class="fu">vif</span>(modelo_transformado_rlm)</span></code></pre></div>
+<pre><code>##                             GVIF Df GVIF^(1/(2*Df))
+## sqrt(upper_lower_total) 3.236021  1        1.798894
+## Age                     1.045671  1        1.022580
+## BodyweightKg            1.928413  1        1.388673
+## Sex                     2.086745  1        1.444557
+## Equipment               1.236949  3        1.036077</code></pre>
+<p>El modelo transformado presenta un coeficiente de determinacion de 0.8744, superior al obtenido por el modelo completo con los levantamientos separados.</p>
+<p>La transformacion permite representar una relacion no lineal entre la fuerza combinada y el peso muerto, conservando la linealidad respecto a los coeficientes del modelo.</p>
+<p>En el modelo transformado, para las variables categoricas se evalua el GVIF ajustado, GVIF^(1/(2*Df)), cuyo umbral equivalente a un VIF de 5 es aproximadamente 2.24.</p>
+<p>Al reemplazar los levantamientos separados por la fuerza combinada, se elimina la multicolinealidad entre sentadilla y press de banca observada en el modelo completo.</p>
+<div id="seleccion-mediante-el-criterio-aic" class="section level3 hasAnchor" number="18.2.1">
+<h3><span class="header-section-number">18.2.1</span> Seleccion mediante el criterio AIC<a href="regresion-lineal-multiple.html#seleccion-mediante-el-criterio-aic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="regresion-lineal-multiple.html#cb118-1" tabindex="-1"></a>modelo_step_original <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">stepAIC</span>(</span>
+<span id="cb118-2"><a href="regresion-lineal-multiple.html#cb118-2" tabindex="-1"></a>  modelo_completo,</span>
+<span id="cb118-3"><a href="regresion-lineal-multiple.html#cb118-3" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>,</span>
+<span id="cb118-4"><a href="regresion-lineal-multiple.html#cb118-4" tabindex="-1"></a>  <span class="at">trace =</span> <span class="cn">FALSE</span></span>
+<span id="cb118-5"><a href="regresion-lineal-multiple.html#cb118-5" tabindex="-1"></a>)</span>
+<span id="cb118-6"><a href="regresion-lineal-multiple.html#cb118-6" tabindex="-1"></a></span>
+<span id="cb118-7"><a href="regresion-lineal-multiple.html#cb118-7" tabindex="-1"></a>modelo_step_transformado <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">stepAIC</span>(</span>
+<span id="cb118-8"><a href="regresion-lineal-multiple.html#cb118-8" tabindex="-1"></a>  modelo_transformado_rlm,</span>
+<span id="cb118-9"><a href="regresion-lineal-multiple.html#cb118-9" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>,</span>
+<span id="cb118-10"><a href="regresion-lineal-multiple.html#cb118-10" tabindex="-1"></a>  <span class="at">trace =</span> <span class="cn">FALSE</span></span>
+<span id="cb118-11"><a href="regresion-lineal-multiple.html#cb118-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="regresion-lineal-multiple.html#cb119-1" tabindex="-1"></a><span class="fu">AIC</span>(</span>
+<span id="cb119-2"><a href="regresion-lineal-multiple.html#cb119-2" tabindex="-1"></a>  modelo_completo,</span>
+<span id="cb119-3"><a href="regresion-lineal-multiple.html#cb119-3" tabindex="-1"></a>  modelo_step_original,</span>
+<span id="cb119-4"><a href="regresion-lineal-multiple.html#cb119-4" tabindex="-1"></a>  modelo_transformado_rlm</span>
+<span id="cb119-5"><a href="regresion-lineal-multiple.html#cb119-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>##                         df      AIC
+## modelo_completo         10 171026.8
+## modelo_step_original     9 171024.8
+## modelo_transformado_rlm  9 170546.9</code></pre>
+<p>En el modelo original, el procedimiento Stepwise favorece la eliminacion de la variable Age, reduciendo ligeramente el criterio AIC.</p>
+<p>Sin embargo, el modelo transformado presenta un AIC considerablemente inferior, con una diferencia aproximada de 477.90 unidades respecto al modelo original reducido.</p>
+<p>Por tanto, se selecciona el modelo transformado, debido a que representa la alternativa mas favorable entre los modelos considerados segun el criterio AIC.</p>
+<p>En este modelo se conservan la edad, el peso corporal, el sexo, el equipamiento y la raiz cuadrada de la fuerza combinada.</p>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="regresion-lineal-multiple.html#cb121-1" tabindex="-1"></a>modelo_optimo_rlm <span class="ot">&lt;-</span> modelo_step_transformado</span>
+<span id="cb121-2"><a href="regresion-lineal-multiple.html#cb121-2" tabindex="-1"></a></span>
+<span id="cb121-3"><a href="regresion-lineal-multiple.html#cb121-3" tabindex="-1"></a><span class="fu">formula</span>(modelo_optimo_rlm)</span></code></pre></div>
+<pre><code>## BestDeadliftKg ~ sqrt(upper_lower_total) + Age + BodyweightKg + 
+##     Sex + Equipment</code></pre>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="regresion-lineal-multiple.html#cb123-1" tabindex="-1"></a><span class="fu">summary</span>(modelo_optimo_rlm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = BestDeadliftKg ~ sqrt(upper_lower_total) + Age + 
+##     BodyweightKg + Sex + Equipment, data = df_nuevo)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -262.960  -12.457   -0.161   12.627  254.927 
+## 
+## Coefficients:
+##                            Estimate  Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)             -111.292459    1.817111 -61.247 &lt; 0.0000000000000002 ***
+## sqrt(upper_lower_total)   16.109293    0.084126 191.490 &lt; 0.0000000000000002 ***
+## Age                       -0.044974    0.014248  -3.156              0.00160 ** 
+## BodyweightKg               0.028427    0.009694   2.932              0.00337 ** 
+## SexM                      11.600348    0.494614  23.453 &lt; 0.0000000000000002 ***
+## EquipmentRaw              35.371089    1.259905  28.074 &lt; 0.0000000000000002 ***
+## EquipmentSingle-ply       18.041719    1.291529  13.969 &lt; 0.0000000000000002 ***
+## EquipmentWraps            31.616942    1.273126  24.834 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22.03 on 18892 degrees of freedom
+## Multiple R-squared:  0.8744, Adjusted R-squared:  0.8744 
+## F-statistic: 1.879e+04 on 7 and 18892 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+</div>
+</div>
+<div id="estimacion-matricial-de-los-coeficientes" class="section level2 hasAnchor" number="18.3">
+<h2><span class="header-section-number">18.3</span> Estimacion matricial de los coeficientes<a href="regresion-lineal-multiple.html#estimacion-matricial-de-los-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="construccion-de-la-matriz-de-diseno" class="section level3 hasAnchor" number="18.3.1">
+<h3><span class="header-section-number">18.3.1</span> Construccion de la matriz de diseno<a href="regresion-lineal-multiple.html#construccion-de-la-matriz-de-diseno" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="regresion-lineal-multiple.html#cb125-1" tabindex="-1"></a>X_rlm <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(modelo_optimo_rlm)</span>
+<span id="cb125-2"><a href="regresion-lineal-multiple.html#cb125-2" tabindex="-1"></a></span>
+<span id="cb125-3"><a href="regresion-lineal-multiple.html#cb125-3" tabindex="-1"></a>y_rlm <span class="ot">&lt;-</span> <span class="fu">model.response</span>(</span>
+<span id="cb125-4"><a href="regresion-lineal-multiple.html#cb125-4" tabindex="-1"></a>  <span class="fu">model.frame</span>(modelo_optimo_rlm)</span>
+<span id="cb125-5"><a href="regresion-lineal-multiple.html#cb125-5" tabindex="-1"></a>)</span>
+<span id="cb125-6"><a href="regresion-lineal-multiple.html#cb125-6" tabindex="-1"></a></span>
+<span id="cb125-7"><a href="regresion-lineal-multiple.html#cb125-7" tabindex="-1"></a><span class="fu">head</span>(X_rlm)</span></code></pre></div>
+<pre><code>##   (Intercept) sqrt(upper_lower_total)  Age BodyweightKg SexM EquipmentRaw EquipmentSingle-ply EquipmentWraps
+## 1           1                18.16590 23.0        87.30    1            1                   0              0
+## 2           1                19.42936 23.0        73.48    1            0                   0              1
+## 3           1                16.95582 26.0       112.40    1            1                   0              0
+## 4           1                12.44990 35.0        59.42    0            1                   0              0
+## 5           1                12.84523 26.5        61.40    0            1                   0              0
+## 6           1                20.49390 23.0       113.50    1            0                   0              1</code></pre>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="regresion-lineal-multiple.html#cb127-1" tabindex="-1"></a><span class="fu">head</span>(y_rlm)</span></code></pre></div>
+<pre><code>##     1     2     3     4     5     6 
+## 235.0 260.0 220.0 102.5 127.5 285.0</code></pre>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="regresion-lineal-multiple.html#cb129-1" tabindex="-1"></a><span class="fu">dim</span>(X_rlm)</span></code></pre></div>
+<pre><code>## [1] 18900     8</code></pre>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="regresion-lineal-multiple.html#cb131-1" tabindex="-1"></a><span class="fu">length</span>(y_rlm)</span></code></pre></div>
+<pre><code>## [1] 18900</code></pre>
+<p>La matriz de diseno presenta dimensiones de 18900 por 8, correspondientes a las 18900 observaciones y los ocho coeficientes del modelo, incluyendo el intercepto.</p>
+<p>Las variables categoricas Sex y Equipment se representan mediante variables indicadoras.</p>
+<p>Las categorias de referencia son F para Sex y Multi-ply para Equipment, de acuerdo con el orden de los niveles de los factores.</p>
+</div>
+<div id="operaciones-matriciales" class="section level3 hasAnchor" number="18.3.2">
+<h3><span class="header-section-number">18.3.2</span> Operaciones matriciales<a href="regresion-lineal-multiple.html#operaciones-matriciales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="regresion-lineal-multiple.html#cb133-1" tabindex="-1"></a>XtX_rlm <span class="ot">&lt;-</span> <span class="fu">t</span>(X_rlm) <span class="sc">%*%</span> X_rlm</span>
+<span id="cb133-2"><a href="regresion-lineal-multiple.html#cb133-2" tabindex="-1"></a></span>
+<span id="cb133-3"><a href="regresion-lineal-multiple.html#cb133-3" tabindex="-1"></a>XtX_inv_rlm <span class="ot">&lt;-</span> <span class="fu">solve</span>(XtX_rlm)</span>
+<span id="cb133-4"><a href="regresion-lineal-multiple.html#cb133-4" tabindex="-1"></a></span>
+<span id="cb133-5"><a href="regresion-lineal-multiple.html#cb133-5" tabindex="-1"></a>Xty_rlm <span class="ot">&lt;-</span> <span class="fu">t</span>(X_rlm) <span class="sc">%*%</span> y_rlm</span>
+<span id="cb133-6"><a href="regresion-lineal-multiple.html#cb133-6" tabindex="-1"></a></span>
+<span id="cb133-7"><a href="regresion-lineal-multiple.html#cb133-7" tabindex="-1"></a>XtX_rlm</span></code></pre></div>
+<pre><code>##                         (Intercept) sqrt(upper_lower_total)         Age BodyweightKg      SexM EquipmentRaw
+## (Intercept)                 18900.0               318723.13   560662.82    1614543.0   12771.0      12277.0
+## sqrt(upper_lower_total)    318723.1              5596844.95  9447194.67   28217491.8  236645.4     198553.6
+## Age                        560662.8              9447194.67 19132785.77   48444962.5  374896.6     355383.6
+## BodyweightKg              1614543.0             28217491.78 48444962.55  147885821.4 1190093.8    1023880.4
+## SexM                        12771.0               236645.36   374896.58    1190093.8   12771.0       8005.0
+## EquipmentRaw                12277.0               198553.61   355383.62    1023880.4    8005.0      12277.0
+## EquipmentSingle-ply          2317.0                42478.98    72321.46     194220.1    1530.0          0.0
+## EquipmentWraps               3965.0                70353.12   120766.92     362771.1    2949.0          0.0
+##                         EquipmentSingle-ply EquipmentWraps
+## (Intercept)                         2317.00        3965.00
+## sqrt(upper_lower_total)            42478.98       70353.12
+## Age                                72321.46      120766.92
+## BodyweightKg                      194220.11      362771.12
+## SexM                                1530.00        2949.00
+## EquipmentRaw                           0.00           0.00
+## EquipmentSingle-ply                 2317.00           0.00
+## EquipmentWraps                         0.00        3965.00</code></pre>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="regresion-lineal-multiple.html#cb135-1" tabindex="-1"></a>XtX_inv_rlm</span></code></pre></div>
+<pre><code>##                            (Intercept) sqrt(upper_lower_total)              Age      BodyweightKg              SexM
+## (Intercept)              0.00680059982        -0.0001900005024 -0.0000160310441  0.00000224906015  0.00067878683549
+## sqrt(upper_lower_total) -0.00019000050         0.0000145761919  0.0000002682068 -0.00000090893300 -0.00005165886998
+## Age                     -0.00001603104         0.0000002682068  0.0000004181192 -0.00000005001250  0.00000029761655
+## BodyweightKg             0.00000224906        -0.0000009089330 -0.0000000500125  0.00000019356560 -0.00000001965052
+## SexM                     0.00067878684        -0.0000516588700  0.0000002976166 -0.00000001965052  0.00050386791690
+## EquipmentRaw            -0.00389386379         0.0000559853647  0.0000035669437 -0.00000223156123 -0.00017883212459
+## EquipmentSingle-ply     -0.00345357369         0.0000246972076  0.0000020586367 -0.00000023643253 -0.00007205802777
+## EquipmentWraps          -0.00365166888         0.0000447812325  0.0000028913870 -0.00000229343152 -0.00014419856683
+##                            EquipmentRaw EquipmentSingle-ply  EquipmentWraps
+## (Intercept)             -0.003893863793    -0.0034535736871 -0.003651668883
+## sqrt(upper_lower_total)  0.000055985365     0.0000246972076  0.000044781232
+## Age                      0.000003566944     0.0000020586367  0.000002891387
+## BodyweightKg            -0.000002231561    -0.0000002364325 -0.000002293432
+## SexM                    -0.000178832125    -0.0000720580278 -0.000144198567
+## EquipmentRaw             0.003269336101     0.0030612610490  0.003129023473
+## EquipmentSingle-ply      0.003061261049     0.0034355214323  0.003027881187
+## EquipmentWraps           0.003129023473     0.0030278811870  0.003338314295</code></pre>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="regresion-lineal-multiple.html#cb137-1" tabindex="-1"></a>Xty_rlm</span></code></pre></div>
+<pre><code>##                                [,1]
+## (Intercept)               3801220.4
+## sqrt(upper_lower_total)  67825956.5
+## Age                     112349056.1
+## BodyweightKg            341897564.7
+## SexM                      2959979.0
+## EquipmentRaw              2372454.9
+## EquipmentSingle-ply        488261.3
+## EquipmentWraps             856516.0</code></pre>
+<p>La matriz <span class="math inline">\(X^TX\)</span> presenta dimensiones de 8 por 8, mientras que <span class="math inline">\(X^Ty\)</span> corresponde a un vector columna de dimension 8.</p>
+</div>
+<div id="estimacion-de-los-coeficientes" class="section level3 hasAnchor" number="18.3.3">
+<h3><span class="header-section-number">18.3.3</span> Estimacion de los coeficientes<a href="regresion-lineal-multiple.html#estimacion-de-los-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="regresion-lineal-multiple.html#cb139-1" tabindex="-1"></a>beta_hat_rlm <span class="ot">&lt;-</span> XtX_inv_rlm <span class="sc">%*%</span> Xty_rlm</span>
+<span id="cb139-2"><a href="regresion-lineal-multiple.html#cb139-2" tabindex="-1"></a></span>
+<span id="cb139-3"><a href="regresion-lineal-multiple.html#cb139-3" tabindex="-1"></a>beta_hat_rlm</span></code></pre></div>
+<pre><code>##                                  [,1]
+## (Intercept)             -111.29245912
+## sqrt(upper_lower_total)   16.10929263
+## Age                       -0.04497384
+## BodyweightKg               0.02842671
+## SexM                      11.60034763
+## EquipmentRaw              35.37108933
+## EquipmentSingle-ply       18.04171885
+## EquipmentWraps            31.61694173</code></pre>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="regresion-lineal-multiple.html#cb141-1" tabindex="-1"></a><span class="fu">coef</span>(modelo_optimo_rlm)</span></code></pre></div>
+<pre><code>##             (Intercept) sqrt(upper_lower_total)                     Age            BodyweightKg                    SexM 
+##           -111.29245912             16.10929263             -0.04497384              0.02842671             11.60034763 
+##            EquipmentRaw     EquipmentSingle-ply          EquipmentWraps 
+##             35.37108933             18.04171885             31.61694173</code></pre>
+</div>
+<div id="interpretacion-de-los-coeficientes" class="section level3 hasAnchor" number="18.3.4">
+<h3><span class="header-section-number">18.3.4</span> Interpretacion de los coeficientes<a href="regresion-lineal-multiple.html#interpretacion-de-los-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Fuerza combinada: por cada incremento de una unidad en la raiz cuadrada de la fuerza combinada, el peso muerto esperado aumenta aproximadamente 16.1093 kg, manteniendo constantes las demas variables.</p>
+<p>Esto no equivale a un incremento de 16.1093 kg de peso muerto por cada kilogramo adicional de fuerza combinada, debido a la transformacion aplicada.</p>
+<p>Por ejemplo, pasar de 300 a 310 kg de fuerza combinada representa un incremento esperado aproximado de 4.61 kg en peso muerto.</p>
+<p>Edad: por cada ano adicional de edad, el peso muerto esperado disminuye aproximadamente 0.045 kg, manteniendo constantes las demas caracteristicas.</p>
+<p>Aunque la asociacion es negativa, su magnitud es pequena desde una perspectiva practica.</p>
+<p>Peso corporal: por cada kilogramo adicional de peso corporal, el peso muerto esperado aumenta aproximadamente 0.0284 kg, manteniendo constantes los demas predictores.</p>
+<p>Sexo: los participantes de la categoria M presentan un peso muerto esperado aproximadamente 11.60 kg superior al de los participantes de la categoria F, al comparar individuos con los mismos valores de los demas predictores.</p>
+<p>Equipamiento Raw: los deportistas de esta categoria presentan un peso muerto esperado aproximadamente 35.37 kg superior al de la categoria Multi-ply, manteniendo constantes las demas variables.</p>
+<p>Este resultado es condicional a la fuerza combinada de sentadilla y press de banca, la cual en Multi-ply se encuentra aumentada por el equipo utilizado. Por ello, a igual fuerza combinada, el peso muerto esperado resulta mayor en Raw.</p>
+<p>Equipamiento Single-ply: presenta una diferencia esperada positiva de aproximadamente 18.04 kg respecto a Multi-ply.</p>
+<p>Equipamiento Wraps: presenta una diferencia esperada positiva de aproximadamente 31.62 kg respecto a Multi-ply.</p>
+<p>Estas diferencias corresponden a asociaciones condicionadas por el modelo y no demuestran que utilizar determinado equipamiento produzca causalmente un aumento del rendimiento.</p>
+<p>El intercepto no presenta una interpretacion practica relevante, puesto que corresponde a un escenario con predictores numericos iguales a cero, ajeno a las condiciones habituales de los deportistas.</p>
+</div>
+</div>
+<div id="analisis-de-varianza" class="section level2 hasAnchor" number="18.4">
+<h2><span class="header-section-number">18.4</span> Analisis de varianza<a href="regresion-lineal-multiple.html#analisis-de-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="valores-ajustados-y-residuos" class="section level3 hasAnchor" number="18.4.1">
+<h3><span class="header-section-number">18.4.1</span> Valores ajustados y residuos<a href="regresion-lineal-multiple.html#valores-ajustados-y-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="regresion-lineal-multiple.html#cb143-1" tabindex="-1"></a>y_hat_rlm <span class="ot">&lt;-</span> X_rlm <span class="sc">%*%</span> beta_hat_rlm</span>
+<span id="cb143-2"><a href="regresion-lineal-multiple.html#cb143-2" tabindex="-1"></a></span>
+<span id="cb143-3"><a href="regresion-lineal-multiple.html#cb143-3" tabindex="-1"></a>e_rlm <span class="ot">&lt;-</span> y_rlm <span class="sc">-</span> y_hat_rlm</span>
+<span id="cb143-4"><a href="regresion-lineal-multiple.html#cb143-4" tabindex="-1"></a></span>
+<span id="cb143-5"><a href="regresion-lineal-multiple.html#cb143-5" tabindex="-1"></a><span class="fu">head</span>(y_hat_rlm)</span></code></pre></div>
+<pre><code>##       [,1]
+## 1 229.7661
+## 2 245.9725
+## 3 210.8512
+## 4 124.7527
+## 5 131.5598
+## 6 264.2591</code></pre>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="regresion-lineal-multiple.html#cb145-1" tabindex="-1"></a><span class="fu">head</span>(e_rlm)</span></code></pre></div>
+<pre><code>##         [,1]
+## 1   5.233935
+## 2  14.027540
+## 3   9.148833
+## 4 -22.252737
+## 5  -4.059834
+## 6  20.740879</code></pre>
+<p>Los residuos corresponden a las diferencias entre el peso muerto observado y el estimado mediante el modelo.</p>
+<p><span class="math display">\[
+e_i=y_i-\hat{y}_i
+\]</span></p>
+</div>
+<div id="sumas-de-cuadrados" class="section level3 hasAnchor" number="18.4.2">
+<h3><span class="header-section-number">18.4.2</span> Sumas de cuadrados<a href="regresion-lineal-multiple.html#sumas-de-cuadrados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="regresion-lineal-multiple.html#cb147-1" tabindex="-1"></a>SCT_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_rlm <span class="sc">-</span> <span class="fu">mean</span>(y_rlm))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb147-2"><a href="regresion-lineal-multiple.html#cb147-2" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="regresion-lineal-multiple.html#cb147-3" tabindex="-1"></a>SCReg_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_hat_rlm <span class="sc">-</span> <span class="fu">mean</span>(y_rlm))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb147-4"><a href="regresion-lineal-multiple.html#cb147-4" tabindex="-1"></a></span>
+<span id="cb147-5"><a href="regresion-lineal-multiple.html#cb147-5" tabindex="-1"></a>SCE_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>(e_rlm<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb147-6"><a href="regresion-lineal-multiple.html#cb147-6" tabindex="-1"></a></span>
+<span id="cb147-7"><a href="regresion-lineal-multiple.html#cb147-7" tabindex="-1"></a>SCT_rlm</span></code></pre></div>
+<pre><code>## [1] 73050523</code></pre>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="regresion-lineal-multiple.html#cb149-1" tabindex="-1"></a>SCReg_rlm</span></code></pre></div>
+<pre><code>## [1] 63877896</code></pre>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="regresion-lineal-multiple.html#cb151-1" tabindex="-1"></a>SCE_rlm</span></code></pre></div>
+<pre><code>## [1] 9172627</code></pre>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="regresion-lineal-multiple.html#cb153-1" tabindex="-1"></a>SCReg_rlm <span class="sc">+</span> SCE_rlm</span></code></pre></div>
+<pre><code>## [1] 73050523</code></pre>
+<p>La variabilidad total observada en peso muerto corresponde a 73050523.00 kg cuadrados, de los cuales 63877896.10 son explicados por el modelo y 9172626.90 corresponden a la variabilidad residual.</p>
+</div>
+<div id="coeficiente-de-determinacion-1" class="section level3 hasAnchor" number="18.4.3">
+<h3><span class="header-section-number">18.4.3</span> Coeficiente de determinacion<a href="regresion-lineal-multiple.html#coeficiente-de-determinacion-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="regresion-lineal-multiple.html#cb155-1" tabindex="-1"></a>R2_rlm <span class="ot">&lt;-</span> SCReg_rlm <span class="sc">/</span> SCT_rlm</span>
+<span id="cb155-2"><a href="regresion-lineal-multiple.html#cb155-2" tabindex="-1"></a></span>
+<span id="cb155-3"><a href="regresion-lineal-multiple.html#cb155-3" tabindex="-1"></a>R2_rlm</span></code></pre></div>
+<pre><code>## [1] 0.8744345</code></pre>
+<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="regresion-lineal-multiple.html#cb157-1" tabindex="-1"></a><span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>adj.r.squared</span></code></pre></div>
+<pre><code>## [1] 0.874388</code></pre>
+<p>El coeficiente de determinacion obtenido es:</p>
+<p><span class="math display">\[
+R^2=0.8744
+\]</span></p>
+<p>Esto significa que aproximadamente el 87.44% de la variabilidad observada en el rendimiento de peso muerto es explicada por el modelo seleccionado.</p>
+<p>El 12.56% restante corresponde a variabilidad no explicada por los predictores considerados.</p>
+</div>
+<div id="grados-de-libertad" class="section level3 hasAnchor" number="18.4.4">
+<h3><span class="header-section-number">18.4.4</span> Grados de libertad<a href="regresion-lineal-multiple.html#grados-de-libertad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="regresion-lineal-multiple.html#cb159-1" tabindex="-1"></a>n_rlm <span class="ot">&lt;-</span> <span class="fu">length</span>(y_rlm)</span>
+<span id="cb159-2"><a href="regresion-lineal-multiple.html#cb159-2" tabindex="-1"></a></span>
+<span id="cb159-3"><a href="regresion-lineal-multiple.html#cb159-3" tabindex="-1"></a>k_rlm <span class="ot">&lt;-</span> <span class="fu">ncol</span>(X_rlm) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb159-4"><a href="regresion-lineal-multiple.html#cb159-4" tabindex="-1"></a></span>
+<span id="cb159-5"><a href="regresion-lineal-multiple.html#cb159-5" tabindex="-1"></a>gl_reg_rlm <span class="ot">&lt;-</span> k_rlm</span>
+<span id="cb159-6"><a href="regresion-lineal-multiple.html#cb159-6" tabindex="-1"></a></span>
+<span id="cb159-7"><a href="regresion-lineal-multiple.html#cb159-7" tabindex="-1"></a>gl_error_rlm <span class="ot">&lt;-</span> n_rlm <span class="sc">-</span> k_rlm <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb159-8"><a href="regresion-lineal-multiple.html#cb159-8" tabindex="-1"></a></span>
+<span id="cb159-9"><a href="regresion-lineal-multiple.html#cb159-9" tabindex="-1"></a>gl_total_rlm <span class="ot">&lt;-</span> n_rlm <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb159-10"><a href="regresion-lineal-multiple.html#cb159-10" tabindex="-1"></a></span>
+<span id="cb159-11"><a href="regresion-lineal-multiple.html#cb159-11" tabindex="-1"></a>gl_reg_rlm</span></code></pre></div>
+<pre><code>## [1] 7</code></pre>
+<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="regresion-lineal-multiple.html#cb161-1" tabindex="-1"></a>gl_error_rlm</span></code></pre></div>
+<pre><code>## [1] 18892</code></pre>
+<div class="sourceCode" id="cb163"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb163-1"><a href="regresion-lineal-multiple.html#cb163-1" tabindex="-1"></a>gl_total_rlm</span></code></pre></div>
+<pre><code>## [1] 18899</code></pre>
+<p>Los grados de libertad correspondientes a regresion, error y total son 7, 18892 y 18899, respectivamente.</p>
+<p>Aunque se utilizan cinco variables explicativas conceptuales, existen siete coeficientes asociados a los predictores debido a la representacion de las variables categoricas mediante indicadores.</p>
+</div>
+<div id="cuadrados-medios" class="section level3 hasAnchor" number="18.4.5">
+<h3><span class="header-section-number">18.4.5</span> Cuadrados medios<a href="regresion-lineal-multiple.html#cuadrados-medios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb165"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb165-1"><a href="regresion-lineal-multiple.html#cb165-1" tabindex="-1"></a>CMReg_rlm <span class="ot">&lt;-</span> SCReg_rlm <span class="sc">/</span> gl_reg_rlm</span>
+<span id="cb165-2"><a href="regresion-lineal-multiple.html#cb165-2" tabindex="-1"></a></span>
+<span id="cb165-3"><a href="regresion-lineal-multiple.html#cb165-3" tabindex="-1"></a>CME_rlm <span class="ot">&lt;-</span> SCE_rlm <span class="sc">/</span> gl_error_rlm</span>
+<span id="cb165-4"><a href="regresion-lineal-multiple.html#cb165-4" tabindex="-1"></a></span>
+<span id="cb165-5"><a href="regresion-lineal-multiple.html#cb165-5" tabindex="-1"></a>CMReg_rlm</span></code></pre></div>
+<pre><code>## [1] 9125414</code></pre>
+<div class="sourceCode" id="cb167"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb167-1"><a href="regresion-lineal-multiple.html#cb167-1" tabindex="-1"></a>CME_rlm</span></code></pre></div>
+<pre><code>## [1] 485.5297</code></pre>
+<p>El cuadrado medio de regresion obtenido es aproximadamente 9125413.73, mientras que el cuadrado medio del error es 485.53.</p>
+</div>
+<div id="tabla-anova" class="section level3 hasAnchor" number="18.4.6">
+<h3><span class="header-section-number">18.4.6</span> Tabla ANOVA<a href="regresion-lineal-multiple.html#tabla-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb169"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb169-1"><a href="regresion-lineal-multiple.html#cb169-1" tabindex="-1"></a>F_rlm <span class="ot">&lt;-</span> CMReg_rlm <span class="sc">/</span> CME_rlm</span>
+<span id="cb169-2"><a href="regresion-lineal-multiple.html#cb169-2" tabindex="-1"></a></span>
+<span id="cb169-3"><a href="regresion-lineal-multiple.html#cb169-3" tabindex="-1"></a>p_global_rlm <span class="ot">&lt;-</span> <span class="fu">pf</span>(</span>
+<span id="cb169-4"><a href="regresion-lineal-multiple.html#cb169-4" tabindex="-1"></a>  F_rlm,</span>
+<span id="cb169-5"><a href="regresion-lineal-multiple.html#cb169-5" tabindex="-1"></a>  gl_reg_rlm,</span>
+<span id="cb169-6"><a href="regresion-lineal-multiple.html#cb169-6" tabindex="-1"></a>  gl_error_rlm,</span>
+<span id="cb169-7"><a href="regresion-lineal-multiple.html#cb169-7" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
+<span id="cb169-8"><a href="regresion-lineal-multiple.html#cb169-8" tabindex="-1"></a>)</span>
+<span id="cb169-9"><a href="regresion-lineal-multiple.html#cb169-9" tabindex="-1"></a></span>
+<span id="cb169-10"><a href="regresion-lineal-multiple.html#cb169-10" tabindex="-1"></a>tabla_anova_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb169-11"><a href="regresion-lineal-multiple.html#cb169-11" tabindex="-1"></a>  <span class="at">Fuente =</span> <span class="fu">c</span>(<span class="st">&quot;Regresion&quot;</span>, <span class="st">&quot;Error&quot;</span>, <span class="st">&quot;Total&quot;</span>),</span>
+<span id="cb169-12"><a href="regresion-lineal-multiple.html#cb169-12" tabindex="-1"></a>  <span class="at">SC =</span> <span class="fu">c</span>(SCReg_rlm, SCE_rlm, SCT_rlm),</span>
+<span id="cb169-13"><a href="regresion-lineal-multiple.html#cb169-13" tabindex="-1"></a>  <span class="at">GL =</span> <span class="fu">c</span>(gl_reg_rlm, gl_error_rlm, gl_total_rlm),</span>
+<span id="cb169-14"><a href="regresion-lineal-multiple.html#cb169-14" tabindex="-1"></a>  <span class="at">CM =</span> <span class="fu">c</span>(CMReg_rlm, CME_rlm, <span class="cn">NA</span>),</span>
+<span id="cb169-15"><a href="regresion-lineal-multiple.html#cb169-15" tabindex="-1"></a>  <span class="at">F =</span> <span class="fu">c</span>(F_rlm, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb169-16"><a href="regresion-lineal-multiple.html#cb169-16" tabindex="-1"></a>  <span class="at">Valor_p =</span> <span class="fu">c</span>(p_global_rlm, <span class="cn">NA</span>, <span class="cn">NA</span>)</span>
+<span id="cb169-17"><a href="regresion-lineal-multiple.html#cb169-17" tabindex="-1"></a>)</span>
+<span id="cb169-18"><a href="regresion-lineal-multiple.html#cb169-18" tabindex="-1"></a></span>
+<span id="cb169-19"><a href="regresion-lineal-multiple.html#cb169-19" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_anova_rlm, <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Fuente</th>
+<th align="right">SC</th>
+<th align="right">GL</th>
+<th align="right">CM</th>
+<th align="right">F</th>
+<th align="right">Valor_p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Regresion</td>
+<td align="right">63877896</td>
+<td align="right">7</td>
+<td align="right">9125413.7290</td>
+<td align="right">18794.76</td>
+<td align="right">0</td>
+</tr>
+<tr class="even">
+<td align="left">Error</td>
+<td align="right">9172627</td>
+<td align="right">18892</td>
+<td align="right">485.5297</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">73050523</td>
+<td align="right">18899</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+<td align="right">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="prueba-de-significancia-global" class="section level2 hasAnchor" number="18.5">
+<h2><span class="header-section-number">18.5</span> Prueba de significancia global<a href="regresion-lineal-multiple.html#prueba-de-significancia-global" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Se plantean las siguientes hipotesis:</p>
+<p><span class="math display">\[
+H_0:\beta_1=\beta_2=\cdots=\beta_7=0
+\]</span></p>
+<p><span class="math display">\[
+H_1:\exists j,\ \beta_j\neq0
+\]</span></p>
+<p>Se establece un nivel de significancia de:</p>
+<p><span class="math display">\[
+\alpha=0.05
+\]</span></p>
+<div class="sourceCode" id="cb170"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb170-1"><a href="regresion-lineal-multiple.html#cb170-1" tabindex="-1"></a>alpha_rlm <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb170-2"><a href="regresion-lineal-multiple.html#cb170-2" tabindex="-1"></a></span>
+<span id="cb170-3"><a href="regresion-lineal-multiple.html#cb170-3" tabindex="-1"></a>F_rlm</span></code></pre></div>
+<pre><code>## [1] 18794.76</code></pre>
+<div class="sourceCode" id="cb172"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb172-1"><a href="regresion-lineal-multiple.html#cb172-1" tabindex="-1"></a>p_global_rlm</span></code></pre></div>
+<pre><code>## [1] 0</code></pre>
+<div class="sourceCode" id="cb174"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb174-1"><a href="regresion-lineal-multiple.html#cb174-1" tabindex="-1"></a>F_critico_rlm <span class="ot">&lt;-</span> <span class="fu">qf</span>(</span>
+<span id="cb174-2"><a href="regresion-lineal-multiple.html#cb174-2" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">-</span> alpha_rlm,</span>
+<span id="cb174-3"><a href="regresion-lineal-multiple.html#cb174-3" tabindex="-1"></a>  gl_reg_rlm,</span>
+<span id="cb174-4"><a href="regresion-lineal-multiple.html#cb174-4" tabindex="-1"></a>  gl_error_rlm</span>
+<span id="cb174-5"><a href="regresion-lineal-multiple.html#cb174-5" tabindex="-1"></a>)</span>
+<span id="cb174-6"><a href="regresion-lineal-multiple.html#cb174-6" tabindex="-1"></a></span>
+<span id="cb174-7"><a href="regresion-lineal-multiple.html#cb174-7" tabindex="-1"></a>F_critico_rlm</span></code></pre></div>
+<pre><code>## [1] 2.010074</code></pre>
+<p>El estadistico F obtenido es aproximadamente 18794.76, muy superior al valor critico, con un valor p inferior a 0.001.</p>
+<p>Bajo los supuestos clasicos del modelo, se rechaza la hipotesis nula y se concluye que existe evidencia estadistica de que al menos uno de los coeficientes asociados a los predictores es diferente de cero.</p>
+<p>Por tanto, la prueba clasica indica que el modelo es globalmente significativo. No obstante, esta conclusion debe complementarse con el diagnostico de los supuestos y la inferencia robusta.</p>
+</div>
+<div id="estimacion-de-la-varianza-residual" class="section level2 hasAnchor" number="18.6">
+<h2><span class="header-section-number">18.6</span> Estimacion de la varianza residual<a href="regresion-lineal-multiple.html#estimacion-de-la-varianza-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb176"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb176-1"><a href="regresion-lineal-multiple.html#cb176-1" tabindex="-1"></a>sigma2_hat_rlm <span class="ot">&lt;-</span> CME_rlm</span>
+<span id="cb176-2"><a href="regresion-lineal-multiple.html#cb176-2" tabindex="-1"></a></span>
+<span id="cb176-3"><a href="regresion-lineal-multiple.html#cb176-3" tabindex="-1"></a>sigma2_hat_rlm</span></code></pre></div>
+<pre><code>## [1] 485.5297</code></pre>
+<div class="sourceCode" id="cb178"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb178-1"><a href="regresion-lineal-multiple.html#cb178-1" tabindex="-1"></a><span class="fu">sqrt</span>(sigma2_hat_rlm)</span></code></pre></div>
+<pre><code>## [1] 22.03474</code></pre>
+<p>La varianza residual estimada bajo el modelo clasico es aproximadamente 485.53 kg cuadrados.</p>
+<p>El error estandar residual es aproximadamente 22.03 kg, lo que representa la escala de dispersion de las observaciones alrededor del modelo ajustado.</p>
+<p>Este resultado no debe interpretarse como un error maximo de prediccion.</p>
+</div>
+<div id="matriz-de-varianzas-y-covarianzas" class="section level2 hasAnchor" number="18.7">
+<h2><span class="header-section-number">18.7</span> Matriz de varianzas y covarianzas<a href="regresion-lineal-multiple.html#matriz-de-varianzas-y-covarianzas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb180"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb180-1"><a href="regresion-lineal-multiple.html#cb180-1" tabindex="-1"></a>V_beta_rlm <span class="ot">&lt;-</span> sigma2_hat_rlm <span class="sc">*</span> XtX_inv_rlm</span>
+<span id="cb180-2"><a href="regresion-lineal-multiple.html#cb180-2" tabindex="-1"></a></span>
+<span id="cb180-3"><a href="regresion-lineal-multiple.html#cb180-3" tabindex="-1"></a>V_beta_rlm</span></code></pre></div>
+<pre><code>##                          (Intercept) sqrt(upper_lower_total)            Age    BodyweightKg            SexM EquipmentRaw
+## (Intercept)              3.301893120           -0.0922508850 -0.00778354786  0.001091985477  0.329571161678 -1.890586480
+## sqrt(upper_lower_total) -0.092250885            0.0070771739  0.00013022237 -0.000441313958 -0.025081915117  0.027182557
+## Age                     -0.007783548            0.0001302224  0.00020300930 -0.000024282552  0.000144501673  0.001731857
+## BodyweightKg             0.001091985           -0.0004413140 -0.00002428255  0.000093981843 -0.000009540911 -0.001083489
+## SexM                     0.329571162           -0.0250819151  0.00014450167 -0.000009540911  0.244642833394 -0.086828306
+## EquipmentRaw            -1.890586480            0.0271825568  0.00173185705 -0.001083489230 -0.086828305980  1.587359743
+## EquipmentSingle-ply     -1.676812561            0.0119912275  0.00099952926 -0.000114795012 -0.034986311872  1.486333128
+## EquipmentWraps          -1.772993660            0.0217426179  0.00140385423 -0.001113529093 -0.070012685425  1.519233796
+##                         EquipmentSingle-ply EquipmentWraps
+## (Intercept)                   -1.6768125610   -1.772993660
+## sqrt(upper_lower_total)        0.0119912275    0.021742618
+## Age                            0.0009995293    0.001403854
+## BodyweightKg                  -0.0001147950   -0.001113529
+## SexM                          -0.0349863119   -0.070012685
+## EquipmentRaw                   1.4863331275    1.519233796
+## EquipmentSingle-ply            1.6680476553    1.470126213
+## EquipmentWraps                 1.4701262135    1.620850704</code></pre>
+<p>La matriz estimada presenta dimensiones de 8 por 8. Los elementos de la diagonal principal corresponden a las varianzas estimadas de los coeficientes, mientras que los elementos restantes representan las covarianzas entre estimadores.</p>
+<p>Esta matriz corresponde a la formulacion clasica que supone homocedasticidad.</p>
+<div id="errores-estandar" class="section level3 hasAnchor" number="18.7.1">
+<h3><span class="header-section-number">18.7.1</span> Errores estandar<a href="regresion-lineal-multiple.html#errores-estandar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb182"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb182-1"><a href="regresion-lineal-multiple.html#cb182-1" tabindex="-1"></a>ee_rlm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(V_beta_rlm))</span>
+<span id="cb182-2"><a href="regresion-lineal-multiple.html#cb182-2" tabindex="-1"></a></span>
+<span id="cb182-3"><a href="regresion-lineal-multiple.html#cb182-3" tabindex="-1"></a>ee_rlm</span></code></pre></div>
+<pre><code>##             (Intercept) sqrt(upper_lower_total)                     Age            BodyweightKg                    SexM 
+##             1.817111202             0.084125941             0.014248133             0.009694423             0.494613822 
+##            EquipmentRaw     EquipmentSingle-ply          EquipmentWraps 
+##             1.259904656             1.291529193             1.273126350</code></pre>
+</div>
+</div>
+<div id="prueba-de-significancia-individual" class="section level2 hasAnchor" number="18.8">
+<h2><span class="header-section-number">18.8</span> Prueba de significancia individual<a href="regresion-lineal-multiple.html#prueba-de-significancia-individual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Para cada coeficiente se plantean las hipotesis:</p>
+<p><span class="math display">\[
+H_0:\beta_j=0
+\]</span></p>
+<p><span class="math display">\[
+H_1:\beta_j\neq0
+\]</span></p>
+<div class="sourceCode" id="cb184"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb184-1"><a href="regresion-lineal-multiple.html#cb184-1" tabindex="-1"></a>t_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">/</span> ee_rlm</span>
+<span id="cb184-2"><a href="regresion-lineal-multiple.html#cb184-2" tabindex="-1"></a></span>
+<span id="cb184-3"><a href="regresion-lineal-multiple.html#cb184-3" tabindex="-1"></a>p_individual_rlm <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(</span>
+<span id="cb184-4"><a href="regresion-lineal-multiple.html#cb184-4" tabindex="-1"></a>  <span class="fu">abs</span>(t_rlm),</span>
+<span id="cb184-5"><a href="regresion-lineal-multiple.html#cb184-5" tabindex="-1"></a>  <span class="at">df =</span> gl_error_rlm,</span>
+<span id="cb184-6"><a href="regresion-lineal-multiple.html#cb184-6" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
+<span id="cb184-7"><a href="regresion-lineal-multiple.html#cb184-7" tabindex="-1"></a>)</span>
+<span id="cb184-8"><a href="regresion-lineal-multiple.html#cb184-8" tabindex="-1"></a></span>
+<span id="cb184-9"><a href="regresion-lineal-multiple.html#cb184-9" tabindex="-1"></a>tabla_t_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb184-10"><a href="regresion-lineal-multiple.html#cb184-10" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
+<span id="cb184-11"><a href="regresion-lineal-multiple.html#cb184-11" tabindex="-1"></a>  <span class="at">Estimacion =</span> <span class="fu">as.vector</span>(beta_hat_rlm),</span>
+<span id="cb184-12"><a href="regresion-lineal-multiple.html#cb184-12" tabindex="-1"></a>  <span class="at">Error_estandar =</span> ee_rlm,</span>
+<span id="cb184-13"><a href="regresion-lineal-multiple.html#cb184-13" tabindex="-1"></a>  <span class="at">Estadistico_t =</span> t_rlm,</span>
+<span id="cb184-14"><a href="regresion-lineal-multiple.html#cb184-14" tabindex="-1"></a>  <span class="at">Valor_p =</span> p_individual_rlm</span>
+<span id="cb184-15"><a href="regresion-lineal-multiple.html#cb184-15" tabindex="-1"></a>)</span>
+<span id="cb184-16"><a href="regresion-lineal-multiple.html#cb184-16" tabindex="-1"></a></span>
+<span id="cb184-17"><a href="regresion-lineal-multiple.html#cb184-17" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_t_rlm, <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="11%" />
+<col width="15%" />
+<col width="14%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Coeficiente</th>
+<th align="right">Estimacion</th>
+<th align="right">Error_estandar</th>
+<th align="right">Estadistico_t</th>
+<th align="right">Valor_p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="left">(Intercept)</td>
+<td align="right">-111.2925</td>
+<td align="right">1.8171</td>
+<td align="right">-61.2469</td>
+<td align="right">0.0000</td>
+</tr>
+<tr class="even">
+<td align="left">sqrt(upper_lower_total)</td>
+<td align="left">sqrt(upper_lower_total)</td>
+<td align="right">16.1093</td>
+<td align="right">0.0841</td>
+<td align="right">191.4902</td>
+<td align="right">0.0000</td>
+</tr>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="left">Age</td>
+<td align="right">-0.0450</td>
+<td align="right">0.0142</td>
+<td align="right">-3.1565</td>
+<td align="right">0.0016</td>
+</tr>
+<tr class="even">
+<td align="left">BodyweightKg</td>
+<td align="left">BodyweightKg</td>
+<td align="right">0.0284</td>
+<td align="right">0.0097</td>
+<td align="right">2.9323</td>
+<td align="right">0.0034</td>
+</tr>
+<tr class="odd">
+<td align="left">SexM</td>
+<td align="left">SexM</td>
+<td align="right">11.6003</td>
+<td align="right">0.4946</td>
+<td align="right">23.4533</td>
+<td align="right">0.0000</td>
+</tr>
+<tr class="even">
+<td align="left">EquipmentRaw</td>
+<td align="left">EquipmentRaw</td>
+<td align="right">35.3711</td>
+<td align="right">1.2599</td>
+<td align="right">28.0744</td>
+<td align="right">0.0000</td>
+</tr>
+<tr class="odd">
+<td align="left">EquipmentSingle-ply</td>
+<td align="left">EquipmentSingle-ply</td>
+<td align="right">18.0417</td>
+<td align="right">1.2915</td>
+<td align="right">13.9693</td>
+<td align="right">0.0000</td>
+</tr>
+<tr class="even">
+<td align="left">EquipmentWraps</td>
+<td align="left">EquipmentWraps</td>
+<td align="right">31.6169</td>
+<td align="right">1.2731</td>
+<td align="right">24.8341</td>
+<td align="right">0.0000</td>
+</tr>
+</tbody>
+</table>
+<p>Todos los coeficientes presentan valores p inferiores a 0.05 en el analisis.</p>
+<p>Es importante destacar que Age no resultaba significativa en el modelo original, pero presenta una asociacion estadisticamente significativa en el modelo transformado. Esto evidencia que la significancia individual depende de la especificacion del modelo y de las variables incluidas.</p>
+</div>
+<div id="intervalos-de-confianza" class="section level2 hasAnchor" number="18.9">
+<h2><span class="header-section-number">18.9</span> Intervalos de confianza<a href="regresion-lineal-multiple.html#intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb185"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb185-1"><a href="regresion-lineal-multiple.html#cb185-1" tabindex="-1"></a>t_critico_rlm <span class="ot">&lt;-</span> <span class="fu">qt</span>(</span>
+<span id="cb185-2"><a href="regresion-lineal-multiple.html#cb185-2" tabindex="-1"></a>  <span class="fl">0.975</span>,</span>
+<span id="cb185-3"><a href="regresion-lineal-multiple.html#cb185-3" tabindex="-1"></a>  <span class="at">df =</span> gl_error_rlm</span>
+<span id="cb185-4"><a href="regresion-lineal-multiple.html#cb185-4" tabindex="-1"></a>)</span>
+<span id="cb185-5"><a href="regresion-lineal-multiple.html#cb185-5" tabindex="-1"></a></span>
+<span id="cb185-6"><a href="regresion-lineal-multiple.html#cb185-6" tabindex="-1"></a>lim_inf_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">-</span></span>
+<span id="cb185-7"><a href="regresion-lineal-multiple.html#cb185-7" tabindex="-1"></a>  t_critico_rlm <span class="sc">*</span> ee_rlm</span>
+<span id="cb185-8"><a href="regresion-lineal-multiple.html#cb185-8" tabindex="-1"></a></span>
+<span id="cb185-9"><a href="regresion-lineal-multiple.html#cb185-9" tabindex="-1"></a>lim_sup_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">+</span></span>
+<span id="cb185-10"><a href="regresion-lineal-multiple.html#cb185-10" tabindex="-1"></a>  t_critico_rlm <span class="sc">*</span> ee_rlm</span>
+<span id="cb185-11"><a href="regresion-lineal-multiple.html#cb185-11" tabindex="-1"></a></span>
+<span id="cb185-12"><a href="regresion-lineal-multiple.html#cb185-12" tabindex="-1"></a>tabla_ic_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb185-13"><a href="regresion-lineal-multiple.html#cb185-13" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
+<span id="cb185-14"><a href="regresion-lineal-multiple.html#cb185-14" tabindex="-1"></a>  <span class="at">Inferior =</span> lim_inf_rlm,</span>
+<span id="cb185-15"><a href="regresion-lineal-multiple.html#cb185-15" tabindex="-1"></a>  <span class="at">Superior =</span> lim_sup_rlm</span>
+<span id="cb185-16"><a href="regresion-lineal-multiple.html#cb185-16" tabindex="-1"></a>)</span>
+<span id="cb185-17"><a href="regresion-lineal-multiple.html#cb185-17" tabindex="-1"></a></span>
+<span id="cb185-18"><a href="regresion-lineal-multiple.html#cb185-18" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(tabla_ic_rlm, <span class="at">digits =</span> <span class="dv">4</span>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="35%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Coeficiente</th>
+<th align="right">Inferior</th>
+<th align="right">Superior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="left">(Intercept)</td>
+<td align="right">-114.8542</td>
+<td align="right">-107.7308</td>
+</tr>
+<tr class="even">
+<td align="left">sqrt(upper_lower_total)</td>
+<td align="left">sqrt(upper_lower_total)</td>
+<td align="right">15.9444</td>
+<td align="right">16.2742</td>
+</tr>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="left">Age</td>
+<td align="right">-0.0729</td>
+<td align="right">-0.0170</td>
+</tr>
+<tr class="even">
+<td align="left">BodyweightKg</td>
+<td align="left">BodyweightKg</td>
+<td align="right">0.0094</td>
+<td align="right">0.0474</td>
+</tr>
+<tr class="odd">
+<td align="left">SexM</td>
+<td align="left">SexM</td>
+<td align="right">10.6309</td>
+<td align="right">12.5698</td>
+</tr>
+<tr class="even">
+<td align="left">EquipmentRaw</td>
+<td align="left">EquipmentRaw</td>
+<td align="right">32.9016</td>
+<td align="right">37.8406</td>
+</tr>
+<tr class="odd">
+<td align="left">EquipmentSingle-ply</td>
+<td align="left">EquipmentSingle-ply</td>
+<td align="right">15.5102</td>
+<td align="right">20.5732</td>
+</tr>
+<tr class="even">
+<td align="left">EquipmentWraps</td>
+<td align="left">EquipmentWraps</td>
+<td align="right">29.1215</td>
+<td align="right">34.1124</td>
+</tr>
+</tbody>
+</table>
+<p>Ninguno de los intervalos de confianza contiene el cero.</p>
+<p>La edad presenta una asociacion negativa con el peso muerto, mientras que la fuerza combinada transformada, el peso corporal y los indicadores de sexo y equipamiento presentan asociaciones positivas respecto a sus correspondientes unidades o categorias de referencia.</p>
+<div id="verificacion-mediante-las-funciones-de-r" class="section level3 hasAnchor" number="18.9.1">
+<h3><span class="header-section-number">18.9.1</span> Verificacion mediante las funciones de R<a href="regresion-lineal-multiple.html#verificacion-mediante-las-funciones-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb186"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb186-1"><a href="regresion-lineal-multiple.html#cb186-1" tabindex="-1"></a><span class="fu">summary</span>(modelo_optimo_rlm)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = BestDeadliftKg ~ sqrt(upper_lower_total) + Age + 
+##     BodyweightKg + Sex + Equipment, data = df_nuevo)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -262.960  -12.457   -0.161   12.627  254.927 
+## 
+## Coefficients:
+##                            Estimate  Std. Error t value             Pr(&gt;|t|)    
+## (Intercept)             -111.292459    1.817111 -61.247 &lt; 0.0000000000000002 ***
+## sqrt(upper_lower_total)   16.109293    0.084126 191.490 &lt; 0.0000000000000002 ***
+## Age                       -0.044974    0.014248  -3.156              0.00160 ** 
+## BodyweightKg               0.028427    0.009694   2.932              0.00337 ** 
+## SexM                      11.600348    0.494614  23.453 &lt; 0.0000000000000002 ***
+## EquipmentRaw              35.371089    1.259905  28.074 &lt; 0.0000000000000002 ***
+## EquipmentSingle-ply       18.041719    1.291529  13.969 &lt; 0.0000000000000002 ***
+## EquipmentWraps            31.616942    1.273126  24.834 &lt; 0.0000000000000002 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 22.03 on 18892 degrees of freedom
+## Multiple R-squared:  0.8744, Adjusted R-squared:  0.8744 
+## F-statistic: 1.879e+04 on 7 and 18892 DF,  p-value: &lt; 0.00000000000000022</code></pre>
+<div class="sourceCode" id="cb188"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb188-1"><a href="regresion-lineal-multiple.html#cb188-1" tabindex="-1"></a><span class="fu">confint</span>(modelo_optimo_rlm, <span class="at">level =</span> <span class="fl">0.95</span>)</span></code></pre></div>
+<pre><code>##                                  2.5 %        97.5 %
+## (Intercept)             -114.854159821 -107.73075842
+## sqrt(upper_lower_total)   15.944398254   16.27418701
+## Age                       -0.072901459   -0.01704622
+## BodyweightKg               0.009424777    0.04742865
+## SexM                      10.630860242   12.56983502
+## EquipmentRaw              32.901563365   37.84061530
+## EquipmentSingle-ply       15.510205956   20.57323174
+## EquipmentWraps            29.121500058   34.11238340</code></pre>
+<div class="sourceCode" id="cb190"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb190-1"><a href="regresion-lineal-multiple.html#cb190-1" tabindex="-1"></a><span class="fu">vcov</span>(modelo_optimo_rlm)</span></code></pre></div>
+<pre><code>##                          (Intercept) sqrt(upper_lower_total)            Age    BodyweightKg            SexM EquipmentRaw
+## (Intercept)              3.301893120           -0.0922508850 -0.00778354786  0.001091985477  0.329571161676 -1.890586480
+## sqrt(upper_lower_total) -0.092250885            0.0070771739  0.00013022237 -0.000441313958 -0.025081915117  0.027182557
+## Age                     -0.007783548            0.0001302224  0.00020300930 -0.000024282552  0.000144501673  0.001731857
+## BodyweightKg             0.001091985           -0.0004413140 -0.00002428255  0.000093981843 -0.000009540911 -0.001083489
+## SexM                     0.329571162           -0.0250819151  0.00014450167 -0.000009540911  0.244642833394 -0.086828306
+## EquipmentRaw            -1.890586480            0.0271825568  0.00173185705 -0.001083489230 -0.086828305979  1.587359743
+## EquipmentSingle-ply     -1.676812561            0.0119912275  0.00099952926 -0.000114795012 -0.034986311871  1.486333128
+## EquipmentWraps          -1.772993660            0.0217426179  0.00140385423 -0.001113529093 -0.070012685424  1.519233796
+##                         EquipmentSingle-ply EquipmentWraps
+## (Intercept)                   -1.6768125610   -1.772993660
+## sqrt(upper_lower_total)        0.0119912275    0.021742618
+## Age                            0.0009995293    0.001403854
+## BodyweightKg                  -0.0001147950   -0.001113529
+## SexM                          -0.0349863119   -0.070012685
+## EquipmentRaw                   1.4863331275    1.519233796
+## EquipmentSingle-ply            1.6680476553    1.470126213
+## EquipmentWraps                 1.4701262135    1.620850704</code></pre>
+<div class="sourceCode" id="cb192"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb192-1"><a href="regresion-lineal-multiple.html#cb192-1" tabindex="-1"></a><span class="fu">all.equal</span>(</span>
+<span id="cb192-2"><a href="regresion-lineal-multiple.html#cb192-2" tabindex="-1"></a>  <span class="fu">as.vector</span>(beta_hat_rlm),</span>
+<span id="cb192-3"><a href="regresion-lineal-multiple.html#cb192-3" tabindex="-1"></a>  <span class="fu">as.vector</span>(<span class="fu">coef</span>(modelo_optimo_rlm))</span>
+<span id="cb192-4"><a href="regresion-lineal-multiple.html#cb192-4" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb194"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb194-1"><a href="regresion-lineal-multiple.html#cb194-1" tabindex="-1"></a><span class="fu">all.equal</span>(</span>
+<span id="cb194-2"><a href="regresion-lineal-multiple.html#cb194-2" tabindex="-1"></a>  V_beta_rlm,</span>
+<span id="cb194-3"><a href="regresion-lineal-multiple.html#cb194-3" tabindex="-1"></a>  <span class="fu">vcov</span>(modelo_optimo_rlm),</span>
+<span id="cb194-4"><a href="regresion-lineal-multiple.html#cb194-4" tabindex="-1"></a>  <span class="at">check.attributes =</span> <span class="cn">FALSE</span></span>
+<span id="cb194-5"><a href="regresion-lineal-multiple.html#cb194-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<div class="sourceCode" id="cb196"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb196-1"><a href="regresion-lineal-multiple.html#cb196-1" tabindex="-1"></a><span class="fu">all.equal</span>(</span>
+<span id="cb196-2"><a href="regresion-lineal-multiple.html#cb196-2" tabindex="-1"></a>  SCE_rlm,</span>
+<span id="cb196-3"><a href="regresion-lineal-multiple.html#cb196-3" tabindex="-1"></a>  <span class="fu">sum</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb196-4"><a href="regresion-lineal-multiple.html#cb196-4" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## [1] TRUE</code></pre>
+<p>Las comparaciones numericas confirman que la estimacion matricial coincide con los resultados obtenidos mediante las funciones de R.</p>
+</div>
+</div>
+<div id="diagnostico-de-los-supuestos" class="section level2 hasAnchor" number="18.10">
+<h2><span class="header-section-number">18.10</span> Diagnostico de los supuestos<a href="regresion-lineal-multiple.html#diagnostico-de-los-supuestos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="analisis-grafico-de-los-residuos" class="section level3 hasAnchor" number="18.10.1">
+<h3><span class="header-section-number">18.10.1</span> Analisis grafico de los residuos<a href="regresion-lineal-multiple.html#analisis-grafico-de-los-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb198"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb198-1"><a href="regresion-lineal-multiple.html#cb198-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb198-2"><a href="regresion-lineal-multiple.html#cb198-2" tabindex="-1"></a></span>
+<span id="cb198-3"><a href="regresion-lineal-multiple.html#cb198-3" tabindex="-1"></a><span class="fu">plot</span>(modelo_optimo_rlm)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/rlm-diagnostico-1.png" alt="" width="960" /></p>
+<div class="sourceCode" id="cb199"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb199-1"><a href="regresion-lineal-multiple.html#cb199-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+</div>
+<div id="normalidad-de-los-residuos" class="section level3 hasAnchor" number="18.10.2">
+<h3><span class="header-section-number">18.10.2</span> Normalidad de los residuos<a href="regresion-lineal-multiple.html#normalidad-de-los-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Se plantean las hipotesis:</p>
+<p><span class="math display">\[
+H_0:\text{Los errores siguen una distribucion normal}
+\]</span></p>
+<p><span class="math display">\[
+H_1:\text{Los errores no siguen una distribucion normal}
+\]</span></p>
+<div class="sourceCode" id="cb200"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb200-1"><a href="regresion-lineal-multiple.html#cb200-1" tabindex="-1"></a><span class="fu">qqnorm</span>(</span>
+<span id="cb200-2"><a href="regresion-lineal-multiple.html#cb200-2" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm),</span>
+<span id="cb200-3"><a href="regresion-lineal-multiple.html#cb200-3" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Grafico Q-Q de los residuos&quot;</span></span>
+<span id="cb200-4"><a href="regresion-lineal-multiple.html#cb200-4" tabindex="-1"></a>)</span>
+<span id="cb200-5"><a href="regresion-lineal-multiple.html#cb200-5" tabindex="-1"></a></span>
+<span id="cb200-6"><a href="regresion-lineal-multiple.html#cb200-6" tabindex="-1"></a><span class="fu">qqline</span>(</span>
+<span id="cb200-7"><a href="regresion-lineal-multiple.html#cb200-7" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm),</span>
+<span id="cb200-8"><a href="regresion-lineal-multiple.html#cb200-8" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb200-9"><a href="regresion-lineal-multiple.html#cb200-9" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">2</span></span>
+<span id="cb200-10"><a href="regresion-lineal-multiple.html#cb200-10" tabindex="-1"></a>)</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/rlm-normalidad-1.png" alt="" width="672" /></p>
+<div class="sourceCode" id="cb201"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb201-1"><a href="regresion-lineal-multiple.html#cb201-1" tabindex="-1"></a>moments<span class="sc">::</span><span class="fu">jarque.test</span>(</span>
+<span id="cb201-2"><a href="regresion-lineal-multiple.html#cb201-2" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm)</span>
+<span id="cb201-3"><a href="regresion-lineal-multiple.html#cb201-3" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## 
+##  Jarque-Bera Normality Test
+## 
+## data:  residuals(modelo_optimo_rlm)
+## JB = 60922, p-value &lt; 0.00000000000000022
+## alternative hypothesis: greater</code></pre>
+<div class="sourceCode" id="cb203"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb203-1"><a href="regresion-lineal-multiple.html#cb203-1" tabindex="-1"></a>moments<span class="sc">::</span><span class="fu">skewness</span>(<span class="fu">residuals</span>(modelo_optimo_rlm))</span></code></pre></div>
+<pre><code>## [1] -0.6589109</code></pre>
+<div class="sourceCode" id="cb205"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb205-1"><a href="regresion-lineal-multiple.html#cb205-1" tabindex="-1"></a>moments<span class="sc">::</span><span class="fu">kurtosis</span>(<span class="fu">residuals</span>(modelo_optimo_rlm))</span></code></pre></div>
+<pre><code>## [1] 11.69624</code></pre>
+<p>La prueba de Jarque-Bera presenta un estadistico aproximado de 60921.93 y un valor p inferior a 0.001.</p>
+<p>Por tanto, se rechaza la hipotesis de normalidad.</p>
+<p>Los residuos presentan una asimetria aproximada de -0.659 y una curtosis de 11.696, lo cual evidencia desviaciones respecto a una distribucion normal, particularmente por la presencia de colas pesadas.</p>
+<p>Dado el elevado tamano de la muestra, la falta de normalidad no invalida automaticamente la estimacion por minimos cuadrados, pero exige precaucion al interpretar la inferencia clasica.</p>
+</div>
+<div id="homocedasticidad" class="section level3 hasAnchor" number="18.10.3">
+<h3><span class="header-section-number">18.10.3</span> Homocedasticidad<a href="regresion-lineal-multiple.html#homocedasticidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>La homocedasticidad supone que la varianza de los errores permanece constante.</p>
+<p><span class="math display">\[
+H_0:Var(\varepsilon_i\mid X)=\sigma^2
+\]</span></p>
+<p><span class="math display">\[
+H_1:\text{La varianza de los errores no es constante}
+\]</span></p>
+<div class="sourceCode" id="cb207"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb207-1"><a href="regresion-lineal-multiple.html#cb207-1" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">bptest</span>(modelo_optimo_rlm)</span></code></pre></div>
+<pre><code>## 
+##  studentized Breusch-Pagan test
+## 
+## data:  modelo_optimo_rlm
+## BP = 494.88, df = 7, p-value &lt; 0.00000000000000022</code></pre>
+<p>La prueba de Breusch-Pagan presenta un estadistico aproximado de 494.88, con 7 grados de libertad y un valor p cercano a:</p>
+<p><span class="math display">\[
+p=1.01\times10^{-102}
+\]</span></p>
+<p>Como el valor p es considerablemente inferior a 0.05, se rechaza la hipotesis nula y se concluye que existe evidencia de heterocedasticidad.</p>
+<p>En consecuencia, la varianza residual no permanece constante para todas las observaciones.</p>
+<p>Este resultado es coherente con las dificultades identificadas durante el analisis de regresion lineal simple. La transformacion de los predictores mejora el ajuste, pero no elimina completamente los problemas asociados a la distribucion de los errores.</p>
+</div>
+</div>
+<div id="inferencia-mediante-errores-estandar-robustos" class="section level2 hasAnchor" number="18.11">
+<h2><span class="header-section-number">18.11</span> Inferencia mediante errores estandar robustos<a href="regresion-lineal-multiple.html#inferencia-mediante-errores-estandar-robustos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Debido a la evidencia de heterocedasticidad, se utiliza una matriz de varianzas y covarianzas robusta HC3 para complementar la inferencia estadistica.</p>
+<div class="sourceCode" id="cb209"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb209-1"><a href="regresion-lineal-multiple.html#cb209-1" tabindex="-1"></a>V_robusta_rlm <span class="ot">&lt;-</span> sandwich<span class="sc">::</span><span class="fu">vcovHC</span>(</span>
+<span id="cb209-2"><a href="regresion-lineal-multiple.html#cb209-2" tabindex="-1"></a>  modelo_optimo_rlm,</span>
+<span id="cb209-3"><a href="regresion-lineal-multiple.html#cb209-3" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;HC3&quot;</span></span>
+<span id="cb209-4"><a href="regresion-lineal-multiple.html#cb209-4" tabindex="-1"></a>)</span>
+<span id="cb209-5"><a href="regresion-lineal-multiple.html#cb209-5" tabindex="-1"></a></span>
+<span id="cb209-6"><a href="regresion-lineal-multiple.html#cb209-6" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">coeftest</span>(</span>
+<span id="cb209-7"><a href="regresion-lineal-multiple.html#cb209-7" tabindex="-1"></a>  modelo_optimo_rlm,</span>
+<span id="cb209-8"><a href="regresion-lineal-multiple.html#cb209-8" tabindex="-1"></a>  <span class="at">vcov. =</span> V_robusta_rlm</span>
+<span id="cb209-9"><a href="regresion-lineal-multiple.html#cb209-9" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>## 
+## t test of coefficients:
+## 
+##                            Estimate  Std. Error  t value              Pr(&gt;|t|)    
+## (Intercept)             -111.292459    2.804949 -39.6772 &lt; 0.00000000000000022 ***
+## sqrt(upper_lower_total)   16.109293    0.111882 143.9845 &lt; 0.00000000000000022 ***
+## Age                       -0.044974    0.014868  -3.0249              0.002491 ** 
+## BodyweightKg               0.028427    0.012135   2.3425              0.019166 *  
+## SexM                      11.600348    0.533687  21.7362 &lt; 0.00000000000000022 ***
+## EquipmentRaw              35.371089    2.165790  16.3317 &lt; 0.00000000000000022 ***
+## EquipmentSingle-ply       18.041719    2.139549   8.4325 &lt; 0.00000000000000022 ***
+## EquipmentWraps            31.616942    2.159710  14.6394 &lt; 0.00000000000000022 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Al utilizar errores estandar robustos, se mantienen los coeficientes estimados por minimos cuadrados, pero se modifican sus errores estandar y valores p.</p>
+<p>En particular, BodyweightKg pasa de presentar un valor p clasico aproximado de 0.003 a un valor p robusto de 0.019.</p>
+<p>A pesar de este incremento, su asociacion continua siendo estadisticamente significativa al nivel del 5%.</p>
+<p>Todos los coeficientes conservan su significancia individual bajo la inferencia robusta HC3, suponiendo independencia de las observaciones.</p>
+<div id="intervalos-de-confianza-robustos" class="section level3 hasAnchor" number="18.11.1">
+<h3><span class="header-section-number">18.11.1</span> Intervalos de confianza robustos<a href="regresion-lineal-multiple.html#intervalos-de-confianza-robustos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb211"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb211-1"><a href="regresion-lineal-multiple.html#cb211-1" tabindex="-1"></a>ee_robusto_rlm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(V_robusta_rlm))</span>
+<span id="cb211-2"><a href="regresion-lineal-multiple.html#cb211-2" tabindex="-1"></a></span>
+<span id="cb211-3"><a href="regresion-lineal-multiple.html#cb211-3" tabindex="-1"></a>tabla_ic_robusto_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb211-4"><a href="regresion-lineal-multiple.html#cb211-4" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">names</span>(<span class="fu">coef</span>(modelo_optimo_rlm)),</span>
+<span id="cb211-5"><a href="regresion-lineal-multiple.html#cb211-5" tabindex="-1"></a>  <span class="at">Inferior =</span> <span class="fu">coef</span>(modelo_optimo_rlm) <span class="sc">-</span></span>
+<span id="cb211-6"><a href="regresion-lineal-multiple.html#cb211-6" tabindex="-1"></a>    t_critico_rlm <span class="sc">*</span> ee_robusto_rlm,</span>
+<span id="cb211-7"><a href="regresion-lineal-multiple.html#cb211-7" tabindex="-1"></a>  <span class="at">Superior =</span> <span class="fu">coef</span>(modelo_optimo_rlm) <span class="sc">+</span></span>
+<span id="cb211-8"><a href="regresion-lineal-multiple.html#cb211-8" tabindex="-1"></a>    t_critico_rlm <span class="sc">*</span> ee_robusto_rlm</span>
+<span id="cb211-9"><a href="regresion-lineal-multiple.html#cb211-9" tabindex="-1"></a>)</span>
+<span id="cb211-10"><a href="regresion-lineal-multiple.html#cb211-10" tabindex="-1"></a></span>
+<span id="cb211-11"><a href="regresion-lineal-multiple.html#cb211-11" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb211-12"><a href="regresion-lineal-multiple.html#cb211-12" tabindex="-1"></a>  tabla_ic_robusto_rlm,</span>
+<span id="cb211-13"><a href="regresion-lineal-multiple.html#cb211-13" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span></span>
+<span id="cb211-14"><a href="regresion-lineal-multiple.html#cb211-14" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="35%" />
+<col width="35%" />
+<col width="14%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="left">Coeficiente</th>
+<th align="right">Inferior</th>
+<th align="right">Superior</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">(Intercept)</td>
+<td align="left">(Intercept)</td>
+<td align="right">-116.7904</td>
+<td align="right">-105.7945</td>
+</tr>
+<tr class="even">
+<td align="left">sqrt(upper_lower_total)</td>
+<td align="left">sqrt(upper_lower_total)</td>
+<td align="right">15.8900</td>
+<td align="right">16.3286</td>
+</tr>
+<tr class="odd">
+<td align="left">Age</td>
+<td align="left">Age</td>
+<td align="right">-0.0741</td>
+<td align="right">-0.0158</td>
+</tr>
+<tr class="even">
+<td align="left">BodyweightKg</td>
+<td align="left">BodyweightKg</td>
+<td align="right">0.0046</td>
+<td align="right">0.0522</td>
+</tr>
+<tr class="odd">
+<td align="left">SexM</td>
+<td align="left">SexM</td>
+<td align="right">10.5543</td>
+<td align="right">12.6464</td>
+</tr>
+<tr class="even">
+<td align="left">EquipmentRaw</td>
+<td align="left">EquipmentRaw</td>
+<td align="right">31.1259</td>
+<td align="right">39.6162</td>
+</tr>
+<tr class="odd">
+<td align="left">EquipmentSingle-ply</td>
+<td align="left">EquipmentSingle-ply</td>
+<td align="right">13.8480</td>
+<td align="right">22.2354</td>
+</tr>
+<tr class="even">
+<td align="left">EquipmentWraps</td>
+<td align="left">EquipmentWraps</td>
+<td align="right">27.3837</td>
+<td align="right">35.8502</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb212"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb212-1"><a href="regresion-lineal-multiple.html#cb212-1" tabindex="-1"></a>lmtest<span class="sc">::</span><span class="fu">coefci</span>(</span>
+<span id="cb212-2"><a href="regresion-lineal-multiple.html#cb212-2" tabindex="-1"></a>  modelo_optimo_rlm,</span>
+<span id="cb212-3"><a href="regresion-lineal-multiple.html#cb212-3" tabindex="-1"></a>  <span class="at">vcov. =</span> V_robusta_rlm,</span>
+<span id="cb212-4"><a href="regresion-lineal-multiple.html#cb212-4" tabindex="-1"></a>  <span class="at">level =</span> <span class="fl">0.95</span></span>
+<span id="cb212-5"><a href="regresion-lineal-multiple.html#cb212-5" tabindex="-1"></a>)</span></code></pre></div>
+<pre><code>##                                  2.5 %        97.5 %
+## (Intercept)             -116.790409554 -105.79450869
+## sqrt(upper_lower_total)   15.889993687   16.32859158
+## Age                       -0.074116674   -0.01583101
+## BodyweightKg               0.004640451    0.05221298
+## SexM                      10.554272519   12.64642275
+## EquipmentRaw              31.125946498   39.61623217
+## EquipmentSingle-ply       13.848010874   22.23542682
+## EquipmentWraps            27.383717397   35.85016606</code></pre>
+<p>Todos los intervalos robustos excluyen el cero, manteniendo las conclusiones sobre la significancia individual de los coeficientes.</p>
+</div>
+</div>
+<div id="independencia-de-las-observaciones-y-limitaciones" class="section level2 hasAnchor" number="18.12">
+<h2><span class="header-section-number">18.12</span> Independencia de las observaciones y limitaciones<a href="regresion-lineal-multiple.html#independencia-de-las-observaciones-y-limitaciones" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La independencia de los errores constituye un supuesto relevante para la inferencia estadistica.</p>
+<p>El conjunto de datos presenta 3009 registros adicionales con nombres de deportistas repetidos, aunque los identificadores playerId son unicos.</p>
+<p>La coincidencia de nombres no permite determinar por si sola que se trate del mismo deportista. Sin embargo, existe la posibilidad de que algunas observaciones correspondan a participaciones repetidas de una misma persona.</p>
+<p>Por tanto, no puede garantizarse completamente la independencia de las observaciones utilizando unicamente la informacion disponible.</p>
+<p>Asimismo, la imputacion mediante la media puede reducir artificialmente la variabilidad de los predictores afectados y los procedimientos de seleccion de modelos pueden introducir incertidumbre adicional en la inferencia.</p>
+<p>Los resultados deben interpretarse principalmente como evidencia exploratoria de asociaciones estadisticas.</p>
+</div>
+<div id="comparacion-entre-regresion-simple-y-multiple" class="section level2 hasAnchor" number="18.13">
+<h2><span class="header-section-number">18.13</span> Comparacion entre regresion simple y multiple<a href="regresion-lineal-multiple.html#comparacion-entre-regresion-simple-y-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb214"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb214-1"><a href="regresion-lineal-multiple.html#cb214-1" tabindex="-1"></a>modelo_simple_original_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb214-2"><a href="regresion-lineal-multiple.html#cb214-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> upper_lower_total,</span>
+<span id="cb214-3"><a href="regresion-lineal-multiple.html#cb214-3" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb214-4"><a href="regresion-lineal-multiple.html#cb214-4" tabindex="-1"></a>)</span>
+<span id="cb214-5"><a href="regresion-lineal-multiple.html#cb214-5" tabindex="-1"></a></span>
+<span id="cb214-6"><a href="regresion-lineal-multiple.html#cb214-6" tabindex="-1"></a>modelo_simple_transformado_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb214-7"><a href="regresion-lineal-multiple.html#cb214-7" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> <span class="fu">sqrt</span>(upper_lower_total),</span>
+<span id="cb214-8"><a href="regresion-lineal-multiple.html#cb214-8" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb214-9"><a href="regresion-lineal-multiple.html#cb214-9" tabindex="-1"></a>)</span>
+<span id="cb214-10"><a href="regresion-lineal-multiple.html#cb214-10" tabindex="-1"></a></span>
+<span id="cb214-11"><a href="regresion-lineal-multiple.html#cb214-11" tabindex="-1"></a>tabla_comparacion_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb214-12"><a href="regresion-lineal-multiple.html#cb214-12" tabindex="-1"></a>  <span class="at">Modelo =</span> <span class="fu">c</span>(</span>
+<span id="cb214-13"><a href="regresion-lineal-multiple.html#cb214-13" tabindex="-1"></a>    <span class="st">&quot;Regresion simple original&quot;</span>,</span>
+<span id="cb214-14"><a href="regresion-lineal-multiple.html#cb214-14" tabindex="-1"></a>    <span class="st">&quot;Regresion simple transformada&quot;</span>,</span>
+<span id="cb214-15"><a href="regresion-lineal-multiple.html#cb214-15" tabindex="-1"></a>    <span class="st">&quot;Regresion multiple original&quot;</span>,</span>
+<span id="cb214-16"><a href="regresion-lineal-multiple.html#cb214-16" tabindex="-1"></a>    <span class="st">&quot;Regresion multiple transformada&quot;</span></span>
+<span id="cb214-17"><a href="regresion-lineal-multiple.html#cb214-17" tabindex="-1"></a>  ),</span>
+<span id="cb214-18"><a href="regresion-lineal-multiple.html#cb214-18" tabindex="-1"></a>  <span class="at">R2 =</span> <span class="fu">c</span>(</span>
+<span id="cb214-19"><a href="regresion-lineal-multiple.html#cb214-19" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>r.squared,</span>
+<span id="cb214-20"><a href="regresion-lineal-multiple.html#cb214-20" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>r.squared,</span>
+<span id="cb214-21"><a href="regresion-lineal-multiple.html#cb214-21" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>r.squared,</span>
+<span id="cb214-22"><a href="regresion-lineal-multiple.html#cb214-22" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>r.squared</span>
+<span id="cb214-23"><a href="regresion-lineal-multiple.html#cb214-23" tabindex="-1"></a>  ),</span>
+<span id="cb214-24"><a href="regresion-lineal-multiple.html#cb214-24" tabindex="-1"></a>  <span class="at">R2_ajustado =</span> <span class="fu">c</span>(</span>
+<span id="cb214-25"><a href="regresion-lineal-multiple.html#cb214-25" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb214-26"><a href="regresion-lineal-multiple.html#cb214-26" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb214-27"><a href="regresion-lineal-multiple.html#cb214-27" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb214-28"><a href="regresion-lineal-multiple.html#cb214-28" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>adj.r.squared</span>
+<span id="cb214-29"><a href="regresion-lineal-multiple.html#cb214-29" tabindex="-1"></a>  ),</span>
+<span id="cb214-30"><a href="regresion-lineal-multiple.html#cb214-30" tabindex="-1"></a>  <span class="at">Error_residual =</span> <span class="fu">c</span>(</span>
+<span id="cb214-31"><a href="regresion-lineal-multiple.html#cb214-31" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>sigma,</span>
+<span id="cb214-32"><a href="regresion-lineal-multiple.html#cb214-32" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>sigma,</span>
+<span id="cb214-33"><a href="regresion-lineal-multiple.html#cb214-33" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>sigma,</span>
+<span id="cb214-34"><a href="regresion-lineal-multiple.html#cb214-34" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>sigma</span>
+<span id="cb214-35"><a href="regresion-lineal-multiple.html#cb214-35" tabindex="-1"></a>  ),</span>
+<span id="cb214-36"><a href="regresion-lineal-multiple.html#cb214-36" tabindex="-1"></a>  <span class="at">AIC =</span> <span class="fu">c</span>(</span>
+<span id="cb214-37"><a href="regresion-lineal-multiple.html#cb214-37" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_simple_original_rlm),</span>
+<span id="cb214-38"><a href="regresion-lineal-multiple.html#cb214-38" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_simple_transformado_rlm),</span>
+<span id="cb214-39"><a href="regresion-lineal-multiple.html#cb214-39" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_completo),</span>
+<span id="cb214-40"><a href="regresion-lineal-multiple.html#cb214-40" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_optimo_rlm)</span>
+<span id="cb214-41"><a href="regresion-lineal-multiple.html#cb214-41" tabindex="-1"></a>  )</span>
+<span id="cb214-42"><a href="regresion-lineal-multiple.html#cb214-42" tabindex="-1"></a>)</span>
+<span id="cb214-43"><a href="regresion-lineal-multiple.html#cb214-43" tabindex="-1"></a></span>
+<span id="cb214-44"><a href="regresion-lineal-multiple.html#cb214-44" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb214-45"><a href="regresion-lineal-multiple.html#cb214-45" tabindex="-1"></a>  tabla_comparacion_rlm,</span>
+<span id="cb214-46"><a href="regresion-lineal-multiple.html#cb214-46" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span></span>
+<span id="cb214-47"><a href="regresion-lineal-multiple.html#cb214-47" tabindex="-1"></a>)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="42%" />
+<col width="9%" />
+<col width="16%" />
+<col width="20%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Modelo</th>
+<th align="right">R2</th>
+<th align="right">R2_ajustado</th>
+<th align="right">Error_residual</th>
+<th align="right">AIC</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Regresion simple original</td>
+<td align="right">0.8326</td>
+<td align="right">0.8326</td>
+<td align="right">25.4393</td>
+<td align="right">175971.9</td>
+</tr>
+<tr class="even">
+<td align="left">Regresion simple transformada</td>
+<td align="right">0.8549</td>
+<td align="right">0.8549</td>
+<td align="right">23.6844</td>
+<td align="right">173269.9</td>
+</tr>
+<tr class="odd">
+<td align="left">Regresion multiple original</td>
+<td align="right">0.8712</td>
+<td align="right">0.8712</td>
+<td align="right">22.3157</td>
+<td align="right">171026.8</td>
+</tr>
+<tr class="even">
+<td align="left">Regresion multiple transformada</td>
+<td align="right">0.8744</td>
+<td align="right">0.8744</td>
+<td align="right">22.0347</td>
+<td align="right">170546.9</td>
+</tr>
+</tbody>
+</table>
+<p>La incorporacion de multiples predictores mejora la capacidad explicativa del modelo respecto a la regresion lineal simple original.</p>
+<p>El coeficiente de determinacion aumenta desde 0.8326 hasta 0.8744, lo cual representa una mejora aproximada de 4.18 puntos porcentuales en la proporcion de variabilidad explicada.</p>
+<p>Esta mejora combina dos efectos: la transformacion raiz cuadrada, que eleva el R2 de 0.8326 a 0.8549 (aproximadamente 2.23 puntos), y la inclusion de edad, peso corporal, sexo y equipamiento, que lo eleva de 0.8549 a 0.8744 (aproximadamente 1.95 puntos).</p>
+<p>El R2 ajustado coincide con el R2 hasta el cuarto decimal en todos los modelos, debido al elevado tamano de la muestra, por lo que la penalizacion por numero de parametros es practicamente nula.</p>
+<p>El error residual disminuye de 25.44 kg en la regresion simple original a 22.03 kg en la regresion multiple transformada, y el AIC desciende de 175971.9 a 170546.9, por lo que el modelo multiple transformado es el de mejor desempeno entre los cuatro comparados.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="transformaciones-para-mejorar-el-ajuste-del-modelo.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="presentacion-del-proyecto-video.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

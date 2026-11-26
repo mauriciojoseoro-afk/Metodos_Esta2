@@ -1,0 +1,47 @@
+---
+title: "Metodologia"
+output: html_document
+date: "2026-09-19"
+---
+
+# Metodologia
+
+Este proyecto se desarrolló bajo un enfoque cuantitativo, de tipo descriptivo, exploratorio y correlacional. Su objetivo principal fue analizar el comportamiento de los datos y determinar la relación existente entre las variables de powerlifting, sin manipular ninguna de ellas de forma experimental.
+
+
+## Fuente de datos y herramientas
+
+Base de datos: Se trabajó con un conjunto de 18.900 registros de competidores. Se analizaron variables como edad, peso corporal y las marcas en los tres movimientos principales: sentadilla, press de banca y peso muerto (definida como la variable de respuesta o principal). Los nombres y números de identificación fueron descartados por no aportar valor analítico.
+Herramientas: Todo el procesamiento, análisis estadístico y la generación de gráficos se llevaron a cabo utilizando el lenguaje de programación R y el entorno RStudio, mediante paquetes especializados para la manipulación de datos, cálculo estadístico y visualización.
+
+## Procedimiento
+
+El desarrollo de la investigación se estructuró en cinco etapas clave:
+Preparación y limpieza de datos: 
+Se corrigieron errores de formato y valores negativos en la marca de sentadilla (correspondientes a intentos fallidos, los cuales se trataron como datos faltantes). Los valores nulos se rellenaron con la media de cada variable numérica, y las variables de sexo y equipamiento se transformaron en variables categóricas (factores).
+
+
+## Análisis exploratorio de datos: 
+
+Se calcularon medidas estadísticas descriptivas (como promedios, dispersión y forma de la distribución) y se crearon gráficos (histogramas, diagramas de caja y de dispersión) para estudiar la distribución individual de cada variable y su relación con el peso muerto.
+
+
+## Ingeniería de características:
+
+Se analizó la correlación entre las variables numéricas y se creó una nueva variable combinando las marcas de sentadilla y press de banca. Posteriormente, se evaluó su relación con la variable de respuesta mediante el coeficiente de correlación de Spearman.
+
+
+
+
+## Verificación de supuestos: 
+
+Se evaluó si los datos cumplían con los supuestos estadísticos tradicionales utilizando la prueba de Kolmogorov-Smirnov (para verificar la normalidad, adecuada para muestras grandes), como los datos no siguen un comportamiento normal no cumple uno de los supuestos para aplicar anova.
+
+
+## Pruebas de hipótesis: 
+
+En función de los resultados de las pruebas anteriores, se aplicaron métodos no paramétricos con un nivel de significancia de 0.05
+
+La prueba de Mann-Whitney-Wilcoxon para comparar los resultados según el sexo (dos grupos).
+
+La prueba de Kruskal-Wallis, complementada con la prueba post-hoc de Dunn y la corrección de Bonferroni, para analizar las diferencias según el tipo de equipamiento (cuatro grupos).

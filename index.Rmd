@@ -1,0 +1,24 @@
+--- 
+title: "Analisis exploratorio de datos - Powerlifting Dead Weight Predict"
+author: "Karla Paredes y Mauricio Orozco"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: " "
+---
+
+
+```{r include=FALSE}
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+
+

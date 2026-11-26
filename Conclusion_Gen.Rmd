@@ -1,0 +1,18 @@
+---
+title: "Conclusion_Gen"
+output: html_document
+date: "2026-09-19"
+---
+
+# Conclusión
+
+Se realizó un análisis estadístico completo sobre la base de datos de powerlifting, desde la limpieza de los datos hasta las pruebas de hipótesis y correlación planteadas en los objetivos.
+
+La variable BestDeadliftKg presentó una distribución prácticamente simétrica (asimetría = 0.11) y ninguna variable numérica del estudio cumplió el supuesto de normalidad, por lo que se utilizaron pruebas no paramétricas en todo el análisis.
+
+Se encontró una diferencia significativa en el peso muerto según el sexo, pues los hombres presentan una mediana de 230 kg frente a 137.5 kg en las mujeres. También se encontró diferencia significativa según el tipo de equipamiento, con un peso muerto creciente en el orden Raw < Single-ply < Wraps < Multi-ply. Además, el sexo y el equipamiento resultaron estar asociados entre sí, no son independientes.
+
+En cuanto a la correlación, tanto el peso corporal (p = 0.67) como la fuerza combinada de sentadilla y press de banca (ρ = 0.93) mostraron relación significativa con el peso muerto. La variable upper_lower_total, creada en la ingeniería de características, fue el predictor con mayor correlación de todo el estudio.
+
+Con esto se responde la pregunta problema planteada, el rendimiento en peso muerto sí está relacionado con el sexo, el equipamiento y la fuerza en los otros dos levantamientos.
+

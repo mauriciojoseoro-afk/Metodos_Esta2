@@ -1,0 +1,16 @@
+---
+title: "Introduccion"
+output: html_document
+date: "2026-09-18"
+---
+# Introducción
+
+Este proyecto tiene como propósito realizar un analisis estadístico completo sobre una base de datos de powerlifting, compuesta por 18.900 registros de competidores de este deporte, con variables como edad, sexo, tipo de equipamiento utilizado y los resultados obtenidos en los tres levantamientos principales: sentadilla, press de banca y peso muerto.
+
+El powerlifting es un deporte de fuerza en el que el rendimiento de un atleta depende de varios factores físicos y biomecánicos, entre ellos la edad, el peso corporal y el tipo de equipamiento que utiliza durante la competencia. Entender cómo se relacionan estos factores es importante no solo desde el punto de vista analítico, sino también para fines prácticos, como diseñar estrategias de entrenamiento o estimar el potencial de un atleta en un levantamiento a partir de su desempeño en los demás.
+
+se realizo un analisis exploratorio de datos (EDA), en el cual se eligio la variable BestDeadliftKg (mejor marca en peso muerto) como variable respuesta del estudio. El objetivo fue analizar su comportamiento de forma individual y su relación con las demas variables del conjunto de datos: edad, sexo, tipo de equipamiento, peso corporal, mejor sentadilla y mejor press de banca. Con esto se busco entender como se distribuye el peso muerto entre los competidores y qué variables parecen influir más en sus resultados. Durante esta etapa tambien se identificaron y corrigieron inconsistencias en los datos, se evaluo la normalidad de las variables numericas mediante pruebas de ajuste, y se llevo a cabo un proceso de ingenieria de caracteristicas para construir nuevas variables a partir de las ya existentes.
+
+A partir de los hallazgos del EDA, al comprobarse que las variables numericas no siguen una distribución normal, en una segunda etapa del proyecto se aplican herramientas de estadistica inferencial para determinar si las diferencias observadas en el peso muerto entre distintos grupos, segun el sexo de los atletas y el tipo de equipamiento utilizado en competencia, son estadísticamente significativas o si pueden atribuirse al azar. Para ello se sigue un proceso estructurado que inicia con la verificación de los supuestos de normalidad y homogeneidad de varianzas en cada grupo de comparación. Esto determina si es adecuado aplicar pruebas parametricas como t-Student o ANOVA, o si es necesario recurrir a sus alternativas no paramétricas, como Mann-Whitney-Wilcoxon o Kruskal-Wallis, complementadas con pruebas post-hoc cuando la comparación involucra más de dos grupos.
+
+

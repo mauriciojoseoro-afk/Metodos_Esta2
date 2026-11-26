@@ -1,0 +1,45 @@
+---
+title: "Marco_Teorico"
+output: html_document
+date: "2026-09-19"
+---
+
+# Marco Teorico
+
+## 1,1 El powerlifting como deporte de fuerza
+
+El powerlifting es un deporte nacido de la necesidad y el deseo de crear una disciplina en donde se evidencie la fuerza máxima del ser humano, tanto en categorías femeninas como masculinas.
+
+Este deporte se practica con una barra de metal con dimensiones específicas, a la cual se le agregan discos con diversos pesos, donde el objetivo es cargar la mayor cantidad de peso posible en tres ejercicios básicos. Cada participante cuenta con tres intentos por cada ejercicio para levantar la barra, teniéndose en cuenta la mayor cantidad de peso levantado en los tres intentos (Doncel, 2010).
+
+## 1.2 Técnica
+
+Las técnicas que se deben dominar para el powerlifting son press de banca, sentadilla y peso muerto; en las tres se usa una barra con discos de diversos pesos conectados a ella. Las pruebas buscan sacar el máximo potencial de los competidores, poniendo a prueba diversas partes del cuerpo.
+
+## 1.3 Press de banca
+
+El levantador se tumba sobre un banco boca arriba con las piernas tocando el suelo; el objetivo es levantar la barra con los brazos de abajo hacia arriba, utilizando los músculos del brazo y exigiéndole al torso en dicha prueba.
+
+## 1.4 Sentadilla
+
+El levantador tendrá la barra en la parte superior de la espalda y procederá a flexionar las rodillas para bajar y después subir, cargando el peso de la barra y exigiéndole a sus piernas y glúteos en el proceso.
+
+## 1.5 Peso muerto
+
+El objetivo es levantar la barra, ubicada en el suelo, hasta las caderas. El levantador no podrá utilizar la fuerza de sus brazos ni flexionar las rodillas como en el ejercicio de sentadilla, la disciplina exige utilizar la fuerza de las piernas y glúteos para poder realizar este ejercicio.
+
+## 1.6 Peso corporal y Categorías por peso
+
+Las competiciones se dividen en categoría femenina y masculina. Se establecen nueve categorías de peso para las mujeres (desde menos de 48 kilos hasta más de 90 kilos) y diez para los hombres (desde menos de 56 kilos hasta más de 125 kilos). Dependiendo de la edad, se puede competir en subjúnior (14 a 18 años), júnior (19 a 23 años) o veteranos (a partir de 40 años, con diferentes subdivisiones), existiendo también la categoría absoluta, en la que se puede participar una vez cumplidos los 14 años (Doncel, 2010).
+1.7 Las federaciones de powerlifting distinguen a los competidores según el soporte mecánico de su equipamiento. En la modalidad Raw solo se permiten elementos básicos como cinturón, calzado y rodilleras o vendas no compresivas. En la modalidad Wraps se permite además el uso de vendas de rodilla compresivas durante la sentadilla, las cuales generan un efecto de rebote elástico y ayudan al atleta a generar más fuerza en la fase de ascenso.
+
+Dentro de la modalidad equipada "se permiten los materiales que en RAW no estaban permitidos" (Guillén Vitaller, 2018, p. 8), diferenciándose a su vez entre Single-ply (traje de una sola capa) y Multi-ply (traje de múltiples capas), según el número de capas del traje utilizado. Estos trajes almacenan energía elástica al estirarse en el descenso del movimiento, energía que se libera para ayudar al atleta en el ascenso.
+Este efecto no es solo reglamentario, sino biomecánico. Blatnik, Skinner y McBride (2012) señalan que, hasta su estudio, "no previous investigation has examined the effect of an SS on squat performance", y al comparar a 8 powerlifters de élite con y sin traje de sentadilla, hallaron diferencias significativas en fuerza, velocidad y potencia entre ambas condiciones.
+
+El equipamiento en el powerlifting puede servir tanto de ayuda y mecanismo de seguridad, sin embargo, dependiendo de la federación o la modalidad, algunos de los equipamientos pueden estar prohibidos, por lo cual su uso puede sancionar o revocar la participación de un powerlifter, pues brindan una ventaja significativa.
+
+## 1.8 Diferencias de fuerza asociadas al sexo
+
+Durante la pubertad, hombres y mujeres experimentan cambios hormonales que determinan el desarrollo de sus características físicas de forma diferenciada. En el caso de los varones, el incremento en la secreción de testosterona durante esta etapa favorece un mayor anabolismo proteico, lo que se traduce en un desarrollo muscular considerablemente superior al que presentan las mujeres en el mismo periodo; además, atraviesan una fase de crecimiento más prolongada, lo cual les permite alcanzar no solo una mayor estatura, sino también un mayor peso corporal y tamaño corporal general en comparación con ellas. En cuanto a la composición corporal, mientras los estrógenos favorecen en las mujeres una mayor acumulación de tejido adiposo, los andrógenos presentes en los varones incrementan de forma predominante el tejido libre de grasa, diferencia hormonal que resulta en gran parte responsable de la brecha en el rendimiento físico observada entre ambos sexos a partir de la pubertad. Esta diferencia se mantiene e incluso se acentúa en la adultez: los hombres llegan a presentar hasta un 40% más de masa muscular que las mujeres en la mayoría de los grupos musculares, siendo esta diferencia aún más marcada en los miembros superiores del cuerpo, debido a que los varones concentran una mayor proporción de su masa corporal en la parte superior (León París, 2000). 
+
+Esto deja en evidencia que el desarrollo entre hombres y mujeres es muy diferente, con el hombre poseyendo un 40% más de masa muscular a comparación con una mujer y un desarrollo hormonal “superior”, esto hace la diferencia en el powerlifting pues quien posee más masa muscular tiende a desarrollar mucha más fuerza, lo que conlleva a desempeñarse mejor al momento de realizar las tres disciplinas del powerlifting (Sentadilla, Press de banca y Peso muerto). 
