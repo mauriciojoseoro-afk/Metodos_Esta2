@@ -1,12 +1,12 @@
 tab:primerasfilas
 tab:str
 tab:caracterizaciontarget
-tab:unnamed-chunk-11
+tab:unnamed-chunk-10
 tab:caracterizacionnueva
+tab:unnamed-chunk-36
 tab:unnamed-chunk-37
 tab:unnamed-chunk-38
 tab:unnamed-chunk-39
-tab:unnamed-chunk-40
 tab:errores
 tab:lilliefors
 tab:bp
