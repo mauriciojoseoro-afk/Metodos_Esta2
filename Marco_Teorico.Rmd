@@ -1,0 +1,131 @@
+---
+title: "Marco_Teorico"
+output: html_document
+date: "2026-09-19"
+---
+
+# Marco Teorico
+
+## El powerlifting como deporte de fuerza
+
+El powerlifting es un deporte nacido de la necesidad y el deseo de crear una disciplina en donde se evidencie la fuerza máxima del ser humano, tanto en categorías femeninas como masculinas.
+
+Este deporte se practica con una barra de metal con dimensiones específicas, a la cual se le agregan discos con diversos pesos, donde el objetivo es cargar la mayor cantidad de peso posible en tres ejercicios básicos. Cada participante cuenta con tres intentos por cada ejercicio para levantar la barra, teniéndose en cuenta la mayor cantidad de peso levantado en los tres intentos (Doncel, 2010).
+
+## Técnica
+
+Las técnicas que se deben dominar para el powerlifting son press de banca, sentadilla y peso muerto; en las tres se usa una barra con discos de diversos pesos conectados a ella. Las pruebas buscan sacar el máximo potencial de los competidores, poniendo a prueba diversas partes del cuerpo.
+
+## Press de banca
+
+El levantador se tumba sobre un banco boca arriba con las piernas tocando el suelo; el objetivo es levantar la barra con los brazos de abajo hacia arriba, utilizando los músculos del brazo y exigiéndole al torso en dicha prueba.
+
+## Sentadilla
+
+El levantador tendrá la barra en la parte superior de la espalda y procederá a flexionar las rodillas para bajar y después subir, cargando el peso de la barra y exigiéndole a sus piernas y glúteos en el proceso.
+
+## Peso muerto
+
+El objetivo es levantar la barra, ubicada en el suelo, hasta las caderas. El levantador no podrá utilizar la fuerza de sus brazos ni flexionar las rodillas como en el ejercicio de sentadilla, la disciplina exige utilizar la fuerza de las piernas y glúteos para poder realizar este ejercicio.
+
+## Peso corporal y Categorías por peso
+
+Las competiciones se dividen en categoría femenina y masculina. Se establecen nueve categorías de peso para las mujeres (desde menos de 48 kilos hasta más de 90 kilos) y diez para los hombres (desde menos de 56 kilos hasta más de 125 kilos). Dependiendo de la edad, se puede competir en subjúnior (14 a 18 años), júnior (19 a 23 años) o veteranos (a partir de 40 años, con diferentes subdivisiones), existiendo también la categoría absoluta, en la que se puede participar una vez cumplidos los 14 años (Doncel, 2010).
+1.7 Las federaciones de powerlifting distinguen a los competidores según el soporte mecánico de su equipamiento. En la modalidad Raw solo se permiten elementos básicos como cinturón, calzado y rodilleras o vendas no compresivas. En la modalidad Wraps se permite además el uso de vendas de rodilla compresivas durante la sentadilla, las cuales generan un efecto de rebote elástico y ayudan al atleta a generar más fuerza en la fase de ascenso.
+
+Dentro de la modalidad equipada "se permiten los materiales que en RAW no estaban permitidos" (Guillén Vitaller, 2018, p. 8), diferenciándose a su vez entre Single-ply (traje de una sola capa) y Multi-ply (traje de múltiples capas), según el número de capas del traje utilizado. Estos trajes almacenan energía elástica al estirarse en el descenso del movimiento, energía que se libera para ayudar al atleta en el ascenso.
+Este efecto no es solo reglamentario, sino biomecánico. Blatnik, Skinner y McBride (2012) señalan que, hasta su estudio, "no previous investigation has examined the effect of an SS on squat performance", y al comparar a 8 powerlifters de élite con y sin traje de sentadilla, hallaron diferencias significativas en fuerza, velocidad y potencia entre ambas condiciones.
+
+El equipamiento en el powerlifting puede servir tanto de ayuda y mecanismo de seguridad, sin embargo, dependiendo de la federación o la modalidad, algunos de los equipamientos pueden estar prohibidos, por lo cual su uso puede sancionar o revocar la participación de un powerlifter, pues brindan una ventaja significativa.
+
+## 1.8 Diferencias de fuerza asociadas al sexo
+
+Durante la pubertad, hombres y mujeres experimentan cambios hormonales que determinan el desarrollo de sus características físicas de forma diferenciada. En el caso de los varones, el incremento en la secreción de testosterona durante esta etapa favorece un mayor anabolismo proteico, lo que se traduce en un desarrollo muscular considerablemente superior al que presentan las mujeres en el mismo periodo; además, atraviesan una fase de crecimiento más prolongada, lo cual les permite alcanzar no solo una mayor estatura, sino también un mayor peso corporal y tamaño corporal general en comparación con ellas. En cuanto a la composición corporal, mientras los estrógenos favorecen en las mujeres una mayor acumulación de tejido adiposo, los andrógenos presentes en los varones incrementan de forma predominante el tejido libre de grasa, diferencia hormonal que resulta en gran parte responsable de la brecha en el rendimiento físico observada entre ambos sexos a partir de la pubertad. Esta diferencia se mantiene e incluso se acentúa en la adultez: los hombres llegan a presentar hasta un 40% más de masa muscular que las mujeres en la mayoría de los grupos musculares, siendo esta diferencia aún más marcada en los miembros superiores del cuerpo, debido a que los varones concentran una mayor proporción de su masa corporal en la parte superior (León París, 2000). 
+
+Esto deja en evidencia que el desarrollo entre hombres y mujeres es muy diferente, con el hombre poseyendo un 40% más de masa muscular a comparación con una mujer y un desarrollo hormonal “superior”, esto hace la diferencia en el powerlifting pues quien posee más masa muscular tiende a desarrollar mucha más fuerza, lo que conlleva a desempeñarse mejor al momento de realizar las tres disciplinas del powerlifting (Sentadilla, Press de banca y Peso muerto). 
+
+
+## Fundamentos estadísticos
+
+### Análisis exploratorio de datos
+
+El análisis exploratorio de datos constituye una etapa fundamental del proceso estadístico, orientada a comprender la estructura, distribución y comportamiento de las variables antes de aplicar procedimientos de inferencia o modelación. Mediante medidas de tendencia central, dispersión y forma, complementadas con histogramas, diagramas de caja y gráficos de dispersión, es posible identificar patrones, posibles valores atípicos y relaciones entre las variables.
+
+En el contexto del powerlifting, estas herramientas permiten caracterizar el rendimiento de los atletas y establecer una base para los análisis posteriores.
+
+### Estadística paramétrica y no paramétrica
+
+Los métodos de inferencia estadística permiten obtener conclusiones sobre las características de una población a partir de la información proporcionada por una muestra.
+
+Las pruebas paramétricas requieren el cumplimiento de determinados supuestos, como la normalidad y, dependiendo del procedimiento, la homogeneidad de varianzas. Cuando estos supuestos no se cumplen, pueden emplearse procedimientos no paramétricos.
+
+La prueba de Mann-Whitney-Wilcoxon permite comparar dos grupos independientes mediante los rangos de las observaciones. Por su parte, la prueba de Kruskal-Wallis permite realizar comparaciones entre tres o más grupos independientes.
+
+En esta investigación, dichos procedimientos se utilizan para estudiar las diferencias en el rendimiento en peso muerto según el sexo y el equipamiento de los atletas.
+
+### Tablas de contingencia
+
+Las tablas de contingencia permiten organizar las frecuencias observadas correspondientes a las diferentes combinaciones de categorías de dos variables cualitativas. Mediante la prueba de independencia chi-cuadrado se evalúa si existe una asociación estadísticamente significativa entre dichas variables, comparando las frecuencias observadas con las frecuencias esperadas bajo la hipótesis de independencia.
+
+En este estudio, este procedimiento permite analizar la asociación entre el sexo del atleta y el tipo de equipamiento utilizado.
+
+### Coeficiente de correlación
+
+El coeficiente de correlación es una medida estadística que permite cuantificar el grado y la dirección de la asociación entre dos variables.
+
+El coeficiente de Pearson mide la intensidad de la relación lineal, mientras que el coeficiente de Spearman evalúa la asociación monótona a partir de los rangos de las observaciones.
+
+Ambos coeficientes toman valores comprendidos entre −1 y 1. Los valores positivos indican una asociación directa, los negativos una asociación inversa y los valores cercanos a cero indican ausencia o debilidad del tipo de asociación evaluada.
+
+El análisis de correlación constituye una etapa previa a la construcción de los modelos de regresión, ya que permite identificar variables que presentan relaciones importantes con la variable de respuesta.
+
+### Regresión lineal simple
+
+La regresión lineal simple es un modelo estadístico que permite estudiar la relación entre una variable de respuesta cuantitativa y una única variable explicativa.
+
+Los coeficientes del modelo representan la ordenada al origen y la pendiente de la recta de regresión. La pendiente permite cuantificar el cambio esperado en la variable de respuesta asociado a un incremento unitario de la variable explicativa. Los parámetros del modelo se estiman mediante el método de mínimos cuadrados ordinarios, cuyo objetivo consiste en minimizar la suma de los cuadrados de las diferencias entre los valores observados y los valores ajustados.
+
+En el presente estudio, la regresión lineal simple permite analizar la relación entre la fuerza combinada de sentadilla y press de banca y el rendimiento en peso muerto.
+
+### Regresión lineal múltiple
+
+La regresión lineal múltiple constituye una extensión de la regresión lineal simple que permite estudiar el comportamiento de una variable de respuesta a partir de dos o más variables explicativas.
+
+Cada coeficiente de regresión representa el cambio esperado en la variable de respuesta asociado a una unidad adicional del predictor correspondiente, manteniendo constantes las demás variables incluidas en el modelo. Para las variables categóricas, los coeficientes representan diferencias respecto a una categoría de referencia.
+
+La estimación de los parámetros puede realizarse mediante operaciones matriciales, aplicando el método de mínimos cuadrados ordinarios.
+
+En el contexto de esta investigación, la regresión lineal múltiple permite estudiar conjuntamente las características físicas y deportivas de los atletas relacionadas con su rendimiento en peso muerto.
+
+### Coeficiente de determinación
+
+El coeficiente de determinación, representado mediante R², permite cuantificar la proporción de la variabilidad observada en la variable de respuesta que es explicada por el modelo de regresión ajustado. En regresión lineal múltiple también se utiliza el coeficiente de determinación ajustado, el cual considera el número de predictores incluidos en el modelo. Estas medidas permiten evaluar la capacidad explicativa de los modelos, aunque un valor elevado no garantiza por sí mismo el cumplimiento de los supuestos estadísticos.
+
+### Inferencia estadística en los modelos de regresión
+
+La inferencia estadística permite evaluar los parámetros poblacionales de los modelos de regresión mediante intervalos de confianza y pruebas de hipótesis.
+
+Las pruebas individuales permiten determinar si un coeficiente de regresión es significativamente diferente de cero, mientras que la prueba de significancia global permite evaluar si al menos uno de los predictores contribuye a explicar el comportamiento de la variable de respuesta. El análisis de varianza permite descomponer la variabilidad total en una componente explicada por el modelo y una componente asociada a los errores.
+
+### Supuestos de los modelos de regresión
+
+La aplicación de los modelos clásicos de regresión lineal requiere considerar los supuestos de linealidad, independencia, normalidad, media cero y varianza constante de los errores.
+
+El diagnóstico de estos supuestos se realiza mediante el análisis de los residuos, utilizando herramientas gráficas y pruebas estadísticas.
+
+Su evaluación es necesaria para establecer las condiciones bajo las cuales pueden interpretarse adecuadamente las pruebas de hipótesis, los intervalos de confianza y los resultados del modelo.
+
+### Multicolinealidad
+
+La multicolinealidad se presenta cuando existe una relación lineal importante entre las variables explicativas de un modelo de regresión múltiple. Esta situación puede dificultar la estimación e interpretación individual de los coeficientes. Para su diagnóstico se emplean herramientas como las matrices de correlación y el factor de inflación de la varianza (VIF).
+
+### Transformación de variables
+
+Las transformaciones de variables permiten evaluar especificaciones alternativas de un modelo de regresión cuando la relación original no presenta un comportamiento lineal adecuado o cuando se identifican dificultades en el ajuste. En esta investigación se considera la transformación de raíz cuadrada de la fuerza combinada de sentadilla y press de banca, conservando la variable de respuesta en su escala original.
+
+### Selección de modelos
+
+La selección de modelos busca identificar una representación estadística adecuada de la relación entre las variables explicativas y la variable de respuesta. Entre los criterios considerados se encuentran el coeficiente de determinación ajustado y el criterio de información de Akaike (AIC), que permite comparar modelos ajustados considerando tanto su ajuste como su complejidad.
+
+
+

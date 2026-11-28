@@ -1,0 +1,34 @@
+---
+title: "Conclusion_Gen"
+output: html_document
+date: "2026-09-19"
+---
+
+# Conclusión
+
+# Conclusión general
+
+Este estudio permitió analizar integralmente los factores asociados al rendimiento en peso muerto de los atletas de powerlifting mediante la aplicación de herramientas de estadística descriptiva, inferencial y modelos de regresión lineal simple y múltiple, utilizando una base de datos conformada por 18.900 registros.
+
+Durante el análisis exploratorio se identificaron patrones relevantes en el comportamiento de las variables físicas y deportivas de los atletas. La preparación de los datos y la ingeniería de características permitieron construir una variable representativa de la fuerza combinada de sentadilla y press de banca, la cual desempeñó un papel fundamental en los análisis posteriores.
+
+Los procedimientos de estadística no paramétrica permitieron identificar diferencias estadísticamente significativas en el rendimiento en peso muerto según el sexo y el tipo de equipamiento utilizado. Adicionalmente, mediante la prueba de independencia chi-cuadrado se evidenció una asociación estadísticamente significativa entre ambas variables categóricas.
+
+El análisis de correlación mostró que tanto el peso corporal como la fuerza combinada de sentadilla y press de banca presentan asociaciones positivas con el rendimiento en peso muerto. Los coeficientes de correlación de Spearman obtenidos fueron de 0,6701 y 0,9321, respectivamente, siendo la fuerza combinada la variable que presentó la asociación de mayor intensidad entre las relaciones evaluadas en esta etapa.
+
+A partir de estos hallazgos, se construyó un modelo de regresión lineal simple que permitió explicar aproximadamente el 83,26 % de la variabilidad observada en el rendimiento en peso muerto. La aplicación de una transformación de raíz cuadrada sobre la fuerza combinada incrementó esta proporción al 85,49 %, evidenciando una mejora en el ajuste del modelo.
+
+Posteriormente, la incorporación simultánea de la edad, el peso corporal, el sexo, el equipamiento y la fuerza combinada transformada mediante un modelo de regresión lineal múltiple permitió aumentar el coeficiente de determinación hasta 0,8744. Este resultado indica que aproximadamente el 87,44 % de la variabilidad observada en el rendimiento en peso muerto es explicada por el modelo ajustado.
+
+Asimismo, el error estándar residual disminuyó de aproximadamente 25,44 kg en el modelo de regresión lineal simple original a 22,03 kg en el modelo múltiple transformado. La comparación mediante el criterio de información de Akaike también favoreció esta última especificación.
+
+En consecuencia, el modelo de regresión lineal múltiple transformado presentó las mejores características de ajuste entre los modelos considerados. La fuerza combinada constituye un predictor de especial relevancia, mientras que la incorporación de las demás características físicas y deportivas proporciona información adicional para explicar las diferencias observadas en el rendimiento.
+
+No obstante, el análisis de los residuos evidenció que no se cumplen completamente los supuestos clásicos de regresión, particularmente los relacionados con la normalidad y la homocedasticidad de los errores. También se reconoce la posible dependencia entre algunas observaciones y las limitaciones derivadas del tratamiento de los valores faltantes.
+
+Por lo anterior, la elevada capacidad explicativa del modelo no debe interpretarse como evidencia de causalidad ni como garantía de precisión predictiva fuera de la muestra analizada.
+
+En respuesta a la pregunta problema, se concluye que el rendimiento en peso muerto se encuentra asociado con diferentes características físicas y deportivas de los atletas, y que los modelos de regresión permiten cuantificar dichas relaciones y explicar una proporción considerable de la variabilidad observada.
+
+Finalmente, esta investigación evidencia la utilidad de integrar diferentes procedimientos estadísticos para comprender fenómenos deportivos, destacando la importancia de seleccionar modelos no únicamente por su capacidad explicativa, sino también por la interpretación de sus parámetros, la evaluación de sus supuestos y el reconocimiento de sus limitaciones.
+

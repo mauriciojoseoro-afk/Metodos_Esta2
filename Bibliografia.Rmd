@@ -1,0 +1,17 @@
+---
+title: "Bibliografia"
+output: html_document
+date: "2026-09-19"
+---
+
+# Bibliografía
+
+Blatnik, J. A., Skinner, J. W., & McBride, J. M. (2012). Effect of supportive equipment on force, velocity, and power in the squat. *Journal of Strength and Conditioning Research, 26*(12), 3204–3208.
+
+De Oro Aguado, C. (2026). *Notas de métodos estadísticos*. https://cdeoroaguado.github.io/rbook_met_estad/
+
+Doncel, L. (2010). *Manual de powerlifting y otras modalidades de levantamiento de peso*. Visión Libros.
+
+Guillén Vitaller, O. (2018). *Análisis de las variables en powerlifting* [Trabajo de fin de grado, Universitat de Lleida, INEFC].
+
+León París, C. (2000). Influencia del sexo en la práctica deportiva. Biología de la mujer deportista. *Arbor, 165*(650), 249–263.

@@ -1,0 +1,23 @@
+---
+title: "Introduccion"
+output: html_document
+date: "2026-09-18"
+---
+# Introducción
+
+# Introducción
+
+El powerlifting es una disciplina deportiva de fuerza cuyo objetivo consiste en levantar la mayor cantidad de peso posible en tres movimientos fundamentales: sentadilla, press de banca y peso muerto. El rendimiento de los atletas en estas pruebas se encuentra relacionado con diferentes características físicas, deportivas y competitivas, entre las que se destacan la edad, el sexo, el peso corporal y el tipo de equipamiento utilizado durante la competencia.
+
+El proyecto tiene como propósito realizar un análisis estadístico sobre una base de datos de powerlifting, conformada por 18.900 observaciones. Se establece como variable de respuesta el mejor levantamiento en peso muerto (BestDeadliftKg), con el fin de identificar los factores asociados a su comportamiento, cuantificar las relaciones existentes entre las variables y construir modelos estadísticos que permitan estimar dicho rendimiento.
+
+En una primera etapa, se realiza un análisis exploratorio de datos que comprende la identificación y corrección de inconsistencias, el tratamiento de valores faltantes, la caracterización de las variables y el estudio de sus distribuciones mediante herramientas gráficas y medidas estadísticas descriptivas. Asimismo, se desarrolla un proceso de ingeniería de características orientado a representar de manera conjunta el rendimiento obtenido en sentadilla y press de banca.
+
+Posteriormente, se aplican herramientas de estadística inferencial paramétrica y no paramétrica, considerando los supuestos correspondientes a cada procedimiento. Se estudian las diferencias en el rendimiento en peso muerto según el sexo y el equipamiento, la asociación entre variables categóricas y el grado de relación entre las variables cuantitativas mediante coeficientes de correlación.
+
+A partir de los resultados anteriores, se desarrolla un modelo de regresión lineal simple para estudiar la relación entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto. Se estiman los parámetros del modelo mediante el método de mínimos cuadrados, se evalúa su capacidad explicativa y se analizan los supuestos asociados a los errores.
+
+Finalmente, se construye un modelo de regresión lineal múltiple que permite estudiar simultáneamente la relación de diferentes variables explicativas con el rendimiento en peso muerto. Se analiza la multicolinealidad, la significancia global e individual de los coeficientes y la bondad de ajuste de los modelos considerados, incorporando transformaciones cuando estas permiten mejorar su ajuste.
+
+De esta manera, el proyecto integra herramientas de estadística descriptiva, inferencial y de modelación estadística para proporcionar una comprensión más amplia del rendimiento en powerlifting, reconociendo tanto la capacidad explicativa de los modelos obtenidos como las limitaciones asociadas a sus supuestos y a la naturaleza de los datos.
+

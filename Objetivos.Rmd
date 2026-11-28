@@ -1,0 +1,35 @@
+---
+title: "Objetivos"
+output: html_document
+date: "2026-09-19"
+---
+
+# Objetivos generales y especificos
+
+## Pregunta problema
+
+¿Qué factores se encuentran asociados al rendimiento en peso muerto de los atletas de powerlifting y en qué medida los modelos de regresión lineal simple y múltiple permiten explicar y estimar dicho rendimiento a partir de sus características físicas y deportivas?
+
+## Objetivo general
+
+Analizar los factores asociados al rendimiento en peso muerto de los atletas de powerlifting mediante herramientas de estadística descriptiva, inferencial y modelos de regresión lineal simple y múltiple, con el propósito de identificar relaciones estadísticamente significativas, cuantificar su magnitud y determinar la capacidad explicativa de las variables consideradas.
+
+## Objetivos específicos
+
+1. Caracterizar las variables del conjunto de datos mediante medidas estadísticas descriptivas y representaciones gráficas, identificando inconsistencias y valores faltantes que puedan afectar el análisis.
+
+2. Evaluar los supuestos estadísticos necesarios para seleccionar los procedimientos de inferencia paramétrica y no paramétrica adecuados.
+
+3. Determinar si existen diferencias estadísticamente significativas en el rendimiento en peso muerto según el sexo de los atletas y el tipo de equipamiento utilizado durante la competencia.
+
+4. Analizar la existencia de una asociación estadísticamente significativa entre el sexo de los atletas y el tipo de equipamiento empleado mediante tablas de contingencia y pruebas de independencia.
+
+5. Cuantificar el grado y la dirección de la relación entre el rendimiento en peso muerto, el peso corporal y la fuerza combinada de sentadilla y press de banca mediante coeficientes de correlación.
+
+6. Construir un modelo de regresión lineal simple que permita estudiar y cuantificar la relación entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto.
+
+7. Desarrollar un modelo de regresión lineal múltiple que permita analizar la relación simultánea de la edad, el peso corporal, el sexo, el equipamiento y las marcas deportivas con el rendimiento en peso muerto.
+
+8. Evaluar los modelos de regresión mediante la estimación de parámetros, intervalos de confianza, pruebas de hipótesis, medidas de bondad de ajuste y diagnóstico de los supuestos.
+
+9. Comparar los modelos de regresión originales y transformados mediante el coeficiente de determinación, el coeficiente de determinación ajustado, el error estándar residual y el criterio de información de Akaike, con el propósito de seleccionar el modelo que presente el mejor ajuste entre las alternativas consideradas.

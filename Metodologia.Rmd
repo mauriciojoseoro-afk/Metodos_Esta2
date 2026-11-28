@@ -1,0 +1,113 @@
+---
+title: "Metodologia"
+output: html_document
+date: "2026-09-19"
+---
+
+# Metodología
+
+## Diseño de la investigación
+
+La presente investigación se desarrolla bajo un enfoque cuantitativo, con un diseño no experimental y un alcance exploratorio, descriptivo, correlacional y de modelación estadística.
+
+El estudio se fundamenta en el análisis de registros existentes de atletas de powerlifting, sin realizar manipulaciones experimentales sobre las variables. Se busca caracterizar su comportamiento, identificar asociaciones estadísticamente significativas y construir modelos que permitan explicar y estimar el rendimiento en peso muerto.
+
+## Fuente de datos
+
+Se utiliza una base de datos conformada por 18.900 registros correspondientes a atletas de powerlifting, que contiene información relacionada con sus características físicas, el equipamiento utilizado y los resultados obtenidos en los tres levantamientos principales.
+
+La variable BestDeadliftKg, correspondiente al mejor levantamiento en peso muerto expresado en kilogramos, se establece como variable de respuesta.
+
+Las variables explicativas consideradas comprenden la edad, el sexo, el peso corporal, el tipo de equipamiento y los resultados obtenidos en sentadilla y press de banca.
+
+## Herramientas computacionales
+
+El procesamiento de los datos, los cálculos estadísticos, el ajuste de los modelos y la generación de representaciones gráficas se realizan mediante el lenguaje de programación R y el entorno de desarrollo RStudio.
+
+La elaboración y organización del informe se lleva a cabo mediante R Markdown y Bookdown, integrando el código computacional, los resultados y sus correspondientes interpretaciones estadísticas.
+
+Los procedimientos estadísticos se fundamentan en las notas de clase de la asignatura Métodos Estadísticos.
+
+## Procedimiento metodológico
+
+### Etapa 1. Preparación y limpieza de datos
+
+Se realiza una revisión inicial de la estructura de la base de datos, identificando los tipos de variables, valores faltantes e inconsistencias en los registros.
+
+Se corrigen los problemas de formato de la variable correspondiente al mejor levantamiento en sentadilla. Los valores negativos identificados en esta variable se consideran datos faltantes y se realiza una imputación mediante la media de las variables numéricas correspondientes.
+
+Las variables cualitativas se convierten en factores y los identificadores personales no se incluyen como predictores de los modelos estadísticos.
+
+### Etapa 2. Análisis exploratorio de datos
+
+Se desarrolla un análisis univariado y bivariado mediante medidas estadísticas descriptivas y representaciones gráficas.
+
+El análisis univariado permite caracterizar individualmente las variables, mientras que el análisis bivariado permite identificar patrones de asociación entre ellas, prestando especial atención a su relación con el mejor levantamiento en peso muerto.
+
+### Etapa 3. Ingeniería de características
+
+A partir de las relaciones identificadas durante el análisis exploratorio, se construyen nuevas variables que permiten representar características relevantes del rendimiento deportivo.
+
+Se define la variable upper_lower_total como la suma de las mejores marcas obtenidas en sentadilla y press de banca. Adicionalmente, se construyen variables que relacionan las marcas deportivas con el peso corporal del atleta.
+
+Estas variables se analizan con el propósito de identificar posibles alternativas para la construcción de los modelos de regresión.
+
+### Etapa 4. Análisis de variables categóricas
+
+Se construye una tabla de contingencia entre el sexo y el equipamiento utilizado por los atletas.
+
+Se calculan las frecuencias observadas y esperadas, y se aplica la prueba de independencia chi-cuadrado para determinar si existe una asociación estadísticamente significativa entre ambas variables.
+
+### Etapa 5. Estadística inferencial paramétrica y no paramétrica
+
+Se evalúa el supuesto de normalidad de las variables involucradas en las comparaciones con el propósito de seleccionar el procedimiento estadístico correspondiente.
+
+Considerando los resultados obtenidos, se aplica la prueba de Mann-Whitney-Wilcoxon para comparar el rendimiento en peso muerto entre los dos grupos definidos por el sexo de los atletas.
+
+Posteriormente, se utiliza la prueba de Kruskal-Wallis para evaluar las diferencias existentes entre los cuatro tipos de equipamiento considerados.
+
+Las pruebas de hipótesis se desarrollan utilizando un nivel de significancia del 5 %.
+
+### Etapa 6. Análisis de correlación
+
+Se analiza la relación entre el peso corporal, la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto.
+
+Se utiliza el coeficiente de correlación de Spearman para cuantificar la intensidad y dirección de las asociaciones monótonas observadas, considerando los resultados de las pruebas de normalidad.
+
+Asimismo, se realizan pruebas de hipótesis para evaluar la significancia estadística de las correlaciones obtenidas.
+
+### Etapa 7. Regresión lineal simple
+
+Se construye un modelo de regresión lineal simple utilizando la fuerza combinada de sentadilla y press de banca como variable explicativa y el mejor levantamiento en peso muerto como variable de respuesta.
+
+Se estiman los coeficientes mediante el método de mínimos cuadrados ordinarios, se calcula la varianza residual y se evalúa la capacidad explicativa del modelo mediante el coeficiente de determinación.
+
+Posteriormente, se construyen intervalos de confianza y se realizan pruebas de hipótesis sobre los parámetros del modelo.
+
+Se desarrolla el diagnóstico de los supuestos mediante el análisis de los residuos y se evalúa una especificación alternativa que incorpora la transformación de raíz cuadrada de la fuerza combinada.
+
+### Etapa 8. Regresión lineal múltiple
+
+Se ajusta inicialmente un modelo de regresión lineal múltiple que incorpora la edad, el peso corporal, el sexo, el equipamiento y las marcas individuales de sentadilla y press de banca.
+
+Se analiza la multicolinealidad mediante la matriz de correlaciones y el factor de inflación de la varianza.
+
+Posteriormente, se considera un modelo alternativo que incorpora la transformación de raíz cuadrada de la fuerza combinada, junto con las demás características físicas y deportivas.
+
+Se realiza la estimación matricial de los coeficientes, el cálculo de las sumas de cuadrados, el análisis de varianza, la estimación de la varianza residual y las pruebas de significancia global e individual.
+
+Asimismo, se construyen intervalos de confianza para los parámetros y se evalúan los supuestos del modelo mediante el análisis de los residuos.
+
+### Etapa 9. Comparación y selección del modelo
+
+Se comparan los modelos de regresión lineal simple y múltiple, tanto en sus especificaciones originales como transformadas.
+
+La comparación se realiza mediante el coeficiente de determinación, el coeficiente de determinación ajustado, el error estándar residual y el criterio de información de Akaike.
+
+Finalmente, se selecciona el modelo que presenta las características de ajuste más favorables entre las alternativas evaluadas, considerando las limitaciones identificadas durante el diagnóstico estadístico.
+
+## Consideraciones metodológicas
+
+Los resultados obtenidos se interpretan como asociaciones estadísticas y no como relaciones de causalidad, debido al carácter no experimental de la investigación.
+
+Asimismo, se reconocen las limitaciones asociadas a la imputación de valores faltantes, al posible incumplimiento de los supuestos de regresión y a la imposibilidad de garantizar completamente la independencia de todas las observaciones.

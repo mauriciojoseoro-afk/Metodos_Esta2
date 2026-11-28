@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>16 Regresión Lineal Simple | Bibliografia</title>
+  <meta name="description" content="16 Regresión Lineal Simple | Bibliografia" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="16 Regresión Lineal Simple | Bibliografia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="16 Regresión Lineal Simple | Bibliografia" />
+  
+  
+  
+
+<meta name="author" content="Karla Paredes y Mauricio Orozco" />
+
+
+<meta name="date" content="2026-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="coeficiente-de-correlación-1.html"/>
+<link rel="next" href="análisis-de-los-errores.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>2</b> Introducción</a></li>
+<li class="chapter" data-level="3" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html"><i class="fa fa-check"></i><b>3</b> Objetivos generales y especificos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#pregunta-problema"><i class="fa fa-check"></i><b>3.1</b> Pregunta problema</a></li>
+<li class="chapter" data-level="3.2" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#objetivo-general"><i class="fa fa-check"></i><b>3.2</b> Objetivo general</a></li>
+<li class="chapter" data-level="3.3" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#objetivos-espec%C3%ADficos"><i class="fa fa-check"></i><b>3.3</b> Objetivos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="metodología.html"><a href="metodología.html"><i class="fa fa-check"></i><b>4</b> Metodología</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="metodología.html"><a href="metodología.html#dise%C3%B1o-de-la-investigaci%C3%B3n"><i class="fa fa-check"></i><b>4.1</b> Diseño de la investigación</a></li>
+<li class="chapter" data-level="4.2" data-path="metodología.html"><a href="metodología.html#fuente-de-datos"><i class="fa fa-check"></i><b>4.2</b> Fuente de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="metodología.html"><a href="metodología.html#herramientas-computacionales"><i class="fa fa-check"></i><b>4.3</b> Herramientas computacionales</a></li>
+<li class="chapter" data-level="4.4" data-path="metodología.html"><a href="metodología.html#procedimiento-metodol%C3%B3gico"><i class="fa fa-check"></i><b>4.4</b> Procedimiento metodológico</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="metodología.html"><a href="metodología.html#etapa-1.-preparaci%C3%B3n-y-limpieza-de-datos"><i class="fa fa-check"></i><b>4.4.1</b> Etapa 1. Preparación y limpieza de datos</a></li>
+<li class="chapter" data-level="4.4.2" data-path="metodología.html"><a href="metodología.html#etapa-2.-an%C3%A1lisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>4.4.2</b> Etapa 2. Análisis exploratorio de datos</a></li>
+<li class="chapter" data-level="4.4.3" data-path="metodología.html"><a href="metodología.html#etapa-3.-ingenier%C3%ADa-de-caracter%C3%ADsticas"><i class="fa fa-check"></i><b>4.4.3</b> Etapa 3. Ingeniería de características</a></li>
+<li class="chapter" data-level="4.4.4" data-path="metodología.html"><a href="metodología.html#etapa-4.-an%C3%A1lisis-de-variables-categ%C3%B3ricas"><i class="fa fa-check"></i><b>4.4.4</b> Etapa 4. Análisis de variables categóricas</a></li>
+<li class="chapter" data-level="4.4.5" data-path="metodología.html"><a href="metodología.html#etapa-5.-estad%C3%ADstica-inferencial-param%C3%A9trica-y-no-param%C3%A9trica"><i class="fa fa-check"></i><b>4.4.5</b> Etapa 5. Estadística inferencial paramétrica y no paramétrica</a></li>
+<li class="chapter" data-level="4.4.6" data-path="metodología.html"><a href="metodología.html#etapa-6.-an%C3%A1lisis-de-correlaci%C3%B3n"><i class="fa fa-check"></i><b>4.4.6</b> Etapa 6. Análisis de correlación</a></li>
+<li class="chapter" data-level="4.4.7" data-path="metodología.html"><a href="metodología.html#etapa-7.-regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>4.4.7</b> Etapa 7. Regresión lineal simple</a></li>
+<li class="chapter" data-level="4.4.8" data-path="metodología.html"><a href="metodología.html#etapa-8.-regresi%C3%B3n-lineal-m%C3%BAltiple"><i class="fa fa-check"></i><b>4.4.8</b> Etapa 8. Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="4.4.9" data-path="metodología.html"><a href="metodología.html#etapa-9.-comparaci%C3%B3n-y-selecci%C3%B3n-del-modelo"><i class="fa fa-check"></i><b>4.4.9</b> Etapa 9. Comparación y selección del modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="metodología.html"><a href="metodología.html#consideraciones-metodol%C3%B3gicas"><i class="fa fa-check"></i><b>4.5</b> Consideraciones metodológicas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="marco-teorico.html"><a href="marco-teorico.html"><i class="fa fa-check"></i><b>5</b> Marco Teorico</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="marco-teorico.html"><a href="marco-teorico.html#el-powerlifting-como-deporte-de-fuerza"><i class="fa fa-check"></i><b>5.1</b> El powerlifting como deporte de fuerza</a></li>
+<li class="chapter" data-level="5.2" data-path="marco-teorico.html"><a href="marco-teorico.html#t%C3%A9cnica"><i class="fa fa-check"></i><b>5.2</b> Técnica</a></li>
+<li class="chapter" data-level="5.3" data-path="marco-teorico.html"><a href="marco-teorico.html#press-de-banca"><i class="fa fa-check"></i><b>5.3</b> Press de banca</a></li>
+<li class="chapter" data-level="5.4" data-path="marco-teorico.html"><a href="marco-teorico.html#sentadilla"><i class="fa fa-check"></i><b>5.4</b> Sentadilla</a></li>
+<li class="chapter" data-level="5.5" data-path="marco-teorico.html"><a href="marco-teorico.html#peso-muerto"><i class="fa fa-check"></i><b>5.5</b> Peso muerto</a></li>
+<li class="chapter" data-level="5.6" data-path="marco-teorico.html"><a href="marco-teorico.html#peso-corporal-y-categor%C3%ADas-por-peso"><i class="fa fa-check"></i><b>5.6</b> Peso corporal y Categorías por peso</a></li>
+<li class="chapter" data-level="5.7" data-path="marco-teorico.html"><a href="marco-teorico.html#diferencias-de-fuerza-asociadas-al-sexo"><i class="fa fa-check"></i><b>5.7</b> 1.8 Diferencias de fuerza asociadas al sexo</a></li>
+<li class="chapter" data-level="5.8" data-path="marco-teorico.html"><a href="marco-teorico.html#fundamentos-estad%C3%ADsticos"><i class="fa fa-check"></i><b>5.8</b> Fundamentos estadísticos</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="marco-teorico.html"><a href="marco-teorico.html#an%C3%A1lisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>5.8.1</b> Análisis exploratorio de datos</a></li>
+<li class="chapter" data-level="5.8.2" data-path="marco-teorico.html"><a href="marco-teorico.html#estad%C3%ADstica-param%C3%A9trica-y-no-param%C3%A9trica"><i class="fa fa-check"></i><b>5.8.2</b> Estadística paramétrica y no paramétrica</a></li>
+<li class="chapter" data-level="5.8.3" data-path="marco-teorico.html"><a href="marco-teorico.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>5.8.3</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="5.8.4" data-path="marco-teorico.html"><a href="marco-teorico.html#coeficiente-de-correlaci%C3%B3n"><i class="fa fa-check"></i><b>5.8.4</b> Coeficiente de correlación</a></li>
+<li class="chapter" data-level="5.8.5" data-path="marco-teorico.html"><a href="marco-teorico.html#regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>5.8.5</b> Regresión lineal simple</a></li>
+<li class="chapter" data-level="5.8.6" data-path="marco-teorico.html"><a href="marco-teorico.html#regresi%C3%B3n-lineal-m%C3%BAltiple"><i class="fa fa-check"></i><b>5.8.6</b> Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="5.8.7" data-path="marco-teorico.html"><a href="marco-teorico.html#coeficiente-de-determinaci%C3%B3n"><i class="fa fa-check"></i><b>5.8.7</b> Coeficiente de determinación</a></li>
+<li class="chapter" data-level="5.8.8" data-path="marco-teorico.html"><a href="marco-teorico.html#inferencia-estad%C3%ADstica-en-los-modelos-de-regresi%C3%B3n"><i class="fa fa-check"></i><b>5.8.8</b> Inferencia estadística en los modelos de regresión</a></li>
+<li class="chapter" data-level="5.8.9" data-path="marco-teorico.html"><a href="marco-teorico.html#supuestos-de-los-modelos-de-regresi%C3%B3n"><i class="fa fa-check"></i><b>5.8.9</b> Supuestos de los modelos de regresión</a></li>
+<li class="chapter" data-level="5.8.10" data-path="marco-teorico.html"><a href="marco-teorico.html#multicolinealidad"><i class="fa fa-check"></i><b>5.8.10</b> Multicolinealidad</a></li>
+<li class="chapter" data-level="5.8.11" data-path="marco-teorico.html"><a href="marco-teorico.html#transformaci%C3%B3n-de-variables"><i class="fa fa-check"></i><b>5.8.11</b> Transformación de variables</a></li>
+<li class="chapter" data-level="5.8.12" data-path="marco-teorico.html"><a href="marco-teorico.html#selecci%C3%B3n-de-modelos"><i class="fa fa-check"></i><b>5.8.12</b> Selección de modelos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>6</b> Dataset</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataset.html"><a href="dataset.html#librerias"><i class="fa fa-check"></i><b>6.1</b> Librerias</a></li>
+<li class="chapter" data-level="6.2" data-path="dataset.html"><a href="dataset.html#leer-dataset"><i class="fa fa-check"></i><b>6.2</b> Leer dataset</a></li>
+<li class="chapter" data-level="6.3" data-path="dataset.html"><a href="dataset.html#mostrar-las-10-primeras-filas"><i class="fa fa-check"></i><b>6.3</b> Mostrar las 10 primeras filas</a></li>
+<li class="chapter" data-level="6.4" data-path="dataset.html"><a href="dataset.html#estructura-de-los-datos"><i class="fa fa-check"></i><b>6.4</b> Estructura de los datos</a></li>
+<li class="chapter" data-level="6.5" data-path="dataset.html"><a href="dataset.html#solucionar-valores-inconsistentes"><i class="fa fa-check"></i><b>6.5</b> Solucionar valores inconsistentes</a></li>
+<li class="chapter" data-level="6.6" data-path="dataset.html"><a href="dataset.html#verificamos-si-los-niveles-de-las-variables-cualitativas-tienen-inconsistencias"><i class="fa fa-check"></i><b>6.6</b> Verificamos si los niveles de las variables cualitativas tienen inconsistencias</a></li>
+<li class="chapter" data-level="6.7" data-path="dataset.html"><a href="dataset.html#forma-directa-de-verificar-si-hay-datos-faltantes"><i class="fa fa-check"></i><b>6.7</b> Forma directa de verificar si hay datos faltantes</a></li>
+<li class="chapter" data-level="6.8" data-path="dataset.html"><a href="dataset.html#imputacion-de-datos-faltantes"><i class="fa fa-check"></i><b>6.8</b> Imputacion de datos faltantes</a></li>
+<li class="chapter" data-level="6.9" data-path="dataset.html"><a href="dataset.html#ver-si-hay-datos-faltantes-nuevamente-en-el-data-frame-limpiado"><i class="fa fa-check"></i><b>6.9</b> Ver si hay datos faltantes nuevamente en el Data Frame limpiado</a></li>
+<li class="chapter" data-level="6.10" data-path="dataset.html"><a href="dataset.html#convertir-las-variables-cualitativas-en-factor."><i class="fa fa-check"></i><b>6.10</b> Convertir las variables cualitativas en factor.</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html"><i class="fa fa-check"></i><b>7</b> Analisis exploratorio de BestDeadliftKg (target)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-tipo-histograma"><i class="fa fa-check"></i><b>7.1</b> Grafico tipo histograma</a></li>
+<li class="chapter" data-level="7.2" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>7.2</b> Grafico de cajas y bigotes</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html"><i class="fa fa-check"></i><b>8</b> Variables independientes (caracteristicas)</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#veamos-el-an%C3%A1lisis-de-cada-variable-independiente"><i class="fa fa-check"></i><b>8.0.1</b> Veamos el análisis de cada variable independiente</a></li>
+<li class="chapter" data-level="8.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#graficos-de-las-variables-independientes"><i class="fa fa-check"></i><b>8.1</b> Graficos de las variables independientes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html"><i class="fa fa-check"></i><b>9</b> Analisis Exploratorio Bivariado</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-edad"><i class="fa fa-check"></i><b>9.1</b> Peso muerto vs Edad</a></li>
+<li class="chapter" data-level="9.2" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-sentadilla"><i class="fa fa-check"></i><b>9.2</b> Peso muerto vs Mejor Sentadilla</a></li>
+<li class="chapter" data-level="9.3" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-peso-corporal"><i class="fa fa-check"></i><b>9.3</b> Peso muerto vs Peso corporal</a></li>
+<li class="chapter" data-level="9.4" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-press-banca"><i class="fa fa-check"></i><b>9.4</b> Peso muerto vs Mejor press banca</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html"><i class="fa fa-check"></i><b>10</b> Variables categoricas ‘Sex’ y ‘Equipament’</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-sex"><i class="fa fa-check"></i><b>10.1</b> Diagrama de barras: Frecuencia de la variable ‘Sex’</a></li>
+<li class="chapter" data-level="10.2" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-tabla"><i class="fa fa-check"></i><b>10.2</b> Comparacion entre peso muerto y sexo (tabla)</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-caja-de-bigotes"><i class="fa fa-check"></i><b>10.2.1</b> Comparacion entre peso muerto y sexo (Caja de bigotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-equipament"><i class="fa fa-check"></i><b>10.3</b> Diagrama de barras: Frecuencia de la variable ‘Equipament’</a></li>
+<li class="chapter" data-level="10.4" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-tabla"><i class="fa fa-check"></i><b>10.4</b> Comparacion entre peso muerto y equipo (tabla)</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-caja-de-bigotes"><i class="fa fa-check"></i><b>10.4.1</b> Comparacion entre peso muerto y equipo (Caja de bigotes)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html"><i class="fa fa-check"></i><b>11</b> Variables independientes vs variables independientes:</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#variables-num%C3%A9ricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>11.1</b> variables numéricas vs numéricas</a></li>
+<li class="chapter" data-level="11.2" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#variables-categoricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>11.2</b> Variables categoricas vs numéricas</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#sex-vs-variables-numericas"><i class="fa fa-check"></i><b>11.2.1</b> Sex vs variables numericas</a></li>
+<li class="chapter" data-level="11.2.2" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#equipamiento-vs-variables-numericas"><i class="fa fa-check"></i><b>11.2.2</b> Equipamiento vs variables numericas</a></li>
+<li class="chapter" data-level="11.2.3" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#equipamiento-vs-sexo"><i class="fa fa-check"></i><b>11.2.3</b> Equipamiento vs Sexo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html"><i class="fa fa-check"></i><b>12</b> Ingenieria de caracterizacion (feature engineering)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#variables-seleccionadas"><i class="fa fa-check"></i><b>12.1</b> Variables seleccionadas</a></li>
+<li class="chapter" data-level="12.2" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#nuevas-variables-upper_lower_total-ratio_squat_peso-ratio_bench_peso"><i class="fa fa-check"></i><b>12.2</b> Nuevas variables: ‘upper_lower_total’, ‘ratio_squat_peso’, ‘ratio_bench_peso’</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#verificar-si-no-hay-valores-nulos"><i class="fa fa-check"></i><b>12.2.1</b> Verificar si no hay valores nulos:</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#realizamos-el-resumen-estadistico-de-nuestras-nuevas-variables"><i class="fa fa-check"></i><b>12.3</b> Realizamos el resumen estadistico de nuestras nuevas variables</a></li>
+<li class="chapter" data-level="12.4" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#veamos-los-graficos-de-las-variables-de-nuestro-dataframe-nuevo."><i class="fa fa-check"></i><b>12.4</b> Veamos los graficos de las variables de nuestro dataframe nuevo.</a></li>
+<li class="chapter" data-level="12.5" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#verificamos-el-%C3%A9xito-de-la-ingenieria-de-caracterizacion"><i class="fa fa-check"></i><b>12.5</b> Verificamos el éxito de la ingenieria de caracterizacion</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html"><i class="fa fa-check"></i><b>13</b> Tabla de contingencia</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#crear-tabla-de-contingencia"><i class="fa fa-check"></i><b>13.1</b> Crear tabla de contingencia</a></li>
+<li class="chapter" data-level="13.2" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#totales-por-fila-columna-y-total-general"><i class="fa fa-check"></i><b>13.2</b> Totales por fila, columna y total general</a></li>
+<li class="chapter" data-level="13.3" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#frecuencias-esperadas-bajo-h0"><i class="fa fa-check"></i><b>13.3</b> Frecuencias esperadas bajo H0</a></li>
+<li class="chapter" data-level="13.4" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#estadistico-chi-cuadrado"><i class="fa fa-check"></i><b>13.4</b> Estadistico Chi-cuadrado</a></li>
+<li class="chapter" data-level="13.5" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#conclusion"><i class="fa fa-check"></i><b>13.5</b> Conclusion</a></li>
+<li class="chapter" data-level="13.6" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#verificamos-con-chisq.test"><i class="fa fa-check"></i><b>13.6</b> Verificamos con chisq.test</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html"><i class="fa fa-check"></i><b>14</b> Estadistica paramétrica y no paramétrica</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existe-una-diferencia-significativa-en-el-peso-muerto-promedio-entre-atletas-de-sexo-masculino-y-femenino"><i class="fa fa-check"></i><b>14.1</b> ¿Existe una diferencia significativa en el peso muerto promedio entre atletas de sexo masculino y femenino?</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-supuestos-de-normalidad"><i class="fa fa-check"></i><b>14.1.1</b> Verifiquemos supuestos de normalidad</a></li>
+<li class="chapter" data-level="14.1.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#comparaci%C3%B3n-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico"><i class="fa fa-check"></i><b>14.1.2</b> comparación de grupos con método no paramétrico</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existen-diferencias-significativas-en-el-peso-muerto-promedio-entre-los-distintos-tipos-de-equipamiento-utilizados-por-los-atletas"><i class="fa fa-check"></i><b>14.2</b> ¿Existen diferencias significativas en el peso muerto promedio entre los distintos tipos de equipamiento utilizados por los atletas?</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-el-supuesto-de-normalidad-de-la-variable-equipment"><i class="fa fa-check"></i><b>14.2.1</b> Verifiquemos el supuesto de normalidad de la variable ‘Equipment’</a></li>
+<li class="chapter" data-level="14.2.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#comparacion-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico"><i class="fa fa-check"></i><b>14.2.2</b> comparacion de grupos con método no paramétrico</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html"><i class="fa fa-check"></i><b>15</b> Coeficiente de correlación</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#correlaci%C3%B3n-entre-peso-corporal-y-mejor-peso-muerto-alcanzado"><i class="fa fa-check"></i><b>15.1</b> Correlación entre peso corporal y mejor peso muerto alcanzado</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#veamos-la-distribucion-entre-ambas-variables"><i class="fa fa-check"></i><b>15.1.1</b> Veamos la distribucion entre ambas variables</a></li>
+<li class="chapter" data-level="15.1.2" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>15.1.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="15.1.3" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#coeficiente-de-correlaci%C3%B3n-de-spearman"><i class="fa fa-check"></i><b>15.1.3</b> Coeficiente de correlación de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#correlaci%C3%B3n-entre-press-banca-sentadilla-y-mejor-peso-muerto-alcanzado."><i class="fa fa-check"></i><b>15.2</b> Correlación entre press banca + sentadilla y mejor peso muerto alcanzado.</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#veamos-la-distribuci%C3%B3n-entre-ambas-variables"><i class="fa fa-check"></i><b>15.2.1</b> Veamos la distribución entre ambas variables</a></li>
+<li class="chapter" data-level="15.2.2" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#supuesto-de-normalidad-1"><i class="fa fa-check"></i><b>15.2.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="15.2.3" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#coeficiente-de-correlaci%C3%B3n-de-spearman-1"><i class="fa fa-check"></i><b>15.2.3</b> Coeficiente de correlación de Spearman</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html"><i class="fa fa-check"></i><b>16</b> Regresión Lineal Simple</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#recapitulando-los-valores-obtenidos"><i class="fa fa-check"></i><b>16.1</b> Recapitulando los valores obtenidos:</a></li>
+<li class="chapter" data-level="16.2" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#estimaci%C3%B3n-de-minimos-cuadrados"><i class="fa fa-check"></i><b>16.2</b> Estimación de minimos cuadrados</a></li>
+<li class="chapter" data-level="16.3" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#estimaci%C3%B3n-de-la-varianza"><i class="fa fa-check"></i><b>16.3</b> Estimación de la varianza</a></li>
+<li class="chapter" data-level="16.4" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#coeficiente-de-determinacion"><i class="fa fa-check"></i><b>16.4</b> Coeficiente de determinacion</a></li>
+<li class="chapter" data-level="16.5" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalos-de-confianza-para-el-modelo-de-regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>16.5</b> Intervalos de confianza para el modelo de regresión lineal simple</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-la-pendiente-beta_1"><i class="fa fa-check"></i><b>16.5.1</b> Intervalo de confianza para la pendiente beta_1:</a></li>
+<li class="chapter" data-level="16.5.2" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-el-intercepto-beta_0"><i class="fa fa-check"></i><b>16.5.2</b> Intervalo de confianza para el intercepto beta_0:</a></li>
+</ul></li>
+<li class="chapter" data-level="16.6" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-sigma2"><i class="fa fa-check"></i><b>16.6</b> Intervalo de confianza para sigma^2</a></li>
+<li class="chapter" data-level="16.7" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#pruebas-de-hip%C3%B3tesis"><i class="fa fa-check"></i><b>16.7</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-beta1"><i class="fa fa-check"></i><b>16.7.1</b> Prueba de hipótesis para beta1</a></li>
+<li class="chapter" data-level="16.7.2" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-beta0"><i class="fa fa-check"></i><b>16.7.2</b> Prueba de hipótesis para beta0:</a></li>
+<li class="chapter" data-level="16.7.3" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-sigma2"><i class="fa fa-check"></i><b>16.7.3</b> Prueba de hipótesis para sigma^2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html"><i class="fa fa-check"></i><b>17</b> Análisis de los errores</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#supuestos-de-los-errores"><i class="fa fa-check"></i><b>17.1</b> Supuestos de los errores</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#independencia-de-los-errores"><i class="fa fa-check"></i><b>17.1.1</b> Independencia de los errores</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#normalidad-de-los-errores"><i class="fa fa-check"></i><b>17.2</b> Normalidad de los errores</a></li>
+<li class="chapter" data-level="17.3" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#media-cero-de-los-errores"><i class="fa fa-check"></i><b>17.3</b> Media cero de los errores</a></li>
+<li class="chapter" data-level="17.4" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#varianza-constante-de-los-errores-homocedasticidad"><i class="fa fa-check"></i><b>17.4</b> Varianza constante de los errores (homocedasticidad)</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="transformaciones-para-mejorar-el-ajuste-del-modelo.html"><a href="transformaciones-para-mejorar-el-ajuste-del-modelo.html"><i class="fa fa-check"></i><b>18</b> Transformaciones para mejorar el ajuste del modelo</a></li>
+<li class="chapter" data-level="19" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html"><i class="fa fa-check"></i><b>19</b> Regresion lineal multiple</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-de-multicolinealidad"><i class="fa fa-check"></i><b>19.1</b> Analisis de multicolinealidad</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#matriz-de-correlaciones"><i class="fa fa-check"></i><b>19.1.1</b> Matriz de correlaciones</a></li>
+<li class="chapter" data-level="19.1.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#ajuste-del-modelo-completo"><i class="fa fa-check"></i><b>19.1.2</b> Ajuste del modelo completo</a></li>
+<li class="chapter" data-level="19.1.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#factor-de-inflacion-de-varianza"><i class="fa fa-check"></i><b>19.1.3</b> Factor de inflacion de varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#seleccion-del-modelo"><i class="fa fa-check"></i><b>19.2</b> Seleccion del modelo</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#seleccion-mediante-el-criterio-aic"><i class="fa fa-check"></i><b>19.2.1</b> Seleccion mediante el criterio AIC</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-matricial-de-los-coeficientes"><i class="fa fa-check"></i><b>19.3</b> Estimacion matricial de los coeficientes</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#construccion-de-la-matriz-de-diseno"><i class="fa fa-check"></i><b>19.3.1</b> Construccion de la matriz de diseno</a></li>
+<li class="chapter" data-level="19.3.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#operaciones-matriciales"><i class="fa fa-check"></i><b>19.3.2</b> Operaciones matriciales</a></li>
+<li class="chapter" data-level="19.3.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-de-los-coeficientes"><i class="fa fa-check"></i><b>19.3.3</b> Estimacion de los coeficientes</a></li>
+<li class="chapter" data-level="19.3.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#interpretacion-de-los-coeficientes"><i class="fa fa-check"></i><b>19.3.4</b> Interpretacion de los coeficientes</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-de-varianza"><i class="fa fa-check"></i><b>19.4</b> Analisis de varianza</a>
+<ul>
+<li class="chapter" data-level="19.4.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#valores-ajustados-y-residuos"><i class="fa fa-check"></i><b>19.4.1</b> Valores ajustados y residuos</a></li>
+<li class="chapter" data-level="19.4.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#sumas-de-cuadrados"><i class="fa fa-check"></i><b>19.4.2</b> Sumas de cuadrados</a></li>
+<li class="chapter" data-level="19.4.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#coeficiente-de-determinacion-1"><i class="fa fa-check"></i><b>19.4.3</b> Coeficiente de determinacion</a></li>
+<li class="chapter" data-level="19.4.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#grados-de-libertad"><i class="fa fa-check"></i><b>19.4.4</b> Grados de libertad</a></li>
+<li class="chapter" data-level="19.4.5" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#cuadrados-medios"><i class="fa fa-check"></i><b>19.4.5</b> Cuadrados medios</a></li>
+<li class="chapter" data-level="19.4.6" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#tabla-anova"><i class="fa fa-check"></i><b>19.4.6</b> Tabla ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="19.5" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#prueba-de-significancia-global"><i class="fa fa-check"></i><b>19.5</b> Prueba de significancia global</a></li>
+<li class="chapter" data-level="19.6" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-de-la-varianza-residual"><i class="fa fa-check"></i><b>19.6</b> Estimacion de la varianza residual</a></li>
+<li class="chapter" data-level="19.7" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#matriz-de-varianzas-y-covarianzas"><i class="fa fa-check"></i><b>19.7</b> Matriz de varianzas y covarianzas</a>
+<ul>
+<li class="chapter" data-level="19.7.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#errores-estandar"><i class="fa fa-check"></i><b>19.7.1</b> Errores estandar</a></li>
+</ul></li>
+<li class="chapter" data-level="19.8" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#prueba-de-significancia-individual"><i class="fa fa-check"></i><b>19.8</b> Prueba de significancia individual</a></li>
+<li class="chapter" data-level="19.9" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>19.9</b> Intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="19.9.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#verificacion-mediante-las-funciones-de-r"><i class="fa fa-check"></i><b>19.9.1</b> Verificacion mediante las funciones de R</a></li>
+</ul></li>
+<li class="chapter" data-level="19.10" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#diagnostico-de-los-supuestos"><i class="fa fa-check"></i><b>19.10</b> Diagnostico de los supuestos</a>
+<ul>
+<li class="chapter" data-level="19.10.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-grafico-de-los-residuos"><i class="fa fa-check"></i><b>19.10.1</b> Analisis grafico de los residuos</a></li>
+<li class="chapter" data-level="19.10.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#normalidad-de-los-residuos"><i class="fa fa-check"></i><b>19.10.2</b> Normalidad de los residuos</a></li>
+<li class="chapter" data-level="19.10.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#homocedasticidad"><i class="fa fa-check"></i><b>19.10.3</b> Homocedasticidad</a></li>
+</ul></li>
+<li class="chapter" data-level="19.11" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#inferencia-mediante-errores-estandar-robustos"><i class="fa fa-check"></i><b>19.11</b> Inferencia mediante errores estandar robustos</a>
+<ul>
+<li class="chapter" data-level="19.11.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#intervalos-de-confianza-robustos"><i class="fa fa-check"></i><b>19.11.1</b> Intervalos de confianza robustos</a></li>
+</ul></li>
+<li class="chapter" data-level="19.12" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#independencia-de-las-observaciones-y-limitaciones"><i class="fa fa-check"></i><b>19.12</b> Independencia de las observaciones y limitaciones</a></li>
+<li class="chapter" data-level="19.13" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#comparacion-entre-regresion-simple-y-multiple"><i class="fa fa-check"></i><b>19.13</b> Comparacion entre regresion simple y multiple</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="presentacion-del-proyecto-video.html"><a href="presentacion-del-proyecto-video.html"><i class="fa fa-check"></i><b>20</b> Presentacion del Proyecto (Video)</a></li>
+<li class="chapter" data-level="21" data-path="conclusión.html"><a href="conclusión.html"><i class="fa fa-check"></i><b>21</b> Conclusión</a></li>
+<li class="chapter" data-level="22" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>22</b> Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bibliografia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="regresión-lineal-simple-1" class="section level1 hasAnchor" number="16">
+<h1><span class="header-section-number">16</span> Regresión Lineal Simple<a href="regresión-lineal-simple-1.html#regresi%C3%B3n-lineal-simple-1" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>La regresión lineal simple (RLS) es un método estadístico que permite estudiar y cuantificar la relación lineal entre una variable explicativa y una variable respuesta mediante el método de mínimos cuadrados ordinarios. En este proyecto se aplica la regresión lineal simple para analizar cómo se relaciona la fuerza combinada de sentadilla y press de banca, considerada como variable explicativa <span class="math inline">\(x\)</span>, con el mejor levantamiento en peso muerto, considerado como variable respuesta <span class="math inline">\(y\)</span>.</p>
+<p><strong>¿Existe una relación lineal estadísticamente significativa entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto de los atletas de powerlifting?</strong></p>
+<p>El objetivo principal es determinar la dirección, magnitud y significancia estadística de esta relación, identificando si un aumento en la fuerza combinada está asociado con un incremento en el rendimiento en peso muerto.</p>
+<div id="recapitulando-los-valores-obtenidos" class="section level2 hasAnchor" number="16.1">
+<h2><span class="header-section-number">16.1</span> Recapitulando los valores obtenidos:<a href="regresión-lineal-simple-1.html#recapitulando-los-valores-obtenidos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb95"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb95-1"><a href="regresión-lineal-simple-1.html#cb95-1" tabindex="-1"></a><span class="co"># Variables seleccionadas</span></span>
+<span id="cb95-2"><a href="regresión-lineal-simple-1.html#cb95-2" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="regresión-lineal-simple-1.html#cb95-3" tabindex="-1"></a>datos_rls <span class="ot">&lt;-</span> df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb95-4"><a href="regresión-lineal-simple-1.html#cb95-4" tabindex="-1"></a>  <span class="fu">select</span>(upper_lower_total, BestDeadliftKg)</span>
+<span id="cb95-5"><a href="regresión-lineal-simple-1.html#cb95-5" tabindex="-1"></a></span>
+<span id="cb95-6"><a href="regresión-lineal-simple-1.html#cb95-6" tabindex="-1"></a><span class="co"># Número de observaciones</span></span>
+<span id="cb95-7"><a href="regresión-lineal-simple-1.html#cb95-7" tabindex="-1"></a><span class="fu">nrow</span>(datos_rls)</span></code></pre></div>
+<pre><code>## [1] 18900</code></pre>
+<div class="sourceCode" id="cb97"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb97-1"><a href="regresión-lineal-simple-1.html#cb97-1" tabindex="-1"></a><span class="co"># Correlación lineal de Pearson</span></span>
+<span id="cb97-2"><a href="regresión-lineal-simple-1.html#cb97-2" tabindex="-1"></a><span class="fu">cor</span>(datos_rls<span class="sc">$</span>upper_lower_total,</span>
+<span id="cb97-3"><a href="regresión-lineal-simple-1.html#cb97-3" tabindex="-1"></a>    datos_rls<span class="sc">$</span>BestDeadliftKg,</span>
+<span id="cb97-4"><a href="regresión-lineal-simple-1.html#cb97-4" tabindex="-1"></a>    <span class="at">method =</span> <span class="st">&quot;pearson&quot;</span>)</span></code></pre></div>
+<pre><code>## [1] 0.912459</code></pre>
+<div class="sourceCode" id="cb99"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb99-1"><a href="regresión-lineal-simple-1.html#cb99-1" tabindex="-1"></a><span class="co"># Diagrama de dispersión con recta de regresión</span></span>
+<span id="cb99-2"><a href="regresión-lineal-simple-1.html#cb99-2" tabindex="-1"></a><span class="fu">ggplot</span>(datos_rls,</span>
+<span id="cb99-3"><a href="regresión-lineal-simple-1.html#cb99-3" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> upper_lower_total,</span>
+<span id="cb99-4"><a href="regresión-lineal-simple-1.html#cb99-4" tabindex="-1"></a>           <span class="at">y =</span> BestDeadliftKg)) <span class="sc">+</span></span>
+<span id="cb99-5"><a href="regresión-lineal-simple-1.html#cb99-5" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.2</span>, <span class="at">color =</span> <span class="st">&quot;darkblue&quot;</span>) <span class="sc">+</span></span>
+<span id="cb99-6"><a href="regresión-lineal-simple-1.html#cb99-6" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb99-7"><a href="regresión-lineal-simple-1.html#cb99-7" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Fuerza combinada vs. peso muerto&quot;</span>,</span>
+<span id="cb99-8"><a href="regresión-lineal-simple-1.html#cb99-8" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Sentadilla + press de banca (kg)&quot;</span>,</span>
+<span id="cb99-9"><a href="regresión-lineal-simple-1.html#cb99-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;Mejor peso muerto (kg)&quot;</span></span>
+<span id="cb99-10"><a href="regresión-lineal-simple-1.html#cb99-10" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb99-11"><a href="regresión-lineal-simple-1.html#cb99-11" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code></pre></div>
+<p><img src="bookdown-demo_files/figure-html/unnamed-chunk-35-1.png" alt="" width="672" /></p>
+<p>El coeficiente de correlación lineal de Pearson entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto fue de <span class="math inline">\(r=0.912)\)</span>, lo que indica una relación lineal positiva y fuerte entre ambas variables.</p>
+<p>Esto significa que los atletas con mayores registros de fuerza combinada tienden a alcanzar mayores marcas en peso muerto.</p>
+<p>El diagrama de dispersión muestra una tendencia creciente.</p>
+</div>
+<div id="estimación-de-minimos-cuadrados" class="section level2 hasAnchor" number="16.2">
+<h2><span class="header-section-number">16.2</span> Estimación de minimos cuadrados<a href="regresión-lineal-simple-1.html#estimaci%C3%B3n-de-minimos-cuadrados" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb100"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb100-1"><a href="regresión-lineal-simple-1.html#cb100-1" tabindex="-1"></a><span class="co"># Seleccionar las variables</span></span>
+<span id="cb100-2"><a href="regresión-lineal-simple-1.html#cb100-2" tabindex="-1"></a>datos_rls <span class="ot">&lt;-</span> df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb100-3"><a href="regresión-lineal-simple-1.html#cb100-3" tabindex="-1"></a>  <span class="fu">select</span>(upper_lower_total, BestDeadliftKg) <span class="sc">%&gt;%</span></span>
+<span id="cb100-4"><a href="regresión-lineal-simple-1.html#cb100-4" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.finite</span>(upper_lower_total),</span>
+<span id="cb100-5"><a href="regresión-lineal-simple-1.html#cb100-5" tabindex="-1"></a>         <span class="fu">is.finite</span>(BestDeadliftKg))</span>
+<span id="cb100-6"><a href="regresión-lineal-simple-1.html#cb100-6" tabindex="-1"></a></span>
+<span id="cb100-7"><a href="regresión-lineal-simple-1.html#cb100-7" tabindex="-1"></a>X <span class="ot">&lt;-</span> datos_rls<span class="sc">$</span>upper_lower_total</span>
+<span id="cb100-8"><a href="regresión-lineal-simple-1.html#cb100-8" tabindex="-1"></a>Y <span class="ot">&lt;-</span> datos_rls<span class="sc">$</span>BestDeadliftKg</span>
+<span id="cb100-9"><a href="regresión-lineal-simple-1.html#cb100-9" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">length</span>(Y)</span>
+<span id="cb100-10"><a href="regresión-lineal-simple-1.html#cb100-10" tabindex="-1"></a></span>
+<span id="cb100-11"><a href="regresión-lineal-simple-1.html#cb100-11" tabindex="-1"></a><span class="co"># 2. Calcular las medias</span></span>
+<span id="cb100-12"><a href="regresión-lineal-simple-1.html#cb100-12" tabindex="-1"></a>x_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(X)</span>
+<span id="cb100-13"><a href="regresión-lineal-simple-1.html#cb100-13" tabindex="-1"></a>y_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(Y)</span>
+<span id="cb100-14"><a href="regresión-lineal-simple-1.html#cb100-14" tabindex="-1"></a></span>
+<span id="cb100-15"><a href="regresión-lineal-simple-1.html#cb100-15" tabindex="-1"></a><span class="co"># 3. Calcular Sxx y Sxy</span></span>
+<span id="cb100-16"><a href="regresión-lineal-simple-1.html#cb100-16" tabindex="-1"></a>Sxx <span class="ot">&lt;-</span> <span class="fu">sum</span>((X <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb100-17"><a href="regresión-lineal-simple-1.html#cb100-17" tabindex="-1"></a>Sxy <span class="ot">&lt;-</span> <span class="fu">sum</span>((X <span class="sc">-</span> x_bar) <span class="sc">*</span> (Y <span class="sc">-</span> y_bar))</span>
+<span id="cb100-18"><a href="regresión-lineal-simple-1.html#cb100-18" tabindex="-1"></a></span>
+<span id="cb100-19"><a href="regresión-lineal-simple-1.html#cb100-19" tabindex="-1"></a><span class="co"># 4. Estimar los coeficientes</span></span>
+<span id="cb100-20"><a href="regresión-lineal-simple-1.html#cb100-20" tabindex="-1"></a>beta1 <span class="ot">&lt;-</span> Sxy <span class="sc">/</span> Sxx</span>
+<span id="cb100-21"><a href="regresión-lineal-simple-1.html#cb100-21" tabindex="-1"></a>beta0 <span class="ot">&lt;-</span> y_bar <span class="sc">-</span> beta1 <span class="sc">*</span> x_bar</span>
+<span id="cb100-22"><a href="regresión-lineal-simple-1.html#cb100-22" tabindex="-1"></a></span>
+<span id="cb100-23"><a href="regresión-lineal-simple-1.html#cb100-23" tabindex="-1"></a><span class="co"># 5. Ajustar el modelo con lm()</span></span>
+<span id="cb100-24"><a href="regresión-lineal-simple-1.html#cb100-24" tabindex="-1"></a>modelo_rls <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb100-25"><a href="regresión-lineal-simple-1.html#cb100-25" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> upper_lower_total,</span>
+<span id="cb100-26"><a href="regresión-lineal-simple-1.html#cb100-26" tabindex="-1"></a>  <span class="at">data =</span> datos_rls</span>
+<span id="cb100-27"><a href="regresión-lineal-simple-1.html#cb100-27" tabindex="-1"></a>)</span>
+<span id="cb100-28"><a href="regresión-lineal-simple-1.html#cb100-28" tabindex="-1"></a></span>
+<span id="cb100-29"><a href="regresión-lineal-simple-1.html#cb100-29" tabindex="-1"></a><span class="co"># 6. Presentar resultados en tabla</span></span>
+<span id="cb100-30"><a href="regresión-lineal-simple-1.html#cb100-30" tabindex="-1"></a>tabla_parametros <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb100-31"><a href="regresión-lineal-simple-1.html#cb100-31" tabindex="-1"></a>  <span class="at">Parametro =</span> <span class="fu">c</span>(<span class="st">&quot;Intercepto (beta_0)&quot;</span>,</span>
+<span id="cb100-32"><a href="regresión-lineal-simple-1.html#cb100-32" tabindex="-1"></a>                <span class="st">&quot;Pendiente (beta_1)&quot;</span>),</span>
+<span id="cb100-33"><a href="regresión-lineal-simple-1.html#cb100-33" tabindex="-1"></a>  <span class="at">Estimacion =</span> <span class="fu">c</span>(beta0, beta1)</span>
+<span id="cb100-34"><a href="regresión-lineal-simple-1.html#cb100-34" tabindex="-1"></a>)</span>
+<span id="cb100-35"><a href="regresión-lineal-simple-1.html#cb100-35" tabindex="-1"></a></span>
+<span id="cb100-36"><a href="regresión-lineal-simple-1.html#cb100-36" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb100-37"><a href="regresión-lineal-simple-1.html#cb100-37" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb100-38"><a href="regresión-lineal-simple-1.html#cb100-38" tabindex="-1"></a>  tabla_parametros,</span>
+<span id="cb100-39"><a href="regresión-lineal-simple-1.html#cb100-39" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb100-40"><a href="regresión-lineal-simple-1.html#cb100-40" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb100-41"><a href="regresión-lineal-simple-1.html#cb100-41" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb100-42"><a href="regresión-lineal-simple-1.html#cb100-42" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb100-43"><a href="regresión-lineal-simple-1.html#cb100-43" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb100-44"><a href="regresión-lineal-simple-1.html#cb100-44" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb100-45"><a href="regresión-lineal-simple-1.html#cb100-45" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Parametro
+</th>
+<th style="text-align:right;">
+Estimacion
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Intercepto (beta_0)
+</td>
+<td style="text-align:right;">
+58.1713
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Pendiente (beta_1)
+</td>
+<td style="text-align:right;">
+0.4827
+</td>
+</tr>
+</tbody>
+</table>
+<p>El modelo ajustado es:
+<span class="math display">\[ \hat y_i = 58.1713+0.4827x_i \]</span></p>
+<p>El intercepto estimado es <span class="math inline">\(\hat{\beta}_0=58.1713\)</span>, lo que indica que cuando la fuerza combinada de sentadilla y press de banca es igual a cero, el valor esperado del mejor levantamiento en peso muerto es de 58.1713 kg.</p>
+<p>Sin embargo, dado que este valor de fuerza combinada se encuentra fuera del rango observado, el intercepto no tiene una interpretación practica real en el contexto del estudio.</p>
+<p>La pendiente estimada es <span class="math inline">\(\hat{\beta}_1=0.4827\)</span>, lo que indica que, por cada kilogramo adicional en la fuerza combinada de sentadilla y press de banca, se espera que el mejor levantamiento en peso muerto aumente aproximadamente 0.4827 kg, según el modelo de regresión lineal simple ajustado.</p>
+</div>
+<div id="estimación-de-la-varianza" class="section level2 hasAnchor" number="16.3">
+<h2><span class="header-section-number">16.3</span> Estimación de la varianza<a href="regresión-lineal-simple-1.html#estimaci%C3%B3n-de-la-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb101"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb101-1"><a href="regresión-lineal-simple-1.html#cb101-1" tabindex="-1"></a><span class="do">## estimación de sigma</span></span>
+<span id="cb101-2"><a href="regresión-lineal-simple-1.html#cb101-2" tabindex="-1"></a>S2<span class="ot">=</span><span class="fu">summary</span>(modelo_rls)<span class="sc">$</span>sigma</span>
+<span id="cb101-3"><a href="regresión-lineal-simple-1.html#cb101-3" tabindex="-1"></a></span>
+<span id="cb101-4"><a href="regresión-lineal-simple-1.html#cb101-4" tabindex="-1"></a><span class="co"># 1. Valores ajustados</span></span>
+<span id="cb101-5"><a href="regresión-lineal-simple-1.html#cb101-5" tabindex="-1"></a>Y_hat <span class="ot">&lt;-</span> <span class="fu">fitted</span>(modelo_rls)</span>
+<span id="cb101-6"><a href="regresión-lineal-simple-1.html#cb101-6" tabindex="-1"></a></span>
+<span id="cb101-7"><a href="regresión-lineal-simple-1.html#cb101-7" tabindex="-1"></a><span class="co"># 2. Residuos</span></span>
+<span id="cb101-8"><a href="regresión-lineal-simple-1.html#cb101-8" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">residuals</span>(modelo_rls)</span>
+<span id="cb101-9"><a href="regresión-lineal-simple-1.html#cb101-9" tabindex="-1"></a></span>
+<span id="cb101-10"><a href="regresión-lineal-simple-1.html#cb101-10" tabindex="-1"></a><span class="co"># 3. Suma de cuadrados de los errores</span></span>
+<span id="cb101-11"><a href="regresión-lineal-simple-1.html#cb101-11" tabindex="-1"></a>SSE <span class="ot">&lt;-</span> <span class="fu">sum</span>(e<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb101-12"><a href="regresión-lineal-simple-1.html#cb101-12" tabindex="-1"></a></span>
+<span id="cb101-13"><a href="regresión-lineal-simple-1.html#cb101-13" tabindex="-1"></a><span class="co"># 4. Grados de libertad</span></span>
+<span id="cb101-14"><a href="regresión-lineal-simple-1.html#cb101-14" tabindex="-1"></a>gl <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb101-15"><a href="regresión-lineal-simple-1.html#cb101-15" tabindex="-1"></a></span>
+<span id="cb101-16"><a href="regresión-lineal-simple-1.html#cb101-16" tabindex="-1"></a><span class="co"># 5. Estimación de la varianza</span></span>
+<span id="cb101-17"><a href="regresión-lineal-simple-1.html#cb101-17" tabindex="-1"></a>MSE <span class="ot">&lt;-</span> SSE <span class="sc">/</span> gl</span>
+<span id="cb101-18"><a href="regresión-lineal-simple-1.html#cb101-18" tabindex="-1"></a></span>
+<span id="cb101-19"><a href="regresión-lineal-simple-1.html#cb101-19" tabindex="-1"></a><span class="co"># 6. Error estándar de la regresión</span></span>
+<span id="cb101-20"><a href="regresión-lineal-simple-1.html#cb101-20" tabindex="-1"></a>RSE <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(MSE)</span>
+<span id="cb101-21"><a href="regresión-lineal-simple-1.html#cb101-21" tabindex="-1"></a></span>
+<span id="cb101-22"><a href="regresión-lineal-simple-1.html#cb101-22" tabindex="-1"></a><span class="co"># 7. Tabla de resultados</span></span>
+<span id="cb101-23"><a href="regresión-lineal-simple-1.html#cb101-23" tabindex="-1"></a>tabla_varianza <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb101-24"><a href="regresión-lineal-simple-1.html#cb101-24" tabindex="-1"></a>  <span class="at">Estadistico =</span> <span class="fu">c</span>(<span class="st">&quot;SSE&quot;</span>, <span class="st">&quot;MSE&quot;</span>, <span class="st">&quot;RSE&quot;</span>),</span>
+<span id="cb101-25"><a href="regresión-lineal-simple-1.html#cb101-25" tabindex="-1"></a>  <span class="at">Valor =</span> <span class="fu">c</span>(SSE, MSE, RSE)</span>
+<span id="cb101-26"><a href="regresión-lineal-simple-1.html#cb101-26" tabindex="-1"></a>)</span>
+<span id="cb101-27"><a href="regresión-lineal-simple-1.html#cb101-27" tabindex="-1"></a></span>
+<span id="cb101-28"><a href="regresión-lineal-simple-1.html#cb101-28" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb101-29"><a href="regresión-lineal-simple-1.html#cb101-29" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb101-30"><a href="regresión-lineal-simple-1.html#cb101-30" tabindex="-1"></a>  tabla_varianza,</span>
+<span id="cb101-31"><a href="regresión-lineal-simple-1.html#cb101-31" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb101-32"><a href="regresión-lineal-simple-1.html#cb101-32" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb101-33"><a href="regresión-lineal-simple-1.html#cb101-33" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb101-34"><a href="regresión-lineal-simple-1.html#cb101-34" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb101-35"><a href="regresión-lineal-simple-1.html#cb101-35" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb101-36"><a href="regresión-lineal-simple-1.html#cb101-36" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb101-37"><a href="regresión-lineal-simple-1.html#cb101-37" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Estadistico
+</th>
+<th style="text-align:right;">
+Valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SSE
+</td>
+<td style="text-align:right;">
+12230012.7309
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+MSE
+</td>
+<td style="text-align:right;">
+647.1591
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RSE
+</td>
+<td style="text-align:right;">
+25.4393
+</td>
+</tr>
+</tbody>
+</table>
+<p>El cuadrado medio residual obtenido fue <span class="math inline">\(MSE=647.1591\)</span>, que corresponde a la estimación de la varianza de los errores del modelo de regresión lineal simple.Por otra parte, se obtuvo un error estándar de la regresión de <span class="math inline">\(RSE=25.4393\)</span> kg, el cual representa una estimación de la desviación estándar de los errores del delo.</p>
+<p>Este último resultado se expresa en kilogramos, las mismas unidades de la variable respuesta <code>BestDeadliftKg</code>.</p>
+</div>
+<div id="coeficiente-de-determinacion" class="section level2 hasAnchor" number="16.4">
+<h2><span class="header-section-number">16.4</span> Coeficiente de determinacion<a href="regresión-lineal-simple-1.html#coeficiente-de-determinacion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb102"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb102-1"><a href="regresión-lineal-simple-1.html#cb102-1" tabindex="-1"></a><span class="co"># PASO 4.3: COEFICIENTE DE DETERMINACIÓN</span></span>
+<span id="cb102-2"><a href="regresión-lineal-simple-1.html#cb102-2" tabindex="-1"></a></span>
+<span id="cb102-3"><a href="regresión-lineal-simple-1.html#cb102-3" tabindex="-1"></a><span class="co"># 1. Suma total de cuadrados</span></span>
+<span id="cb102-4"><a href="regresión-lineal-simple-1.html#cb102-4" tabindex="-1"></a>SST <span class="ot">&lt;-</span> <span class="fu">sum</span>((Y <span class="sc">-</span> y_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb102-5"><a href="regresión-lineal-simple-1.html#cb102-5" tabindex="-1"></a></span>
+<span id="cb102-6"><a href="regresión-lineal-simple-1.html#cb102-6" tabindex="-1"></a><span class="co"># 2. Suma de cuadrados de regresión</span></span>
+<span id="cb102-7"><a href="regresión-lineal-simple-1.html#cb102-7" tabindex="-1"></a>SSR <span class="ot">&lt;-</span> SST <span class="sc">-</span> SSE</span>
+<span id="cb102-8"><a href="regresión-lineal-simple-1.html#cb102-8" tabindex="-1"></a></span>
+<span id="cb102-9"><a href="regresión-lineal-simple-1.html#cb102-9" tabindex="-1"></a><span class="co"># 3. Coeficiente de determinación</span></span>
+<span id="cb102-10"><a href="regresión-lineal-simple-1.html#cb102-10" tabindex="-1"></a>R2 <span class="ot">&lt;-</span> SSR <span class="sc">/</span> SST</span>
+<span id="cb102-11"><a href="regresión-lineal-simple-1.html#cb102-11" tabindex="-1"></a></span>
+<span id="cb102-12"><a href="regresión-lineal-simple-1.html#cb102-12" tabindex="-1"></a><span class="co"># 4. Verificar el resultado usando lm()</span></span>
+<span id="cb102-13"><a href="regresión-lineal-simple-1.html#cb102-13" tabindex="-1"></a>R2_lm <span class="ot">&lt;-</span> <span class="fu">summary</span>(modelo_rls)<span class="sc">$</span>r.squared</span>
+<span id="cb102-14"><a href="regresión-lineal-simple-1.html#cb102-14" tabindex="-1"></a></span>
+<span id="cb102-15"><a href="regresión-lineal-simple-1.html#cb102-15" tabindex="-1"></a><span class="co"># 5. Mostrar resultados en tabla</span></span>
+<span id="cb102-16"><a href="regresión-lineal-simple-1.html#cb102-16" tabindex="-1"></a>tabla_ajuste <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb102-17"><a href="regresión-lineal-simple-1.html#cb102-17" tabindex="-1"></a>  <span class="at">Estadistico =</span> <span class="fu">c</span>(</span>
+<span id="cb102-18"><a href="regresión-lineal-simple-1.html#cb102-18" tabindex="-1"></a>    <span class="st">&quot;SST&quot;</span>,</span>
+<span id="cb102-19"><a href="regresión-lineal-simple-1.html#cb102-19" tabindex="-1"></a>    <span class="st">&quot;SSR&quot;</span>,</span>
+<span id="cb102-20"><a href="regresión-lineal-simple-1.html#cb102-20" tabindex="-1"></a>    <span class="st">&quot;SSE&quot;</span>,</span>
+<span id="cb102-21"><a href="regresión-lineal-simple-1.html#cb102-21" tabindex="-1"></a>    <span class="st">&quot;R cuadrado&quot;</span>,</span>
+<span id="cb102-22"><a href="regresión-lineal-simple-1.html#cb102-22" tabindex="-1"></a>    <span class="st">&quot;R cuadrado con lm&quot;</span></span>
+<span id="cb102-23"><a href="regresión-lineal-simple-1.html#cb102-23" tabindex="-1"></a>  ),</span>
+<span id="cb102-24"><a href="regresión-lineal-simple-1.html#cb102-24" tabindex="-1"></a>  <span class="at">Valor =</span> <span class="fu">c</span>(</span>
+<span id="cb102-25"><a href="regresión-lineal-simple-1.html#cb102-25" tabindex="-1"></a>    SST,</span>
+<span id="cb102-26"><a href="regresión-lineal-simple-1.html#cb102-26" tabindex="-1"></a>    SSR,</span>
+<span id="cb102-27"><a href="regresión-lineal-simple-1.html#cb102-27" tabindex="-1"></a>    SSE,</span>
+<span id="cb102-28"><a href="regresión-lineal-simple-1.html#cb102-28" tabindex="-1"></a>    R2,</span>
+<span id="cb102-29"><a href="regresión-lineal-simple-1.html#cb102-29" tabindex="-1"></a>    R2_lm</span>
+<span id="cb102-30"><a href="regresión-lineal-simple-1.html#cb102-30" tabindex="-1"></a>  )</span>
+<span id="cb102-31"><a href="regresión-lineal-simple-1.html#cb102-31" tabindex="-1"></a>)</span>
+<span id="cb102-32"><a href="regresión-lineal-simple-1.html#cb102-32" tabindex="-1"></a></span>
+<span id="cb102-33"><a href="regresión-lineal-simple-1.html#cb102-33" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb102-34"><a href="regresión-lineal-simple-1.html#cb102-34" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb102-35"><a href="regresión-lineal-simple-1.html#cb102-35" tabindex="-1"></a>  tabla_ajuste,</span>
+<span id="cb102-36"><a href="regresión-lineal-simple-1.html#cb102-36" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb102-37"><a href="regresión-lineal-simple-1.html#cb102-37" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb102-38"><a href="regresión-lineal-simple-1.html#cb102-38" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb102-39"><a href="regresión-lineal-simple-1.html#cb102-39" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb102-40"><a href="regresión-lineal-simple-1.html#cb102-40" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb102-41"><a href="regresión-lineal-simple-1.html#cb102-41" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb102-42"><a href="regresión-lineal-simple-1.html#cb102-42" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Estadistico
+</th>
+<th style="text-align:right;">
+Valor
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+SST
+</td>
+<td style="text-align:right;">
+73050523.0029
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSR
+</td>
+<td style="text-align:right;">
+60820510.2720
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SSE
+</td>
+<td style="text-align:right;">
+12230012.7309
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R cuadrado
+</td>
+<td style="text-align:right;">
+0.8326
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+R cuadrado con lm
+</td>
+<td style="text-align:right;">
+0.8326
+</td>
+</tr>
+</tbody>
+</table>
+<p>El coeficiente de determinación obtenido fue <span class="math inline">\(R^2=0.8326\)</span>, lo que indica que aproximadamente el 83.26 % de la variabilidad observada en el mejor levantamiento en peso muerto (<code>BestDeadliftKg</code>) es explicada por el modelo de regresión lineal simple que utiliza la fuerza combinada de sentadilla y press de banca (<code>upper_lower_total</code>) como variable explicativa. Esto implica que el 16.74 % restante de la variabilidad no es explicado por el modelo ajustado.</p>
+<p>Este resultado demuestra que el modelo explica una proporción elevada de la variabilidad de la variable respuesta.</p>
+</div>
+<div id="intervalos-de-confianza-para-el-modelo-de-regresión-lineal-simple" class="section level2 hasAnchor" number="16.5">
+<h2><span class="header-section-number">16.5</span> Intervalos de confianza para el modelo de regresión lineal simple<a href="regresión-lineal-simple-1.html#intervalos-de-confianza-para-el-modelo-de-regresi%C3%B3n-lineal-simple" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="intervalo-de-confianza-para-la-pendiente-beta_1" class="section level3 hasAnchor" number="16.5.1">
+<h3><span class="header-section-number">16.5.1</span> Intervalo de confianza para la pendiente beta_1:<a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-la-pendiente-beta_1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb103"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb103-1"><a href="regresión-lineal-simple-1.html#cb103-1" tabindex="-1"></a><span class="co"># Nivel de significancia</span></span>
+<span id="cb103-2"><a href="regresión-lineal-simple-1.html#cb103-2" tabindex="-1"></a>alpha_ic <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb103-3"><a href="regresión-lineal-simple-1.html#cb103-3" tabindex="-1"></a></span>
+<span id="cb103-4"><a href="regresión-lineal-simple-1.html#cb103-4" tabindex="-1"></a><span class="co"># Información del modelo</span></span>
+<span id="cb103-5"><a href="regresión-lineal-simple-1.html#cb103-5" tabindex="-1"></a>n_ic <span class="ot">&lt;-</span> <span class="fu">nobs</span>(modelo_rls)</span>
+<span id="cb103-6"><a href="regresión-lineal-simple-1.html#cb103-6" tabindex="-1"></a>gl_ic <span class="ot">&lt;-</span> <span class="fu">df.residual</span>(modelo_rls)</span>
+<span id="cb103-7"><a href="regresión-lineal-simple-1.html#cb103-7" tabindex="-1"></a></span>
+<span id="cb103-8"><a href="regresión-lineal-simple-1.html#cb103-8" tabindex="-1"></a>x_ic <span class="ot">&lt;-</span> <span class="fu">model.frame</span>(modelo_rls)<span class="sc">$</span>upper_lower_total</span>
+<span id="cb103-9"><a href="regresión-lineal-simple-1.html#cb103-9" tabindex="-1"></a>x_bar_ic <span class="ot">&lt;-</span> <span class="fu">mean</span>(x_ic)</span>
+<span id="cb103-10"><a href="regresión-lineal-simple-1.html#cb103-10" tabindex="-1"></a></span>
+<span id="cb103-11"><a href="regresión-lineal-simple-1.html#cb103-11" tabindex="-1"></a>Sxx_ic <span class="ot">&lt;-</span> <span class="fu">sum</span>((x_ic <span class="sc">-</span> x_bar_ic)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb103-12"><a href="regresión-lineal-simple-1.html#cb103-12" tabindex="-1"></a></span>
+<span id="cb103-13"><a href="regresión-lineal-simple-1.html#cb103-13" tabindex="-1"></a><span class="co"># Estimación de sigma cuadrado</span></span>
+<span id="cb103-14"><a href="regresión-lineal-simple-1.html#cb103-14" tabindex="-1"></a>sigma2_ic <span class="ot">&lt;-</span> <span class="fu">sum</span>(<span class="fu">resid</span>(modelo_rls)<span class="sc">^</span><span class="dv">2</span>) <span class="sc">/</span> gl_ic</span>
+<span id="cb103-15"><a href="regresión-lineal-simple-1.html#cb103-15" tabindex="-1"></a></span>
+<span id="cb103-16"><a href="regresión-lineal-simple-1.html#cb103-16" tabindex="-1"></a><span class="co"># Valor crítico t</span></span>
+<span id="cb103-17"><a href="regresión-lineal-simple-1.html#cb103-17" tabindex="-1"></a>t_crit_ic <span class="ot">&lt;-</span> <span class="fu">qt</span>(<span class="dv">1</span> <span class="sc">-</span> alpha_ic<span class="sc">/</span><span class="dv">2</span>, <span class="at">df =</span> gl_ic)</span>
+<span id="cb103-18"><a href="regresión-lineal-simple-1.html#cb103-18" tabindex="-1"></a></span>
+<span id="cb103-19"><a href="regresión-lineal-simple-1.html#cb103-19" tabindex="-1"></a><span class="co"># Estimación de la pendiente</span></span>
+<span id="cb103-20"><a href="regresión-lineal-simple-1.html#cb103-20" tabindex="-1"></a>b1_ic <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coef</span>(modelo_rls)[<span class="dv">2</span>])</span>
+<span id="cb103-21"><a href="regresión-lineal-simple-1.html#cb103-21" tabindex="-1"></a></span>
+<span id="cb103-22"><a href="regresión-lineal-simple-1.html#cb103-22" tabindex="-1"></a><span class="co"># Error estándar de beta1</span></span>
+<span id="cb103-23"><a href="regresión-lineal-simple-1.html#cb103-23" tabindex="-1"></a>se_b1_ic <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(sigma2_ic <span class="sc">/</span> Sxx_ic)</span>
+<span id="cb103-24"><a href="regresión-lineal-simple-1.html#cb103-24" tabindex="-1"></a></span>
+<span id="cb103-25"><a href="regresión-lineal-simple-1.html#cb103-25" tabindex="-1"></a><span class="co"># Límites del intervalo</span></span>
+<span id="cb103-26"><a href="regresión-lineal-simple-1.html#cb103-26" tabindex="-1"></a>LI_b1 <span class="ot">&lt;-</span> b1_ic <span class="sc">-</span> t_crit_ic <span class="sc">*</span> se_b1_ic</span>
+<span id="cb103-27"><a href="regresión-lineal-simple-1.html#cb103-27" tabindex="-1"></a>LS_b1 <span class="ot">&lt;-</span> b1_ic <span class="sc">+</span> t_crit_ic <span class="sc">*</span> se_b1_ic</span>
+<span id="cb103-28"><a href="regresión-lineal-simple-1.html#cb103-28" tabindex="-1"></a></span>
+<span id="cb103-29"><a href="regresión-lineal-simple-1.html#cb103-29" tabindex="-1"></a><span class="co"># Tabla de resultados</span></span>
+<span id="cb103-30"><a href="regresión-lineal-simple-1.html#cb103-30" tabindex="-1"></a>tabla_ic_b1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb103-31"><a href="regresión-lineal-simple-1.html#cb103-31" tabindex="-1"></a>  <span class="st">&quot;Parámetro&quot;</span> <span class="ot">=</span> <span class="st">&quot;Pendiente (beta1)&quot;</span>,</span>
+<span id="cb103-32"><a href="regresión-lineal-simple-1.html#cb103-32" tabindex="-1"></a>  <span class="st">&quot;Estimación&quot;</span> <span class="ot">=</span> b1_ic,</span>
+<span id="cb103-33"><a href="regresión-lineal-simple-1.html#cb103-33" tabindex="-1"></a>  <span class="st">&quot;Error estándar&quot;</span> <span class="ot">=</span> se_b1_ic,</span>
+<span id="cb103-34"><a href="regresión-lineal-simple-1.html#cb103-34" tabindex="-1"></a>  <span class="st">&quot;Límite inferior&quot;</span> <span class="ot">=</span> LI_b1,</span>
+<span id="cb103-35"><a href="regresión-lineal-simple-1.html#cb103-35" tabindex="-1"></a>  <span class="st">&quot;Límite superior&quot;</span> <span class="ot">=</span> LS_b1,</span>
+<span id="cb103-36"><a href="regresión-lineal-simple-1.html#cb103-36" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb103-37"><a href="regresión-lineal-simple-1.html#cb103-37" tabindex="-1"></a>)</span>
+<span id="cb103-38"><a href="regresión-lineal-simple-1.html#cb103-38" tabindex="-1"></a></span>
+<span id="cb103-39"><a href="regresión-lineal-simple-1.html#cb103-39" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb103-40"><a href="regresión-lineal-simple-1.html#cb103-40" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb103-41"><a href="regresión-lineal-simple-1.html#cb103-41" tabindex="-1"></a>  tabla_ic_b1,</span>
+<span id="cb103-42"><a href="regresión-lineal-simple-1.html#cb103-42" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb103-43"><a href="regresión-lineal-simple-1.html#cb103-43" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb103-44"><a href="regresión-lineal-simple-1.html#cb103-44" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb103-45"><a href="regresión-lineal-simple-1.html#cb103-45" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb103-46"><a href="regresión-lineal-simple-1.html#cb103-46" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb103-47"><a href="regresión-lineal-simple-1.html#cb103-47" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb103-48"><a href="regresión-lineal-simple-1.html#cb103-48" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Parámetro
+</th>
+<th style="text-align:right;">
+Estimación
+</th>
+<th style="text-align:right;">
+Error estándar
+</th>
+<th style="text-align:right;">
+Límite inferior
+</th>
+<th style="text-align:right;">
+Límite superior
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Pendiente (beta1)
+</td>
+<td style="text-align:right;">
+0.4827
+</td>
+<td style="text-align:right;">
+0.0016
+</td>
+<td style="text-align:right;">
+0.4796
+</td>
+<td style="text-align:right;">
+0.4858
+</td>
+</tr>
+</tbody>
+</table>
+<p>El intervalo de confianza del 95 % para la pendiente es:
+<span class="math display">\[
+{\beta_1\in(0.4796,\ 0.4858)}
+\]</span></p>
+<p>Como ambos límites son positivos y el intervalo no contiene el valor cero, el procedimiento indica que la pendiente es estadísticamente diferente de cero.</p>
+</div>
+<div id="intervalo-de-confianza-para-el-intercepto-beta_0" class="section level3 hasAnchor" number="16.5.2">
+<h3><span class="header-section-number">16.5.2</span> Intervalo de confianza para el intercepto beta_0:<a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-el-intercepto-beta_0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb104"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb104-1"><a href="regresión-lineal-simple-1.html#cb104-1" tabindex="-1"></a>b0_ic <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coef</span>(modelo_rls)[<span class="dv">1</span>])</span>
+<span id="cb104-2"><a href="regresión-lineal-simple-1.html#cb104-2" tabindex="-1"></a></span>
+<span id="cb104-3"><a href="regresión-lineal-simple-1.html#cb104-3" tabindex="-1"></a><span class="co"># Error estándar del intercepto</span></span>
+<span id="cb104-4"><a href="regresión-lineal-simple-1.html#cb104-4" tabindex="-1"></a>se_b0_ic <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(</span>
+<span id="cb104-5"><a href="regresión-lineal-simple-1.html#cb104-5" tabindex="-1"></a>  sigma2_ic <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span>n_ic <span class="sc">+</span> x_bar_ic<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx_ic)</span>
+<span id="cb104-6"><a href="regresión-lineal-simple-1.html#cb104-6" tabindex="-1"></a>)</span>
+<span id="cb104-7"><a href="regresión-lineal-simple-1.html#cb104-7" tabindex="-1"></a></span>
+<span id="cb104-8"><a href="regresión-lineal-simple-1.html#cb104-8" tabindex="-1"></a><span class="co"># Límites del intervalo</span></span>
+<span id="cb104-9"><a href="regresión-lineal-simple-1.html#cb104-9" tabindex="-1"></a>LI_b0 <span class="ot">&lt;-</span> b0_ic <span class="sc">-</span> t_crit_ic <span class="sc">*</span> se_b0_ic</span>
+<span id="cb104-10"><a href="regresión-lineal-simple-1.html#cb104-10" tabindex="-1"></a>LS_b0 <span class="ot">&lt;-</span> b0_ic <span class="sc">+</span> t_crit_ic <span class="sc">*</span> se_b0_ic</span>
+<span id="cb104-11"><a href="regresión-lineal-simple-1.html#cb104-11" tabindex="-1"></a></span>
+<span id="cb104-12"><a href="regresión-lineal-simple-1.html#cb104-12" tabindex="-1"></a><span class="co"># Tabla de resultados</span></span>
+<span id="cb104-13"><a href="regresión-lineal-simple-1.html#cb104-13" tabindex="-1"></a>tabla_ic_b0 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb104-14"><a href="regresión-lineal-simple-1.html#cb104-14" tabindex="-1"></a>  <span class="st">&quot;Parámetro&quot;</span> <span class="ot">=</span> <span class="st">&quot;Intercepto (beta0)&quot;</span>,</span>
+<span id="cb104-15"><a href="regresión-lineal-simple-1.html#cb104-15" tabindex="-1"></a>  <span class="st">&quot;Estimación&quot;</span> <span class="ot">=</span> b0_ic,</span>
+<span id="cb104-16"><a href="regresión-lineal-simple-1.html#cb104-16" tabindex="-1"></a>  <span class="st">&quot;Error estándar&quot;</span> <span class="ot">=</span> se_b0_ic,</span>
+<span id="cb104-17"><a href="regresión-lineal-simple-1.html#cb104-17" tabindex="-1"></a>  <span class="st">&quot;Límite inferior&quot;</span> <span class="ot">=</span> LI_b0,</span>
+<span id="cb104-18"><a href="regresión-lineal-simple-1.html#cb104-18" tabindex="-1"></a>  <span class="st">&quot;Límite superior&quot;</span> <span class="ot">=</span> LS_b0,</span>
+<span id="cb104-19"><a href="regresión-lineal-simple-1.html#cb104-19" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb104-20"><a href="regresión-lineal-simple-1.html#cb104-20" tabindex="-1"></a>)</span>
+<span id="cb104-21"><a href="regresión-lineal-simple-1.html#cb104-21" tabindex="-1"></a></span>
+<span id="cb104-22"><a href="regresión-lineal-simple-1.html#cb104-22" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb104-23"><a href="regresión-lineal-simple-1.html#cb104-23" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb104-24"><a href="regresión-lineal-simple-1.html#cb104-24" tabindex="-1"></a>  tabla_ic_b0,</span>
+<span id="cb104-25"><a href="regresión-lineal-simple-1.html#cb104-25" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb104-26"><a href="regresión-lineal-simple-1.html#cb104-26" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb104-27"><a href="regresión-lineal-simple-1.html#cb104-27" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb104-28"><a href="regresión-lineal-simple-1.html#cb104-28" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb104-29"><a href="regresión-lineal-simple-1.html#cb104-29" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb104-30"><a href="regresión-lineal-simple-1.html#cb104-30" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb104-31"><a href="regresión-lineal-simple-1.html#cb104-31" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+Parámetro
+</th>
+<th style="text-align:right;">
+Estimación
+</th>
+<th style="text-align:right;">
+Error estándar
+</th>
+<th style="text-align:right;">
+Límite inferior
+</th>
+<th style="text-align:right;">
+Límite superior
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Intercepto (beta0)
+</td>
+<td style="text-align:right;">
+58.1713
+</td>
+<td style="text-align:right;">
+0.5017
+</td>
+<td style="text-align:right;">
+57.1879
+</td>
+<td style="text-align:right;">
+59.1546
+</td>
+</tr>
+</tbody>
+</table>
+<p>El intervalo obtenido es:
+<span class="math display">\[{\beta_0\in(57.1879,\ 59.1546)}\]</span></p>
+<p>Como el intervalo no contiene el cero, el procedimiento indica que el intercepto es significativamente diferente de cero.</p>
+<p>Sin embargo, no podemos darle una interpretación práctica directa, porque una fuerza combinada de cero kilogramos no se encuentra dentro del rango observado en nuestro estudio.</p>
+</div>
+</div>
+<div id="intervalo-de-confianza-para-sigma2" class="section level2 hasAnchor" number="16.6">
+<h2><span class="header-section-number">16.6</span> Intervalo de confianza para sigma^2<a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-sigma2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb105"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb105-1"><a href="regresión-lineal-simple-1.html#cb105-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb105-2"><a href="regresión-lineal-simple-1.html#cb105-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nobs</span>(modelo_rls)</span>
+<span id="cb105-3"><a href="regresión-lineal-simple-1.html#cb105-3" tabindex="-1"></a></span>
+<span id="cb105-4"><a href="regresión-lineal-simple-1.html#cb105-4" tabindex="-1"></a>sigma <span class="ot">&lt;-</span> <span class="fu">summary</span>(modelo_rls)<span class="sc">$</span>sigma</span>
+<span id="cb105-5"><a href="regresión-lineal-simple-1.html#cb105-5" tabindex="-1"></a></span>
+<span id="cb105-6"><a href="regresión-lineal-simple-1.html#cb105-6" tabindex="-1"></a>gl <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb105-7"><a href="regresión-lineal-simple-1.html#cb105-7" tabindex="-1"></a></span>
+<span id="cb105-8"><a href="regresión-lineal-simple-1.html#cb105-8" tabindex="-1"></a>lim_inf <span class="ot">&lt;-</span> gl <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">qchisq</span>(<span class="dv">1</span><span class="sc">-</span>alpha<span class="sc">/</span><span class="dv">2</span>, gl)</span>
+<span id="cb105-9"><a href="regresión-lineal-simple-1.html#cb105-9" tabindex="-1"></a></span>
+<span id="cb105-10"><a href="regresión-lineal-simple-1.html#cb105-10" tabindex="-1"></a>lim_sup <span class="ot">&lt;-</span> gl <span class="sc">*</span> sigma<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> <span class="fu">qchisq</span>(alpha<span class="sc">/</span><span class="dv">2</span>, gl)</span>
+<span id="cb105-11"><a href="regresión-lineal-simple-1.html#cb105-11" tabindex="-1"></a></span>
+<span id="cb105-12"><a href="regresión-lineal-simple-1.html#cb105-12" tabindex="-1"></a><span class="co"># Tabla de resultados</span></span>
+<span id="cb105-13"><a href="regresión-lineal-simple-1.html#cb105-13" tabindex="-1"></a>tabla_ic_sigma2 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb105-14"><a href="regresión-lineal-simple-1.html#cb105-14" tabindex="-1"></a>  <span class="at">lim_inf =</span> lim_inf,</span>
+<span id="cb105-15"><a href="regresión-lineal-simple-1.html#cb105-15" tabindex="-1"></a>  <span class="at">sigma2_hat =</span> sigma<span class="sc">^</span><span class="dv">2</span>,</span>
+<span id="cb105-16"><a href="regresión-lineal-simple-1.html#cb105-16" tabindex="-1"></a>  <span class="at">lim_sup =</span> lim_sup</span>
+<span id="cb105-17"><a href="regresión-lineal-simple-1.html#cb105-17" tabindex="-1"></a>)</span>
+<span id="cb105-18"><a href="regresión-lineal-simple-1.html#cb105-18" tabindex="-1"></a></span>
+<span id="cb105-19"><a href="regresión-lineal-simple-1.html#cb105-19" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb105-20"><a href="regresión-lineal-simple-1.html#cb105-20" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb105-21"><a href="regresión-lineal-simple-1.html#cb105-21" tabindex="-1"></a>  tabla_ic_sigma2,</span>
+<span id="cb105-22"><a href="regresión-lineal-simple-1.html#cb105-22" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb105-23"><a href="regresión-lineal-simple-1.html#cb105-23" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb105-24"><a href="regresión-lineal-simple-1.html#cb105-24" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb105-25"><a href="regresión-lineal-simple-1.html#cb105-25" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb105-26"><a href="regresión-lineal-simple-1.html#cb105-26" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb105-27"><a href="regresión-lineal-simple-1.html#cb105-27" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb105-28"><a href="regresión-lineal-simple-1.html#cb105-28" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+lim_inf
+</th>
+<th style="text-align:right;">
+sigma2_hat
+</th>
+<th style="text-align:right;">
+lim_sup
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+634.3061
+</td>
+<td style="text-align:right;">
+647.1591
+</td>
+<td style="text-align:right;">
+660.4086
+</td>
+</tr>
+</tbody>
+</table>
+<p>El resultado es:
+<span class="math display">\[{\sigma^2\in(634.3061,\ 660.4086)}\]</span></p>
+<p>Esto significa que, con una confianza del 95 %, estimamos que la varianza poblacional de los errores se encuentra entre 634.3061 y 660.4086 kg², bajo los supuestos de la regresión lineal simple.</p>
+</div>
+<div id="pruebas-de-hipótesis" class="section level2 hasAnchor" number="16.7">
+<h2><span class="header-section-number">16.7</span> Pruebas de hipótesis<a href="regresión-lineal-simple-1.html#pruebas-de-hip%C3%B3tesis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="prueba-de-hipótesis-para-beta1" class="section level3 hasAnchor" number="16.7.1">
+<h3><span class="header-section-number">16.7.1</span> Prueba de hipótesis para beta1<a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-beta1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+H_0: \beta_1 = 0\\
+H_1: \beta_1 \neq 0
+\]</span></p>
+<div class="sourceCode" id="cb106"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb106-1"><a href="regresión-lineal-simple-1.html#cb106-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb106-2"><a href="regresión-lineal-simple-1.html#cb106-2" tabindex="-1"></a>n <span class="ot">&lt;-</span> <span class="fu">nobs</span>(modelo_rls)</span>
+<span id="cb106-3"><a href="regresión-lineal-simple-1.html#cb106-3" tabindex="-1"></a></span>
+<span id="cb106-4"><a href="regresión-lineal-simple-1.html#cb106-4" tabindex="-1"></a><span class="co"># Variable explicativa utilizada</span></span>
+<span id="cb106-5"><a href="regresión-lineal-simple-1.html#cb106-5" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="fu">model.frame</span>(modelo_rls)<span class="sc">$</span>upper_lower_total</span>
+<span id="cb106-6"><a href="regresión-lineal-simple-1.html#cb106-6" tabindex="-1"></a>x_bar <span class="ot">&lt;-</span> <span class="fu">mean</span>(x)</span>
+<span id="cb106-7"><a href="regresión-lineal-simple-1.html#cb106-7" tabindex="-1"></a></span>
+<span id="cb106-8"><a href="regresión-lineal-simple-1.html#cb106-8" tabindex="-1"></a><span class="co"># Sxx</span></span>
+<span id="cb106-9"><a href="regresión-lineal-simple-1.html#cb106-9" tabindex="-1"></a>Sxx <span class="ot">&lt;-</span> <span class="fu">sum</span>((x <span class="sc">-</span> x_bar)<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb106-10"><a href="regresión-lineal-simple-1.html#cb106-10" tabindex="-1"></a></span>
+<span id="cb106-11"><a href="regresión-lineal-simple-1.html#cb106-11" tabindex="-1"></a><span class="co"># Pendiente</span></span>
+<span id="cb106-12"><a href="regresión-lineal-simple-1.html#cb106-12" tabindex="-1"></a>b1 <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coef</span>(modelo_rls)[<span class="dv">2</span>])</span>
+<span id="cb106-13"><a href="regresión-lineal-simple-1.html#cb106-13" tabindex="-1"></a></span>
+<span id="cb106-14"><a href="regresión-lineal-simple-1.html#cb106-14" tabindex="-1"></a><span class="co"># Estimación de sigma</span></span>
+<span id="cb106-15"><a href="regresión-lineal-simple-1.html#cb106-15" tabindex="-1"></a>sigma_hat <span class="ot">&lt;-</span> <span class="fu">summary</span>(modelo_rls)<span class="sc">$</span>sigma</span>
+<span id="cb106-16"><a href="regresión-lineal-simple-1.html#cb106-16" tabindex="-1"></a></span>
+<span id="cb106-17"><a href="regresión-lineal-simple-1.html#cb106-17" tabindex="-1"></a><span class="co"># Varianza y error estándar de beta1</span></span>
+<span id="cb106-18"><a href="regresión-lineal-simple-1.html#cb106-18" tabindex="-1"></a>var_b1 <span class="ot">&lt;-</span> sigma_hat<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> Sxx</span>
+<span id="cb106-19"><a href="regresión-lineal-simple-1.html#cb106-19" tabindex="-1"></a>se_b1 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(var_b1)</span>
+<span id="cb106-20"><a href="regresión-lineal-simple-1.html#cb106-20" tabindex="-1"></a></span>
+<span id="cb106-21"><a href="regresión-lineal-simple-1.html#cb106-21" tabindex="-1"></a><span class="co"># H0: beta1 = 0 vs H1: beta1 != 0</span></span>
+<span id="cb106-22"><a href="regresión-lineal-simple-1.html#cb106-22" tabindex="-1"></a>t_calc <span class="ot">&lt;-</span> (b1 <span class="sc">-</span> <span class="dv">0</span>) <span class="sc">/</span> se_b1</span>
+<span id="cb106-23"><a href="regresión-lineal-simple-1.html#cb106-23" tabindex="-1"></a>gl <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb106-24"><a href="regresión-lineal-simple-1.html#cb106-24" tabindex="-1"></a></span>
+<span id="cb106-25"><a href="regresión-lineal-simple-1.html#cb106-25" tabindex="-1"></a><span class="co"># Valor p bilateral</span></span>
+<span id="cb106-26"><a href="regresión-lineal-simple-1.html#cb106-26" tabindex="-1"></a>p_valor <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="fu">abs</span>(t_calc), <span class="at">df =</span> gl)</span>
+<span id="cb106-27"><a href="regresión-lineal-simple-1.html#cb106-27" tabindex="-1"></a></span>
+<span id="cb106-28"><a href="regresión-lineal-simple-1.html#cb106-28" tabindex="-1"></a><span class="co"># Tabla de resultados</span></span>
+<span id="cb106-29"><a href="regresión-lineal-simple-1.html#cb106-29" tabindex="-1"></a>resultados_b1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb106-30"><a href="regresión-lineal-simple-1.html#cb106-30" tabindex="-1"></a>  <span class="at">beta1_hat =</span> b1,</span>
+<span id="cb106-31"><a href="regresión-lineal-simple-1.html#cb106-31" tabindex="-1"></a>  <span class="at">se_beta1 =</span> se_b1,</span>
+<span id="cb106-32"><a href="regresión-lineal-simple-1.html#cb106-32" tabindex="-1"></a>  <span class="at">estadistico_t =</span> t_calc,</span>
+<span id="cb106-33"><a href="regresión-lineal-simple-1.html#cb106-33" tabindex="-1"></a>  <span class="at">gl =</span> gl,</span>
+<span id="cb106-34"><a href="regresión-lineal-simple-1.html#cb106-34" tabindex="-1"></a>  <span class="at">p_value =</span> <span class="fu">format.pval</span>(p_valor, <span class="at">digits =</span> <span class="dv">4</span>)</span>
+<span id="cb106-35"><a href="regresión-lineal-simple-1.html#cb106-35" tabindex="-1"></a>)</span>
+<span id="cb106-36"><a href="regresión-lineal-simple-1.html#cb106-36" tabindex="-1"></a></span>
+<span id="cb106-37"><a href="regresión-lineal-simple-1.html#cb106-37" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb106-38"><a href="regresión-lineal-simple-1.html#cb106-38" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb106-39"><a href="regresión-lineal-simple-1.html#cb106-39" tabindex="-1"></a>  resultados_b1,</span>
+<span id="cb106-40"><a href="regresión-lineal-simple-1.html#cb106-40" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb106-41"><a href="regresión-lineal-simple-1.html#cb106-41" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb106-42"><a href="regresión-lineal-simple-1.html#cb106-42" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb106-43"><a href="regresión-lineal-simple-1.html#cb106-43" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb106-44"><a href="regresión-lineal-simple-1.html#cb106-44" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb106-45"><a href="regresión-lineal-simple-1.html#cb106-45" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb106-46"><a href="regresión-lineal-simple-1.html#cb106-46" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+beta1_hat
+</th>
+<th style="text-align:right;">
+se_beta1
+</th>
+<th style="text-align:right;">
+estadistico_t
+</th>
+<th style="text-align:right;">
+gl
+</th>
+<th style="text-align:left;">
+p_value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0.4827
+</td>
+<td style="text-align:right;">
+0.0016
+</td>
+<td style="text-align:right;">
+306.5628
+</td>
+<td style="text-align:right;">
+18898
+</td>
+<td style="text-align:left;">
+&lt; 0.00000000000000022
+</td>
+</tr>
+</tbody>
+</table>
+<p>Se realizó una prueba de hipótesis bilateral para determinar si la pendiente del modelo de regresión lineal simple es significativamente diferente de cero. Se obtuvo un estadístico <span class="math inline">\(t=306.5628\)</span>, con 18898 grados de libertad y un valor <span class="math inline">\(p&lt;0.001\)</span>. Dado que el valor p es menor que el nivel de significancia <span class="math inline">\(\alpha=0.05\)</span>, se rechaza la hipótesis nula <span class="math inline">\(H_0:\beta_1=0\)</span>.</p>
+<p>Por lo tanto, existe evidencia estadísticamente significativa de una relación lineal entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto. Además, como la pendiente estimada es positiva (<span class="math inline">\(\hat{\beta}_1=0.4827\)</span>), se concluye que, según el modelo ajustado, mayores valores de fuerza combinada están asociados con mayores valores esperados de peso muerto.</p>
+</div>
+<div id="prueba-de-hipótesis-para-beta0" class="section level3 hasAnchor" number="16.7.2">
+<h3><span class="header-section-number">16.7.2</span> Prueba de hipótesis para beta0:<a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-beta0" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+H_0: \beta_0 = 0 \\
+H_1: \beta_0 \neq 0
+\]</span></p>
+<div class="sourceCode" id="cb107"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb107-1"><a href="regresión-lineal-simple-1.html#cb107-1" tabindex="-1"></a>b0 <span class="ot">&lt;-</span> <span class="fu">unname</span>(<span class="fu">coef</span>(modelo_rls)[<span class="dv">1</span>])</span>
+<span id="cb107-2"><a href="regresión-lineal-simple-1.html#cb107-2" tabindex="-1"></a></span>
+<span id="cb107-3"><a href="regresión-lineal-simple-1.html#cb107-3" tabindex="-1"></a><span class="co"># Varianza y error estándar de beta0</span></span>
+<span id="cb107-4"><a href="regresión-lineal-simple-1.html#cb107-4" tabindex="-1"></a>var_b0 <span class="ot">&lt;-</span> sigma_hat<span class="sc">^</span><span class="dv">2</span> <span class="sc">*</span> (<span class="dv">1</span><span class="sc">/</span>n <span class="sc">+</span> x_bar<span class="sc">^</span><span class="dv">2</span><span class="sc">/</span>Sxx)</span>
+<span id="cb107-5"><a href="regresión-lineal-simple-1.html#cb107-5" tabindex="-1"></a>se_b0 <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(var_b0)</span>
+<span id="cb107-6"><a href="regresión-lineal-simple-1.html#cb107-6" tabindex="-1"></a></span>
+<span id="cb107-7"><a href="regresión-lineal-simple-1.html#cb107-7" tabindex="-1"></a><span class="co"># H0: beta0 = 0 vs H1: beta0 != 0</span></span>
+<span id="cb107-8"><a href="regresión-lineal-simple-1.html#cb107-8" tabindex="-1"></a>t_calc <span class="ot">&lt;-</span> (b0 <span class="sc">-</span> <span class="dv">0</span>) <span class="sc">/</span> se_b0</span>
+<span id="cb107-9"><a href="regresión-lineal-simple-1.html#cb107-9" tabindex="-1"></a>gl <span class="ot">&lt;-</span> n <span class="sc">-</span> <span class="dv">2</span></span>
+<span id="cb107-10"><a href="regresión-lineal-simple-1.html#cb107-10" tabindex="-1"></a></span>
+<span id="cb107-11"><a href="regresión-lineal-simple-1.html#cb107-11" tabindex="-1"></a><span class="co"># Valor p bilateral</span></span>
+<span id="cb107-12"><a href="regresión-lineal-simple-1.html#cb107-12" tabindex="-1"></a>p_valor <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(<span class="sc">-</span><span class="fu">abs</span>(t_calc), <span class="at">df =</span> gl)</span>
+<span id="cb107-13"><a href="regresión-lineal-simple-1.html#cb107-13" tabindex="-1"></a></span>
+<span id="cb107-14"><a href="regresión-lineal-simple-1.html#cb107-14" tabindex="-1"></a><span class="co"># Tabla de resultados</span></span>
+<span id="cb107-15"><a href="regresión-lineal-simple-1.html#cb107-15" tabindex="-1"></a>resultados_b0 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb107-16"><a href="regresión-lineal-simple-1.html#cb107-16" tabindex="-1"></a>  <span class="at">beta0_hat =</span> b0,</span>
+<span id="cb107-17"><a href="regresión-lineal-simple-1.html#cb107-17" tabindex="-1"></a>  <span class="at">se_beta0 =</span> se_b0,</span>
+<span id="cb107-18"><a href="regresión-lineal-simple-1.html#cb107-18" tabindex="-1"></a>  <span class="at">estadistico_t =</span> t_calc,</span>
+<span id="cb107-19"><a href="regresión-lineal-simple-1.html#cb107-19" tabindex="-1"></a>  <span class="at">gl =</span> gl,</span>
+<span id="cb107-20"><a href="regresión-lineal-simple-1.html#cb107-20" tabindex="-1"></a>  <span class="at">p_value =</span> <span class="fu">format.pval</span>(p_valor, <span class="at">digits =</span> <span class="dv">4</span>)</span>
+<span id="cb107-21"><a href="regresión-lineal-simple-1.html#cb107-21" tabindex="-1"></a>)</span>
+<span id="cb107-22"><a href="regresión-lineal-simple-1.html#cb107-22" tabindex="-1"></a></span>
+<span id="cb107-23"><a href="regresión-lineal-simple-1.html#cb107-23" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb107-24"><a href="regresión-lineal-simple-1.html#cb107-24" tabindex="-1"></a>  <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb107-25"><a href="regresión-lineal-simple-1.html#cb107-25" tabindex="-1"></a>  resultados_b0,</span>
+<span id="cb107-26"><a href="regresión-lineal-simple-1.html#cb107-26" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">4</span>,</span>
+<span id="cb107-27"><a href="regresión-lineal-simple-1.html#cb107-27" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb107-28"><a href="regresión-lineal-simple-1.html#cb107-28" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb107-29"><a href="regresión-lineal-simple-1.html#cb107-29" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb107-30"><a href="regresión-lineal-simple-1.html#cb107-30" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>),</span>
+<span id="cb107-31"><a href="regresión-lineal-simple-1.html#cb107-31" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb107-32"><a href="regresión-lineal-simple-1.html#cb107-32" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:right;">
+beta0_hat
+</th>
+<th style="text-align:right;">
+se_beta0
+</th>
+<th style="text-align:right;">
+estadistico_t
+</th>
+<th style="text-align:right;">
+gl
+</th>
+<th style="text-align:left;">
+p_value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+58.1713
+</td>
+<td style="text-align:right;">
+0.5017
+</td>
+<td style="text-align:right;">
+115.9534
+</td>
+<td style="text-align:right;">
+18898
+</td>
+<td style="text-align:left;">
+&lt; 0.00000000000000022
+</td>
+</tr>
+</tbody>
+</table>
+<p>Se realizó una prueba de hipótesis bilateral para determinar si el intercepto del modelo de regresión lineal simple es significativamente diferente de cero.Se obtuvo un estadístico <span class="math inline">\(t=115.9534\)</span>, con 18898 grados de libertad y un valor <span class="math inline">\(p&lt;0.001\)</span>. Como el valor p es menor que el nivel de significancia <span class="math inline">\(\alpha=0.05\)</span>, se rechaza la hipótesis nula <span class="math inline">\(H_0:\beta_0=0\)</span>.</p>
+<p>Por lo tanto, existe evidencia estadísticamente significativa de que el intercepto poblacional es diferente de cero.</p>
+</div>
+<div id="prueba-de-hipótesis-para-sigma2" class="section level3 hasAnchor" number="16.7.3">
+<h3><span class="header-section-number">16.7.3</span> Prueba de hipótesis para sigma^2<a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-sigma2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><span class="math display">\[
+H_0: \sigma^2 = \sigma_0^2\\
+H_1: \sigma^2 \neq \sigma_0^2
+\]</span></p>
+<p>Para la varianza de los errores del modelo se obtuvo una estimación de <span class="math inline">\(\hat{\sigma}^2=647.1591\)</span> kg² y un intervalo de confianza del 95 % de <span class="math inline">\((634.3061,\ 660.4086)\)</span> kg². No se realizó una prueba de hipótesis para este parámetro, debido a que no se cuenra con un valor de referencia <span class="math inline">\(\sigma_0^2\)</span> previamente establecido que permita formular una hipótesis nula realmente fundamentada.</p>
+<p>En consecuencia, se presenta la estimación de la varianza y su intervalo de confianza, sujetos al cumplimiento de los supuestos del modelo de regresión lineal simple.</p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="coeficiente-de-correlación-1.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="análisis-de-los-errores.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

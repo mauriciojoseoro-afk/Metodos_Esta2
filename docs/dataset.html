@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>6 Dataset | Bibliografia</title>
+  <meta name="description" content="6 Dataset | Bibliografia" />
+  <meta name="generator" content="bookdown 0.47 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="6 Dataset | Bibliografia" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="6 Dataset | Bibliografia" />
+  
+  
+  
+
+<meta name="author" content="Karla Paredes y Mauricio Orozco" />
+
+
+<meta name="date" content="2026-09-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="marco-teorico.html"/>
+<link rel="next" href="analisis-exploratorio-de-bestdeadliftkg-target.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
+<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
+
+
+<style type="text/css">
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="introducción.html"><a href="introducción.html"><i class="fa fa-check"></i><b>1</b> Introducción</a></li>
+<li class="chapter" data-level="2" data-path="introducción-1.html"><a href="introducción-1.html"><i class="fa fa-check"></i><b>2</b> Introducción</a></li>
+<li class="chapter" data-level="3" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html"><i class="fa fa-check"></i><b>3</b> Objetivos generales y especificos</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#pregunta-problema"><i class="fa fa-check"></i><b>3.1</b> Pregunta problema</a></li>
+<li class="chapter" data-level="3.2" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#objetivo-general"><i class="fa fa-check"></i><b>3.2</b> Objetivo general</a></li>
+<li class="chapter" data-level="3.3" data-path="objetivos-generales-y-especificos.html"><a href="objetivos-generales-y-especificos.html#objetivos-espec%C3%ADficos"><i class="fa fa-check"></i><b>3.3</b> Objetivos específicos</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="metodología.html"><a href="metodología.html"><i class="fa fa-check"></i><b>4</b> Metodología</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="metodología.html"><a href="metodología.html#dise%C3%B1o-de-la-investigaci%C3%B3n"><i class="fa fa-check"></i><b>4.1</b> Diseño de la investigación</a></li>
+<li class="chapter" data-level="4.2" data-path="metodología.html"><a href="metodología.html#fuente-de-datos"><i class="fa fa-check"></i><b>4.2</b> Fuente de datos</a></li>
+<li class="chapter" data-level="4.3" data-path="metodología.html"><a href="metodología.html#herramientas-computacionales"><i class="fa fa-check"></i><b>4.3</b> Herramientas computacionales</a></li>
+<li class="chapter" data-level="4.4" data-path="metodología.html"><a href="metodología.html#procedimiento-metodol%C3%B3gico"><i class="fa fa-check"></i><b>4.4</b> Procedimiento metodológico</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="metodología.html"><a href="metodología.html#etapa-1.-preparaci%C3%B3n-y-limpieza-de-datos"><i class="fa fa-check"></i><b>4.4.1</b> Etapa 1. Preparación y limpieza de datos</a></li>
+<li class="chapter" data-level="4.4.2" data-path="metodología.html"><a href="metodología.html#etapa-2.-an%C3%A1lisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>4.4.2</b> Etapa 2. Análisis exploratorio de datos</a></li>
+<li class="chapter" data-level="4.4.3" data-path="metodología.html"><a href="metodología.html#etapa-3.-ingenier%C3%ADa-de-caracter%C3%ADsticas"><i class="fa fa-check"></i><b>4.4.3</b> Etapa 3. Ingeniería de características</a></li>
+<li class="chapter" data-level="4.4.4" data-path="metodología.html"><a href="metodología.html#etapa-4.-an%C3%A1lisis-de-variables-categ%C3%B3ricas"><i class="fa fa-check"></i><b>4.4.4</b> Etapa 4. Análisis de variables categóricas</a></li>
+<li class="chapter" data-level="4.4.5" data-path="metodología.html"><a href="metodología.html#etapa-5.-estad%C3%ADstica-inferencial-param%C3%A9trica-y-no-param%C3%A9trica"><i class="fa fa-check"></i><b>4.4.5</b> Etapa 5. Estadística inferencial paramétrica y no paramétrica</a></li>
+<li class="chapter" data-level="4.4.6" data-path="metodología.html"><a href="metodología.html#etapa-6.-an%C3%A1lisis-de-correlaci%C3%B3n"><i class="fa fa-check"></i><b>4.4.6</b> Etapa 6. Análisis de correlación</a></li>
+<li class="chapter" data-level="4.4.7" data-path="metodología.html"><a href="metodología.html#etapa-7.-regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>4.4.7</b> Etapa 7. Regresión lineal simple</a></li>
+<li class="chapter" data-level="4.4.8" data-path="metodología.html"><a href="metodología.html#etapa-8.-regresi%C3%B3n-lineal-m%C3%BAltiple"><i class="fa fa-check"></i><b>4.4.8</b> Etapa 8. Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="4.4.9" data-path="metodología.html"><a href="metodología.html#etapa-9.-comparaci%C3%B3n-y-selecci%C3%B3n-del-modelo"><i class="fa fa-check"></i><b>4.4.9</b> Etapa 9. Comparación y selección del modelo</a></li>
+</ul></li>
+<li class="chapter" data-level="4.5" data-path="metodología.html"><a href="metodología.html#consideraciones-metodol%C3%B3gicas"><i class="fa fa-check"></i><b>4.5</b> Consideraciones metodológicas</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="marco-teorico.html"><a href="marco-teorico.html"><i class="fa fa-check"></i><b>5</b> Marco Teorico</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="marco-teorico.html"><a href="marco-teorico.html#el-powerlifting-como-deporte-de-fuerza"><i class="fa fa-check"></i><b>5.1</b> El powerlifting como deporte de fuerza</a></li>
+<li class="chapter" data-level="5.2" data-path="marco-teorico.html"><a href="marco-teorico.html#t%C3%A9cnica"><i class="fa fa-check"></i><b>5.2</b> Técnica</a></li>
+<li class="chapter" data-level="5.3" data-path="marco-teorico.html"><a href="marco-teorico.html#press-de-banca"><i class="fa fa-check"></i><b>5.3</b> Press de banca</a></li>
+<li class="chapter" data-level="5.4" data-path="marco-teorico.html"><a href="marco-teorico.html#sentadilla"><i class="fa fa-check"></i><b>5.4</b> Sentadilla</a></li>
+<li class="chapter" data-level="5.5" data-path="marco-teorico.html"><a href="marco-teorico.html#peso-muerto"><i class="fa fa-check"></i><b>5.5</b> Peso muerto</a></li>
+<li class="chapter" data-level="5.6" data-path="marco-teorico.html"><a href="marco-teorico.html#peso-corporal-y-categor%C3%ADas-por-peso"><i class="fa fa-check"></i><b>5.6</b> Peso corporal y Categorías por peso</a></li>
+<li class="chapter" data-level="5.7" data-path="marco-teorico.html"><a href="marco-teorico.html#diferencias-de-fuerza-asociadas-al-sexo"><i class="fa fa-check"></i><b>5.7</b> 1.8 Diferencias de fuerza asociadas al sexo</a></li>
+<li class="chapter" data-level="5.8" data-path="marco-teorico.html"><a href="marco-teorico.html#fundamentos-estad%C3%ADsticos"><i class="fa fa-check"></i><b>5.8</b> Fundamentos estadísticos</a>
+<ul>
+<li class="chapter" data-level="5.8.1" data-path="marco-teorico.html"><a href="marco-teorico.html#an%C3%A1lisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>5.8.1</b> Análisis exploratorio de datos</a></li>
+<li class="chapter" data-level="5.8.2" data-path="marco-teorico.html"><a href="marco-teorico.html#estad%C3%ADstica-param%C3%A9trica-y-no-param%C3%A9trica"><i class="fa fa-check"></i><b>5.8.2</b> Estadística paramétrica y no paramétrica</a></li>
+<li class="chapter" data-level="5.8.3" data-path="marco-teorico.html"><a href="marco-teorico.html#tablas-de-contingencia"><i class="fa fa-check"></i><b>5.8.3</b> Tablas de contingencia</a></li>
+<li class="chapter" data-level="5.8.4" data-path="marco-teorico.html"><a href="marco-teorico.html#coeficiente-de-correlaci%C3%B3n"><i class="fa fa-check"></i><b>5.8.4</b> Coeficiente de correlación</a></li>
+<li class="chapter" data-level="5.8.5" data-path="marco-teorico.html"><a href="marco-teorico.html#regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>5.8.5</b> Regresión lineal simple</a></li>
+<li class="chapter" data-level="5.8.6" data-path="marco-teorico.html"><a href="marco-teorico.html#regresi%C3%B3n-lineal-m%C3%BAltiple"><i class="fa fa-check"></i><b>5.8.6</b> Regresión lineal múltiple</a></li>
+<li class="chapter" data-level="5.8.7" data-path="marco-teorico.html"><a href="marco-teorico.html#coeficiente-de-determinaci%C3%B3n"><i class="fa fa-check"></i><b>5.8.7</b> Coeficiente de determinación</a></li>
+<li class="chapter" data-level="5.8.8" data-path="marco-teorico.html"><a href="marco-teorico.html#inferencia-estad%C3%ADstica-en-los-modelos-de-regresi%C3%B3n"><i class="fa fa-check"></i><b>5.8.8</b> Inferencia estadística en los modelos de regresión</a></li>
+<li class="chapter" data-level="5.8.9" data-path="marco-teorico.html"><a href="marco-teorico.html#supuestos-de-los-modelos-de-regresi%C3%B3n"><i class="fa fa-check"></i><b>5.8.9</b> Supuestos de los modelos de regresión</a></li>
+<li class="chapter" data-level="5.8.10" data-path="marco-teorico.html"><a href="marco-teorico.html#multicolinealidad"><i class="fa fa-check"></i><b>5.8.10</b> Multicolinealidad</a></li>
+<li class="chapter" data-level="5.8.11" data-path="marco-teorico.html"><a href="marco-teorico.html#transformaci%C3%B3n-de-variables"><i class="fa fa-check"></i><b>5.8.11</b> Transformación de variables</a></li>
+<li class="chapter" data-level="5.8.12" data-path="marco-teorico.html"><a href="marco-teorico.html#selecci%C3%B3n-de-modelos"><i class="fa fa-check"></i><b>5.8.12</b> Selección de modelos</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="dataset.html"><a href="dataset.html"><i class="fa fa-check"></i><b>6</b> Dataset</a>
+<ul>
+<li class="chapter" data-level="6.1" data-path="dataset.html"><a href="dataset.html#librerias"><i class="fa fa-check"></i><b>6.1</b> Librerias</a></li>
+<li class="chapter" data-level="6.2" data-path="dataset.html"><a href="dataset.html#leer-dataset"><i class="fa fa-check"></i><b>6.2</b> Leer dataset</a></li>
+<li class="chapter" data-level="6.3" data-path="dataset.html"><a href="dataset.html#mostrar-las-10-primeras-filas"><i class="fa fa-check"></i><b>6.3</b> Mostrar las 10 primeras filas</a></li>
+<li class="chapter" data-level="6.4" data-path="dataset.html"><a href="dataset.html#estructura-de-los-datos"><i class="fa fa-check"></i><b>6.4</b> Estructura de los datos</a></li>
+<li class="chapter" data-level="6.5" data-path="dataset.html"><a href="dataset.html#solucionar-valores-inconsistentes"><i class="fa fa-check"></i><b>6.5</b> Solucionar valores inconsistentes</a></li>
+<li class="chapter" data-level="6.6" data-path="dataset.html"><a href="dataset.html#verificamos-si-los-niveles-de-las-variables-cualitativas-tienen-inconsistencias"><i class="fa fa-check"></i><b>6.6</b> Verificamos si los niveles de las variables cualitativas tienen inconsistencias</a></li>
+<li class="chapter" data-level="6.7" data-path="dataset.html"><a href="dataset.html#forma-directa-de-verificar-si-hay-datos-faltantes"><i class="fa fa-check"></i><b>6.7</b> Forma directa de verificar si hay datos faltantes</a></li>
+<li class="chapter" data-level="6.8" data-path="dataset.html"><a href="dataset.html#imputacion-de-datos-faltantes"><i class="fa fa-check"></i><b>6.8</b> Imputacion de datos faltantes</a></li>
+<li class="chapter" data-level="6.9" data-path="dataset.html"><a href="dataset.html#ver-si-hay-datos-faltantes-nuevamente-en-el-data-frame-limpiado"><i class="fa fa-check"></i><b>6.9</b> Ver si hay datos faltantes nuevamente en el Data Frame limpiado</a></li>
+<li class="chapter" data-level="6.10" data-path="dataset.html"><a href="dataset.html#convertir-las-variables-cualitativas-en-factor."><i class="fa fa-check"></i><b>6.10</b> Convertir las variables cualitativas en factor.</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html"><i class="fa fa-check"></i><b>7</b> Analisis exploratorio de BestDeadliftKg (target)</a>
+<ul>
+<li class="chapter" data-level="7.1" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-tipo-histograma"><i class="fa fa-check"></i><b>7.1</b> Grafico tipo histograma</a></li>
+<li class="chapter" data-level="7.2" data-path="analisis-exploratorio-de-bestdeadliftkg-target.html"><a href="analisis-exploratorio-de-bestdeadliftkg-target.html#grafico-de-cajas-y-bigotes"><i class="fa fa-check"></i><b>7.2</b> Grafico de cajas y bigotes</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html"><i class="fa fa-check"></i><b>8</b> Variables independientes (caracteristicas)</a>
+<ul>
+<li class="chapter" data-level="8.0.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#veamos-el-an%C3%A1lisis-de-cada-variable-independiente"><i class="fa fa-check"></i><b>8.0.1</b> Veamos el análisis de cada variable independiente</a></li>
+<li class="chapter" data-level="8.1" data-path="variables-independientes-caracteristicas.html"><a href="variables-independientes-caracteristicas.html#graficos-de-las-variables-independientes"><i class="fa fa-check"></i><b>8.1</b> Graficos de las variables independientes</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html"><i class="fa fa-check"></i><b>9</b> Analisis Exploratorio Bivariado</a>
+<ul>
+<li class="chapter" data-level="9.1" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-edad"><i class="fa fa-check"></i><b>9.1</b> Peso muerto vs Edad</a></li>
+<li class="chapter" data-level="9.2" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-sentadilla"><i class="fa fa-check"></i><b>9.2</b> Peso muerto vs Mejor Sentadilla</a></li>
+<li class="chapter" data-level="9.3" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-peso-corporal"><i class="fa fa-check"></i><b>9.3</b> Peso muerto vs Peso corporal</a></li>
+<li class="chapter" data-level="9.4" data-path="analisis-exploratorio-bivariado.html"><a href="analisis-exploratorio-bivariado.html#peso-muerto-vs-mejor-press-banca"><i class="fa fa-check"></i><b>9.4</b> Peso muerto vs Mejor press banca</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html"><i class="fa fa-check"></i><b>10</b> Variables categoricas ‘Sex’ y ‘Equipament’</a>
+<ul>
+<li class="chapter" data-level="10.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-sex"><i class="fa fa-check"></i><b>10.1</b> Diagrama de barras: Frecuencia de la variable ‘Sex’</a></li>
+<li class="chapter" data-level="10.2" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-tabla"><i class="fa fa-check"></i><b>10.2</b> Comparacion entre peso muerto y sexo (tabla)</a>
+<ul>
+<li class="chapter" data-level="10.2.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-sexo-caja-de-bigotes"><i class="fa fa-check"></i><b>10.2.1</b> Comparacion entre peso muerto y sexo (Caja de bigotes)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#diagrama-de-barras-frecuencia-de-la-variable-equipament"><i class="fa fa-check"></i><b>10.3</b> Diagrama de barras: Frecuencia de la variable ‘Equipament’</a></li>
+<li class="chapter" data-level="10.4" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-tabla"><i class="fa fa-check"></i><b>10.4</b> Comparacion entre peso muerto y equipo (tabla)</a>
+<ul>
+<li class="chapter" data-level="10.4.1" data-path="variables-categoricas-sex-y-equipament.html"><a href="variables-categoricas-sex-y-equipament.html#comparacion-entre-peso-muerto-y-equipo-caja-de-bigotes"><i class="fa fa-check"></i><b>10.4.1</b> Comparacion entre peso muerto y equipo (Caja de bigotes)</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html"><i class="fa fa-check"></i><b>11</b> Variables independientes vs variables independientes:</a>
+<ul>
+<li class="chapter" data-level="11.1" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#variables-num%C3%A9ricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>11.1</b> variables numéricas vs numéricas</a></li>
+<li class="chapter" data-level="11.2" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#variables-categoricas-vs-num%C3%A9ricas"><i class="fa fa-check"></i><b>11.2</b> Variables categoricas vs numéricas</a>
+<ul>
+<li class="chapter" data-level="11.2.1" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#sex-vs-variables-numericas"><i class="fa fa-check"></i><b>11.2.1</b> Sex vs variables numericas</a></li>
+<li class="chapter" data-level="11.2.2" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#equipamiento-vs-variables-numericas"><i class="fa fa-check"></i><b>11.2.2</b> Equipamiento vs variables numericas</a></li>
+<li class="chapter" data-level="11.2.3" data-path="variables-independientes-vs-variables-independientes.html"><a href="variables-independientes-vs-variables-independientes.html#equipamiento-vs-sexo"><i class="fa fa-check"></i><b>11.2.3</b> Equipamiento vs Sexo</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html"><i class="fa fa-check"></i><b>12</b> Ingenieria de caracterizacion (feature engineering)</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#variables-seleccionadas"><i class="fa fa-check"></i><b>12.1</b> Variables seleccionadas</a></li>
+<li class="chapter" data-level="12.2" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#nuevas-variables-upper_lower_total-ratio_squat_peso-ratio_bench_peso"><i class="fa fa-check"></i><b>12.2</b> Nuevas variables: ‘upper_lower_total’, ‘ratio_squat_peso’, ‘ratio_bench_peso’</a>
+<ul>
+<li class="chapter" data-level="12.2.1" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#verificar-si-no-hay-valores-nulos"><i class="fa fa-check"></i><b>12.2.1</b> Verificar si no hay valores nulos:</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#realizamos-el-resumen-estadistico-de-nuestras-nuevas-variables"><i class="fa fa-check"></i><b>12.3</b> Realizamos el resumen estadistico de nuestras nuevas variables</a></li>
+<li class="chapter" data-level="12.4" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#veamos-los-graficos-de-las-variables-de-nuestro-dataframe-nuevo."><i class="fa fa-check"></i><b>12.4</b> Veamos los graficos de las variables de nuestro dataframe nuevo.</a></li>
+<li class="chapter" data-level="12.5" data-path="ingenieria-de-caracterizacion-feature-engineering.html"><a href="ingenieria-de-caracterizacion-feature-engineering.html#verificamos-el-%C3%A9xito-de-la-ingenieria-de-caracterizacion"><i class="fa fa-check"></i><b>12.5</b> Verificamos el éxito de la ingenieria de caracterizacion</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html"><i class="fa fa-check"></i><b>13</b> Tabla de contingencia</a>
+<ul>
+<li class="chapter" data-level="13.1" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#crear-tabla-de-contingencia"><i class="fa fa-check"></i><b>13.1</b> Crear tabla de contingencia</a></li>
+<li class="chapter" data-level="13.2" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#totales-por-fila-columna-y-total-general"><i class="fa fa-check"></i><b>13.2</b> Totales por fila, columna y total general</a></li>
+<li class="chapter" data-level="13.3" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#frecuencias-esperadas-bajo-h0"><i class="fa fa-check"></i><b>13.3</b> Frecuencias esperadas bajo H0</a></li>
+<li class="chapter" data-level="13.4" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#estadistico-chi-cuadrado"><i class="fa fa-check"></i><b>13.4</b> Estadistico Chi-cuadrado</a></li>
+<li class="chapter" data-level="13.5" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#conclusion"><i class="fa fa-check"></i><b>13.5</b> Conclusion</a></li>
+<li class="chapter" data-level="13.6" data-path="tabla-de-contingencia.html"><a href="tabla-de-contingencia.html#verificamos-con-chisq.test"><i class="fa fa-check"></i><b>13.6</b> Verificamos con chisq.test</a></li>
+</ul></li>
+<li class="chapter" data-level="14" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html"><i class="fa fa-check"></i><b>14</b> Estadistica paramétrica y no paramétrica</a>
+<ul>
+<li class="chapter" data-level="14.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existe-una-diferencia-significativa-en-el-peso-muerto-promedio-entre-atletas-de-sexo-masculino-y-femenino"><i class="fa fa-check"></i><b>14.1</b> ¿Existe una diferencia significativa en el peso muerto promedio entre atletas de sexo masculino y femenino?</a>
+<ul>
+<li class="chapter" data-level="14.1.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-supuestos-de-normalidad"><i class="fa fa-check"></i><b>14.1.1</b> Verifiquemos supuestos de normalidad</a></li>
+<li class="chapter" data-level="14.1.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#comparaci%C3%B3n-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico"><i class="fa fa-check"></i><b>14.1.2</b> comparación de grupos con método no paramétrico</a></li>
+</ul></li>
+<li class="chapter" data-level="14.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#existen-diferencias-significativas-en-el-peso-muerto-promedio-entre-los-distintos-tipos-de-equipamiento-utilizados-por-los-atletas"><i class="fa fa-check"></i><b>14.2</b> ¿Existen diferencias significativas en el peso muerto promedio entre los distintos tipos de equipamiento utilizados por los atletas?</a>
+<ul>
+<li class="chapter" data-level="14.2.1" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-el-supuesto-de-normalidad-de-la-variable-equipment"><i class="fa fa-check"></i><b>14.2.1</b> Verifiquemos el supuesto de normalidad de la variable ‘Equipment’</a></li>
+<li class="chapter" data-level="14.2.2" data-path="estadistica-paramétrica-y-no-paramétrica.html"><a href="estadistica-paramétrica-y-no-paramétrica.html#comparacion-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico"><i class="fa fa-check"></i><b>14.2.2</b> comparacion de grupos con método no paramétrico</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="15" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html"><i class="fa fa-check"></i><b>15</b> Coeficiente de correlación</a>
+<ul>
+<li class="chapter" data-level="15.1" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#correlaci%C3%B3n-entre-peso-corporal-y-mejor-peso-muerto-alcanzado"><i class="fa fa-check"></i><b>15.1</b> Correlación entre peso corporal y mejor peso muerto alcanzado</a>
+<ul>
+<li class="chapter" data-level="15.1.1" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#veamos-la-distribucion-entre-ambas-variables"><i class="fa fa-check"></i><b>15.1.1</b> Veamos la distribucion entre ambas variables</a></li>
+<li class="chapter" data-level="15.1.2" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#supuesto-de-normalidad"><i class="fa fa-check"></i><b>15.1.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="15.1.3" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#coeficiente-de-correlaci%C3%B3n-de-spearman"><i class="fa fa-check"></i><b>15.1.3</b> Coeficiente de correlación de Spearman</a></li>
+</ul></li>
+<li class="chapter" data-level="15.2" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#correlaci%C3%B3n-entre-press-banca-sentadilla-y-mejor-peso-muerto-alcanzado."><i class="fa fa-check"></i><b>15.2</b> Correlación entre press banca + sentadilla y mejor peso muerto alcanzado.</a>
+<ul>
+<li class="chapter" data-level="15.2.1" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#veamos-la-distribuci%C3%B3n-entre-ambas-variables"><i class="fa fa-check"></i><b>15.2.1</b> Veamos la distribución entre ambas variables</a></li>
+<li class="chapter" data-level="15.2.2" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#supuesto-de-normalidad-1"><i class="fa fa-check"></i><b>15.2.2</b> Supuesto de normalidad</a></li>
+<li class="chapter" data-level="15.2.3" data-path="coeficiente-de-correlación-1.html"><a href="coeficiente-de-correlación-1.html#coeficiente-de-correlaci%C3%B3n-de-spearman-1"><i class="fa fa-check"></i><b>15.2.3</b> Coeficiente de correlación de Spearman</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="16" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html"><i class="fa fa-check"></i><b>16</b> Regresión Lineal Simple</a>
+<ul>
+<li class="chapter" data-level="16.1" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#recapitulando-los-valores-obtenidos"><i class="fa fa-check"></i><b>16.1</b> Recapitulando los valores obtenidos:</a></li>
+<li class="chapter" data-level="16.2" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#estimaci%C3%B3n-de-minimos-cuadrados"><i class="fa fa-check"></i><b>16.2</b> Estimación de minimos cuadrados</a></li>
+<li class="chapter" data-level="16.3" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#estimaci%C3%B3n-de-la-varianza"><i class="fa fa-check"></i><b>16.3</b> Estimación de la varianza</a></li>
+<li class="chapter" data-level="16.4" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#coeficiente-de-determinacion"><i class="fa fa-check"></i><b>16.4</b> Coeficiente de determinacion</a></li>
+<li class="chapter" data-level="16.5" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalos-de-confianza-para-el-modelo-de-regresi%C3%B3n-lineal-simple"><i class="fa fa-check"></i><b>16.5</b> Intervalos de confianza para el modelo de regresión lineal simple</a>
+<ul>
+<li class="chapter" data-level="16.5.1" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-la-pendiente-beta_1"><i class="fa fa-check"></i><b>16.5.1</b> Intervalo de confianza para la pendiente beta_1:</a></li>
+<li class="chapter" data-level="16.5.2" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-el-intercepto-beta_0"><i class="fa fa-check"></i><b>16.5.2</b> Intervalo de confianza para el intercepto beta_0:</a></li>
+</ul></li>
+<li class="chapter" data-level="16.6" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#intervalo-de-confianza-para-sigma2"><i class="fa fa-check"></i><b>16.6</b> Intervalo de confianza para sigma^2</a></li>
+<li class="chapter" data-level="16.7" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#pruebas-de-hip%C3%B3tesis"><i class="fa fa-check"></i><b>16.7</b> Pruebas de hipótesis</a>
+<ul>
+<li class="chapter" data-level="16.7.1" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-beta1"><i class="fa fa-check"></i><b>16.7.1</b> Prueba de hipótesis para beta1</a></li>
+<li class="chapter" data-level="16.7.2" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-beta0"><i class="fa fa-check"></i><b>16.7.2</b> Prueba de hipótesis para beta0:</a></li>
+<li class="chapter" data-level="16.7.3" data-path="regresión-lineal-simple-1.html"><a href="regresión-lineal-simple-1.html#prueba-de-hip%C3%B3tesis-para-sigma2"><i class="fa fa-check"></i><b>16.7.3</b> Prueba de hipótesis para sigma^2</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="17" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html"><i class="fa fa-check"></i><b>17</b> Análisis de los errores</a>
+<ul>
+<li class="chapter" data-level="17.1" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#supuestos-de-los-errores"><i class="fa fa-check"></i><b>17.1</b> Supuestos de los errores</a>
+<ul>
+<li class="chapter" data-level="17.1.1" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#independencia-de-los-errores"><i class="fa fa-check"></i><b>17.1.1</b> Independencia de los errores</a></li>
+</ul></li>
+<li class="chapter" data-level="17.2" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#normalidad-de-los-errores"><i class="fa fa-check"></i><b>17.2</b> Normalidad de los errores</a></li>
+<li class="chapter" data-level="17.3" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#media-cero-de-los-errores"><i class="fa fa-check"></i><b>17.3</b> Media cero de los errores</a></li>
+<li class="chapter" data-level="17.4" data-path="análisis-de-los-errores.html"><a href="análisis-de-los-errores.html#varianza-constante-de-los-errores-homocedasticidad"><i class="fa fa-check"></i><b>17.4</b> Varianza constante de los errores (homocedasticidad)</a></li>
+</ul></li>
+<li class="chapter" data-level="18" data-path="transformaciones-para-mejorar-el-ajuste-del-modelo.html"><a href="transformaciones-para-mejorar-el-ajuste-del-modelo.html"><i class="fa fa-check"></i><b>18</b> Transformaciones para mejorar el ajuste del modelo</a></li>
+<li class="chapter" data-level="19" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html"><i class="fa fa-check"></i><b>19</b> Regresion lineal multiple</a>
+<ul>
+<li class="chapter" data-level="19.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-de-multicolinealidad"><i class="fa fa-check"></i><b>19.1</b> Analisis de multicolinealidad</a>
+<ul>
+<li class="chapter" data-level="19.1.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#matriz-de-correlaciones"><i class="fa fa-check"></i><b>19.1.1</b> Matriz de correlaciones</a></li>
+<li class="chapter" data-level="19.1.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#ajuste-del-modelo-completo"><i class="fa fa-check"></i><b>19.1.2</b> Ajuste del modelo completo</a></li>
+<li class="chapter" data-level="19.1.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#factor-de-inflacion-de-varianza"><i class="fa fa-check"></i><b>19.1.3</b> Factor de inflacion de varianza</a></li>
+</ul></li>
+<li class="chapter" data-level="19.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#seleccion-del-modelo"><i class="fa fa-check"></i><b>19.2</b> Seleccion del modelo</a>
+<ul>
+<li class="chapter" data-level="19.2.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#seleccion-mediante-el-criterio-aic"><i class="fa fa-check"></i><b>19.2.1</b> Seleccion mediante el criterio AIC</a></li>
+</ul></li>
+<li class="chapter" data-level="19.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-matricial-de-los-coeficientes"><i class="fa fa-check"></i><b>19.3</b> Estimacion matricial de los coeficientes</a>
+<ul>
+<li class="chapter" data-level="19.3.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#construccion-de-la-matriz-de-diseno"><i class="fa fa-check"></i><b>19.3.1</b> Construccion de la matriz de diseno</a></li>
+<li class="chapter" data-level="19.3.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#operaciones-matriciales"><i class="fa fa-check"></i><b>19.3.2</b> Operaciones matriciales</a></li>
+<li class="chapter" data-level="19.3.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-de-los-coeficientes"><i class="fa fa-check"></i><b>19.3.3</b> Estimacion de los coeficientes</a></li>
+<li class="chapter" data-level="19.3.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#interpretacion-de-los-coeficientes"><i class="fa fa-check"></i><b>19.3.4</b> Interpretacion de los coeficientes</a></li>
+</ul></li>
+<li class="chapter" data-level="19.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-de-varianza"><i class="fa fa-check"></i><b>19.4</b> Analisis de varianza</a>
+<ul>
+<li class="chapter" data-level="19.4.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#valores-ajustados-y-residuos"><i class="fa fa-check"></i><b>19.4.1</b> Valores ajustados y residuos</a></li>
+<li class="chapter" data-level="19.4.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#sumas-de-cuadrados"><i class="fa fa-check"></i><b>19.4.2</b> Sumas de cuadrados</a></li>
+<li class="chapter" data-level="19.4.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#coeficiente-de-determinacion-1"><i class="fa fa-check"></i><b>19.4.3</b> Coeficiente de determinacion</a></li>
+<li class="chapter" data-level="19.4.4" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#grados-de-libertad"><i class="fa fa-check"></i><b>19.4.4</b> Grados de libertad</a></li>
+<li class="chapter" data-level="19.4.5" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#cuadrados-medios"><i class="fa fa-check"></i><b>19.4.5</b> Cuadrados medios</a></li>
+<li class="chapter" data-level="19.4.6" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#tabla-anova"><i class="fa fa-check"></i><b>19.4.6</b> Tabla ANOVA</a></li>
+</ul></li>
+<li class="chapter" data-level="19.5" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#prueba-de-significancia-global"><i class="fa fa-check"></i><b>19.5</b> Prueba de significancia global</a></li>
+<li class="chapter" data-level="19.6" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#estimacion-de-la-varianza-residual"><i class="fa fa-check"></i><b>19.6</b> Estimacion de la varianza residual</a></li>
+<li class="chapter" data-level="19.7" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#matriz-de-varianzas-y-covarianzas"><i class="fa fa-check"></i><b>19.7</b> Matriz de varianzas y covarianzas</a>
+<ul>
+<li class="chapter" data-level="19.7.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#errores-estandar"><i class="fa fa-check"></i><b>19.7.1</b> Errores estandar</a></li>
+</ul></li>
+<li class="chapter" data-level="19.8" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#prueba-de-significancia-individual"><i class="fa fa-check"></i><b>19.8</b> Prueba de significancia individual</a></li>
+<li class="chapter" data-level="19.9" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#intervalos-de-confianza"><i class="fa fa-check"></i><b>19.9</b> Intervalos de confianza</a>
+<ul>
+<li class="chapter" data-level="19.9.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#verificacion-mediante-las-funciones-de-r"><i class="fa fa-check"></i><b>19.9.1</b> Verificacion mediante las funciones de R</a></li>
+</ul></li>
+<li class="chapter" data-level="19.10" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#diagnostico-de-los-supuestos"><i class="fa fa-check"></i><b>19.10</b> Diagnostico de los supuestos</a>
+<ul>
+<li class="chapter" data-level="19.10.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#analisis-grafico-de-los-residuos"><i class="fa fa-check"></i><b>19.10.1</b> Analisis grafico de los residuos</a></li>
+<li class="chapter" data-level="19.10.2" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#normalidad-de-los-residuos"><i class="fa fa-check"></i><b>19.10.2</b> Normalidad de los residuos</a></li>
+<li class="chapter" data-level="19.10.3" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#homocedasticidad"><i class="fa fa-check"></i><b>19.10.3</b> Homocedasticidad</a></li>
+</ul></li>
+<li class="chapter" data-level="19.11" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#inferencia-mediante-errores-estandar-robustos"><i class="fa fa-check"></i><b>19.11</b> Inferencia mediante errores estandar robustos</a>
+<ul>
+<li class="chapter" data-level="19.11.1" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#intervalos-de-confianza-robustos"><i class="fa fa-check"></i><b>19.11.1</b> Intervalos de confianza robustos</a></li>
+</ul></li>
+<li class="chapter" data-level="19.12" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#independencia-de-las-observaciones-y-limitaciones"><i class="fa fa-check"></i><b>19.12</b> Independencia de las observaciones y limitaciones</a></li>
+<li class="chapter" data-level="19.13" data-path="regresion-lineal-multiple.html"><a href="regresion-lineal-multiple.html#comparacion-entre-regresion-simple-y-multiple"><i class="fa fa-check"></i><b>19.13</b> Comparacion entre regresion simple y multiple</a></li>
+</ul></li>
+<li class="chapter" data-level="20" data-path="presentacion-del-proyecto-video.html"><a href="presentacion-del-proyecto-video.html"><i class="fa fa-check"></i><b>20</b> Presentacion del Proyecto (Video)</a></li>
+<li class="chapter" data-level="21" data-path="conclusión.html"><a href="conclusión.html"><i class="fa fa-check"></i><b>21</b> Conclusión</a></li>
+<li class="chapter" data-level="22" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>22</b> Bibliografía</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Bibliografia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="dataset" class="section level1 hasAnchor" number="6">
+<h1><span class="header-section-number">6</span> Dataset<a href="dataset.html#dataset" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="librerias" class="section level2 hasAnchor" number="6.1">
+<h2><span class="header-section-number">6.1</span> Librerias<a href="dataset.html#librerias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="dataset.html#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="dataset.html#cb1-2" tabindex="-1"></a><span class="fu">library</span>(Amelia)</span>
+<span id="cb1-3"><a href="dataset.html#cb1-3" tabindex="-1"></a><span class="fu">library</span>(nortest)</span>
+<span id="cb1-4"><a href="dataset.html#cb1-4" tabindex="-1"></a><span class="fu">library</span>(moments)</span>
+<span id="cb1-5"><a href="dataset.html#cb1-5" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
+<span id="cb1-6"><a href="dataset.html#cb1-6" tabindex="-1"></a><span class="fu">library</span>(lmtest)</span>
+<span id="cb1-7"><a href="dataset.html#cb1-7" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb1-8"><a href="dataset.html#cb1-8" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-9"><a href="dataset.html#cb1-9" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb1-10"><a href="dataset.html#cb1-10" tabindex="-1"></a><span class="fu">library</span>(GGally)</span>
+<span id="cb1-11"><a href="dataset.html#cb1-11" tabindex="-1"></a><span class="fu">library</span>(reshape)</span>
+<span id="cb1-12"><a href="dataset.html#cb1-12" tabindex="-1"></a><span class="fu">library</span>(car)</span>
+<span id="cb1-13"><a href="dataset.html#cb1-13" tabindex="-1"></a><span class="fu">library</span>(sandwich)</span>
+<span id="cb1-14"><a href="dataset.html#cb1-14" tabindex="-1"></a><span class="fu">library</span>(ggpubr)</span>
+<span id="cb1-15"><a href="dataset.html#cb1-15" tabindex="-1"></a><span class="fu">library</span>(knitr) <span class="co">#Visualización de tablas.</span></span>
+<span id="cb1-16"><a href="dataset.html#cb1-16" tabindex="-1"></a><span class="fu">library</span>(kableExtra) <span class="co"># Estilo</span></span>
+<span id="cb1-17"><a href="dataset.html#cb1-17" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen =</span> <span class="dv">999</span>) <span class="co">#Nos permite observar mejor números muy grandes en los diagramas.</span></span>
+<span id="cb1-18"><a href="dataset.html#cb1-18" tabindex="-1"></a>select <span class="ot">&lt;-</span> dplyr<span class="sc">::</span>select</span></code></pre></div>
+</div>
+<div id="leer-dataset" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Leer dataset<a href="dataset.html#leer-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="dataset.html#cb2-1" tabindex="-1"></a>df<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;Data/X_train.csv&quot;</span>)</span></code></pre></div>
+</div>
+<div id="mostrar-las-10-primeras-filas" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> Mostrar las 10 primeras filas<a href="dataset.html#mostrar-las-10-primeras-filas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="dataset.html#cb3-1" tabindex="-1"></a><span class="fu">head</span>(df, <span class="at">n=</span><span class="dv">10</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="dataset.html#cb3-2" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot; Primeras 5 observaciones del dataset&quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="dataset.html#cb3-3" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb3-4"><a href="dataset.html#cb3-4" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-5"><a href="dataset.html#cb3-5" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:primerasfilas">Table 6.1: </span><span id="tab:primerasfilas">Table 6.2: </span> Primeras 5 observaciones del dataset
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+playerId
+</th>
+<th style="text-align:left;">
+Name
+</th>
+<th style="text-align:left;">
+Sex
+</th>
+<th style="text-align:left;">
+Equipment
+</th>
+<th style="text-align:right;">
+Age
+</th>
+<th style="text-align:right;">
+BodyweightKg
+</th>
+<th style="text-align:left;">
+BestSquatKg
+</th>
+<th style="text-align:right;">
+BestDeadliftKg
+</th>
+<th style="text-align:right;">
+BestBenchKg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+19391
+</td>
+<td style="text-align:left;">
+Carlos Ceron
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+23.0
+</td>
+<td style="text-align:right;">
+87.30
+</td>
+<td style="text-align:left;">
+205.0
+</td>
+<td style="text-align:right;">
+235.0
+</td>
+<td style="text-align:right;">
+125.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+15978
+</td>
+<td style="text-align:left;">
+Tito Herrera
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Wraps
+</td>
+<td style="text-align:right;">
+23.0
+</td>
+<td style="text-align:right;">
+73.48
+</td>
+<td style="text-align:left;">
+220.0
+</td>
+<td style="text-align:right;">
+260.0
+</td>
+<td style="text-align:right;">
+157.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27209
+</td>
+<td style="text-align:left;">
+Levi Lehman
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+26.0
+</td>
+<td style="text-align:right;">
+112.40
+</td>
+<td style="text-align:left;">
+142.5
+</td>
+<td style="text-align:right;">
+220.0
+</td>
+<td style="text-align:right;">
+145.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+27496
+</td>
+<td style="text-align:left;">
+Stacy Hayford
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+35.0
+</td>
+<td style="text-align:right;">
+59.42
+</td>
+<td style="text-align:left;">
+95.0
+</td>
+<td style="text-align:right;">
+102.5
+</td>
+<td style="text-align:right;">
+60.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+20293
+</td>
+<td style="text-align:left;">
+Brittany Hirt
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+26.5
+</td>
+<td style="text-align:right;">
+61.40
+</td>
+<td style="text-align:left;">
+105.0
+</td>
+<td style="text-align:right;">
+127.5
+</td>
+<td style="text-align:right;">
+60.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+25176
+</td>
+<td style="text-align:left;">
+Zoran Jankovski
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Wraps
+</td>
+<td style="text-align:right;">
+23.0
+</td>
+<td style="text-align:right;">
+113.50
+</td>
+<td style="text-align:left;">
+260.0
+</td>
+<td style="text-align:right;">
+285.0
+</td>
+<td style="text-align:right;">
+160.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+128
+</td>
+<td style="text-align:left;">
+Mitchell Hayes
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+22.5
+</td>
+<td style="text-align:right;">
+90.55
+</td>
+<td style="text-align:left;">
+162.5
+</td>
+<td style="text-align:right;">
+200.0
+</td>
+<td style="text-align:right;">
+107.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+28187
+</td>
+<td style="text-align:left;">
+John Gibson
+</td>
+<td style="text-align:left;">
+M
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+24.0
+</td>
+<td style="text-align:right;">
+100.00
+</td>
+<td style="text-align:left;">
+200.0
+</td>
+<td style="text-align:right;">
+227.5
+</td>
+<td style="text-align:right;">
+180.0
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+8022
+</td>
+<td style="text-align:left;">
+Sakiko Ito
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Single-ply
+</td>
+<td style="text-align:right;">
+19.5
+</td>
+<td style="text-align:right;">
+51.20
+</td>
+<td style="text-align:left;">
+115.0
+</td>
+<td style="text-align:right;">
+127.5
+</td>
+<td style="text-align:right;">
+62.5
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+22487
+</td>
+<td style="text-align:left;">
+Lorrie Bosen
+</td>
+<td style="text-align:left;">
+F
+</td>
+<td style="text-align:left;">
+Raw
+</td>
+<td style="text-align:right;">
+54.0
+</td>
+<td style="text-align:right;">
+65.25
+</td>
+<td style="text-align:left;">
+72.5
+</td>
+<td style="text-align:right;">
+115.0
+</td>
+<td style="text-align:right;">
+55.0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="estructura-de-los-datos" class="section level2 hasAnchor" number="6.4">
+<h2><span class="header-section-number">6.4</span> Estructura de los datos<a href="dataset.html#estructura-de-los-datos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="dataset.html#cb4-1" tabindex="-1"></a>estructura <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-2"><a href="dataset.html#cb4-2" tabindex="-1"></a>  <span class="st">&quot;Variable&quot;</span> <span class="ot">=</span> <span class="fu">names</span>(df),</span>
+<span id="cb4-3"><a href="dataset.html#cb4-3" tabindex="-1"></a>  <span class="st">&quot;Tipo de dato&quot;</span> <span class="ot">=</span> <span class="fu">unname</span>(<span class="fu">sapply</span>(df, class)),</span>
+<span id="cb4-4"><a href="dataset.html#cb4-4" tabindex="-1"></a>  <span class="st">&quot;Valores faltantes&quot;</span> <span class="ot">=</span> <span class="fu">unname</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(df))),</span>
+<span id="cb4-5"><a href="dataset.html#cb4-5" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-6"><a href="dataset.html#cb4-6" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="dataset.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="dataset.html#cb4-8" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb4-9"><a href="dataset.html#cb4-9" tabindex="-1"></a>  estructura,</span>
+<span id="cb4-10"><a href="dataset.html#cb4-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Estructura de las variables del conjunto de datos&quot;</span>,</span>
+<span id="cb4-11"><a href="dataset.html#cb4-11" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-12"><a href="dataset.html#cb4-12" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb4-13"><a href="dataset.html#cb4-13" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb4-14"><a href="dataset.html#cb4-14" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb4-15"><a href="dataset.html#cb4-15" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb4-16"><a href="dataset.html#cb4-16" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+<span id="tab:str">Table 6.3: </span><span id="tab:str">Table 6.4: </span>Estructura de las variables del conjunto de datos
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Tipo de dato
+</th>
+<th style="text-align:right;">
+Valores faltantes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+playerId
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sex
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Equipment
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Age
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+175
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BodyweightKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BestSquatKg
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BestDeadliftKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BestBenchKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p>El conjunto de datos contiene 18.900 observaciones y 9 variables. A partir de la tabla de estructura se identifican variables numéricas y de tipo carácter.</p>
+<p>Se observa que <code>BestSquatKg</code>, correspondiente al mejor levantamiento en sentadilla, aparece registrada como una variable de tipo carácter, aunque representa una medida cuantitativa. Por esta razón, será necesario revisar y corregir sus valores para convertirla a tipo numérico. También se puede notar que la variable <code>Age</code> tiene 175 valores faltantes.</p>
+<p>Asimismo, las variables <code>playerId</code> y <code>Name</code> se consideran identificadoras y no se incluirán en el análisis estadístico. Las variables <code>Sex</code> y <code>Equipment</code> se utilizarán como variables cualitativas.</p>
+</div>
+<div id="solucionar-valores-inconsistentes" class="section level2 hasAnchor" number="6.5">
+<h2><span class="header-section-number">6.5</span> Solucionar valores inconsistentes<a href="dataset.html#solucionar-valores-inconsistentes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>La variable ‘BestSquatKg’ está siendo leida como caracter (variable categórica) cuando en realidad es una variable numérica, lo que nos indica que hay una inconsistencia entre los datos. Y tambien presenta algunos valores negativos, lo cual es fisicamente imposible; en bases de datos de powerlifting, es una convención estándar del dominio: cuando un atleta falla sus 3 intentos en un levantamiento, el sistema registra el peso del mejor intento fallido como número negativo, en vez de dejarlo vacío. Como en nuestro estudio son relevantes los levantamientos que fueron exitosos, convertiremos esos valores a ‘NA’ y posteriormente reemplazaremos utilizando la funcion mutate para bajar las posibilidades de un sesgo mayor.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="dataset.html#cb5-1" tabindex="-1"></a><span class="co"># convertir a numérico</span></span>
+<span id="cb5-2"><a href="dataset.html#cb5-2" tabindex="-1"></a>issues<span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="dataset.html#cb5-3" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">is.na</span>(<span class="fu">as.numeric</span>(BestSquatKg)) <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(BestSquatKg))</span></code></pre></div>
+<pre><code>## Warning: There was 1 warning in `filter()`.
+## ℹ In argument: `is.na(as.numeric(BestSquatKg)) &amp; !is.na(BestSquatKg)`.
+## Caused by warning:
+## ! NAs introducidos por coerción</code></pre>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="dataset.html#cb7-1" tabindex="-1"></a>issues <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="dataset.html#cb7-2" tabindex="-1"></a>  <span class="fu">select</span>(playerId, BestSquatKg)</span></code></pre></div>
+<pre><code>##    playerId BestSquatKg
+## 1     11462      102..5
+## 2     21517      227..5
+## 3     12116      133..0
+## 4     28706      192..5
+## 5     23256      105..0
+## 6     12648      195..0
+## 7     20917      237..5
+## 8      1659      122..5
+## 9     24353      295..0
+## 10    17751      180..0
+## 11    16459      205..0
+## 12    14456      110..0
+## 13    13558      220..0
+## 14      545      145..0
+## 15     5539      207..5</code></pre>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="dataset.html#cb9-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="dataset.html#cb9-2" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="fu">str_detect</span>(BestSquatKg, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">.&quot;</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="dataset.html#cb9-3" tabindex="-1"></a>  <span class="fu">select</span>(playerId, BestSquatKg)</span></code></pre></div>
+<pre><code>##    playerId BestSquatKg
+## 1     11462      102..5
+## 2     21517      227..5
+## 3     12116      133..0
+## 4     28706      192..5
+## 5     23256      105..0
+## 6     12648      195..0
+## 7     20917      237..5
+## 8      1659      122..5
+## 9     24353      295..0
+## 10    17751      180..0
+## 11    16459      205..0
+## 12    14456      110..0
+## 13    13558      220..0
+## 14      545      145..0
+## 15     5539      207..5</code></pre>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="dataset.html#cb11-1" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="dataset.html#cb11-2" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb11-3"><a href="dataset.html#cb11-3" tabindex="-1"></a>    <span class="at">BestSquatKg =</span> <span class="fu">str_replace</span>(BestSquatKg, <span class="st">&quot;</span><span class="sc">\\</span><span class="st">.</span><span class="sc">\\</span><span class="st">.&quot;</span>, <span class="st">&quot;.&quot;</span>),  <span class="co"># corrige el doble punto</span></span>
+<span id="cb11-4"><a href="dataset.html#cb11-4" tabindex="-1"></a>    <span class="at">BestSquatKg =</span> <span class="fu">as.numeric</span>(BestSquatKg)</span>
+<span id="cb11-5"><a href="dataset.html#cb11-5" tabindex="-1"></a>  )</span>
+<span id="cb11-6"><a href="dataset.html#cb11-6" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="dataset.html#cb11-7" tabindex="-1"></a>df <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> </span>
+<span id="cb11-8"><a href="dataset.html#cb11-8" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">BestSquatKg =</span> <span class="fu">ifelse</span>(BestSquatKg <span class="sc">&lt;</span> <span class="dv">0</span>, <span class="cn">NA</span>, BestSquatKg)) <span class="co">#eliminamos los valores negativos</span></span>
+<span id="cb11-9"><a href="dataset.html#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="dataset.html#cb11-10" tabindex="-1"></a>estructura_nueva <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-11"><a href="dataset.html#cb11-11" tabindex="-1"></a>  <span class="st">&quot;Variable&quot;</span> <span class="ot">=</span> <span class="fu">names</span>(df),</span>
+<span id="cb11-12"><a href="dataset.html#cb11-12" tabindex="-1"></a>  <span class="st">&quot;Tipo de dato&quot;</span> <span class="ot">=</span> <span class="fu">unname</span>(<span class="fu">sapply</span>(df, class)),</span>
+<span id="cb11-13"><a href="dataset.html#cb11-13" tabindex="-1"></a>  <span class="st">&quot;Valores faltantes&quot;</span> <span class="ot">=</span> <span class="fu">unname</span>(<span class="fu">colSums</span>(<span class="fu">is.na</span>(df))),</span>
+<span id="cb11-14"><a href="dataset.html#cb11-14" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb11-15"><a href="dataset.html#cb11-15" tabindex="-1"></a>)</span>
+<span id="cb11-16"><a href="dataset.html#cb11-16" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb11-17"><a href="dataset.html#cb11-17" tabindex="-1"></a>  estructura_nueva, <span class="at">format =</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb11-18"><a href="dataset.html#cb11-18" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Estructura de las variables del conjunto de datos&quot;</span>,</span>
+<span id="cb11-19"><a href="dataset.html#cb11-19" tabindex="-1"></a>  <span class="at">row.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb11-20"><a href="dataset.html#cb11-20" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb11-21"><a href="dataset.html#cb11-21" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb11-22"><a href="dataset.html#cb11-22" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb11-23"><a href="dataset.html#cb11-23" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb11-24"><a href="dataset.html#cb11-24" tabindex="-1"></a>  )</span></code></pre></div>
+<table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
+<caption>
+(#tab:corregir.)Estructura de las variables del conjunto de datos
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+Variable
+</th>
+<th style="text-align:left;">
+Tipo de dato
+</th>
+<th style="text-align:right;">
+Valores faltantes
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+playerId
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Name
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Sex
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Equipment
+</td>
+<td style="text-align:left;">
+character
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Age
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+175
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BodyweightKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BestSquatKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+83
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BestDeadliftKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+BestBenchKg
+</td>
+<td style="text-align:left;">
+numeric
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+<p>La variable ‘BestSquatKg’ ahora es leida como numerica.</p>
+</div>
+<div id="verificamos-si-los-niveles-de-las-variables-cualitativas-tienen-inconsistencias" class="section level2 hasAnchor" number="6.6">
+<h2><span class="header-section-number">6.6</span> Verificamos si los niveles de las variables cualitativas tienen inconsistencias<a href="dataset.html#verificamos-si-los-niveles-de-las-variables-cualitativas-tienen-inconsistencias" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="dataset.html#cb12-1" tabindex="-1"></a><span class="co">#Niveles</span></span>
+<span id="cb12-2"><a href="dataset.html#cb12-2" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>Sex)</span></code></pre></div>
+<pre><code>## [1] &quot;M&quot; &quot;F&quot;</code></pre>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="dataset.html#cb14-1" tabindex="-1"></a><span class="fu">unique</span>(df<span class="sc">$</span>Equipment)</span></code></pre></div>
+<pre><code>## [1] &quot;Raw&quot;        &quot;Wraps&quot;      &quot;Single-ply&quot; &quot;Multi-ply&quot;</code></pre>
+<p>No existen inconsistencias en los niveles (Por ejemplo, observaciones como “F” y “f” que indiquen el mismo nivel).</p>
+</div>
+<div id="forma-directa-de-verificar-si-hay-datos-faltantes" class="section level2 hasAnchor" number="6.7">
+<h2><span class="header-section-number">6.7</span> Forma directa de verificar si hay datos faltantes<a href="dataset.html#forma-directa-de-verificar-si-hay-datos-faltantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="dataset.html#cb16-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb16-2"><a href="dataset.html#cb16-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.)),<span class="at">.names=</span><span class="st">&quot;NA_{.col}&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb16-3"><a href="dataset.html#cb16-3" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot; Verificar datos faltantes &quot;</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-4"><a href="dataset.html#cb16-4" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb16-5"><a href="dataset.html#cb16-5" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb16-6"><a href="dataset.html#cb16-6" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+(#tab:Datos faltantes)(#tab:Datos faltantes) Verificar datos faltantes
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+NA_playerId
+</th>
+<th style="text-align:right;">
+NA_Name
+</th>
+<th style="text-align:right;">
+NA_Sex
+</th>
+<th style="text-align:right;">
+NA_Equipment
+</th>
+<th style="text-align:right;">
+NA_Age
+</th>
+<th style="text-align:right;">
+NA_BodyweightKg
+</th>
+<th style="text-align:right;">
+NA_BestSquatKg
+</th>
+<th style="text-align:right;">
+NA_BestDeadliftKg
+</th>
+<th style="text-align:right;">
+NA_BestBenchKg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+175
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+83
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="imputacion-de-datos-faltantes" class="section level2 hasAnchor" number="6.8">
+<h2><span class="header-section-number">6.8</span> Imputacion de datos faltantes<a href="dataset.html#imputacion-de-datos-faltantes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="dataset.html#cb17-1" tabindex="-1"></a> df <span class="sc">%&gt;%</span>  <span class="co">#datos</span></span>
+<span id="cb17-2"><a href="dataset.html#cb17-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="fu">across</span>( <span class="co">#columnas</span></span>
+<span id="cb17-3"><a href="dataset.html#cb17-3" tabindex="-1"></a>    <span class="fu">where</span>(is.numeric), <span class="co">#seleccionar variables numericas</span></span>
+<span id="cb17-4"><a href="dataset.html#cb17-4" tabindex="-1"></a>    <span class="sc">~</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(.),<span class="fu">mean</span>(.,<span class="at">na.rm=</span><span class="cn">TRUE</span>), .) <span class="co">#si hay un na, reemplazar, si no, dejar la variable</span></span>
+<span id="cb17-5"><a href="dataset.html#cb17-5" tabindex="-1"></a>  )) <span class="ot">-&gt;</span> df <span class="co">#data limpiada</span></span></code></pre></div>
+</div>
+<div id="ver-si-hay-datos-faltantes-nuevamente-en-el-data-frame-limpiado" class="section level2 hasAnchor" number="6.9">
+<h2><span class="header-section-number">6.9</span> Ver si hay datos faltantes nuevamente en el Data Frame limpiado<a href="dataset.html#ver-si-hay-datos-faltantes-nuevamente-en-el-data-frame-limpiado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="dataset.html#cb18-1" tabindex="-1"></a>df <span class="sc">%&gt;%</span> </span>
+<span id="cb18-2"><a href="dataset.html#cb18-2" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="fu">across</span>(<span class="fu">everything</span>(), <span class="sc">~</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(.)),<span class="at">.names=</span><span class="st">&quot;NA_{.col}&quot;</span>)) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-3"><a href="dataset.html#cb18-3" tabindex="-1"></a>  <span class="fu">kable</span>(<span class="at">caption =</span> <span class="st">&quot; Verificar exito del dataset limpiado&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb18-4"><a href="dataset.html#cb18-4" tabindex="-1"></a>  <span class="fu">kable_styling</span>(<span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb18-5"><a href="dataset.html#cb18-5" tabindex="-1"></a>                <span class="at">full_width =</span> <span class="cn">TRUE</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb18-6"><a href="dataset.html#cb18-6" tabindex="-1"></a>  <span class="fu">scroll_box</span>(<span class="at">width =</span> <span class="st">&quot;100%&quot;</span>)</span></code></pre></div>
+<div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
+<table class="table table-striped table-hover table-condensed" style="color: black; margin-left: auto; margin-right: auto;">
+<caption>
+(#tab:datos faltantes 2)(#tab:datos faltantes 2) Verificar exito del dataset limpiado
+</caption>
+<thead>
+<tr>
+<th style="text-align:right;">
+NA_playerId
+</th>
+<th style="text-align:right;">
+NA_Name
+</th>
+<th style="text-align:right;">
+NA_Sex
+</th>
+<th style="text-align:right;">
+NA_Equipment
+</th>
+<th style="text-align:right;">
+NA_Age
+</th>
+<th style="text-align:right;">
+NA_BodyweightKg
+</th>
+<th style="text-align:right;">
+NA_BestSquatKg
+</th>
+<th style="text-align:right;">
+NA_BestDeadliftKg
+</th>
+<th style="text-align:right;">
+NA_BestBenchKg
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+<td style="text-align:right;">
+0
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="convertir-las-variables-cualitativas-en-factor." class="section level2 hasAnchor" number="6.10">
+<h2><span class="header-section-number">6.10</span> Convertir las variables cualitativas en factor.<a href="dataset.html#convertir-las-variables-cualitativas-en-factor." class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="dataset.html#cb19-1" tabindex="-1"></a>df<span class="sc">$</span>Sex <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>Sex)</span>
+<span id="cb19-2"><a href="dataset.html#cb19-2" tabindex="-1"></a>df<span class="sc">$</span>Equipment <span class="ot">&lt;-</span> <span class="fu">factor</span>(df<span class="sc">$</span>Equipment)</span></code></pre></div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="marco-teorico.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analisis-exploratorio-de-bestdeadliftkg-target.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/rstudio/bookdown-demo/edit/master/01-intro.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": null,
+    "text": null
+  },
+  "download": ["bookdown-demo.pdf", "bookdown-demo.epub"],
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
