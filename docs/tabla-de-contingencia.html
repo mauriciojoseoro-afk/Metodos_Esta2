@@ -407,22 +407,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Utilizaremos la prueba de independencia chi-cuadrado, ya que se cuenta con una única muestra de atletas (no poblaciones separadas y predefinidas), clasificada según dos variables categóricas: Sexo y Equipamiento. El objetivo es determinar si estas dos variables están asociadas entre sí o si, por el contrario, son independientes.</p>
 <p><span class="math display">\[H_0: \text{El sexo del atleta y el tipo de equipamiento utilizado son independientes}\]</span></p>
 <p><span class="math display">\[H_1: \text{El sexo del atleta y el tipo de equipamiento utilizado están asociados (no son independientes)}\]</span></p>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="tabla-de-contingencia.html#cb38-1" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(df_nuevo<span class="sc">$</span>Sex, df_nuevo<span class="sc">$</span>Equipment)</span>
-<span id="cb38-2"><a href="tabla-de-contingencia.html#cb38-2" tabindex="-1"></a>tabla</span></code></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tabla-de-contingencia.html#cb40-1" tabindex="-1"></a>tabla <span class="ot">&lt;-</span> <span class="fu">table</span>(df_nuevo<span class="sc">$</span>Sex, df_nuevo<span class="sc">$</span>Equipment)</span>
+<span id="cb40-2"><a href="tabla-de-contingencia.html#cb40-2" tabindex="-1"></a>tabla</span></code></pre></div>
 <pre><code>##    
 ##     Multi-ply  Raw Single-ply Wraps
 ##   F        54 4272        787  1016
 ##   M       287 8005       1530  2949</code></pre>
 <div id="crear-tabla-de-contingencia" class="section level2 hasAnchor" number="13.1">
 <h2><span class="header-section-number">13.1</span> Crear tabla de contingencia<a href="tabla-de-contingencia.html#crear-tabla-de-contingencia" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb40-1"><a href="tabla-de-contingencia.html#cb40-1" tabindex="-1"></a>observados <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">4272</span>, <span class="dv">787</span>, <span class="dv">1016</span>,</span>
-<span id="cb40-2"><a href="tabla-de-contingencia.html#cb40-2" tabindex="-1"></a>                        <span class="dv">287</span>, <span class="dv">8005</span>, <span class="dv">1530</span>, <span class="dv">2949</span>),</span>
-<span id="cb40-3"><a href="tabla-de-contingencia.html#cb40-3" tabindex="-1"></a>                      <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb40-4"><a href="tabla-de-contingencia.html#cb40-4" tabindex="-1"></a>                      <span class="at">dimnames =</span> <span class="fu">list</span>(</span>
-<span id="cb40-5"><a href="tabla-de-contingencia.html#cb40-5" tabindex="-1"></a>                        <span class="at">Sexo =</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>),</span>
-<span id="cb40-6"><a href="tabla-de-contingencia.html#cb40-6" tabindex="-1"></a>                        <span class="at">Equipamiento =</span> <span class="fu">c</span>(<span class="st">&quot;Multi-ply&quot;</span>, <span class="st">&quot;Raw&quot;</span>, <span class="st">&quot;Single-ply&quot;</span>, <span class="st">&quot;Wraps&quot;</span>)</span>
-<span id="cb40-7"><a href="tabla-de-contingencia.html#cb40-7" tabindex="-1"></a>                      )) </span>
-<span id="cb40-8"><a href="tabla-de-contingencia.html#cb40-8" tabindex="-1"></a>observados</span></code></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="tabla-de-contingencia.html#cb42-1" tabindex="-1"></a>observados <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">54</span>, <span class="dv">4272</span>, <span class="dv">787</span>, <span class="dv">1016</span>,</span>
+<span id="cb42-2"><a href="tabla-de-contingencia.html#cb42-2" tabindex="-1"></a>                        <span class="dv">287</span>, <span class="dv">8005</span>, <span class="dv">1530</span>, <span class="dv">2949</span>),</span>
+<span id="cb42-3"><a href="tabla-de-contingencia.html#cb42-3" tabindex="-1"></a>                      <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb42-4"><a href="tabla-de-contingencia.html#cb42-4" tabindex="-1"></a>                      <span class="at">dimnames =</span> <span class="fu">list</span>(</span>
+<span id="cb42-5"><a href="tabla-de-contingencia.html#cb42-5" tabindex="-1"></a>                        <span class="at">Sexo =</span> <span class="fu">c</span>(<span class="st">&quot;F&quot;</span>, <span class="st">&quot;M&quot;</span>),</span>
+<span id="cb42-6"><a href="tabla-de-contingencia.html#cb42-6" tabindex="-1"></a>                        <span class="at">Equipamiento =</span> <span class="fu">c</span>(<span class="st">&quot;Multi-ply&quot;</span>, <span class="st">&quot;Raw&quot;</span>, <span class="st">&quot;Single-ply&quot;</span>, <span class="st">&quot;Wraps&quot;</span>)</span>
+<span id="cb42-7"><a href="tabla-de-contingencia.html#cb42-7" tabindex="-1"></a>                      )) </span>
+<span id="cb42-8"><a href="tabla-de-contingencia.html#cb42-8" tabindex="-1"></a>observados</span></code></pre></div>
 <pre><code>##     Equipamiento
 ## Sexo Multi-ply  Raw Single-ply Wraps
 ##    F        54 4272        787  1016
@@ -430,24 +430,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="totales-por-fila-columna-y-total-general" class="section level2 hasAnchor" number="13.2">
 <h2><span class="header-section-number">13.2</span> Totales por fila, columna y total general<a href="tabla-de-contingencia.html#totales-por-fila-columna-y-total-general" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb42"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb42-1"><a href="tabla-de-contingencia.html#cb42-1" tabindex="-1"></a>fila_totales <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(observados)</span>
-<span id="cb42-2"><a href="tabla-de-contingencia.html#cb42-2" tabindex="-1"></a>col_totales <span class="ot">&lt;-</span> <span class="fu">colSums</span>(observados)</span>
-<span id="cb42-3"><a href="tabla-de-contingencia.html#cb42-3" tabindex="-1"></a>total_general <span class="ot">&lt;-</span> <span class="fu">sum</span>(observados)</span>
-<span id="cb42-4"><a href="tabla-de-contingencia.html#cb42-4" tabindex="-1"></a></span>
-<span id="cb42-5"><a href="tabla-de-contingencia.html#cb42-5" tabindex="-1"></a>fila_totales</span></code></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="tabla-de-contingencia.html#cb44-1" tabindex="-1"></a>fila_totales <span class="ot">&lt;-</span> <span class="fu">rowSums</span>(observados)</span>
+<span id="cb44-2"><a href="tabla-de-contingencia.html#cb44-2" tabindex="-1"></a>col_totales <span class="ot">&lt;-</span> <span class="fu">colSums</span>(observados)</span>
+<span id="cb44-3"><a href="tabla-de-contingencia.html#cb44-3" tabindex="-1"></a>total_general <span class="ot">&lt;-</span> <span class="fu">sum</span>(observados)</span>
+<span id="cb44-4"><a href="tabla-de-contingencia.html#cb44-4" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="tabla-de-contingencia.html#cb44-5" tabindex="-1"></a>fila_totales</span></code></pre></div>
 <pre><code>##     F     M 
 ##  6129 12771</code></pre>
-<div class="sourceCode" id="cb44"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb44-1"><a href="tabla-de-contingencia.html#cb44-1" tabindex="-1"></a>col_totales</span></code></pre></div>
+<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tabla-de-contingencia.html#cb46-1" tabindex="-1"></a>col_totales</span></code></pre></div>
 <pre><code>##  Multi-ply        Raw Single-ply      Wraps 
 ##        341      12277       2317       3965</code></pre>
-<div class="sourceCode" id="cb46"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb46-1"><a href="tabla-de-contingencia.html#cb46-1" tabindex="-1"></a>total_general</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tabla-de-contingencia.html#cb48-1" tabindex="-1"></a>total_general</span></code></pre></div>
 <pre><code>## [1] 18900</code></pre>
 </div>
 <div id="frecuencias-esperadas-bajo-h0" class="section level2 hasAnchor" number="13.3">
 <h2><span class="header-section-number">13.3</span> Frecuencias esperadas bajo H0<a href="tabla-de-contingencia.html#frecuencias-esperadas-bajo-h0" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="tabla-de-contingencia.html#cb48-1" tabindex="-1"></a>esperados <span class="ot">&lt;-</span> <span class="fu">outer</span>(fila_totales, col_totales, <span class="at">FUN =</span> <span class="cf">function</span>(f, c) f <span class="sc">*</span> c <span class="sc">/</span> total_general)</span>
-<span id="cb48-2"><a href="tabla-de-contingencia.html#cb48-2" tabindex="-1"></a><span class="fu">dimnames</span>(esperados) <span class="ot">&lt;-</span> <span class="fu">dimnames</span>(observados)</span>
-<span id="cb48-3"><a href="tabla-de-contingencia.html#cb48-3" tabindex="-1"></a>esperados</span></code></pre></div>
+<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tabla-de-contingencia.html#cb50-1" tabindex="-1"></a>esperados <span class="ot">&lt;-</span> <span class="fu">outer</span>(fila_totales, col_totales, <span class="at">FUN =</span> <span class="cf">function</span>(f, c) f <span class="sc">*</span> c <span class="sc">/</span> total_general)</span>
+<span id="cb50-2"><a href="tabla-de-contingencia.html#cb50-2" tabindex="-1"></a><span class="fu">dimnames</span>(esperados) <span class="ot">&lt;-</span> <span class="fu">dimnames</span>(observados)</span>
+<span id="cb50-3"><a href="tabla-de-contingencia.html#cb50-3" tabindex="-1"></a>esperados</span></code></pre></div>
 <pre><code>##     Equipamiento
 ## Sexo Multi-ply      Raw Single-ply    Wraps
 ##    F  110.5814 3981.256     751.37 1285.793
@@ -455,42 +455,42 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="estadistico-chi-cuadrado" class="section level2 hasAnchor" number="13.4">
 <h2><span class="header-section-number">13.4</span> Estadistico Chi-cuadrado<a href="tabla-de-contingencia.html#estadistico-chi-cuadrado" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb50"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb50-1"><a href="tabla-de-contingencia.html#cb50-1" tabindex="-1"></a>chi_cuadrado <span class="ot">&lt;-</span> <span class="fu">sum</span>((observados <span class="sc">-</span> esperados)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> esperados)</span>
-<span id="cb50-2"><a href="tabla-de-contingencia.html#cb50-2" tabindex="-1"></a>chi_cuadrado</span></code></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tabla-de-contingencia.html#cb52-1" tabindex="-1"></a>chi_cuadrado <span class="ot">&lt;-</span> <span class="fu">sum</span>((observados <span class="sc">-</span> esperados)<span class="sc">^</span><span class="dv">2</span> <span class="sc">/</span> esperados)</span>
+<span id="cb52-2"><a href="tabla-de-contingencia.html#cb52-2" tabindex="-1"></a>chi_cuadrado</span></code></pre></div>
 <pre><code>## [1] 160.5454</code></pre>
-<div class="sourceCode" id="cb52"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb52-1"><a href="tabla-de-contingencia.html#cb52-1" tabindex="-1"></a>df_gl <span class="ot">&lt;-</span> (<span class="fu">nrow</span>(observados) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> (<span class="fu">ncol</span>(observados) <span class="sc">-</span> <span class="dv">1</span>)</span>
-<span id="cb52-2"><a href="tabla-de-contingencia.html#cb52-2" tabindex="-1"></a>df_gl</span></code></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="tabla-de-contingencia.html#cb54-1" tabindex="-1"></a>df_gl <span class="ot">&lt;-</span> (<span class="fu">nrow</span>(observados) <span class="sc">-</span> <span class="dv">1</span>) <span class="sc">*</span> (<span class="fu">ncol</span>(observados) <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb54-2"><a href="tabla-de-contingencia.html#cb54-2" tabindex="-1"></a>df_gl</span></code></pre></div>
 <pre><code>## [1] 3</code></pre>
-<div class="sourceCode" id="cb54"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb54-1"><a href="tabla-de-contingencia.html#cb54-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb54-2"><a href="tabla-de-contingencia.html#cb54-2" tabindex="-1"></a>valor_critico <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, df_gl)</span>
-<span id="cb54-3"><a href="tabla-de-contingencia.html#cb54-3" tabindex="-1"></a>valor_critico</span></code></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="tabla-de-contingencia.html#cb56-1" tabindex="-1"></a>alpha <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb56-2"><a href="tabla-de-contingencia.html#cb56-2" tabindex="-1"></a>valor_critico <span class="ot">&lt;-</span> <span class="fu">qchisq</span>(<span class="dv">1</span> <span class="sc">-</span> alpha, df_gl)</span>
+<span id="cb56-3"><a href="tabla-de-contingencia.html#cb56-3" tabindex="-1"></a>valor_critico</span></code></pre></div>
 <pre><code>## [1] 7.814728</code></pre>
 </div>
 <div id="conclusion" class="section level2 hasAnchor" number="13.5">
 <h2><span class="header-section-number">13.5</span> Conclusion<a href="tabla-de-contingencia.html#conclusion" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb56"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb56-1"><a href="tabla-de-contingencia.html#cb56-1" tabindex="-1"></a><span class="co"># comparación</span></span>
-<span id="cb56-2"><a href="tabla-de-contingencia.html#cb56-2" tabindex="-1"></a>rechaza_H0 <span class="ot">&lt;-</span> chi_cuadrado <span class="sc">&gt;</span> valor_critico</span>
-<span id="cb56-3"><a href="tabla-de-contingencia.html#cb56-3" tabindex="-1"></a></span>
-<span id="cb56-4"><a href="tabla-de-contingencia.html#cb56-4" tabindex="-1"></a><span class="cf">if</span> (rechaza_H0) {</span>
-<span id="cb56-5"><a href="tabla-de-contingencia.html#cb56-5" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Se rechaza H0: existe una asociacion significativa entre el sexo del atleta y el tipo de equipamiento utilizado.&quot;</span>)</span>
-<span id="cb56-6"><a href="tabla-de-contingencia.html#cb56-6" tabindex="-1"></a>} <span class="cf">else</span> {</span>
-<span id="cb56-7"><a href="tabla-de-contingencia.html#cb56-7" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;No se rechaza H0: no hay evidencia suficiente para afirmar que el sexo y el equipamiento están asociados.&quot;</span>)</span>
-<span id="cb56-8"><a href="tabla-de-contingencia.html#cb56-8" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="tabla-de-contingencia.html#cb58-1" tabindex="-1"></a><span class="co"># comparación</span></span>
+<span id="cb58-2"><a href="tabla-de-contingencia.html#cb58-2" tabindex="-1"></a>rechaza_H0 <span class="ot">&lt;-</span> chi_cuadrado <span class="sc">&gt;</span> valor_critico</span>
+<span id="cb58-3"><a href="tabla-de-contingencia.html#cb58-3" tabindex="-1"></a></span>
+<span id="cb58-4"><a href="tabla-de-contingencia.html#cb58-4" tabindex="-1"></a><span class="cf">if</span> (rechaza_H0) {</span>
+<span id="cb58-5"><a href="tabla-de-contingencia.html#cb58-5" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;Se rechaza H0: existe una asociacion significativa entre el sexo del atleta y el tipo de equipamiento utilizado.&quot;</span>)</span>
+<span id="cb58-6"><a href="tabla-de-contingencia.html#cb58-6" tabindex="-1"></a>} <span class="cf">else</span> {</span>
+<span id="cb58-7"><a href="tabla-de-contingencia.html#cb58-7" tabindex="-1"></a>  <span class="fu">print</span>(<span class="st">&quot;No se rechaza H0: no hay evidencia suficiente para afirmar que el sexo y el equipamiento están asociados.&quot;</span>)</span>
+<span id="cb58-8"><a href="tabla-de-contingencia.html#cb58-8" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;Se rechaza H0: existe una asociacion significativa entre el sexo del atleta y el tipo de equipamiento utilizado.&quot;</code></pre>
-<div class="sourceCode" id="cb58"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb58-1"><a href="tabla-de-contingencia.html#cb58-1" tabindex="-1"></a>valor_p <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(chi_cuadrado, df_gl, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb58-2"><a href="tabla-de-contingencia.html#cb58-2" tabindex="-1"></a>valor_p</span></code></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="tabla-de-contingencia.html#cb60-1" tabindex="-1"></a>valor_p <span class="ot">&lt;-</span> <span class="fu">pchisq</span>(chi_cuadrado, df_gl, <span class="at">lower.tail =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb60-2"><a href="tabla-de-contingencia.html#cb60-2" tabindex="-1"></a>valor_p</span></code></pre></div>
 <pre><code>## [1] 0.0000000000000000000000000000000001397723</code></pre>
 </div>
 <div id="verificamos-con-chisq.test" class="section level2 hasAnchor" number="13.6">
 <h2><span class="header-section-number">13.6</span> Verificamos con chisq.test<a href="tabla-de-contingencia.html#verificamos-con-chisq.test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb60"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb60-1"><a href="tabla-de-contingencia.html#cb60-1" tabindex="-1"></a><span class="fu">chisq.test</span>(observados)</span></code></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="tabla-de-contingencia.html#cb62-1" tabindex="-1"></a><span class="fu">chisq.test</span>(observados)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s Chi-squared test
 ## 
 ## data:  observados
 ## X-squared = 160.55, df = 3, p-value &lt; 0.00000000000000022</code></pre>
-<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb62-1"><a href="tabla-de-contingencia.html#cb62-1" tabindex="-1"></a>chi_test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tabla)</span>
-<span id="cb62-2"><a href="tabla-de-contingencia.html#cb62-2" tabindex="-1"></a>chi_test<span class="sc">$</span>expected</span></code></pre></div>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="tabla-de-contingencia.html#cb64-1" tabindex="-1"></a>chi_test <span class="ot">&lt;-</span> <span class="fu">chisq.test</span>(tabla)</span>
+<span id="cb64-2"><a href="tabla-de-contingencia.html#cb64-2" tabindex="-1"></a>chi_test<span class="sc">$</span>expected</span></code></pre></div>
 <pre><code>##    
 ##     Multi-ply      Raw Single-ply    Wraps
 ##   F  110.5814 3981.256     751.37 1285.793
