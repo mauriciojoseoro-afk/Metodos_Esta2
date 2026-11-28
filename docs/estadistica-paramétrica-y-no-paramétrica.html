@@ -54,8 +54,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -382,7 +380,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="20" data-path="presentacion-del-proyecto-video.html"><a href="presentacion-del-proyecto-video.html"><i class="fa fa-check"></i><b>20</b> Presentacion del Proyecto (Video)</a></li>
 <li class="chapter" data-level="21" data-path="conclusión.html"><a href="conclusión.html"><i class="fa fa-check"></i><b>21</b> Conclusión</a></li>
-<li class="chapter" data-level="22" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>22</b> Bibliografía</a></li>
+<li class="chapter" data-level="22" data-path="conclusión-general.html"><a href="conclusión-general.html"><i class="fa fa-check"></i><b>22</b> Conclusión general</a></li>
+<li class="chapter" data-level="23" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>23</b> Bibliografía</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -418,10 +417,7 @@ H_0: \mu_1 = \mu_2 \quad
 \]</span></p>
 <div id="verifiquemos-supuestos-de-normalidad" class="section level3 hasAnchor" number="14.1.1">
 <h3><span class="header-section-number">14.1.1</span> Verifiquemos supuestos de normalidad<a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-supuestos-de-normalidad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb66-1" tabindex="-1"></a><span class="fu">ks.test</span>(df_nuevo<span class="sc">$</span>BestDeadliftKg, <span class="st">&quot;pnorm&quot;</span>, <span class="at">mean=</span><span class="fu">mean</span>(df_nuevo<span class="sc">$</span>BestDeadliftKg), <span class="at">sd=</span><span class="fu">sd</span>(df_nuevo<span class="sc">$</span>BestDeadliftKg))</span></code></pre></div>
-<pre><code>## Warning in ks.test.default(df_nuevo$BestDeadliftKg, &quot;pnorm&quot;, mean =
-## mean(df_nuevo$BestDeadliftKg), : ties should not be present for the one-sample
-## Kolmogorov-Smirnov test</code></pre>
+<div class="sourceCode" id="cb64"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb64-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb64-1" tabindex="-1"></a><span class="fu">ks.test</span>(df_nuevo<span class="sc">$</span>BestDeadliftKg, <span class="st">&quot;pnorm&quot;</span>, <span class="at">mean=</span><span class="fu">mean</span>(df_nuevo<span class="sc">$</span>BestDeadliftKg), <span class="at">sd=</span><span class="fu">sd</span>(df_nuevo<span class="sc">$</span>BestDeadliftKg))</span></code></pre></div>
 <pre><code>## 
 ##  Asymptotic one-sample Kolmogorov-Smirnov test
 ## 
@@ -433,7 +429,7 @@ H_0: \mu_1 = \mu_2 \quad
 </div>
 <div id="comparación-de-grupos-con-método-no-paramétrico" class="section level3 hasAnchor" number="14.1.2">
 <h3><span class="header-section-number">14.1.2</span> comparación de grupos con método no paramétrico<a href="estadistica-paramétrica-y-no-paramétrica.html#comparaci%C3%B3n-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb69"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb69-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb69-1" tabindex="-1"></a><span class="fu">wilcox.test</span>(BestDeadliftKg <span class="sc">~</span> Sex, <span class="at">data =</span> df_nuevo)</span></code></pre></div>
+<div class="sourceCode" id="cb66"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb66-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb66-1" tabindex="-1"></a><span class="fu">wilcox.test</span>(BestDeadliftKg <span class="sc">~</span> Sex, <span class="at">data =</span> df_nuevo)</span></code></pre></div>
 <pre><code>## 
 ##  Wilcoxon rank sum test with continuity correction
 ## 
@@ -455,18 +451,11 @@ H_1:  ij: _i_j</p>
 <p>$$</p>
 <div id="verifiquemos-el-supuesto-de-normalidad-de-la-variable-equipment" class="section level3 hasAnchor" number="14.2.1">
 <h3><span class="header-section-number">14.2.1</span> Verifiquemos el supuesto de normalidad de la variable ‘Equipment’<a href="estadistica-paramétrica-y-no-paramétrica.html#verifiquemos-el-supuesto-de-normalidad-de-la-variable-equipment" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb71"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb71-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb71-1" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
-<span id="cb71-2"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb71-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Equipment) <span class="sc">%&gt;%</span></span>
-<span id="cb71-3"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb71-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ks =</span> <span class="fu">ks.test</span>(BestDeadliftKg, <span class="st">&quot;pnorm&quot;</span>, </span>
-<span id="cb71-4"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb71-4" tabindex="-1"></a>                          <span class="at">mean =</span> <span class="fu">mean</span>(BestDeadliftKg), </span>
-<span id="cb71-5"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb71-5" tabindex="-1"></a>                          <span class="at">sd =</span> <span class="fu">sd</span>(BestDeadliftKg))<span class="sc">$</span>p.value)</span></code></pre></div>
-<pre><code>## Warning: There were 4 warnings in `summarise()`.
-## The first warning was:
-## ℹ In argument: `ks = `$`(...)`.
-## ℹ In group 1: `Equipment = Multi-ply`.
-## Caused by warning in `ks.test.default()`:
-## ! ties should not be present for the one-sample Kolmogorov-Smirnov test
-## ℹ Run `dplyr::last_dplyr_warnings()` to see the 3 remaining warnings.</code></pre>
+<div class="sourceCode" id="cb68"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb68-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb68-1" tabindex="-1"></a>df_nuevo <span class="sc">%&gt;%</span></span>
+<span id="cb68-2"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb68-2" tabindex="-1"></a>  <span class="fu">group_by</span>(Equipment) <span class="sc">%&gt;%</span></span>
+<span id="cb68-3"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb68-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">ks =</span> <span class="fu">ks.test</span>(BestDeadliftKg, <span class="st">&quot;pnorm&quot;</span>, </span>
+<span id="cb68-4"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb68-4" tabindex="-1"></a>                          <span class="at">mean =</span> <span class="fu">mean</span>(BestDeadliftKg), </span>
+<span id="cb68-5"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb68-5" tabindex="-1"></a>                          <span class="at">sd =</span> <span class="fu">sd</span>(BestDeadliftKg))<span class="sc">$</span>p.value)</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 2
 ##   Equipment        ks
 ##   &lt;fct&gt;         &lt;dbl&gt;
@@ -478,14 +467,13 @@ H_1:  ij: _i_j</p>
 </div>
 <div id="comparacion-de-grupos-con-método-no-paramétrico" class="section level3 hasAnchor" number="14.2.2">
 <h3><span class="header-section-number">14.2.2</span> comparacion de grupos con método no paramétrico<a href="estadistica-paramétrica-y-no-paramétrica.html#comparacion-de-grupos-con-m%C3%A9todo-no-param%C3%A9trico" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb74"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb74-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb74-1" tabindex="-1"></a><span class="co">#como NO se cumplen los supuestos utilizamos Kruskal-Wallis</span></span>
-<span id="cb74-2"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb74-2" tabindex="-1"></a><span class="fu">kruskal.test</span>(BestDeadliftKg <span class="sc">~</span> <span class="fu">factor</span>(Equipment), <span class="at">data =</span> df)</span></code></pre></div>
+<div class="sourceCode" id="cb70"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb70-1"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb70-1" tabindex="-1"></a><span class="co">#como NO se cumplen los supuestos utilizamos Kruskal-Wallis</span></span>
+<span id="cb70-2"><a href="estadistica-paramétrica-y-no-paramétrica.html#cb70-2" tabindex="-1"></a><span class="fu">kruskal.test</span>(BestDeadliftKg <span class="sc">~</span> <span class="fu">factor</span>(Equipment), <span class="at">data =</span> df)</span></code></pre></div>
 <pre><code>## 
 ##  Kruskal-Wallis rank sum test
 ## 
 ## data:  BestDeadliftKg by factor(Equipment)
-## Kruskal-Wallis chi-squared = 626.13, df = 3, p-value &lt;
-## 0.00000000000000022</code></pre>
+## Kruskal-Wallis chi-squared = 626.13, df = 3, p-value &lt; 0.00000000000000022</code></pre>
 <p>El resultado (<span class="math inline">\(χ²=626.13\)</span>, <span class="math inline">\(gl=3\)</span>, p&lt;0.001) indica que se rechaza la hipótesis nula, existiendo evidencia estadística suficiente para afirmar que al menos un tipo de equipamiento presenta un peso muerto con una distribución significativamente distinta a los demás. Al observar las medianas por grupo, se aprecia que Multi-ply presenta la mediana más alta (251.7 kg), seguido de Wraps (225 kg) y Single-ply (210 kg), mientras que Raw presenta la mediana más baja (195 kg), lo cual es coherente con el mayor nivel de asistencia mecánica que ofrece cada tipo de equipamiento.</p>
 </div>
 </div>

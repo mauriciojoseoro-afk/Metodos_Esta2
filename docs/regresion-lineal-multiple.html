@@ -54,8 +54,6 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 <script src="libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
-<link href="libs/bsTable-3.3.7/bootstrapTable.min.css" rel="stylesheet" />
-<script src="libs/bsTable-3.3.7/bootstrapTable.js"></script>
 
 
 <style type="text/css">
@@ -382,7 +380,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="20" data-path="presentacion-del-proyecto-video.html"><a href="presentacion-del-proyecto-video.html"><i class="fa fa-check"></i><b>20</b> Presentacion del Proyecto (Video)</a></li>
 <li class="chapter" data-level="21" data-path="conclusión.html"><a href="conclusión.html"><i class="fa fa-check"></i><b>21</b> Conclusión</a></li>
-<li class="chapter" data-level="22" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>22</b> Bibliografía</a></li>
+<li class="chapter" data-level="22" data-path="conclusión-general.html"><a href="conclusión-general.html"><i class="fa fa-check"></i><b>22</b> Conclusión general</a></li>
+<li class="chapter" data-level="23" data-path="bibliografía.html"><a href="bibliografía.html"><i class="fa fa-check"></i><b>23</b> Bibliografía</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -409,21 +408,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">19.1</span> Analisis de multicolinealidad<a href="regresion-lineal-multiple.html#analisis-de-multicolinealidad" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="matriz-de-correlaciones" class="section level3 hasAnchor" number="19.1.1">
 <h3><span class="header-section-number">19.1.1</span> Matriz de correlaciones<a href="regresion-lineal-multiple.html#matriz-de-correlaciones" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="regresion-lineal-multiple.html#cb117-1" tabindex="-1"></a>correlaciones_rlm <span class="ot">&lt;-</span> <span class="fu">cor</span>(df_nuevo[, <span class="fu">c</span>(</span>
-<span id="cb117-2"><a href="regresion-lineal-multiple.html#cb117-2" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,</span>
-<span id="cb117-3"><a href="regresion-lineal-multiple.html#cb117-3" tabindex="-1"></a>  <span class="st">&quot;BestSquatKg&quot;</span>,</span>
-<span id="cb117-4"><a href="regresion-lineal-multiple.html#cb117-4" tabindex="-1"></a>  <span class="st">&quot;BestBenchKg&quot;</span>,</span>
-<span id="cb117-5"><a href="regresion-lineal-multiple.html#cb117-5" tabindex="-1"></a>  <span class="st">&quot;BodyweightKg&quot;</span></span>
-<span id="cb117-6"><a href="regresion-lineal-multiple.html#cb117-6" tabindex="-1"></a>)])</span>
-<span id="cb117-7"><a href="regresion-lineal-multiple.html#cb117-7" tabindex="-1"></a></span>
-<span id="cb117-8"><a href="regresion-lineal-multiple.html#cb117-8" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
-<span id="cb117-9"><a href="regresion-lineal-multiple.html#cb117-9" tabindex="-1"></a>  <span class="fu">round</span>(correlaciones_rlm, <span class="dv">4</span>), <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
-<span id="cb117-10"><a href="regresion-lineal-multiple.html#cb117-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Matriz de correlaciones entre predictores&quot;</span></span>
-<span id="cb117-11"><a href="regresion-lineal-multiple.html#cb117-11" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
-<span id="cb117-12"><a href="regresion-lineal-multiple.html#cb117-12" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
-<span id="cb117-13"><a href="regresion-lineal-multiple.html#cb117-13" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
-<span id="cb117-14"><a href="regresion-lineal-multiple.html#cb117-14" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
-<span id="cb117-15"><a href="regresion-lineal-multiple.html#cb117-15" tabindex="-1"></a>  )</span></code></pre></div>
+<div class="sourceCode" id="cb108"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb108-1"><a href="regresion-lineal-multiple.html#cb108-1" tabindex="-1"></a>correlaciones_rlm <span class="ot">&lt;-</span> <span class="fu">cor</span>(df_nuevo[, <span class="fu">c</span>(</span>
+<span id="cb108-2"><a href="regresion-lineal-multiple.html#cb108-2" tabindex="-1"></a>  <span class="st">&quot;Age&quot;</span>,</span>
+<span id="cb108-3"><a href="regresion-lineal-multiple.html#cb108-3" tabindex="-1"></a>  <span class="st">&quot;BestSquatKg&quot;</span>,</span>
+<span id="cb108-4"><a href="regresion-lineal-multiple.html#cb108-4" tabindex="-1"></a>  <span class="st">&quot;BestBenchKg&quot;</span>,</span>
+<span id="cb108-5"><a href="regresion-lineal-multiple.html#cb108-5" tabindex="-1"></a>  <span class="st">&quot;BodyweightKg&quot;</span></span>
+<span id="cb108-6"><a href="regresion-lineal-multiple.html#cb108-6" tabindex="-1"></a>)])</span>
+<span id="cb108-7"><a href="regresion-lineal-multiple.html#cb108-7" tabindex="-1"></a></span>
+<span id="cb108-8"><a href="regresion-lineal-multiple.html#cb108-8" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(</span>
+<span id="cb108-9"><a href="regresion-lineal-multiple.html#cb108-9" tabindex="-1"></a>  <span class="fu">round</span>(correlaciones_rlm, <span class="dv">4</span>), <span class="at">format=</span> <span class="st">&quot;html&quot;</span>,</span>
+<span id="cb108-10"><a href="regresion-lineal-multiple.html#cb108-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Matriz de correlaciones entre predictores&quot;</span></span>
+<span id="cb108-11"><a href="regresion-lineal-multiple.html#cb108-11" tabindex="-1"></a>) <span class="sc">%&gt;%</span></span>
+<span id="cb108-12"><a href="regresion-lineal-multiple.html#cb108-12" tabindex="-1"></a>  kableExtra<span class="sc">::</span><span class="fu">kable_styling</span>(</span>
+<span id="cb108-13"><a href="regresion-lineal-multiple.html#cb108-13" tabindex="-1"></a>    <span class="at">bootstrap_options =</span> <span class="fu">c</span>(<span class="st">&quot;striped&quot;</span>, <span class="st">&quot;hover&quot;</span>, <span class="st">&quot;condensed&quot;</span>),</span>
+<span id="cb108-14"><a href="regresion-lineal-multiple.html#cb108-14" tabindex="-1"></a>    <span class="at">full_width =</span> <span class="cn">FALSE</span></span>
+<span id="cb108-15"><a href="regresion-lineal-multiple.html#cb108-15" tabindex="-1"></a>  )</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-correlaciones">Table 19.1: </span>Matriz de correlaciones entre predictores
@@ -524,14 +523,14 @@ BodyweightKg
 </div>
 <div id="ajuste-del-modelo-completo" class="section level3 hasAnchor" number="19.1.2">
 <h3><span class="header-section-number">19.1.2</span> Ajuste del modelo completo<a href="regresion-lineal-multiple.html#ajuste-del-modelo-completo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="regresion-lineal-multiple.html#cb118-1" tabindex="-1"></a>modelo_completo <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb118-2"><a href="regresion-lineal-multiple.html#cb118-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> Age <span class="sc">+</span> BestSquatKg <span class="sc">+</span></span>
-<span id="cb118-3"><a href="regresion-lineal-multiple.html#cb118-3" tabindex="-1"></a>    BestBenchKg <span class="sc">+</span> BodyweightKg <span class="sc">+</span> Sex <span class="sc">+</span> Equipment,</span>
-<span id="cb118-4"><a href="regresion-lineal-multiple.html#cb118-4" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
-<span id="cb118-5"><a href="regresion-lineal-multiple.html#cb118-5" tabindex="-1"></a>)</span>
-<span id="cb118-6"><a href="regresion-lineal-multiple.html#cb118-6" tabindex="-1"></a></span>
-<span id="cb118-7"><a href="regresion-lineal-multiple.html#cb118-7" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_completo,</span>
-<span id="cb118-8"><a href="regresion-lineal-multiple.html#cb118-8" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes del modelo completo&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb109"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb109-1"><a href="regresion-lineal-multiple.html#cb109-1" tabindex="-1"></a>modelo_completo <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb109-2"><a href="regresion-lineal-multiple.html#cb109-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> Age <span class="sc">+</span> BestSquatKg <span class="sc">+</span></span>
+<span id="cb109-3"><a href="regresion-lineal-multiple.html#cb109-3" tabindex="-1"></a>    BestBenchKg <span class="sc">+</span> BodyweightKg <span class="sc">+</span> Sex <span class="sc">+</span> Equipment,</span>
+<span id="cb109-4"><a href="regresion-lineal-multiple.html#cb109-4" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb109-5"><a href="regresion-lineal-multiple.html#cb109-5" tabindex="-1"></a>)</span>
+<span id="cb109-6"><a href="regresion-lineal-multiple.html#cb109-6" tabindex="-1"></a></span>
+<span id="cb109-7"><a href="regresion-lineal-multiple.html#cb109-7" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_completo,</span>
+<span id="cb109-8"><a href="regresion-lineal-multiple.html#cb109-8" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes del modelo completo&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-completo">Table 19.2: </span>Coeficientes del modelo completo
@@ -711,8 +710,8 @@ EquipmentWraps
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="regresion-lineal-multiple.html#cb119-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_completo,</span>
-<span id="cb119-2"><a href="regresion-lineal-multiple.html#cb119-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Medidas de ajuste del modelo completo&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb110"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb110-1"><a href="regresion-lineal-multiple.html#cb110-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_completo,</span>
+<span id="cb110-2"><a href="regresion-lineal-multiple.html#cb110-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Medidas de ajuste del modelo completo&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-completo">Table 19.2: </span>Medidas de ajuste del modelo completo
@@ -791,8 +790,8 @@ Valor p (F)
 </div>
 <div id="factor-de-inflacion-de-varianza" class="section level3 hasAnchor" number="19.1.3">
 <h3><span class="header-section-number">19.1.3</span> Factor de inflacion de varianza<a href="regresion-lineal-multiple.html#factor-de-inflacion-de-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="regresion-lineal-multiple.html#cb120-1" tabindex="-1"></a><span class="fu">tabla_vif</span>(modelo_completo,</span>
-<span id="cb120-2"><a href="regresion-lineal-multiple.html#cb120-2" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Factor de inflación de varianza del modelo completo&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb111"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb111-1"><a href="regresion-lineal-multiple.html#cb111-1" tabindex="-1"></a><span class="fu">tabla_vif</span>(modelo_completo,</span>
+<span id="cb111-2"><a href="regresion-lineal-multiple.html#cb111-2" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;Factor de inflación de varianza del modelo completo&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-vif">Table 19.3: </span>Factor de inflación de varianza del modelo completo
@@ -908,14 +907,14 @@ Equipment
 </div>
 <div id="seleccion-del-modelo" class="section level2 hasAnchor" number="19.2">
 <h2><span class="header-section-number">19.2</span> Seleccion del modelo<a href="regresion-lineal-multiple.html#seleccion-del-modelo" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="regresion-lineal-multiple.html#cb121-1" tabindex="-1"></a>modelo_transformado_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb121-2"><a href="regresion-lineal-multiple.html#cb121-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> <span class="fu">sqrt</span>(upper_lower_total) <span class="sc">+</span></span>
-<span id="cb121-3"><a href="regresion-lineal-multiple.html#cb121-3" tabindex="-1"></a>    Age <span class="sc">+</span> BodyweightKg <span class="sc">+</span> Sex <span class="sc">+</span> Equipment,</span>
-<span id="cb121-4"><a href="regresion-lineal-multiple.html#cb121-4" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
-<span id="cb121-5"><a href="regresion-lineal-multiple.html#cb121-5" tabindex="-1"></a>)</span>
-<span id="cb121-6"><a href="regresion-lineal-multiple.html#cb121-6" tabindex="-1"></a></span>
-<span id="cb121-7"><a href="regresion-lineal-multiple.html#cb121-7" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_transformado_rlm,</span>
-<span id="cb121-8"><a href="regresion-lineal-multiple.html#cb121-8" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes del modelo transformado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb112"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb112-1"><a href="regresion-lineal-multiple.html#cb112-1" tabindex="-1"></a>modelo_transformado_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb112-2"><a href="regresion-lineal-multiple.html#cb112-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> <span class="fu">sqrt</span>(upper_lower_total) <span class="sc">+</span></span>
+<span id="cb112-3"><a href="regresion-lineal-multiple.html#cb112-3" tabindex="-1"></a>    Age <span class="sc">+</span> BodyweightKg <span class="sc">+</span> Sex <span class="sc">+</span> Equipment,</span>
+<span id="cb112-4"><a href="regresion-lineal-multiple.html#cb112-4" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb112-5"><a href="regresion-lineal-multiple.html#cb112-5" tabindex="-1"></a>)</span>
+<span id="cb112-6"><a href="regresion-lineal-multiple.html#cb112-6" tabindex="-1"></a></span>
+<span id="cb112-7"><a href="regresion-lineal-multiple.html#cb112-7" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_transformado_rlm,</span>
+<span id="cb112-8"><a href="regresion-lineal-multiple.html#cb112-8" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes del modelo transformado&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-transformado">Table 19.4: </span>Coeficientes del modelo transformado
@@ -1078,8 +1077,8 @@ EquipmentWraps
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="regresion-lineal-multiple.html#cb122-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_transformado_rlm,</span>
-<span id="cb122-2"><a href="regresion-lineal-multiple.html#cb122-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Medidas de ajuste del modelo transformado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb113"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb113-1"><a href="regresion-lineal-multiple.html#cb113-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_transformado_rlm,</span>
+<span id="cb113-2"><a href="regresion-lineal-multiple.html#cb113-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Medidas de ajuste del modelo transformado&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-transformado">Table 19.4: </span>Medidas de ajuste del modelo transformado
@@ -1153,8 +1152,8 @@ Valor p (F)
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="regresion-lineal-multiple.html#cb123-1" tabindex="-1"></a><span class="fu">tabla_vif</span>(modelo_transformado_rlm,</span>
-<span id="cb123-2"><a href="regresion-lineal-multiple.html#cb123-2" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;VIF / GVIF del modelo transformado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="regresion-lineal-multiple.html#cb114-1" tabindex="-1"></a><span class="fu">tabla_vif</span>(modelo_transformado_rlm,</span>
+<span id="cb114-2"><a href="regresion-lineal-multiple.html#cb114-2" tabindex="-1"></a>          <span class="at">caption =</span> <span class="st">&quot;VIF / GVIF del modelo transformado&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-transformado">Table 19.4: </span>VIF / GVIF del modelo transformado
@@ -1254,33 +1253,33 @@ Equipment
 <p>Al reemplazar los levantamientos separados por la fuerza combinada, se elimina la multicolinealidad entre sentadilla y press de banca observada en el modelo completo.</p>
 <div id="seleccion-mediante-el-criterio-aic" class="section level3 hasAnchor" number="19.2.1">
 <h3><span class="header-section-number">19.2.1</span> Seleccion mediante el criterio AIC<a href="regresion-lineal-multiple.html#seleccion-mediante-el-criterio-aic" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="regresion-lineal-multiple.html#cb124-1" tabindex="-1"></a>modelo_step_original <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">stepAIC</span>(</span>
-<span id="cb124-2"><a href="regresion-lineal-multiple.html#cb124-2" tabindex="-1"></a>  modelo_completo,</span>
-<span id="cb124-3"><a href="regresion-lineal-multiple.html#cb124-3" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>,</span>
-<span id="cb124-4"><a href="regresion-lineal-multiple.html#cb124-4" tabindex="-1"></a>  <span class="at">trace =</span> <span class="cn">FALSE</span></span>
-<span id="cb124-5"><a href="regresion-lineal-multiple.html#cb124-5" tabindex="-1"></a>)</span>
-<span id="cb124-6"><a href="regresion-lineal-multiple.html#cb124-6" tabindex="-1"></a></span>
-<span id="cb124-7"><a href="regresion-lineal-multiple.html#cb124-7" tabindex="-1"></a>modelo_step_transformado <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">stepAIC</span>(</span>
-<span id="cb124-8"><a href="regresion-lineal-multiple.html#cb124-8" tabindex="-1"></a>  modelo_transformado_rlm,</span>
-<span id="cb124-9"><a href="regresion-lineal-multiple.html#cb124-9" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>,</span>
-<span id="cb124-10"><a href="regresion-lineal-multiple.html#cb124-10" tabindex="-1"></a>  <span class="at">trace =</span> <span class="cn">FALSE</span></span>
-<span id="cb124-11"><a href="regresion-lineal-multiple.html#cb124-11" tabindex="-1"></a>)</span></code></pre></div>
-<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="regresion-lineal-multiple.html#cb125-1" tabindex="-1"></a>aic_resultado <span class="ot">&lt;-</span> <span class="fu">AIC</span>(</span>
-<span id="cb125-2"><a href="regresion-lineal-multiple.html#cb125-2" tabindex="-1"></a>  modelo_completo,</span>
-<span id="cb125-3"><a href="regresion-lineal-multiple.html#cb125-3" tabindex="-1"></a>  modelo_step_original,</span>
-<span id="cb125-4"><a href="regresion-lineal-multiple.html#cb125-4" tabindex="-1"></a>  modelo_transformado_rlm</span>
-<span id="cb125-5"><a href="regresion-lineal-multiple.html#cb125-5" tabindex="-1"></a>)</span>
-<span id="cb125-6"><a href="regresion-lineal-multiple.html#cb125-6" tabindex="-1"></a></span>
-<span id="cb125-7"><a href="regresion-lineal-multiple.html#cb125-7" tabindex="-1"></a>tabla_aic <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb125-8"><a href="regresion-lineal-multiple.html#cb125-8" tabindex="-1"></a>  <span class="at">Modelo =</span> <span class="fu">c</span>(<span class="st">&quot;Modelo completo&quot;</span>,</span>
-<span id="cb125-9"><a href="regresion-lineal-multiple.html#cb125-9" tabindex="-1"></a>             <span class="st">&quot;Stepwise (original)&quot;</span>,</span>
-<span id="cb125-10"><a href="regresion-lineal-multiple.html#cb125-10" tabindex="-1"></a>             <span class="st">&quot;Modelo transformado&quot;</span>),</span>
-<span id="cb125-11"><a href="regresion-lineal-multiple.html#cb125-11" tabindex="-1"></a>  <span class="st">`</span><span class="at">Parámetros (gl)</span><span class="st">`</span> <span class="ot">=</span> aic_resultado<span class="sc">$</span>df,</span>
-<span id="cb125-12"><a href="regresion-lineal-multiple.html#cb125-12" tabindex="-1"></a>  <span class="at">AIC =</span> aic_resultado<span class="sc">$</span>AIC,</span>
-<span id="cb125-13"><a href="regresion-lineal-multiple.html#cb125-13" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb125-14"><a href="regresion-lineal-multiple.html#cb125-14" tabindex="-1"></a>)</span>
-<span id="cb125-15"><a href="regresion-lineal-multiple.html#cb125-15" tabindex="-1"></a></span>
-<span id="cb125-16"><a href="regresion-lineal-multiple.html#cb125-16" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_aic, <span class="at">caption =</span> <span class="st">&quot;Comparación de modelos según el criterio AIC&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="regresion-lineal-multiple.html#cb115-1" tabindex="-1"></a>modelo_step_original <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">stepAIC</span>(</span>
+<span id="cb115-2"><a href="regresion-lineal-multiple.html#cb115-2" tabindex="-1"></a>  modelo_completo,</span>
+<span id="cb115-3"><a href="regresion-lineal-multiple.html#cb115-3" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>,</span>
+<span id="cb115-4"><a href="regresion-lineal-multiple.html#cb115-4" tabindex="-1"></a>  <span class="at">trace =</span> <span class="cn">FALSE</span></span>
+<span id="cb115-5"><a href="regresion-lineal-multiple.html#cb115-5" tabindex="-1"></a>)</span>
+<span id="cb115-6"><a href="regresion-lineal-multiple.html#cb115-6" tabindex="-1"></a></span>
+<span id="cb115-7"><a href="regresion-lineal-multiple.html#cb115-7" tabindex="-1"></a>modelo_step_transformado <span class="ot">&lt;-</span> MASS<span class="sc">::</span><span class="fu">stepAIC</span>(</span>
+<span id="cb115-8"><a href="regresion-lineal-multiple.html#cb115-8" tabindex="-1"></a>  modelo_transformado_rlm,</span>
+<span id="cb115-9"><a href="regresion-lineal-multiple.html#cb115-9" tabindex="-1"></a>  <span class="at">direction =</span> <span class="st">&quot;both&quot;</span>,</span>
+<span id="cb115-10"><a href="regresion-lineal-multiple.html#cb115-10" tabindex="-1"></a>  <span class="at">trace =</span> <span class="cn">FALSE</span></span>
+<span id="cb115-11"><a href="regresion-lineal-multiple.html#cb115-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb116"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb116-1"><a href="regresion-lineal-multiple.html#cb116-1" tabindex="-1"></a>aic_resultado <span class="ot">&lt;-</span> <span class="fu">AIC</span>(</span>
+<span id="cb116-2"><a href="regresion-lineal-multiple.html#cb116-2" tabindex="-1"></a>  modelo_completo,</span>
+<span id="cb116-3"><a href="regresion-lineal-multiple.html#cb116-3" tabindex="-1"></a>  modelo_step_original,</span>
+<span id="cb116-4"><a href="regresion-lineal-multiple.html#cb116-4" tabindex="-1"></a>  modelo_transformado_rlm</span>
+<span id="cb116-5"><a href="regresion-lineal-multiple.html#cb116-5" tabindex="-1"></a>)</span>
+<span id="cb116-6"><a href="regresion-lineal-multiple.html#cb116-6" tabindex="-1"></a></span>
+<span id="cb116-7"><a href="regresion-lineal-multiple.html#cb116-7" tabindex="-1"></a>tabla_aic <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb116-8"><a href="regresion-lineal-multiple.html#cb116-8" tabindex="-1"></a>  <span class="at">Modelo =</span> <span class="fu">c</span>(<span class="st">&quot;Modelo completo&quot;</span>,</span>
+<span id="cb116-9"><a href="regresion-lineal-multiple.html#cb116-9" tabindex="-1"></a>             <span class="st">&quot;Stepwise (original)&quot;</span>,</span>
+<span id="cb116-10"><a href="regresion-lineal-multiple.html#cb116-10" tabindex="-1"></a>             <span class="st">&quot;Modelo transformado&quot;</span>),</span>
+<span id="cb116-11"><a href="regresion-lineal-multiple.html#cb116-11" tabindex="-1"></a>  <span class="st">`</span><span class="at">Parámetros (gl)</span><span class="st">`</span> <span class="ot">=</span> aic_resultado<span class="sc">$</span>df,</span>
+<span id="cb116-12"><a href="regresion-lineal-multiple.html#cb116-12" tabindex="-1"></a>  <span class="at">AIC =</span> aic_resultado<span class="sc">$</span>AIC,</span>
+<span id="cb116-13"><a href="regresion-lineal-multiple.html#cb116-13" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb116-14"><a href="regresion-lineal-multiple.html#cb116-14" tabindex="-1"></a>)</span>
+<span id="cb116-15"><a href="regresion-lineal-multiple.html#cb116-15" tabindex="-1"></a></span>
+<span id="cb116-16"><a href="regresion-lineal-multiple.html#cb116-16" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_aic, <span class="at">caption =</span> <span class="st">&quot;Comparación de modelos según el criterio AIC&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-comparacion-aic">Table 19.5: </span>Comparación de modelos según el criterio AIC
@@ -1338,15 +1337,15 @@ Modelo transformado
 <p>Sin embargo, el modelo transformado presenta un AIC considerablemente inferior, con una diferencia aproximada de 477.90 unidades respecto al modelo original reducido.</p>
 <p>Por tanto, se selecciona el modelo transformado, debido a que representa la alternativa mas favorable entre los modelos considerados segun el criterio AIC.</p>
 <p>En este modelo se conservan la edad, el peso corporal, el sexo, el equipamiento y la raiz cuadrada de la fuerza combinada.</p>
-<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="regresion-lineal-multiple.html#cb126-1" tabindex="-1"></a>modelo_optimo_rlm <span class="ot">&lt;-</span> modelo_step_transformado</span>
-<span id="cb126-2"><a href="regresion-lineal-multiple.html#cb126-2" tabindex="-1"></a></span>
-<span id="cb126-3"><a href="regresion-lineal-multiple.html#cb126-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb126-4"><a href="regresion-lineal-multiple.html#cb126-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb126-5"><a href="regresion-lineal-multiple.html#cb126-5" tabindex="-1"></a>    <span class="st">`</span><span class="at">Fórmula del modelo seleccionado</span><span class="st">`</span> <span class="ot">=</span></span>
-<span id="cb126-6"><a href="regresion-lineal-multiple.html#cb126-6" tabindex="-1"></a>      <span class="fu">paste</span>(<span class="fu">deparse</span>(<span class="fu">formula</span>(modelo_optimo_rlm)), <span class="at">collapse =</span> <span class="st">&quot; &quot;</span>),</span>
-<span id="cb126-7"><a href="regresion-lineal-multiple.html#cb126-7" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb126-8"><a href="regresion-lineal-multiple.html#cb126-8" tabindex="-1"></a>  )</span>
-<span id="cb126-9"><a href="regresion-lineal-multiple.html#cb126-9" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb117"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb117-1"><a href="regresion-lineal-multiple.html#cb117-1" tabindex="-1"></a>modelo_optimo_rlm <span class="ot">&lt;-</span> modelo_step_transformado</span>
+<span id="cb117-2"><a href="regresion-lineal-multiple.html#cb117-2" tabindex="-1"></a></span>
+<span id="cb117-3"><a href="regresion-lineal-multiple.html#cb117-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb117-4"><a href="regresion-lineal-multiple.html#cb117-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb117-5"><a href="regresion-lineal-multiple.html#cb117-5" tabindex="-1"></a>    <span class="st">`</span><span class="at">Fórmula del modelo seleccionado</span><span class="st">`</span> <span class="ot">=</span></span>
+<span id="cb117-6"><a href="regresion-lineal-multiple.html#cb117-6" tabindex="-1"></a>      <span class="fu">paste</span>(<span class="fu">deparse</span>(<span class="fu">formula</span>(modelo_optimo_rlm)), <span class="at">collapse =</span> <span class="st">&quot; &quot;</span>),</span>
+<span id="cb117-7"><a href="regresion-lineal-multiple.html#cb117-7" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb117-8"><a href="regresion-lineal-multiple.html#cb117-8" tabindex="-1"></a>  )</span>
+<span id="cb117-9"><a href="regresion-lineal-multiple.html#cb117-9" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1363,8 +1362,8 @@ BestDeadliftKg ~ sqrt(upper_lower_total) + Age + BodyweightKg + Sex + Equipment
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="regresion-lineal-multiple.html#cb127-1" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_optimo_rlm,</span>
-<span id="cb127-2"><a href="regresion-lineal-multiple.html#cb127-2" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes del modelo seleccionado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb118"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb118-1"><a href="regresion-lineal-multiple.html#cb118-1" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_optimo_rlm,</span>
+<span id="cb118-2"><a href="regresion-lineal-multiple.html#cb118-2" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes del modelo seleccionado&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-modelo-optimo">Table 19.6: </span>Coeficientes del modelo seleccionado
@@ -1527,8 +1526,8 @@ EquipmentWraps
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="regresion-lineal-multiple.html#cb128-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_optimo_rlm,</span>
-<span id="cb128-2"><a href="regresion-lineal-multiple.html#cb128-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Medidas de ajuste del modelo seleccionado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb119"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb119-1"><a href="regresion-lineal-multiple.html#cb119-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_optimo_rlm,</span>
+<span id="cb119-2"><a href="regresion-lineal-multiple.html#cb119-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Medidas de ajuste del modelo seleccionado&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-modelo-optimo">Table 19.6: </span>Medidas de ajuste del modelo seleccionado
@@ -1608,14 +1607,14 @@ Valor p (F)
 <h2><span class="header-section-number">19.3</span> Estimacion matricial de los coeficientes<a href="regresion-lineal-multiple.html#estimacion-matricial-de-los-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="construccion-de-la-matriz-de-diseno" class="section level3 hasAnchor" number="19.3.1">
 <h3><span class="header-section-number">19.3.1</span> Construccion de la matriz de diseno<a href="regresion-lineal-multiple.html#construccion-de-la-matriz-de-diseno" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="regresion-lineal-multiple.html#cb129-1" tabindex="-1"></a>X_rlm <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(modelo_optimo_rlm)</span>
-<span id="cb129-2"><a href="regresion-lineal-multiple.html#cb129-2" tabindex="-1"></a></span>
-<span id="cb129-3"><a href="regresion-lineal-multiple.html#cb129-3" tabindex="-1"></a>y_rlm <span class="ot">&lt;-</span> <span class="fu">model.response</span>(</span>
-<span id="cb129-4"><a href="regresion-lineal-multiple.html#cb129-4" tabindex="-1"></a>  <span class="fu">model.frame</span>(modelo_optimo_rlm)</span>
-<span id="cb129-5"><a href="regresion-lineal-multiple.html#cb129-5" tabindex="-1"></a>)</span>
-<span id="cb129-6"><a href="regresion-lineal-multiple.html#cb129-6" tabindex="-1"></a></span>
-<span id="cb129-7"><a href="regresion-lineal-multiple.html#cb129-7" tabindex="-1"></a><span class="fu">tabla_matriz</span>(<span class="fu">head</span>(X_rlm), <span class="at">digits =</span> <span class="dv">3</span>,</span>
-<span id="cb129-8"><a href="regresion-lineal-multiple.html#cb129-8" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Primeras 6 filas de la matriz de diseño X&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb120"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb120-1"><a href="regresion-lineal-multiple.html#cb120-1" tabindex="-1"></a>X_rlm <span class="ot">&lt;-</span> <span class="fu">model.matrix</span>(modelo_optimo_rlm)</span>
+<span id="cb120-2"><a href="regresion-lineal-multiple.html#cb120-2" tabindex="-1"></a></span>
+<span id="cb120-3"><a href="regresion-lineal-multiple.html#cb120-3" tabindex="-1"></a>y_rlm <span class="ot">&lt;-</span> <span class="fu">model.response</span>(</span>
+<span id="cb120-4"><a href="regresion-lineal-multiple.html#cb120-4" tabindex="-1"></a>  <span class="fu">model.frame</span>(modelo_optimo_rlm)</span>
+<span id="cb120-5"><a href="regresion-lineal-multiple.html#cb120-5" tabindex="-1"></a>)</span>
+<span id="cb120-6"><a href="regresion-lineal-multiple.html#cb120-6" tabindex="-1"></a></span>
+<span id="cb120-7"><a href="regresion-lineal-multiple.html#cb120-7" tabindex="-1"></a><span class="fu">tabla_matriz</span>(<span class="fu">head</span>(X_rlm), <span class="at">digits =</span> <span class="dv">3</span>,</span>
+<span id="cb120-8"><a href="regresion-lineal-multiple.html#cb120-8" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Primeras 6 filas de la matriz de diseño X&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -1809,14 +1808,14 @@ EquipmentWraps
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="regresion-lineal-multiple.html#cb130-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb130-2"><a href="regresion-lineal-multiple.html#cb130-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb130-3"><a href="regresion-lineal-multiple.html#cb130-3" tabindex="-1"></a>    Observación <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
-<span id="cb130-4"><a href="regresion-lineal-multiple.html#cb130-4" tabindex="-1"></a>    <span class="st">`</span><span class="at">Peso muerto observado (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(y_rlm)),</span>
-<span id="cb130-5"><a href="regresion-lineal-multiple.html#cb130-5" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb130-6"><a href="regresion-lineal-multiple.html#cb130-6" tabindex="-1"></a>  ),</span>
-<span id="cb130-7"><a href="regresion-lineal-multiple.html#cb130-7" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Primeros 6 valores del vector de respuesta y&quot;</span></span>
-<span id="cb130-8"><a href="regresion-lineal-multiple.html#cb130-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb121"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb121-1"><a href="regresion-lineal-multiple.html#cb121-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb121-2"><a href="regresion-lineal-multiple.html#cb121-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb121-3"><a href="regresion-lineal-multiple.html#cb121-3" tabindex="-1"></a>    Observación <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb121-4"><a href="regresion-lineal-multiple.html#cb121-4" tabindex="-1"></a>    <span class="st">`</span><span class="at">Peso muerto observado (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(y_rlm)),</span>
+<span id="cb121-5"><a href="regresion-lineal-multiple.html#cb121-5" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb121-6"><a href="regresion-lineal-multiple.html#cb121-6" tabindex="-1"></a>  ),</span>
+<span id="cb121-7"><a href="regresion-lineal-multiple.html#cb121-7" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Primeros 6 valores del vector de respuesta y&quot;</span></span>
+<span id="cb121-8"><a href="regresion-lineal-multiple.html#cb121-8" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-matriz-diseno">Table 19.7: </span>Primeros 6 valores del vector de respuesta y
@@ -1882,15 +1881,15 @@ Peso muerto observado (kg)
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="regresion-lineal-multiple.html#cb131-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb131-2"><a href="regresion-lineal-multiple.html#cb131-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb131-3"><a href="regresion-lineal-multiple.html#cb131-3" tabindex="-1"></a>    <span class="at">Elemento =</span> <span class="fu">c</span>(<span class="st">&quot;Filas de X (observaciones)&quot;</span>,</span>
-<span id="cb131-4"><a href="regresion-lineal-multiple.html#cb131-4" tabindex="-1"></a>                 <span class="st">&quot;Columnas de X (coeficientes)&quot;</span>,</span>
-<span id="cb131-5"><a href="regresion-lineal-multiple.html#cb131-5" tabindex="-1"></a>                 <span class="st">&quot;Longitud de y&quot;</span>),</span>
-<span id="cb131-6"><a href="regresion-lineal-multiple.html#cb131-6" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(<span class="fu">nrow</span>(X_rlm), <span class="fu">ncol</span>(X_rlm), <span class="fu">length</span>(y_rlm))</span>
-<span id="cb131-7"><a href="regresion-lineal-multiple.html#cb131-7" tabindex="-1"></a>  ),</span>
-<span id="cb131-8"><a href="regresion-lineal-multiple.html#cb131-8" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Dimensiones de X y y&quot;</span></span>
-<span id="cb131-9"><a href="regresion-lineal-multiple.html#cb131-9" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb122"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb122-1"><a href="regresion-lineal-multiple.html#cb122-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb122-2"><a href="regresion-lineal-multiple.html#cb122-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb122-3"><a href="regresion-lineal-multiple.html#cb122-3" tabindex="-1"></a>    <span class="at">Elemento =</span> <span class="fu">c</span>(<span class="st">&quot;Filas de X (observaciones)&quot;</span>,</span>
+<span id="cb122-4"><a href="regresion-lineal-multiple.html#cb122-4" tabindex="-1"></a>                 <span class="st">&quot;Columnas de X (coeficientes)&quot;</span>,</span>
+<span id="cb122-5"><a href="regresion-lineal-multiple.html#cb122-5" tabindex="-1"></a>                 <span class="st">&quot;Longitud de y&quot;</span>),</span>
+<span id="cb122-6"><a href="regresion-lineal-multiple.html#cb122-6" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(<span class="fu">nrow</span>(X_rlm), <span class="fu">ncol</span>(X_rlm), <span class="fu">length</span>(y_rlm))</span>
+<span id="cb122-7"><a href="regresion-lineal-multiple.html#cb122-7" tabindex="-1"></a>  ),</span>
+<span id="cb122-8"><a href="regresion-lineal-multiple.html#cb122-8" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Dimensiones de X y y&quot;</span></span>
+<span id="cb122-9"><a href="regresion-lineal-multiple.html#cb122-9" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-matriz-diseno">Table 19.7: </span>Dimensiones de X y y
@@ -1938,14 +1937,14 @@ Longitud de y
 </div>
 <div id="operaciones-matriciales" class="section level3 hasAnchor" number="19.3.2">
 <h3><span class="header-section-number">19.3.2</span> Operaciones matriciales<a href="regresion-lineal-multiple.html#operaciones-matriciales" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="regresion-lineal-multiple.html#cb132-1" tabindex="-1"></a>XtX_rlm <span class="ot">&lt;-</span> <span class="fu">t</span>(X_rlm) <span class="sc">%*%</span> X_rlm</span>
-<span id="cb132-2"><a href="regresion-lineal-multiple.html#cb132-2" tabindex="-1"></a></span>
-<span id="cb132-3"><a href="regresion-lineal-multiple.html#cb132-3" tabindex="-1"></a>XtX_inv_rlm <span class="ot">&lt;-</span> <span class="fu">solve</span>(XtX_rlm)</span>
-<span id="cb132-4"><a href="regresion-lineal-multiple.html#cb132-4" tabindex="-1"></a></span>
-<span id="cb132-5"><a href="regresion-lineal-multiple.html#cb132-5" tabindex="-1"></a>Xty_rlm <span class="ot">&lt;-</span> <span class="fu">t</span>(X_rlm) <span class="sc">%*%</span> y_rlm</span>
-<span id="cb132-6"><a href="regresion-lineal-multiple.html#cb132-6" tabindex="-1"></a></span>
-<span id="cb132-7"><a href="regresion-lineal-multiple.html#cb132-7" tabindex="-1"></a><span class="fu">tabla_matriz</span>(XtX_rlm, <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb132-8"><a href="regresion-lineal-multiple.html#cb132-8" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Matriz X&#39;X&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb123"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb123-1"><a href="regresion-lineal-multiple.html#cb123-1" tabindex="-1"></a>XtX_rlm <span class="ot">&lt;-</span> <span class="fu">t</span>(X_rlm) <span class="sc">%*%</span> X_rlm</span>
+<span id="cb123-2"><a href="regresion-lineal-multiple.html#cb123-2" tabindex="-1"></a></span>
+<span id="cb123-3"><a href="regresion-lineal-multiple.html#cb123-3" tabindex="-1"></a>XtX_inv_rlm <span class="ot">&lt;-</span> <span class="fu">solve</span>(XtX_rlm)</span>
+<span id="cb123-4"><a href="regresion-lineal-multiple.html#cb123-4" tabindex="-1"></a></span>
+<span id="cb123-5"><a href="regresion-lineal-multiple.html#cb123-5" tabindex="-1"></a>Xty_rlm <span class="ot">&lt;-</span> <span class="fu">t</span>(X_rlm) <span class="sc">%*%</span> y_rlm</span>
+<span id="cb123-6"><a href="regresion-lineal-multiple.html#cb123-6" tabindex="-1"></a></span>
+<span id="cb123-7"><a href="regresion-lineal-multiple.html#cb123-7" tabindex="-1"></a><span class="fu">tabla_matriz</span>(XtX_rlm, <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb123-8"><a href="regresion-lineal-multiple.html#cb123-8" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Matriz X&#39;X&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -2217,8 +2216,8 @@ EquipmentWraps
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="regresion-lineal-multiple.html#cb133-1" tabindex="-1"></a><span class="fu">tabla_matriz</span>(XtX_inv_rlm, <span class="at">cientifica =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb133-2"><a href="regresion-lineal-multiple.html#cb133-2" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Matriz (X&#39;X)^-1 (notación científica)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb124"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb124-1"><a href="regresion-lineal-multiple.html#cb124-1" tabindex="-1"></a><span class="fu">tabla_matriz</span>(XtX_inv_rlm, <span class="at">cientifica =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb124-2"><a href="regresion-lineal-multiple.html#cb124-2" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Matriz (X&#39;X)^-1 (notación científica)&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -2490,8 +2489,8 @@ EquipmentWraps
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="regresion-lineal-multiple.html#cb134-1" tabindex="-1"></a><span class="fu">tabla_matriz</span>(Xty_rlm, <span class="at">digits =</span> <span class="dv">2</span>,</span>
-<span id="cb134-2"><a href="regresion-lineal-multiple.html#cb134-2" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Vector X&#39;y&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb125"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb125-1"><a href="regresion-lineal-multiple.html#cb125-1" tabindex="-1"></a><span class="fu">tabla_matriz</span>(Xty_rlm, <span class="at">digits =</span> <span class="dv">2</span>,</span>
+<span id="cb125-2"><a href="regresion-lineal-multiple.html#cb125-2" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Vector X&#39;y&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -2578,17 +2577,17 @@ EquipmentWraps
 </div>
 <div id="estimacion-de-los-coeficientes" class="section level3 hasAnchor" number="19.3.3">
 <h3><span class="header-section-number">19.3.3</span> Estimacion de los coeficientes<a href="regresion-lineal-multiple.html#estimacion-de-los-coeficientes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="regresion-lineal-multiple.html#cb135-1" tabindex="-1"></a>beta_hat_rlm <span class="ot">&lt;-</span> XtX_inv_rlm <span class="sc">%*%</span> Xty_rlm</span>
-<span id="cb135-2"><a href="regresion-lineal-multiple.html#cb135-2" tabindex="-1"></a></span>
-<span id="cb135-3"><a href="regresion-lineal-multiple.html#cb135-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb135-4"><a href="regresion-lineal-multiple.html#cb135-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb135-5"><a href="regresion-lineal-multiple.html#cb135-5" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
-<span id="cb135-6"><a href="regresion-lineal-multiple.html#cb135-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estimación matricial</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.vector</span>(beta_hat_rlm),</span>
-<span id="cb135-7"><a href="regresion-lineal-multiple.html#cb135-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estimación con lm()</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.vector</span>(<span class="fu">coef</span>(modelo_optimo_rlm)),</span>
-<span id="cb135-8"><a href="regresion-lineal-multiple.html#cb135-8" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb135-9"><a href="regresion-lineal-multiple.html#cb135-9" tabindex="-1"></a>  ),</span>
-<span id="cb135-10"><a href="regresion-lineal-multiple.html#cb135-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Coeficientes estimados: método matricial vs lm()&quot;</span></span>
-<span id="cb135-11"><a href="regresion-lineal-multiple.html#cb135-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb126"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb126-1"><a href="regresion-lineal-multiple.html#cb126-1" tabindex="-1"></a>beta_hat_rlm <span class="ot">&lt;-</span> XtX_inv_rlm <span class="sc">%*%</span> Xty_rlm</span>
+<span id="cb126-2"><a href="regresion-lineal-multiple.html#cb126-2" tabindex="-1"></a></span>
+<span id="cb126-3"><a href="regresion-lineal-multiple.html#cb126-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb126-4"><a href="regresion-lineal-multiple.html#cb126-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb126-5"><a href="regresion-lineal-multiple.html#cb126-5" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
+<span id="cb126-6"><a href="regresion-lineal-multiple.html#cb126-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estimación matricial</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.vector</span>(beta_hat_rlm),</span>
+<span id="cb126-7"><a href="regresion-lineal-multiple.html#cb126-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estimación con lm()</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.vector</span>(<span class="fu">coef</span>(modelo_optimo_rlm)),</span>
+<span id="cb126-8"><a href="regresion-lineal-multiple.html#cb126-8" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb126-9"><a href="regresion-lineal-multiple.html#cb126-9" tabindex="-1"></a>  ),</span>
+<span id="cb126-10"><a href="regresion-lineal-multiple.html#cb126-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Coeficientes estimados: método matricial vs lm()&quot;</span></span>
+<span id="cb126-11"><a href="regresion-lineal-multiple.html#cb126-11" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-beta">Table 19.9: </span>Coeficientes estimados: método matricial vs lm()
@@ -2719,20 +2718,20 @@ EquipmentWraps
 <h2><span class="header-section-number">19.4</span> Analisis de varianza<a href="regresion-lineal-multiple.html#analisis-de-varianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="valores-ajustados-y-residuos" class="section level3 hasAnchor" number="19.4.1">
 <h3><span class="header-section-number">19.4.1</span> Valores ajustados y residuos<a href="regresion-lineal-multiple.html#valores-ajustados-y-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="regresion-lineal-multiple.html#cb136-1" tabindex="-1"></a>y_hat_rlm <span class="ot">&lt;-</span> X_rlm <span class="sc">%*%</span> beta_hat_rlm</span>
-<span id="cb136-2"><a href="regresion-lineal-multiple.html#cb136-2" tabindex="-1"></a></span>
-<span id="cb136-3"><a href="regresion-lineal-multiple.html#cb136-3" tabindex="-1"></a>e_rlm <span class="ot">&lt;-</span> y_rlm <span class="sc">-</span> y_hat_rlm</span>
-<span id="cb136-4"><a href="regresion-lineal-multiple.html#cb136-4" tabindex="-1"></a></span>
-<span id="cb136-5"><a href="regresion-lineal-multiple.html#cb136-5" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb136-6"><a href="regresion-lineal-multiple.html#cb136-6" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb136-7"><a href="regresion-lineal-multiple.html#cb136-7" tabindex="-1"></a>    Observación <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
-<span id="cb136-8"><a href="regresion-lineal-multiple.html#cb136-8" tabindex="-1"></a>    <span class="st">`</span><span class="at">Peso muerto observado (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(y_rlm)),</span>
-<span id="cb136-9"><a href="regresion-lineal-multiple.html#cb136-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Peso muerto ajustado (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(y_hat_rlm)),</span>
-<span id="cb136-10"><a href="regresion-lineal-multiple.html#cb136-10" tabindex="-1"></a>    <span class="st">`</span><span class="at">Residuo (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(e_rlm)),</span>
-<span id="cb136-11"><a href="regresion-lineal-multiple.html#cb136-11" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb136-12"><a href="regresion-lineal-multiple.html#cb136-12" tabindex="-1"></a>  ),</span>
-<span id="cb136-13"><a href="regresion-lineal-multiple.html#cb136-13" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Primeras 6 observaciones: valor observado, ajustado y residuo&quot;</span></span>
-<span id="cb136-14"><a href="regresion-lineal-multiple.html#cb136-14" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb127"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb127-1"><a href="regresion-lineal-multiple.html#cb127-1" tabindex="-1"></a>y_hat_rlm <span class="ot">&lt;-</span> X_rlm <span class="sc">%*%</span> beta_hat_rlm</span>
+<span id="cb127-2"><a href="regresion-lineal-multiple.html#cb127-2" tabindex="-1"></a></span>
+<span id="cb127-3"><a href="regresion-lineal-multiple.html#cb127-3" tabindex="-1"></a>e_rlm <span class="ot">&lt;-</span> y_rlm <span class="sc">-</span> y_hat_rlm</span>
+<span id="cb127-4"><a href="regresion-lineal-multiple.html#cb127-4" tabindex="-1"></a></span>
+<span id="cb127-5"><a href="regresion-lineal-multiple.html#cb127-5" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb127-6"><a href="regresion-lineal-multiple.html#cb127-6" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb127-7"><a href="regresion-lineal-multiple.html#cb127-7" tabindex="-1"></a>    Observación <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>,</span>
+<span id="cb127-8"><a href="regresion-lineal-multiple.html#cb127-8" tabindex="-1"></a>    <span class="st">`</span><span class="at">Peso muerto observado (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(y_rlm)),</span>
+<span id="cb127-9"><a href="regresion-lineal-multiple.html#cb127-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Peso muerto ajustado (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(y_hat_rlm)),</span>
+<span id="cb127-10"><a href="regresion-lineal-multiple.html#cb127-10" tabindex="-1"></a>    <span class="st">`</span><span class="at">Residuo (kg)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">head</span>(e_rlm)),</span>
+<span id="cb127-11"><a href="regresion-lineal-multiple.html#cb127-11" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb127-12"><a href="regresion-lineal-multiple.html#cb127-12" tabindex="-1"></a>  ),</span>
+<span id="cb127-13"><a href="regresion-lineal-multiple.html#cb127-13" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Primeras 6 observaciones: valor observado, ajustado y residuo&quot;</span></span>
+<span id="cb127-14"><a href="regresion-lineal-multiple.html#cb127-14" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-residuos">Table 19.10: </span>Primeras 6 observaciones: valor observado, ajustado y residuo
@@ -2847,22 +2846,22 @@ e_i=y_i-\hat{y}_i
 </div>
 <div id="sumas-de-cuadrados" class="section level3 hasAnchor" number="19.4.2">
 <h3><span class="header-section-number">19.4.2</span> Sumas de cuadrados<a href="regresion-lineal-multiple.html#sumas-de-cuadrados" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="regresion-lineal-multiple.html#cb137-1" tabindex="-1"></a>SCT_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_rlm <span class="sc">-</span> <span class="fu">mean</span>(y_rlm))<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb137-2"><a href="regresion-lineal-multiple.html#cb137-2" tabindex="-1"></a></span>
-<span id="cb137-3"><a href="regresion-lineal-multiple.html#cb137-3" tabindex="-1"></a>SCReg_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_hat_rlm <span class="sc">-</span> <span class="fu">mean</span>(y_rlm))<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb137-4"><a href="regresion-lineal-multiple.html#cb137-4" tabindex="-1"></a></span>
-<span id="cb137-5"><a href="regresion-lineal-multiple.html#cb137-5" tabindex="-1"></a>SCE_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>(e_rlm<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb137-6"><a href="regresion-lineal-multiple.html#cb137-6" tabindex="-1"></a></span>
-<span id="cb137-7"><a href="regresion-lineal-multiple.html#cb137-7" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb137-8"><a href="regresion-lineal-multiple.html#cb137-8" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb137-9"><a href="regresion-lineal-multiple.html#cb137-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Suma de cuadrados</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;SCT (total)&quot;</span>, <span class="st">&quot;SCReg (regresión)&quot;</span>,</span>
-<span id="cb137-10"><a href="regresion-lineal-multiple.html#cb137-10" tabindex="-1"></a>                            <span class="st">&quot;SCE (error)&quot;</span>, <span class="st">&quot;SCReg + SCE&quot;</span>),</span>
-<span id="cb137-11"><a href="regresion-lineal-multiple.html#cb137-11" tabindex="-1"></a>    <span class="st">`</span><span class="at">Valor (kg²)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(SCT_rlm, SCReg_rlm, SCE_rlm, SCReg_rlm <span class="sc">+</span> SCE_rlm),</span>
-<span id="cb137-12"><a href="regresion-lineal-multiple.html#cb137-12" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb137-13"><a href="regresion-lineal-multiple.html#cb137-13" tabindex="-1"></a>  ),</span>
-<span id="cb137-14"><a href="regresion-lineal-multiple.html#cb137-14" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Sumas de cuadrados del modelo&quot;</span>,</span>
-<span id="cb137-15"><a href="regresion-lineal-multiple.html#cb137-15" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
-<span id="cb137-16"><a href="regresion-lineal-multiple.html#cb137-16" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb128"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb128-1"><a href="regresion-lineal-multiple.html#cb128-1" tabindex="-1"></a>SCT_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_rlm <span class="sc">-</span> <span class="fu">mean</span>(y_rlm))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb128-2"><a href="regresion-lineal-multiple.html#cb128-2" tabindex="-1"></a></span>
+<span id="cb128-3"><a href="regresion-lineal-multiple.html#cb128-3" tabindex="-1"></a>SCReg_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>((y_hat_rlm <span class="sc">-</span> <span class="fu">mean</span>(y_rlm))<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb128-4"><a href="regresion-lineal-multiple.html#cb128-4" tabindex="-1"></a></span>
+<span id="cb128-5"><a href="regresion-lineal-multiple.html#cb128-5" tabindex="-1"></a>SCE_rlm <span class="ot">&lt;-</span> <span class="fu">sum</span>(e_rlm<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb128-6"><a href="regresion-lineal-multiple.html#cb128-6" tabindex="-1"></a></span>
+<span id="cb128-7"><a href="regresion-lineal-multiple.html#cb128-7" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb128-8"><a href="regresion-lineal-multiple.html#cb128-8" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb128-9"><a href="regresion-lineal-multiple.html#cb128-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Suma de cuadrados</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;SCT (total)&quot;</span>, <span class="st">&quot;SCReg (regresión)&quot;</span>,</span>
+<span id="cb128-10"><a href="regresion-lineal-multiple.html#cb128-10" tabindex="-1"></a>                            <span class="st">&quot;SCE (error)&quot;</span>, <span class="st">&quot;SCReg + SCE&quot;</span>),</span>
+<span id="cb128-11"><a href="regresion-lineal-multiple.html#cb128-11" tabindex="-1"></a>    <span class="st">`</span><span class="at">Valor (kg²)</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(SCT_rlm, SCReg_rlm, SCE_rlm, SCReg_rlm <span class="sc">+</span> SCE_rlm),</span>
+<span id="cb128-12"><a href="regresion-lineal-multiple.html#cb128-12" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb128-13"><a href="regresion-lineal-multiple.html#cb128-13" tabindex="-1"></a>  ),</span>
+<span id="cb128-14"><a href="regresion-lineal-multiple.html#cb128-14" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Sumas de cuadrados del modelo&quot;</span>,</span>
+<span id="cb128-15"><a href="regresion-lineal-multiple.html#cb128-15" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
+<span id="cb128-16"><a href="regresion-lineal-multiple.html#cb128-16" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-sumas">Table 19.11: </span>Sumas de cuadrados del modelo
@@ -2916,15 +2915,15 @@ SCReg + SCE
 </div>
 <div id="coeficiente-de-determinacion-1" class="section level3 hasAnchor" number="19.4.3">
 <h3><span class="header-section-number">19.4.3</span> Coeficiente de determinacion<a href="regresion-lineal-multiple.html#coeficiente-de-determinacion-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="regresion-lineal-multiple.html#cb138-1" tabindex="-1"></a>R2_rlm <span class="ot">&lt;-</span> SCReg_rlm <span class="sc">/</span> SCT_rlm</span>
-<span id="cb138-2"><a href="regresion-lineal-multiple.html#cb138-2" tabindex="-1"></a></span>
-<span id="cb138-3"><a href="regresion-lineal-multiple.html#cb138-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb138-4"><a href="regresion-lineal-multiple.html#cb138-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb138-5"><a href="regresion-lineal-multiple.html#cb138-5" tabindex="-1"></a>    <span class="at">Medida =</span> <span class="fu">c</span>(<span class="st">&quot;R²&quot;</span>, <span class="st">&quot;R² ajustado&quot;</span>),</span>
-<span id="cb138-6"><a href="regresion-lineal-multiple.html#cb138-6" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(R2_rlm, <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>adj.r.squared)</span>
-<span id="cb138-7"><a href="regresion-lineal-multiple.html#cb138-7" tabindex="-1"></a>  ),</span>
-<span id="cb138-8"><a href="regresion-lineal-multiple.html#cb138-8" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Coeficiente de determinación del modelo seleccionado&quot;</span></span>
-<span id="cb138-9"><a href="regresion-lineal-multiple.html#cb138-9" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb129"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb129-1"><a href="regresion-lineal-multiple.html#cb129-1" tabindex="-1"></a>R2_rlm <span class="ot">&lt;-</span> SCReg_rlm <span class="sc">/</span> SCT_rlm</span>
+<span id="cb129-2"><a href="regresion-lineal-multiple.html#cb129-2" tabindex="-1"></a></span>
+<span id="cb129-3"><a href="regresion-lineal-multiple.html#cb129-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb129-4"><a href="regresion-lineal-multiple.html#cb129-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb129-5"><a href="regresion-lineal-multiple.html#cb129-5" tabindex="-1"></a>    <span class="at">Medida =</span> <span class="fu">c</span>(<span class="st">&quot;R²&quot;</span>, <span class="st">&quot;R² ajustado&quot;</span>),</span>
+<span id="cb129-6"><a href="regresion-lineal-multiple.html#cb129-6" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(R2_rlm, <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>adj.r.squared)</span>
+<span id="cb129-7"><a href="regresion-lineal-multiple.html#cb129-7" tabindex="-1"></a>  ),</span>
+<span id="cb129-8"><a href="regresion-lineal-multiple.html#cb129-8" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Coeficiente de determinación del modelo seleccionado&quot;</span></span>
+<span id="cb129-9"><a href="regresion-lineal-multiple.html#cb129-9" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-r2">Table 19.12: </span>Coeficiente de determinación del modelo seleccionado
@@ -2967,24 +2966,24 @@ R^2=0.8744
 </div>
 <div id="grados-de-libertad" class="section level3 hasAnchor" number="19.4.4">
 <h3><span class="header-section-number">19.4.4</span> Grados de libertad<a href="regresion-lineal-multiple.html#grados-de-libertad" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="regresion-lineal-multiple.html#cb139-1" tabindex="-1"></a>n_rlm <span class="ot">&lt;-</span> <span class="fu">length</span>(y_rlm)</span>
-<span id="cb139-2"><a href="regresion-lineal-multiple.html#cb139-2" tabindex="-1"></a></span>
-<span id="cb139-3"><a href="regresion-lineal-multiple.html#cb139-3" tabindex="-1"></a>k_rlm <span class="ot">&lt;-</span> <span class="fu">ncol</span>(X_rlm) <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb139-4"><a href="regresion-lineal-multiple.html#cb139-4" tabindex="-1"></a></span>
-<span id="cb139-5"><a href="regresion-lineal-multiple.html#cb139-5" tabindex="-1"></a>gl_reg_rlm <span class="ot">&lt;-</span> k_rlm</span>
-<span id="cb139-6"><a href="regresion-lineal-multiple.html#cb139-6" tabindex="-1"></a></span>
-<span id="cb139-7"><a href="regresion-lineal-multiple.html#cb139-7" tabindex="-1"></a>gl_error_rlm <span class="ot">&lt;-</span> n_rlm <span class="sc">-</span> k_rlm <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb139-8"><a href="regresion-lineal-multiple.html#cb139-8" tabindex="-1"></a></span>
-<span id="cb139-9"><a href="regresion-lineal-multiple.html#cb139-9" tabindex="-1"></a>gl_total_rlm <span class="ot">&lt;-</span> n_rlm <span class="sc">-</span> <span class="dv">1</span></span>
-<span id="cb139-10"><a href="regresion-lineal-multiple.html#cb139-10" tabindex="-1"></a></span>
-<span id="cb139-11"><a href="regresion-lineal-multiple.html#cb139-11" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb139-12"><a href="regresion-lineal-multiple.html#cb139-12" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb139-13"><a href="regresion-lineal-multiple.html#cb139-13" tabindex="-1"></a>    <span class="at">Fuente =</span> <span class="fu">c</span>(<span class="st">&quot;Regresión&quot;</span>, <span class="st">&quot;Error&quot;</span>, <span class="st">&quot;Total&quot;</span>),</span>
-<span id="cb139-14"><a href="regresion-lineal-multiple.html#cb139-14" tabindex="-1"></a>    <span class="st">`</span><span class="at">Grados de libertad</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(gl_reg_rlm, gl_error_rlm, gl_total_rlm),</span>
-<span id="cb139-15"><a href="regresion-lineal-multiple.html#cb139-15" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb139-16"><a href="regresion-lineal-multiple.html#cb139-16" tabindex="-1"></a>  ),</span>
-<span id="cb139-17"><a href="regresion-lineal-multiple.html#cb139-17" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Grados de libertad&quot;</span></span>
-<span id="cb139-18"><a href="regresion-lineal-multiple.html#cb139-18" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb130"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb130-1"><a href="regresion-lineal-multiple.html#cb130-1" tabindex="-1"></a>n_rlm <span class="ot">&lt;-</span> <span class="fu">length</span>(y_rlm)</span>
+<span id="cb130-2"><a href="regresion-lineal-multiple.html#cb130-2" tabindex="-1"></a></span>
+<span id="cb130-3"><a href="regresion-lineal-multiple.html#cb130-3" tabindex="-1"></a>k_rlm <span class="ot">&lt;-</span> <span class="fu">ncol</span>(X_rlm) <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb130-4"><a href="regresion-lineal-multiple.html#cb130-4" tabindex="-1"></a></span>
+<span id="cb130-5"><a href="regresion-lineal-multiple.html#cb130-5" tabindex="-1"></a>gl_reg_rlm <span class="ot">&lt;-</span> k_rlm</span>
+<span id="cb130-6"><a href="regresion-lineal-multiple.html#cb130-6" tabindex="-1"></a></span>
+<span id="cb130-7"><a href="regresion-lineal-multiple.html#cb130-7" tabindex="-1"></a>gl_error_rlm <span class="ot">&lt;-</span> n_rlm <span class="sc">-</span> k_rlm <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb130-8"><a href="regresion-lineal-multiple.html#cb130-8" tabindex="-1"></a></span>
+<span id="cb130-9"><a href="regresion-lineal-multiple.html#cb130-9" tabindex="-1"></a>gl_total_rlm <span class="ot">&lt;-</span> n_rlm <span class="sc">-</span> <span class="dv">1</span></span>
+<span id="cb130-10"><a href="regresion-lineal-multiple.html#cb130-10" tabindex="-1"></a></span>
+<span id="cb130-11"><a href="regresion-lineal-multiple.html#cb130-11" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb130-12"><a href="regresion-lineal-multiple.html#cb130-12" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb130-13"><a href="regresion-lineal-multiple.html#cb130-13" tabindex="-1"></a>    <span class="at">Fuente =</span> <span class="fu">c</span>(<span class="st">&quot;Regresión&quot;</span>, <span class="st">&quot;Error&quot;</span>, <span class="st">&quot;Total&quot;</span>),</span>
+<span id="cb130-14"><a href="regresion-lineal-multiple.html#cb130-14" tabindex="-1"></a>    <span class="st">`</span><span class="at">Grados de libertad</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(gl_reg_rlm, gl_error_rlm, gl_total_rlm),</span>
+<span id="cb130-15"><a href="regresion-lineal-multiple.html#cb130-15" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb130-16"><a href="regresion-lineal-multiple.html#cb130-16" tabindex="-1"></a>  ),</span>
+<span id="cb130-17"><a href="regresion-lineal-multiple.html#cb130-17" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Grados de libertad&quot;</span></span>
+<span id="cb130-18"><a href="regresion-lineal-multiple.html#cb130-18" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-gl">Table 19.13: </span>Grados de libertad
@@ -3031,19 +3030,19 @@ Total
 </div>
 <div id="cuadrados-medios" class="section level3 hasAnchor" number="19.4.5">
 <h3><span class="header-section-number">19.4.5</span> Cuadrados medios<a href="regresion-lineal-multiple.html#cuadrados-medios" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="regresion-lineal-multiple.html#cb140-1" tabindex="-1"></a>CMReg_rlm <span class="ot">&lt;-</span> SCReg_rlm <span class="sc">/</span> gl_reg_rlm</span>
-<span id="cb140-2"><a href="regresion-lineal-multiple.html#cb140-2" tabindex="-1"></a></span>
-<span id="cb140-3"><a href="regresion-lineal-multiple.html#cb140-3" tabindex="-1"></a>CME_rlm <span class="ot">&lt;-</span> SCE_rlm <span class="sc">/</span> gl_error_rlm</span>
-<span id="cb140-4"><a href="regresion-lineal-multiple.html#cb140-4" tabindex="-1"></a></span>
-<span id="cb140-5"><a href="regresion-lineal-multiple.html#cb140-5" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb140-6"><a href="regresion-lineal-multiple.html#cb140-6" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb140-7"><a href="regresion-lineal-multiple.html#cb140-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Cuadrado medio</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;CM Regresión&quot;</span>, <span class="st">&quot;CM Error&quot;</span>),</span>
-<span id="cb140-8"><a href="regresion-lineal-multiple.html#cb140-8" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(CMReg_rlm, CME_rlm),</span>
-<span id="cb140-9"><a href="regresion-lineal-multiple.html#cb140-9" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb140-10"><a href="regresion-lineal-multiple.html#cb140-10" tabindex="-1"></a>  ),</span>
-<span id="cb140-11"><a href="regresion-lineal-multiple.html#cb140-11" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Cuadrados medios&quot;</span>,</span>
-<span id="cb140-12"><a href="regresion-lineal-multiple.html#cb140-12" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
-<span id="cb140-13"><a href="regresion-lineal-multiple.html#cb140-13" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb131"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb131-1"><a href="regresion-lineal-multiple.html#cb131-1" tabindex="-1"></a>CMReg_rlm <span class="ot">&lt;-</span> SCReg_rlm <span class="sc">/</span> gl_reg_rlm</span>
+<span id="cb131-2"><a href="regresion-lineal-multiple.html#cb131-2" tabindex="-1"></a></span>
+<span id="cb131-3"><a href="regresion-lineal-multiple.html#cb131-3" tabindex="-1"></a>CME_rlm <span class="ot">&lt;-</span> SCE_rlm <span class="sc">/</span> gl_error_rlm</span>
+<span id="cb131-4"><a href="regresion-lineal-multiple.html#cb131-4" tabindex="-1"></a></span>
+<span id="cb131-5"><a href="regresion-lineal-multiple.html#cb131-5" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb131-6"><a href="regresion-lineal-multiple.html#cb131-6" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb131-7"><a href="regresion-lineal-multiple.html#cb131-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Cuadrado medio</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;CM Regresión&quot;</span>, <span class="st">&quot;CM Error&quot;</span>),</span>
+<span id="cb131-8"><a href="regresion-lineal-multiple.html#cb131-8" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(CMReg_rlm, CME_rlm),</span>
+<span id="cb131-9"><a href="regresion-lineal-multiple.html#cb131-9" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb131-10"><a href="regresion-lineal-multiple.html#cb131-10" tabindex="-1"></a>  ),</span>
+<span id="cb131-11"><a href="regresion-lineal-multiple.html#cb131-11" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Cuadrados medios&quot;</span>,</span>
+<span id="cb131-12"><a href="regresion-lineal-multiple.html#cb131-12" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
+<span id="cb131-13"><a href="regresion-lineal-multiple.html#cb131-13" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-cm">Table 19.14: </span>Cuadrados medios
@@ -3081,26 +3080,26 @@ CM Error
 </div>
 <div id="tabla-anova" class="section level3 hasAnchor" number="19.4.6">
 <h3><span class="header-section-number">19.4.6</span> Tabla ANOVA<a href="regresion-lineal-multiple.html#tabla-anova" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="regresion-lineal-multiple.html#cb141-1" tabindex="-1"></a>F_rlm <span class="ot">&lt;-</span> CMReg_rlm <span class="sc">/</span> CME_rlm</span>
-<span id="cb141-2"><a href="regresion-lineal-multiple.html#cb141-2" tabindex="-1"></a></span>
-<span id="cb141-3"><a href="regresion-lineal-multiple.html#cb141-3" tabindex="-1"></a>p_global_rlm <span class="ot">&lt;-</span> <span class="fu">pf</span>(</span>
-<span id="cb141-4"><a href="regresion-lineal-multiple.html#cb141-4" tabindex="-1"></a>  F_rlm,</span>
-<span id="cb141-5"><a href="regresion-lineal-multiple.html#cb141-5" tabindex="-1"></a>  gl_reg_rlm,</span>
-<span id="cb141-6"><a href="regresion-lineal-multiple.html#cb141-6" tabindex="-1"></a>  gl_error_rlm,</span>
-<span id="cb141-7"><a href="regresion-lineal-multiple.html#cb141-7" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
-<span id="cb141-8"><a href="regresion-lineal-multiple.html#cb141-8" tabindex="-1"></a>)</span>
-<span id="cb141-9"><a href="regresion-lineal-multiple.html#cb141-9" tabindex="-1"></a></span>
-<span id="cb141-10"><a href="regresion-lineal-multiple.html#cb141-10" tabindex="-1"></a>tabla_anova_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb141-11"><a href="regresion-lineal-multiple.html#cb141-11" tabindex="-1"></a>  <span class="at">Fuente =</span> <span class="fu">c</span>(<span class="st">&quot;Regresion&quot;</span>, <span class="st">&quot;Error&quot;</span>, <span class="st">&quot;Total&quot;</span>),</span>
-<span id="cb141-12"><a href="regresion-lineal-multiple.html#cb141-12" tabindex="-1"></a>  <span class="at">SC =</span> <span class="fu">c</span>(SCReg_rlm, SCE_rlm, SCT_rlm),</span>
-<span id="cb141-13"><a href="regresion-lineal-multiple.html#cb141-13" tabindex="-1"></a>  <span class="at">GL =</span> <span class="fu">c</span>(gl_reg_rlm, gl_error_rlm, gl_total_rlm),</span>
-<span id="cb141-14"><a href="regresion-lineal-multiple.html#cb141-14" tabindex="-1"></a>  <span class="at">CM =</span> <span class="fu">c</span>(CMReg_rlm, CME_rlm, <span class="cn">NA</span>),</span>
-<span id="cb141-15"><a href="regresion-lineal-multiple.html#cb141-15" tabindex="-1"></a>  <span class="at">F =</span> <span class="fu">c</span>(F_rlm, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
-<span id="cb141-16"><a href="regresion-lineal-multiple.html#cb141-16" tabindex="-1"></a>  <span class="at">Valor_p =</span> <span class="fu">c</span>(<span class="fu">fmt_p</span>(p_global_rlm), <span class="cn">NA</span>, <span class="cn">NA</span>)</span>
-<span id="cb141-17"><a href="regresion-lineal-multiple.html#cb141-17" tabindex="-1"></a>)</span>
-<span id="cb141-18"><a href="regresion-lineal-multiple.html#cb141-18" tabindex="-1"></a></span>
-<span id="cb141-19"><a href="regresion-lineal-multiple.html#cb141-19" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_anova_rlm, <span class="at">caption =</span> <span class="st">&quot;Tabla ANOVA del modelo múltiple&quot;</span>,</span>
-<span id="cb141-20"><a href="regresion-lineal-multiple.html#cb141-20" tabindex="-1"></a>             <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb132"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb132-1"><a href="regresion-lineal-multiple.html#cb132-1" tabindex="-1"></a>F_rlm <span class="ot">&lt;-</span> CMReg_rlm <span class="sc">/</span> CME_rlm</span>
+<span id="cb132-2"><a href="regresion-lineal-multiple.html#cb132-2" tabindex="-1"></a></span>
+<span id="cb132-3"><a href="regresion-lineal-multiple.html#cb132-3" tabindex="-1"></a>p_global_rlm <span class="ot">&lt;-</span> <span class="fu">pf</span>(</span>
+<span id="cb132-4"><a href="regresion-lineal-multiple.html#cb132-4" tabindex="-1"></a>  F_rlm,</span>
+<span id="cb132-5"><a href="regresion-lineal-multiple.html#cb132-5" tabindex="-1"></a>  gl_reg_rlm,</span>
+<span id="cb132-6"><a href="regresion-lineal-multiple.html#cb132-6" tabindex="-1"></a>  gl_error_rlm,</span>
+<span id="cb132-7"><a href="regresion-lineal-multiple.html#cb132-7" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
+<span id="cb132-8"><a href="regresion-lineal-multiple.html#cb132-8" tabindex="-1"></a>)</span>
+<span id="cb132-9"><a href="regresion-lineal-multiple.html#cb132-9" tabindex="-1"></a></span>
+<span id="cb132-10"><a href="regresion-lineal-multiple.html#cb132-10" tabindex="-1"></a>tabla_anova_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb132-11"><a href="regresion-lineal-multiple.html#cb132-11" tabindex="-1"></a>  <span class="at">Fuente =</span> <span class="fu">c</span>(<span class="st">&quot;Regresion&quot;</span>, <span class="st">&quot;Error&quot;</span>, <span class="st">&quot;Total&quot;</span>),</span>
+<span id="cb132-12"><a href="regresion-lineal-multiple.html#cb132-12" tabindex="-1"></a>  <span class="at">SC =</span> <span class="fu">c</span>(SCReg_rlm, SCE_rlm, SCT_rlm),</span>
+<span id="cb132-13"><a href="regresion-lineal-multiple.html#cb132-13" tabindex="-1"></a>  <span class="at">GL =</span> <span class="fu">c</span>(gl_reg_rlm, gl_error_rlm, gl_total_rlm),</span>
+<span id="cb132-14"><a href="regresion-lineal-multiple.html#cb132-14" tabindex="-1"></a>  <span class="at">CM =</span> <span class="fu">c</span>(CMReg_rlm, CME_rlm, <span class="cn">NA</span>),</span>
+<span id="cb132-15"><a href="regresion-lineal-multiple.html#cb132-15" tabindex="-1"></a>  <span class="at">F =</span> <span class="fu">c</span>(F_rlm, <span class="cn">NA</span>, <span class="cn">NA</span>),</span>
+<span id="cb132-16"><a href="regresion-lineal-multiple.html#cb132-16" tabindex="-1"></a>  <span class="at">Valor_p =</span> <span class="fu">c</span>(<span class="fu">fmt_p</span>(p_global_rlm), <span class="cn">NA</span>, <span class="cn">NA</span>)</span>
+<span id="cb132-17"><a href="regresion-lineal-multiple.html#cb132-17" tabindex="-1"></a>)</span>
+<span id="cb132-18"><a href="regresion-lineal-multiple.html#cb132-18" tabindex="-1"></a></span>
+<span id="cb132-19"><a href="regresion-lineal-multiple.html#cb132-19" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_anova_rlm, <span class="at">caption =</span> <span class="st">&quot;Tabla ANOVA del modelo múltiple&quot;</span>,</span>
+<span id="cb132-20"><a href="regresion-lineal-multiple.html#cb132-20" tabindex="-1"></a>             <span class="at">digits =</span> <span class="dv">2</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-anova">Table 19.15: </span>Tabla ANOVA del modelo múltiple
@@ -3200,28 +3199,28 @@ H_1:\exists j,\ \beta_j\neq0
 <p><span class="math display">\[
 \alpha=0.05
 \]</span></p>
-<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="regresion-lineal-multiple.html#cb142-1" tabindex="-1"></a>alpha_rlm <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
-<span id="cb142-2"><a href="regresion-lineal-multiple.html#cb142-2" tabindex="-1"></a></span>
-<span id="cb142-3"><a href="regresion-lineal-multiple.html#cb142-3" tabindex="-1"></a>F_critico_rlm <span class="ot">&lt;-</span> <span class="fu">qf</span>(</span>
-<span id="cb142-4"><a href="regresion-lineal-multiple.html#cb142-4" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">-</span> alpha_rlm,</span>
-<span id="cb142-5"><a href="regresion-lineal-multiple.html#cb142-5" tabindex="-1"></a>  gl_reg_rlm,</span>
-<span id="cb142-6"><a href="regresion-lineal-multiple.html#cb142-6" tabindex="-1"></a>  gl_error_rlm</span>
-<span id="cb142-7"><a href="regresion-lineal-multiple.html#cb142-7" tabindex="-1"></a>)</span>
-<span id="cb142-8"><a href="regresion-lineal-multiple.html#cb142-8" tabindex="-1"></a></span>
-<span id="cb142-9"><a href="regresion-lineal-multiple.html#cb142-9" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb142-10"><a href="regresion-lineal-multiple.html#cb142-10" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb142-11"><a href="regresion-lineal-multiple.html#cb142-11" tabindex="-1"></a>    <span class="at">Elemento =</span> <span class="fu">c</span>(<span class="st">&quot;Estadístico F&quot;</span>,</span>
-<span id="cb142-12"><a href="regresion-lineal-multiple.html#cb142-12" tabindex="-1"></a>                 <span class="st">&quot;Valor crítico F (α = 0.05)&quot;</span>,</span>
-<span id="cb142-13"><a href="regresion-lineal-multiple.html#cb142-13" tabindex="-1"></a>                 <span class="st">&quot;Valor p&quot;</span>,</span>
-<span id="cb142-14"><a href="regresion-lineal-multiple.html#cb142-14" tabindex="-1"></a>                 <span class="st">&quot;Decisión&quot;</span>),</span>
-<span id="cb142-15"><a href="regresion-lineal-multiple.html#cb142-15" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(<span class="fu">sprintf</span>(<span class="st">&quot;%.2f&quot;</span>, F_rlm),</span>
-<span id="cb142-16"><a href="regresion-lineal-multiple.html#cb142-16" tabindex="-1"></a>              <span class="fu">sprintf</span>(<span class="st">&quot;%.4f&quot;</span>, F_critico_rlm),</span>
-<span id="cb142-17"><a href="regresion-lineal-multiple.html#cb142-17" tabindex="-1"></a>              <span class="fu">fmt_p</span>(p_global_rlm),</span>
-<span id="cb142-18"><a href="regresion-lineal-multiple.html#cb142-18" tabindex="-1"></a>              <span class="fu">ifelse</span>(F_rlm <span class="sc">&gt;</span> F_critico_rlm,</span>
-<span id="cb142-19"><a href="regresion-lineal-multiple.html#cb142-19" tabindex="-1"></a>                     <span class="st">&quot;Se rechaza H0&quot;</span>, <span class="st">&quot;No se rechaza H0&quot;</span>))</span>
-<span id="cb142-20"><a href="regresion-lineal-multiple.html#cb142-20" tabindex="-1"></a>  ),</span>
-<span id="cb142-21"><a href="regresion-lineal-multiple.html#cb142-21" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Prueba de significancia global&quot;</span></span>
-<span id="cb142-22"><a href="regresion-lineal-multiple.html#cb142-22" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb133"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb133-1"><a href="regresion-lineal-multiple.html#cb133-1" tabindex="-1"></a>alpha_rlm <span class="ot">&lt;-</span> <span class="fl">0.05</span></span>
+<span id="cb133-2"><a href="regresion-lineal-multiple.html#cb133-2" tabindex="-1"></a></span>
+<span id="cb133-3"><a href="regresion-lineal-multiple.html#cb133-3" tabindex="-1"></a>F_critico_rlm <span class="ot">&lt;-</span> <span class="fu">qf</span>(</span>
+<span id="cb133-4"><a href="regresion-lineal-multiple.html#cb133-4" tabindex="-1"></a>  <span class="dv">1</span> <span class="sc">-</span> alpha_rlm,</span>
+<span id="cb133-5"><a href="regresion-lineal-multiple.html#cb133-5" tabindex="-1"></a>  gl_reg_rlm,</span>
+<span id="cb133-6"><a href="regresion-lineal-multiple.html#cb133-6" tabindex="-1"></a>  gl_error_rlm</span>
+<span id="cb133-7"><a href="regresion-lineal-multiple.html#cb133-7" tabindex="-1"></a>)</span>
+<span id="cb133-8"><a href="regresion-lineal-multiple.html#cb133-8" tabindex="-1"></a></span>
+<span id="cb133-9"><a href="regresion-lineal-multiple.html#cb133-9" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb133-10"><a href="regresion-lineal-multiple.html#cb133-10" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb133-11"><a href="regresion-lineal-multiple.html#cb133-11" tabindex="-1"></a>    <span class="at">Elemento =</span> <span class="fu">c</span>(<span class="st">&quot;Estadístico F&quot;</span>,</span>
+<span id="cb133-12"><a href="regresion-lineal-multiple.html#cb133-12" tabindex="-1"></a>                 <span class="st">&quot;Valor crítico F (α = 0.05)&quot;</span>,</span>
+<span id="cb133-13"><a href="regresion-lineal-multiple.html#cb133-13" tabindex="-1"></a>                 <span class="st">&quot;Valor p&quot;</span>,</span>
+<span id="cb133-14"><a href="regresion-lineal-multiple.html#cb133-14" tabindex="-1"></a>                 <span class="st">&quot;Decisión&quot;</span>),</span>
+<span id="cb133-15"><a href="regresion-lineal-multiple.html#cb133-15" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(<span class="fu">sprintf</span>(<span class="st">&quot;%.2f&quot;</span>, F_rlm),</span>
+<span id="cb133-16"><a href="regresion-lineal-multiple.html#cb133-16" tabindex="-1"></a>              <span class="fu">sprintf</span>(<span class="st">&quot;%.4f&quot;</span>, F_critico_rlm),</span>
+<span id="cb133-17"><a href="regresion-lineal-multiple.html#cb133-17" tabindex="-1"></a>              <span class="fu">fmt_p</span>(p_global_rlm),</span>
+<span id="cb133-18"><a href="regresion-lineal-multiple.html#cb133-18" tabindex="-1"></a>              <span class="fu">ifelse</span>(F_rlm <span class="sc">&gt;</span> F_critico_rlm,</span>
+<span id="cb133-19"><a href="regresion-lineal-multiple.html#cb133-19" tabindex="-1"></a>                     <span class="st">&quot;Se rechaza H0&quot;</span>, <span class="st">&quot;No se rechaza H0&quot;</span>))</span>
+<span id="cb133-20"><a href="regresion-lineal-multiple.html#cb133-20" tabindex="-1"></a>  ),</span>
+<span id="cb133-21"><a href="regresion-lineal-multiple.html#cb133-21" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Prueba de significancia global&quot;</span></span>
+<span id="cb133-22"><a href="regresion-lineal-multiple.html#cb133-22" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-prueba-global">Table 19.16: </span>Prueba de significancia global
@@ -3277,16 +3276,16 @@ Se rechaza H0
 </div>
 <div id="estimacion-de-la-varianza-residual" class="section level2 hasAnchor" number="19.6">
 <h2><span class="header-section-number">19.6</span> Estimacion de la varianza residual<a href="regresion-lineal-multiple.html#estimacion-de-la-varianza-residual" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="regresion-lineal-multiple.html#cb143-1" tabindex="-1"></a>sigma2_hat_rlm <span class="ot">&lt;-</span> CME_rlm</span>
-<span id="cb143-2"><a href="regresion-lineal-multiple.html#cb143-2" tabindex="-1"></a></span>
-<span id="cb143-3"><a href="regresion-lineal-multiple.html#cb143-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb143-4"><a href="regresion-lineal-multiple.html#cb143-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb143-5"><a href="regresion-lineal-multiple.html#cb143-5" tabindex="-1"></a>    Estadístico <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Varianza residual (kg²)&quot;</span>,</span>
-<span id="cb143-6"><a href="regresion-lineal-multiple.html#cb143-6" tabindex="-1"></a>                    <span class="st">&quot;Error estándar residual (kg)&quot;</span>),</span>
-<span id="cb143-7"><a href="regresion-lineal-multiple.html#cb143-7" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(sigma2_hat_rlm, <span class="fu">sqrt</span>(sigma2_hat_rlm))</span>
-<span id="cb143-8"><a href="regresion-lineal-multiple.html#cb143-8" tabindex="-1"></a>  ),</span>
-<span id="cb143-9"><a href="regresion-lineal-multiple.html#cb143-9" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Estimación de la varianza residual&quot;</span></span>
-<span id="cb143-10"><a href="regresion-lineal-multiple.html#cb143-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb134"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb134-1"><a href="regresion-lineal-multiple.html#cb134-1" tabindex="-1"></a>sigma2_hat_rlm <span class="ot">&lt;-</span> CME_rlm</span>
+<span id="cb134-2"><a href="regresion-lineal-multiple.html#cb134-2" tabindex="-1"></a></span>
+<span id="cb134-3"><a href="regresion-lineal-multiple.html#cb134-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb134-4"><a href="regresion-lineal-multiple.html#cb134-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb134-5"><a href="regresion-lineal-multiple.html#cb134-5" tabindex="-1"></a>    Estadístico <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Varianza residual (kg²)&quot;</span>,</span>
+<span id="cb134-6"><a href="regresion-lineal-multiple.html#cb134-6" tabindex="-1"></a>                    <span class="st">&quot;Error estándar residual (kg)&quot;</span>),</span>
+<span id="cb134-7"><a href="regresion-lineal-multiple.html#cb134-7" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(sigma2_hat_rlm, <span class="fu">sqrt</span>(sigma2_hat_rlm))</span>
+<span id="cb134-8"><a href="regresion-lineal-multiple.html#cb134-8" tabindex="-1"></a>  ),</span>
+<span id="cb134-9"><a href="regresion-lineal-multiple.html#cb134-9" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Estimación de la varianza residual&quot;</span></span>
+<span id="cb134-10"><a href="regresion-lineal-multiple.html#cb134-10" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-sigma">Table 19.17: </span>Estimación de la varianza residual
@@ -3326,10 +3325,10 @@ Error estándar residual (kg)
 </div>
 <div id="matriz-de-varianzas-y-covarianzas" class="section level2 hasAnchor" number="19.7">
 <h2><span class="header-section-number">19.7</span> Matriz de varianzas y covarianzas<a href="regresion-lineal-multiple.html#matriz-de-varianzas-y-covarianzas" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="regresion-lineal-multiple.html#cb144-1" tabindex="-1"></a>V_beta_rlm <span class="ot">&lt;-</span> sigma2_hat_rlm <span class="sc">*</span> XtX_inv_rlm</span>
-<span id="cb144-2"><a href="regresion-lineal-multiple.html#cb144-2" tabindex="-1"></a></span>
-<span id="cb144-3"><a href="regresion-lineal-multiple.html#cb144-3" tabindex="-1"></a><span class="fu">tabla_matriz</span>(V_beta_rlm, <span class="at">cientifica =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb144-4"><a href="regresion-lineal-multiple.html#cb144-4" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Matriz de varianzas y covarianzas de los coeficientes&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb135"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb135-1"><a href="regresion-lineal-multiple.html#cb135-1" tabindex="-1"></a>V_beta_rlm <span class="ot">&lt;-</span> sigma2_hat_rlm <span class="sc">*</span> XtX_inv_rlm</span>
+<span id="cb135-2"><a href="regresion-lineal-multiple.html#cb135-2" tabindex="-1"></a></span>
+<span id="cb135-3"><a href="regresion-lineal-multiple.html#cb135-3" tabindex="-1"></a><span class="fu">tabla_matriz</span>(V_beta_rlm, <span class="at">cientifica =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb135-4"><a href="regresion-lineal-multiple.html#cb135-4" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Matriz de varianzas y covarianzas de los coeficientes&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -3605,16 +3604,16 @@ EquipmentWraps
 <p>Esta matriz corresponde a la formulacion clasica que supone homocedasticidad.</p>
 <div id="errores-estandar" class="section level3 hasAnchor" number="19.7.1">
 <h3><span class="header-section-number">19.7.1</span> Errores estandar<a href="regresion-lineal-multiple.html#errores-estandar" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="regresion-lineal-multiple.html#cb145-1" tabindex="-1"></a>ee_rlm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(V_beta_rlm))</span>
-<span id="cb145-2"><a href="regresion-lineal-multiple.html#cb145-2" tabindex="-1"></a></span>
-<span id="cb145-3"><a href="regresion-lineal-multiple.html#cb145-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb145-4"><a href="regresion-lineal-multiple.html#cb145-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb145-5"><a href="regresion-lineal-multiple.html#cb145-5" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">names</span>(ee_rlm),</span>
-<span id="cb145-6"><a href="regresion-lineal-multiple.html#cb145-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Error estándar</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ee_rlm),</span>
-<span id="cb145-7"><a href="regresion-lineal-multiple.html#cb145-7" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb145-8"><a href="regresion-lineal-multiple.html#cb145-8" tabindex="-1"></a>  ),</span>
-<span id="cb145-9"><a href="regresion-lineal-multiple.html#cb145-9" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Errores estándar clásicos de los coeficientes&quot;</span></span>
-<span id="cb145-10"><a href="regresion-lineal-multiple.html#cb145-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb136"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb136-1"><a href="regresion-lineal-multiple.html#cb136-1" tabindex="-1"></a>ee_rlm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(V_beta_rlm))</span>
+<span id="cb136-2"><a href="regresion-lineal-multiple.html#cb136-2" tabindex="-1"></a></span>
+<span id="cb136-3"><a href="regresion-lineal-multiple.html#cb136-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb136-4"><a href="regresion-lineal-multiple.html#cb136-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb136-5"><a href="regresion-lineal-multiple.html#cb136-5" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">names</span>(ee_rlm),</span>
+<span id="cb136-6"><a href="regresion-lineal-multiple.html#cb136-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Error estándar</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ee_rlm),</span>
+<span id="cb136-7"><a href="regresion-lineal-multiple.html#cb136-7" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb136-8"><a href="regresion-lineal-multiple.html#cb136-8" tabindex="-1"></a>  ),</span>
+<span id="cb136-9"><a href="regresion-lineal-multiple.html#cb136-9" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Errores estándar clásicos de los coeficientes&quot;</span></span>
+<span id="cb136-10"><a href="regresion-lineal-multiple.html#cb136-10" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-ee">Table 19.19: </span>Errores estándar clásicos de los coeficientes
@@ -3707,25 +3706,25 @@ H_0:\beta_j=0
 <p><span class="math display">\[
 H_1:\beta_j\neq0
 \]</span></p>
-<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="regresion-lineal-multiple.html#cb146-1" tabindex="-1"></a>t_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">/</span> ee_rlm</span>
-<span id="cb146-2"><a href="regresion-lineal-multiple.html#cb146-2" tabindex="-1"></a></span>
-<span id="cb146-3"><a href="regresion-lineal-multiple.html#cb146-3" tabindex="-1"></a>p_individual_rlm <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(</span>
-<span id="cb146-4"><a href="regresion-lineal-multiple.html#cb146-4" tabindex="-1"></a>  <span class="fu">abs</span>(t_rlm),</span>
-<span id="cb146-5"><a href="regresion-lineal-multiple.html#cb146-5" tabindex="-1"></a>  <span class="at">df =</span> gl_error_rlm,</span>
-<span id="cb146-6"><a href="regresion-lineal-multiple.html#cb146-6" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
-<span id="cb146-7"><a href="regresion-lineal-multiple.html#cb146-7" tabindex="-1"></a>)</span>
-<span id="cb146-8"><a href="regresion-lineal-multiple.html#cb146-8" tabindex="-1"></a></span>
-<span id="cb146-9"><a href="regresion-lineal-multiple.html#cb146-9" tabindex="-1"></a>tabla_t_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb146-10"><a href="regresion-lineal-multiple.html#cb146-10" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
-<span id="cb146-11"><a href="regresion-lineal-multiple.html#cb146-11" tabindex="-1"></a>  <span class="st">`</span><span class="at">Estimación</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.vector</span>(beta_hat_rlm),</span>
-<span id="cb146-12"><a href="regresion-lineal-multiple.html#cb146-12" tabindex="-1"></a>  <span class="st">`</span><span class="at">Error estándar</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ee_rlm),</span>
-<span id="cb146-13"><a href="regresion-lineal-multiple.html#cb146-13" tabindex="-1"></a>  <span class="st">`</span><span class="at">Estadístico t</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(t_rlm),</span>
-<span id="cb146-14"><a href="regresion-lineal-multiple.html#cb146-14" tabindex="-1"></a>  <span class="st">`</span><span class="at">Valor p</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_p</span>(p_individual_rlm),</span>
-<span id="cb146-15"><a href="regresion-lineal-multiple.html#cb146-15" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb146-16"><a href="regresion-lineal-multiple.html#cb146-16" tabindex="-1"></a>)</span>
-<span id="cb146-17"><a href="regresion-lineal-multiple.html#cb146-17" tabindex="-1"></a></span>
-<span id="cb146-18"><a href="regresion-lineal-multiple.html#cb146-18" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_t_rlm,</span>
-<span id="cb146-19"><a href="regresion-lineal-multiple.html#cb146-19" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Pruebas de significancia individual (inferencia clásica)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb137"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb137-1"><a href="regresion-lineal-multiple.html#cb137-1" tabindex="-1"></a>t_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">/</span> ee_rlm</span>
+<span id="cb137-2"><a href="regresion-lineal-multiple.html#cb137-2" tabindex="-1"></a></span>
+<span id="cb137-3"><a href="regresion-lineal-multiple.html#cb137-3" tabindex="-1"></a>p_individual_rlm <span class="ot">&lt;-</span> <span class="dv">2</span> <span class="sc">*</span> <span class="fu">pt</span>(</span>
+<span id="cb137-4"><a href="regresion-lineal-multiple.html#cb137-4" tabindex="-1"></a>  <span class="fu">abs</span>(t_rlm),</span>
+<span id="cb137-5"><a href="regresion-lineal-multiple.html#cb137-5" tabindex="-1"></a>  <span class="at">df =</span> gl_error_rlm,</span>
+<span id="cb137-6"><a href="regresion-lineal-multiple.html#cb137-6" tabindex="-1"></a>  <span class="at">lower.tail =</span> <span class="cn">FALSE</span></span>
+<span id="cb137-7"><a href="regresion-lineal-multiple.html#cb137-7" tabindex="-1"></a>)</span>
+<span id="cb137-8"><a href="regresion-lineal-multiple.html#cb137-8" tabindex="-1"></a></span>
+<span id="cb137-9"><a href="regresion-lineal-multiple.html#cb137-9" tabindex="-1"></a>tabla_t_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb137-10"><a href="regresion-lineal-multiple.html#cb137-10" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
+<span id="cb137-11"><a href="regresion-lineal-multiple.html#cb137-11" tabindex="-1"></a>  <span class="st">`</span><span class="at">Estimación</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.vector</span>(beta_hat_rlm),</span>
+<span id="cb137-12"><a href="regresion-lineal-multiple.html#cb137-12" tabindex="-1"></a>  <span class="st">`</span><span class="at">Error estándar</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ee_rlm),</span>
+<span id="cb137-13"><a href="regresion-lineal-multiple.html#cb137-13" tabindex="-1"></a>  <span class="st">`</span><span class="at">Estadístico t</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(t_rlm),</span>
+<span id="cb137-14"><a href="regresion-lineal-multiple.html#cb137-14" tabindex="-1"></a>  <span class="st">`</span><span class="at">Valor p</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_p</span>(p_individual_rlm),</span>
+<span id="cb137-15"><a href="regresion-lineal-multiple.html#cb137-15" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb137-16"><a href="regresion-lineal-multiple.html#cb137-16" tabindex="-1"></a>)</span>
+<span id="cb137-17"><a href="regresion-lineal-multiple.html#cb137-17" tabindex="-1"></a></span>
+<span id="cb137-18"><a href="regresion-lineal-multiple.html#cb137-18" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_t_rlm,</span>
+<span id="cb137-19"><a href="regresion-lineal-multiple.html#cb137-19" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Pruebas de significancia individual (inferencia clásica)&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-t">Table 19.20: </span>Pruebas de significancia individual (inferencia clásica)
@@ -3893,26 +3892,26 @@ EquipmentWraps
 </div>
 <div id="intervalos-de-confianza" class="section level2 hasAnchor" number="19.9">
 <h2><span class="header-section-number">19.9</span> Intervalos de confianza<a href="regresion-lineal-multiple.html#intervalos-de-confianza" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="regresion-lineal-multiple.html#cb147-1" tabindex="-1"></a>t_critico_rlm <span class="ot">&lt;-</span> <span class="fu">qt</span>(</span>
-<span id="cb147-2"><a href="regresion-lineal-multiple.html#cb147-2" tabindex="-1"></a>  <span class="fl">0.975</span>,</span>
-<span id="cb147-3"><a href="regresion-lineal-multiple.html#cb147-3" tabindex="-1"></a>  <span class="at">df =</span> gl_error_rlm</span>
-<span id="cb147-4"><a href="regresion-lineal-multiple.html#cb147-4" tabindex="-1"></a>)</span>
-<span id="cb147-5"><a href="regresion-lineal-multiple.html#cb147-5" tabindex="-1"></a></span>
-<span id="cb147-6"><a href="regresion-lineal-multiple.html#cb147-6" tabindex="-1"></a>lim_inf_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">-</span></span>
-<span id="cb147-7"><a href="regresion-lineal-multiple.html#cb147-7" tabindex="-1"></a>  t_critico_rlm <span class="sc">*</span> ee_rlm</span>
-<span id="cb147-8"><a href="regresion-lineal-multiple.html#cb147-8" tabindex="-1"></a></span>
-<span id="cb147-9"><a href="regresion-lineal-multiple.html#cb147-9" tabindex="-1"></a>lim_sup_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">+</span></span>
-<span id="cb147-10"><a href="regresion-lineal-multiple.html#cb147-10" tabindex="-1"></a>  t_critico_rlm <span class="sc">*</span> ee_rlm</span>
-<span id="cb147-11"><a href="regresion-lineal-multiple.html#cb147-11" tabindex="-1"></a></span>
-<span id="cb147-12"><a href="regresion-lineal-multiple.html#cb147-12" tabindex="-1"></a>tabla_ic_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb147-13"><a href="regresion-lineal-multiple.html#cb147-13" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
-<span id="cb147-14"><a href="regresion-lineal-multiple.html#cb147-14" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(lim_inf_rlm),</span>
-<span id="cb147-15"><a href="regresion-lineal-multiple.html#cb147-15" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(lim_sup_rlm),</span>
-<span id="cb147-16"><a href="regresion-lineal-multiple.html#cb147-16" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb147-17"><a href="regresion-lineal-multiple.html#cb147-17" tabindex="-1"></a>)</span>
-<span id="cb147-18"><a href="regresion-lineal-multiple.html#cb147-18" tabindex="-1"></a></span>
-<span id="cb147-19"><a href="regresion-lineal-multiple.html#cb147-19" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_ic_rlm,</span>
-<span id="cb147-20"><a href="regresion-lineal-multiple.html#cb147-20" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Intervalos de confianza del 95% (clásicos)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb138"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb138-1"><a href="regresion-lineal-multiple.html#cb138-1" tabindex="-1"></a>t_critico_rlm <span class="ot">&lt;-</span> <span class="fu">qt</span>(</span>
+<span id="cb138-2"><a href="regresion-lineal-multiple.html#cb138-2" tabindex="-1"></a>  <span class="fl">0.975</span>,</span>
+<span id="cb138-3"><a href="regresion-lineal-multiple.html#cb138-3" tabindex="-1"></a>  <span class="at">df =</span> gl_error_rlm</span>
+<span id="cb138-4"><a href="regresion-lineal-multiple.html#cb138-4" tabindex="-1"></a>)</span>
+<span id="cb138-5"><a href="regresion-lineal-multiple.html#cb138-5" tabindex="-1"></a></span>
+<span id="cb138-6"><a href="regresion-lineal-multiple.html#cb138-6" tabindex="-1"></a>lim_inf_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">-</span></span>
+<span id="cb138-7"><a href="regresion-lineal-multiple.html#cb138-7" tabindex="-1"></a>  t_critico_rlm <span class="sc">*</span> ee_rlm</span>
+<span id="cb138-8"><a href="regresion-lineal-multiple.html#cb138-8" tabindex="-1"></a></span>
+<span id="cb138-9"><a href="regresion-lineal-multiple.html#cb138-9" tabindex="-1"></a>lim_sup_rlm <span class="ot">&lt;-</span> <span class="fu">as.vector</span>(beta_hat_rlm) <span class="sc">+</span></span>
+<span id="cb138-10"><a href="regresion-lineal-multiple.html#cb138-10" tabindex="-1"></a>  t_critico_rlm <span class="sc">*</span> ee_rlm</span>
+<span id="cb138-11"><a href="regresion-lineal-multiple.html#cb138-11" tabindex="-1"></a></span>
+<span id="cb138-12"><a href="regresion-lineal-multiple.html#cb138-12" tabindex="-1"></a>tabla_ic_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb138-13"><a href="regresion-lineal-multiple.html#cb138-13" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(beta_hat_rlm),</span>
+<span id="cb138-14"><a href="regresion-lineal-multiple.html#cb138-14" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(lim_inf_rlm),</span>
+<span id="cb138-15"><a href="regresion-lineal-multiple.html#cb138-15" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(lim_sup_rlm),</span>
+<span id="cb138-16"><a href="regresion-lineal-multiple.html#cb138-16" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb138-17"><a href="regresion-lineal-multiple.html#cb138-17" tabindex="-1"></a>)</span>
+<span id="cb138-18"><a href="regresion-lineal-multiple.html#cb138-18" tabindex="-1"></a></span>
+<span id="cb138-19"><a href="regresion-lineal-multiple.html#cb138-19" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_ic_rlm,</span>
+<span id="cb138-20"><a href="regresion-lineal-multiple.html#cb138-20" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Intervalos de confianza del 95% (clásicos)&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-ic">Table 19.21: </span>Intervalos de confianza del 95% (clásicos)
@@ -4025,8 +4024,8 @@ EquipmentWraps
 <p>La edad presenta una asociacion negativa con el peso muerto, mientras que la fuerza combinada transformada, el peso corporal y los indicadores de sexo y equipamiento presentan asociaciones positivas respecto a sus correspondientes unidades o categorias de referencia.</p>
 <div id="verificacion-mediante-las-funciones-de-r" class="section level3 hasAnchor" number="19.9.1">
 <h3><span class="header-section-number">19.9.1</span> Verificacion mediante las funciones de R<a href="regresion-lineal-multiple.html#verificacion-mediante-las-funciones-de-r" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="regresion-lineal-multiple.html#cb148-1" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_optimo_rlm,</span>
-<span id="cb148-2"><a href="regresion-lineal-multiple.html#cb148-2" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Verificación con summary(): coeficientes del modelo seleccionado&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb139"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb139-1"><a href="regresion-lineal-multiple.html#cb139-1" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_optimo_rlm,</span>
+<span id="cb139-2"><a href="regresion-lineal-multiple.html#cb139-2" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Verificación con summary(): coeficientes del modelo seleccionado&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-verificacion">Table 19.22: </span>Verificación con summary(): coeficientes del modelo seleccionado
@@ -4189,8 +4188,8 @@ EquipmentWraps
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="regresion-lineal-multiple.html#cb149-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_optimo_rlm,</span>
-<span id="cb149-2"><a href="regresion-lineal-multiple.html#cb149-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Verificación con summary(): medidas de ajuste&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb140"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb140-1"><a href="regresion-lineal-multiple.html#cb140-1" tabindex="-1"></a><span class="fu">tabla_ajuste_modelo</span>(modelo_optimo_rlm,</span>
+<span id="cb140-2"><a href="regresion-lineal-multiple.html#cb140-2" tabindex="-1"></a>                    <span class="at">caption =</span> <span class="st">&quot;Verificación con summary(): medidas de ajuste&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-verificacion">Table 19.22: </span>Verificación con summary(): medidas de ajuste
@@ -4264,17 +4263,17 @@ Valor p (F)
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="regresion-lineal-multiple.html#cb150-1" tabindex="-1"></a>ci_lm_rlm <span class="ot">&lt;-</span> <span class="fu">confint</span>(modelo_optimo_rlm, <span class="at">level =</span> <span class="fl">0.95</span>)</span>
-<span id="cb150-2"><a href="regresion-lineal-multiple.html#cb150-2" tabindex="-1"></a></span>
-<span id="cb150-3"><a href="regresion-lineal-multiple.html#cb150-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb150-4"><a href="regresion-lineal-multiple.html#cb150-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb150-5"><a href="regresion-lineal-multiple.html#cb150-5" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(ci_lm_rlm),</span>
-<span id="cb150-6"><a href="regresion-lineal-multiple.html#cb150-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_lm_rlm[, <span class="dv">1</span>]),</span>
-<span id="cb150-7"><a href="regresion-lineal-multiple.html#cb150-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_lm_rlm[, <span class="dv">2</span>]),</span>
-<span id="cb150-8"><a href="regresion-lineal-multiple.html#cb150-8" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb150-9"><a href="regresion-lineal-multiple.html#cb150-9" tabindex="-1"></a>  ),</span>
-<span id="cb150-10"><a href="regresion-lineal-multiple.html#cb150-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Verificación con confint()&quot;</span></span>
-<span id="cb150-11"><a href="regresion-lineal-multiple.html#cb150-11" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb141"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb141-1"><a href="regresion-lineal-multiple.html#cb141-1" tabindex="-1"></a>ci_lm_rlm <span class="ot">&lt;-</span> <span class="fu">confint</span>(modelo_optimo_rlm, <span class="at">level =</span> <span class="fl">0.95</span>)</span>
+<span id="cb141-2"><a href="regresion-lineal-multiple.html#cb141-2" tabindex="-1"></a></span>
+<span id="cb141-3"><a href="regresion-lineal-multiple.html#cb141-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb141-4"><a href="regresion-lineal-multiple.html#cb141-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb141-5"><a href="regresion-lineal-multiple.html#cb141-5" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(ci_lm_rlm),</span>
+<span id="cb141-6"><a href="regresion-lineal-multiple.html#cb141-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_lm_rlm[, <span class="dv">1</span>]),</span>
+<span id="cb141-7"><a href="regresion-lineal-multiple.html#cb141-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_lm_rlm[, <span class="dv">2</span>]),</span>
+<span id="cb141-8"><a href="regresion-lineal-multiple.html#cb141-8" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb141-9"><a href="regresion-lineal-multiple.html#cb141-9" tabindex="-1"></a>  ),</span>
+<span id="cb141-10"><a href="regresion-lineal-multiple.html#cb141-10" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Verificación con confint()&quot;</span></span>
+<span id="cb141-11"><a href="regresion-lineal-multiple.html#cb141-11" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-verificacion">Table 19.22: </span>Verificación con confint()
@@ -4383,8 +4382,8 @@ EquipmentWraps
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="regresion-lineal-multiple.html#cb151-1" tabindex="-1"></a><span class="fu">tabla_matriz</span>(<span class="fu">vcov</span>(modelo_optimo_rlm), <span class="at">cientifica =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb151-2"><a href="regresion-lineal-multiple.html#cb151-2" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Verificación con vcov(): matriz de varianzas y covarianzas&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb142"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb142-1"><a href="regresion-lineal-multiple.html#cb142-1" tabindex="-1"></a><span class="fu">tabla_matriz</span>(<span class="fu">vcov</span>(modelo_optimo_rlm), <span class="at">cientifica =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb142-2"><a href="regresion-lineal-multiple.html#cb142-2" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Verificación con vcov(): matriz de varianzas y covarianzas&quot;</span>)</span></code></pre></div>
 <div style="border: 1px solid #ddd; padding: 5px; overflow-x: scroll; width:100%; ">
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
@@ -4656,24 +4655,24 @@ EquipmentWraps
 </tbody>
 </table>
 </div>
-<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="regresion-lineal-multiple.html#cb152-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb152-2"><a href="regresion-lineal-multiple.html#cb152-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb152-3"><a href="regresion-lineal-multiple.html#cb152-3" tabindex="-1"></a>    Comparación <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Coeficientes (matricial vs lm)&quot;</span>,</span>
-<span id="cb152-4"><a href="regresion-lineal-multiple.html#cb152-4" tabindex="-1"></a>                    <span class="st">&quot;Matriz de varianzas y covarianzas (matricial vs vcov)&quot;</span>,</span>
-<span id="cb152-5"><a href="regresion-lineal-multiple.html#cb152-5" tabindex="-1"></a>                    <span class="st">&quot;SCE (matricial vs lm)&quot;</span>),</span>
-<span id="cb152-6"><a href="regresion-lineal-multiple.html#cb152-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">¿Coinciden?</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">si_no</span>(<span class="fu">c</span>(</span>
-<span id="cb152-7"><a href="regresion-lineal-multiple.html#cb152-7" tabindex="-1"></a>      <span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">as.vector</span>(beta_hat_rlm),</span>
-<span id="cb152-8"><a href="regresion-lineal-multiple.html#cb152-8" tabindex="-1"></a>                       <span class="fu">as.vector</span>(<span class="fu">coef</span>(modelo_optimo_rlm)))),</span>
-<span id="cb152-9"><a href="regresion-lineal-multiple.html#cb152-9" tabindex="-1"></a>      <span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(V_beta_rlm,</span>
-<span id="cb152-10"><a href="regresion-lineal-multiple.html#cb152-10" tabindex="-1"></a>                       <span class="fu">vcov</span>(modelo_optimo_rlm),</span>
-<span id="cb152-11"><a href="regresion-lineal-multiple.html#cb152-11" tabindex="-1"></a>                       <span class="at">check.attributes =</span> <span class="cn">FALSE</span>)),</span>
-<span id="cb152-12"><a href="regresion-lineal-multiple.html#cb152-12" tabindex="-1"></a>      <span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(SCE_rlm,</span>
-<span id="cb152-13"><a href="regresion-lineal-multiple.html#cb152-13" tabindex="-1"></a>                       <span class="fu">sum</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)<span class="sc">^</span><span class="dv">2</span>)))</span>
-<span id="cb152-14"><a href="regresion-lineal-multiple.html#cb152-14" tabindex="-1"></a>    )),</span>
-<span id="cb152-15"><a href="regresion-lineal-multiple.html#cb152-15" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb152-16"><a href="regresion-lineal-multiple.html#cb152-16" tabindex="-1"></a>  ),</span>
-<span id="cb152-17"><a href="regresion-lineal-multiple.html#cb152-17" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Verificación numérica de la estimación matricial&quot;</span></span>
-<span id="cb152-18"><a href="regresion-lineal-multiple.html#cb152-18" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb143"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb143-1"><a href="regresion-lineal-multiple.html#cb143-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb143-2"><a href="regresion-lineal-multiple.html#cb143-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb143-3"><a href="regresion-lineal-multiple.html#cb143-3" tabindex="-1"></a>    Comparación <span class="ot">=</span> <span class="fu">c</span>(<span class="st">&quot;Coeficientes (matricial vs lm)&quot;</span>,</span>
+<span id="cb143-4"><a href="regresion-lineal-multiple.html#cb143-4" tabindex="-1"></a>                    <span class="st">&quot;Matriz de varianzas y covarianzas (matricial vs vcov)&quot;</span>,</span>
+<span id="cb143-5"><a href="regresion-lineal-multiple.html#cb143-5" tabindex="-1"></a>                    <span class="st">&quot;SCE (matricial vs lm)&quot;</span>),</span>
+<span id="cb143-6"><a href="regresion-lineal-multiple.html#cb143-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">¿Coinciden?</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">si_no</span>(<span class="fu">c</span>(</span>
+<span id="cb143-7"><a href="regresion-lineal-multiple.html#cb143-7" tabindex="-1"></a>      <span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(<span class="fu">as.vector</span>(beta_hat_rlm),</span>
+<span id="cb143-8"><a href="regresion-lineal-multiple.html#cb143-8" tabindex="-1"></a>                       <span class="fu">as.vector</span>(<span class="fu">coef</span>(modelo_optimo_rlm)))),</span>
+<span id="cb143-9"><a href="regresion-lineal-multiple.html#cb143-9" tabindex="-1"></a>      <span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(V_beta_rlm,</span>
+<span id="cb143-10"><a href="regresion-lineal-multiple.html#cb143-10" tabindex="-1"></a>                       <span class="fu">vcov</span>(modelo_optimo_rlm),</span>
+<span id="cb143-11"><a href="regresion-lineal-multiple.html#cb143-11" tabindex="-1"></a>                       <span class="at">check.attributes =</span> <span class="cn">FALSE</span>)),</span>
+<span id="cb143-12"><a href="regresion-lineal-multiple.html#cb143-12" tabindex="-1"></a>      <span class="fu">isTRUE</span>(<span class="fu">all.equal</span>(SCE_rlm,</span>
+<span id="cb143-13"><a href="regresion-lineal-multiple.html#cb143-13" tabindex="-1"></a>                       <span class="fu">sum</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)<span class="sc">^</span><span class="dv">2</span>)))</span>
+<span id="cb143-14"><a href="regresion-lineal-multiple.html#cb143-14" tabindex="-1"></a>    )),</span>
+<span id="cb143-15"><a href="regresion-lineal-multiple.html#cb143-15" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb143-16"><a href="regresion-lineal-multiple.html#cb143-16" tabindex="-1"></a>  ),</span>
+<span id="cb143-17"><a href="regresion-lineal-multiple.html#cb143-17" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Verificación numérica de la estimación matricial&quot;</span></span>
+<span id="cb143-18"><a href="regresion-lineal-multiple.html#cb143-18" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-verificacion-numerica">Table 19.23: </span>Verificación numérica de la estimación matricial
@@ -4722,11 +4721,11 @@ Sí
 <h2><span class="header-section-number">19.10</span> Diagnostico de los supuestos<a href="regresion-lineal-multiple.html#diagnostico-de-los-supuestos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="analisis-grafico-de-los-residuos" class="section level3 hasAnchor" number="19.10.1">
 <h3><span class="header-section-number">19.10.1</span> Analisis grafico de los residuos<a href="regresion-lineal-multiple.html#analisis-grafico-de-los-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="regresion-lineal-multiple.html#cb153-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
-<span id="cb153-2"><a href="regresion-lineal-multiple.html#cb153-2" tabindex="-1"></a></span>
-<span id="cb153-3"><a href="regresion-lineal-multiple.html#cb153-3" tabindex="-1"></a><span class="fu">plot</span>(modelo_optimo_rlm)</span></code></pre></div>
+<div class="sourceCode" id="cb144"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb144-1"><a href="regresion-lineal-multiple.html#cb144-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">2</span>))</span>
+<span id="cb144-2"><a href="regresion-lineal-multiple.html#cb144-2" tabindex="-1"></a></span>
+<span id="cb144-3"><a href="regresion-lineal-multiple.html#cb144-3" tabindex="-1"></a><span class="fu">plot</span>(modelo_optimo_rlm)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/rlm-diagnostico-1.png" alt="" width="960" /></p>
-<div class="sourceCode" id="cb154"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb154-1"><a href="regresion-lineal-multiple.html#cb154-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb145"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb145-1"><a href="regresion-lineal-multiple.html#cb145-1" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>))</span></code></pre></div>
 </div>
 <div id="normalidad-de-los-residuos" class="section level3 hasAnchor" number="19.10.2">
 <h3><span class="header-section-number">19.10.2</span> Normalidad de los residuos<a href="regresion-lineal-multiple.html#normalidad-de-los-residuos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -4737,34 +4736,34 @@ H_0:\text{Los errores siguen una distribucion normal}
 <p><span class="math display">\[
 H_1:\text{Los errores no siguen una distribucion normal}
 \]</span></p>
-<div class="sourceCode" id="cb155"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb155-1"><a href="regresion-lineal-multiple.html#cb155-1" tabindex="-1"></a><span class="fu">qqnorm</span>(</span>
-<span id="cb155-2"><a href="regresion-lineal-multiple.html#cb155-2" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm),</span>
-<span id="cb155-3"><a href="regresion-lineal-multiple.html#cb155-3" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Grafico Q-Q de los residuos&quot;</span></span>
-<span id="cb155-4"><a href="regresion-lineal-multiple.html#cb155-4" tabindex="-1"></a>)</span>
-<span id="cb155-5"><a href="regresion-lineal-multiple.html#cb155-5" tabindex="-1"></a></span>
-<span id="cb155-6"><a href="regresion-lineal-multiple.html#cb155-6" tabindex="-1"></a><span class="fu">qqline</span>(</span>
-<span id="cb155-7"><a href="regresion-lineal-multiple.html#cb155-7" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm),</span>
-<span id="cb155-8"><a href="regresion-lineal-multiple.html#cb155-8" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,</span>
-<span id="cb155-9"><a href="regresion-lineal-multiple.html#cb155-9" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">2</span></span>
-<span id="cb155-10"><a href="regresion-lineal-multiple.html#cb155-10" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb146"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb146-1"><a href="regresion-lineal-multiple.html#cb146-1" tabindex="-1"></a><span class="fu">qqnorm</span>(</span>
+<span id="cb146-2"><a href="regresion-lineal-multiple.html#cb146-2" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm),</span>
+<span id="cb146-3"><a href="regresion-lineal-multiple.html#cb146-3" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">&quot;Grafico Q-Q de los residuos&quot;</span></span>
+<span id="cb146-4"><a href="regresion-lineal-multiple.html#cb146-4" tabindex="-1"></a>)</span>
+<span id="cb146-5"><a href="regresion-lineal-multiple.html#cb146-5" tabindex="-1"></a></span>
+<span id="cb146-6"><a href="regresion-lineal-multiple.html#cb146-6" tabindex="-1"></a><span class="fu">qqline</span>(</span>
+<span id="cb146-7"><a href="regresion-lineal-multiple.html#cb146-7" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm),</span>
+<span id="cb146-8"><a href="regresion-lineal-multiple.html#cb146-8" tabindex="-1"></a>  <span class="at">col =</span> <span class="st">&quot;red&quot;</span>,</span>
+<span id="cb146-9"><a href="regresion-lineal-multiple.html#cb146-9" tabindex="-1"></a>  <span class="at">lwd =</span> <span class="dv">2</span></span>
+<span id="cb146-10"><a href="regresion-lineal-multiple.html#cb146-10" tabindex="-1"></a>)</span></code></pre></div>
 <p><img src="bookdown-demo_files/figure-html/rlm-normalidad-1.png" alt="" width="672" /></p>
-<div class="sourceCode" id="cb156"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb156-1"><a href="regresion-lineal-multiple.html#cb156-1" tabindex="-1"></a>jb_rlm <span class="ot">&lt;-</span> moments<span class="sc">::</span><span class="fu">jarque.test</span>(</span>
-<span id="cb156-2"><a href="regresion-lineal-multiple.html#cb156-2" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm)</span>
-<span id="cb156-3"><a href="regresion-lineal-multiple.html#cb156-3" tabindex="-1"></a>)</span>
-<span id="cb156-4"><a href="regresion-lineal-multiple.html#cb156-4" tabindex="-1"></a></span>
-<span id="cb156-5"><a href="regresion-lineal-multiple.html#cb156-5" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb156-6"><a href="regresion-lineal-multiple.html#cb156-6" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb156-7"><a href="regresion-lineal-multiple.html#cb156-7" tabindex="-1"></a>    <span class="at">Prueba =</span> <span class="st">&quot;Jarque-Bera&quot;</span>,</span>
-<span id="cb156-8"><a href="regresion-lineal-multiple.html#cb156-8" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estadístico JB</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(jb_rlm<span class="sc">$</span>statistic),</span>
-<span id="cb156-9"><a href="regresion-lineal-multiple.html#cb156-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Grados de libertad</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
-<span id="cb156-10"><a href="regresion-lineal-multiple.html#cb156-10" tabindex="-1"></a>    <span class="st">`</span><span class="at">Valor p</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_p</span>(jb_rlm<span class="sc">$</span>p.value),</span>
-<span id="cb156-11"><a href="regresion-lineal-multiple.html#cb156-11" tabindex="-1"></a>    <span class="st">`</span><span class="at">Decisión</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(jb_rlm<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>,</span>
-<span id="cb156-12"><a href="regresion-lineal-multiple.html#cb156-12" tabindex="-1"></a>                        <span class="st">&quot;Se rechaza H0&quot;</span>, <span class="st">&quot;No se rechaza H0&quot;</span>),</span>
-<span id="cb156-13"><a href="regresion-lineal-multiple.html#cb156-13" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb156-14"><a href="regresion-lineal-multiple.html#cb156-14" tabindex="-1"></a>  ),</span>
-<span id="cb156-15"><a href="regresion-lineal-multiple.html#cb156-15" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Prueba de normalidad de los residuos (Jarque-Bera)&quot;</span>,</span>
-<span id="cb156-16"><a href="regresion-lineal-multiple.html#cb156-16" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
-<span id="cb156-17"><a href="regresion-lineal-multiple.html#cb156-17" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb147"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb147-1"><a href="regresion-lineal-multiple.html#cb147-1" tabindex="-1"></a>jb_rlm <span class="ot">&lt;-</span> moments<span class="sc">::</span><span class="fu">jarque.test</span>(</span>
+<span id="cb147-2"><a href="regresion-lineal-multiple.html#cb147-2" tabindex="-1"></a>  <span class="fu">residuals</span>(modelo_optimo_rlm)</span>
+<span id="cb147-3"><a href="regresion-lineal-multiple.html#cb147-3" tabindex="-1"></a>)</span>
+<span id="cb147-4"><a href="regresion-lineal-multiple.html#cb147-4" tabindex="-1"></a></span>
+<span id="cb147-5"><a href="regresion-lineal-multiple.html#cb147-5" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb147-6"><a href="regresion-lineal-multiple.html#cb147-6" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb147-7"><a href="regresion-lineal-multiple.html#cb147-7" tabindex="-1"></a>    <span class="at">Prueba =</span> <span class="st">&quot;Jarque-Bera&quot;</span>,</span>
+<span id="cb147-8"><a href="regresion-lineal-multiple.html#cb147-8" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estadístico JB</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(jb_rlm<span class="sc">$</span>statistic),</span>
+<span id="cb147-9"><a href="regresion-lineal-multiple.html#cb147-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Grados de libertad</span><span class="st">`</span> <span class="ot">=</span> <span class="dv">2</span>,</span>
+<span id="cb147-10"><a href="regresion-lineal-multiple.html#cb147-10" tabindex="-1"></a>    <span class="st">`</span><span class="at">Valor p</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">fmt_p</span>(jb_rlm<span class="sc">$</span>p.value),</span>
+<span id="cb147-11"><a href="regresion-lineal-multiple.html#cb147-11" tabindex="-1"></a>    <span class="st">`</span><span class="at">Decisión</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(jb_rlm<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>,</span>
+<span id="cb147-12"><a href="regresion-lineal-multiple.html#cb147-12" tabindex="-1"></a>                        <span class="st">&quot;Se rechaza H0&quot;</span>, <span class="st">&quot;No se rechaza H0&quot;</span>),</span>
+<span id="cb147-13"><a href="regresion-lineal-multiple.html#cb147-13" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb147-14"><a href="regresion-lineal-multiple.html#cb147-14" tabindex="-1"></a>  ),</span>
+<span id="cb147-15"><a href="regresion-lineal-multiple.html#cb147-15" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Prueba de normalidad de los residuos (Jarque-Bera)&quot;</span>,</span>
+<span id="cb147-16"><a href="regresion-lineal-multiple.html#cb147-16" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
+<span id="cb147-17"><a href="regresion-lineal-multiple.html#cb147-17" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-normalidad">Table 19.24: </span>Prueba de normalidad de los residuos (Jarque-Bera)
@@ -4808,14 +4807,14 @@ Se rechaza H0
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb157"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb157-1"><a href="regresion-lineal-multiple.html#cb157-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb157-2"><a href="regresion-lineal-multiple.html#cb157-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb157-3"><a href="regresion-lineal-multiple.html#cb157-3" tabindex="-1"></a>    <span class="at">Medida =</span> <span class="fu">c</span>(<span class="st">&quot;Asimetría&quot;</span>, <span class="st">&quot;Curtosis&quot;</span>),</span>
-<span id="cb157-4"><a href="regresion-lineal-multiple.html#cb157-4" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(moments<span class="sc">::</span><span class="fu">skewness</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)),</span>
-<span id="cb157-5"><a href="regresion-lineal-multiple.html#cb157-5" tabindex="-1"></a>              moments<span class="sc">::</span><span class="fu">kurtosis</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)))</span>
-<span id="cb157-6"><a href="regresion-lineal-multiple.html#cb157-6" tabindex="-1"></a>  ),</span>
-<span id="cb157-7"><a href="regresion-lineal-multiple.html#cb157-7" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Forma de la distribución de los residuos&quot;</span></span>
-<span id="cb157-8"><a href="regresion-lineal-multiple.html#cb157-8" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb148"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb148-1"><a href="regresion-lineal-multiple.html#cb148-1" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb148-2"><a href="regresion-lineal-multiple.html#cb148-2" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb148-3"><a href="regresion-lineal-multiple.html#cb148-3" tabindex="-1"></a>    <span class="at">Medida =</span> <span class="fu">c</span>(<span class="st">&quot;Asimetría&quot;</span>, <span class="st">&quot;Curtosis&quot;</span>),</span>
+<span id="cb148-4"><a href="regresion-lineal-multiple.html#cb148-4" tabindex="-1"></a>    <span class="at">Valor =</span> <span class="fu">c</span>(moments<span class="sc">::</span><span class="fu">skewness</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)),</span>
+<span id="cb148-5"><a href="regresion-lineal-multiple.html#cb148-5" tabindex="-1"></a>              moments<span class="sc">::</span><span class="fu">kurtosis</span>(<span class="fu">residuals</span>(modelo_optimo_rlm)))</span>
+<span id="cb148-6"><a href="regresion-lineal-multiple.html#cb148-6" tabindex="-1"></a>  ),</span>
+<span id="cb148-7"><a href="regresion-lineal-multiple.html#cb148-7" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Forma de la distribución de los residuos&quot;</span></span>
+<span id="cb148-8"><a href="regresion-lineal-multiple.html#cb148-8" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-asimetria-curtosis">Table 19.25: </span>Forma de la distribución de los residuos
@@ -4863,22 +4862,22 @@ H_0:Var(\varepsilon_i\mid X)=\sigma^2
 <p><span class="math display">\[
 H_1:\text{La varianza de los errores no es constante}
 \]</span></p>
-<div class="sourceCode" id="cb158"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb158-1"><a href="regresion-lineal-multiple.html#cb158-1" tabindex="-1"></a>bp_rlm <span class="ot">&lt;-</span> lmtest<span class="sc">::</span><span class="fu">bptest</span>(modelo_optimo_rlm)</span>
-<span id="cb158-2"><a href="regresion-lineal-multiple.html#cb158-2" tabindex="-1"></a></span>
-<span id="cb158-3"><a href="regresion-lineal-multiple.html#cb158-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb158-4"><a href="regresion-lineal-multiple.html#cb158-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb158-5"><a href="regresion-lineal-multiple.html#cb158-5" tabindex="-1"></a>    <span class="at">Prueba =</span> <span class="st">&quot;Breusch-Pagan&quot;</span>,</span>
-<span id="cb158-6"><a href="regresion-lineal-multiple.html#cb158-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estadístico</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(bp_rlm<span class="sc">$</span>statistic),</span>
-<span id="cb158-7"><a href="regresion-lineal-multiple.html#cb158-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Grados de libertad</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(bp_rlm<span class="sc">$</span>parameter),</span>
-<span id="cb158-8"><a href="regresion-lineal-multiple.html#cb158-8" tabindex="-1"></a>    <span class="st">`</span><span class="at">Valor p</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">format</span>(bp_rlm<span class="sc">$</span>p.value, <span class="at">scientific =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> <span class="dv">3</span>),</span>
-<span id="cb158-9"><a href="regresion-lineal-multiple.html#cb158-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Decisión</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(bp_rlm<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>,</span>
-<span id="cb158-10"><a href="regresion-lineal-multiple.html#cb158-10" tabindex="-1"></a>                        <span class="st">&quot;Se rechaza H0 (heterocedasticidad)&quot;</span>,</span>
-<span id="cb158-11"><a href="regresion-lineal-multiple.html#cb158-11" tabindex="-1"></a>                        <span class="st">&quot;No se rechaza H0&quot;</span>),</span>
-<span id="cb158-12"><a href="regresion-lineal-multiple.html#cb158-12" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb158-13"><a href="regresion-lineal-multiple.html#cb158-13" tabindex="-1"></a>  ),</span>
-<span id="cb158-14"><a href="regresion-lineal-multiple.html#cb158-14" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Prueba de homocedasticidad (Breusch-Pagan)&quot;</span>,</span>
-<span id="cb158-15"><a href="regresion-lineal-multiple.html#cb158-15" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
-<span id="cb158-16"><a href="regresion-lineal-multiple.html#cb158-16" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb149"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb149-1"><a href="regresion-lineal-multiple.html#cb149-1" tabindex="-1"></a>bp_rlm <span class="ot">&lt;-</span> lmtest<span class="sc">::</span><span class="fu">bptest</span>(modelo_optimo_rlm)</span>
+<span id="cb149-2"><a href="regresion-lineal-multiple.html#cb149-2" tabindex="-1"></a></span>
+<span id="cb149-3"><a href="regresion-lineal-multiple.html#cb149-3" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb149-4"><a href="regresion-lineal-multiple.html#cb149-4" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb149-5"><a href="regresion-lineal-multiple.html#cb149-5" tabindex="-1"></a>    <span class="at">Prueba =</span> <span class="st">&quot;Breusch-Pagan&quot;</span>,</span>
+<span id="cb149-6"><a href="regresion-lineal-multiple.html#cb149-6" tabindex="-1"></a>    <span class="st">`</span><span class="at">Estadístico</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(bp_rlm<span class="sc">$</span>statistic),</span>
+<span id="cb149-7"><a href="regresion-lineal-multiple.html#cb149-7" tabindex="-1"></a>    <span class="st">`</span><span class="at">Grados de libertad</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(bp_rlm<span class="sc">$</span>parameter),</span>
+<span id="cb149-8"><a href="regresion-lineal-multiple.html#cb149-8" tabindex="-1"></a>    <span class="st">`</span><span class="at">Valor p</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">format</span>(bp_rlm<span class="sc">$</span>p.value, <span class="at">scientific =</span> <span class="cn">TRUE</span>, <span class="at">digits =</span> <span class="dv">3</span>),</span>
+<span id="cb149-9"><a href="regresion-lineal-multiple.html#cb149-9" tabindex="-1"></a>    <span class="st">`</span><span class="at">Decisión</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">ifelse</span>(bp_rlm<span class="sc">$</span>p.value <span class="sc">&lt;</span> <span class="fl">0.05</span>,</span>
+<span id="cb149-10"><a href="regresion-lineal-multiple.html#cb149-10" tabindex="-1"></a>                        <span class="st">&quot;Se rechaza H0 (heterocedasticidad)&quot;</span>,</span>
+<span id="cb149-11"><a href="regresion-lineal-multiple.html#cb149-11" tabindex="-1"></a>                        <span class="st">&quot;No se rechaza H0&quot;</span>),</span>
+<span id="cb149-12"><a href="regresion-lineal-multiple.html#cb149-12" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb149-13"><a href="regresion-lineal-multiple.html#cb149-13" tabindex="-1"></a>  ),</span>
+<span id="cb149-14"><a href="regresion-lineal-multiple.html#cb149-14" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Prueba de homocedasticidad (Breusch-Pagan)&quot;</span>,</span>
+<span id="cb149-15"><a href="regresion-lineal-multiple.html#cb149-15" tabindex="-1"></a>  <span class="at">digits =</span> <span class="dv">2</span></span>
+<span id="cb149-16"><a href="regresion-lineal-multiple.html#cb149-16" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-breusch-pagan">Table 19.26: </span>Prueba de homocedasticidad (Breusch-Pagan)
@@ -4934,13 +4933,13 @@ p=1.01\times10^{-102}
 <div id="inferencia-mediante-errores-estandar-robustos" class="section level2 hasAnchor" number="19.11">
 <h2><span class="header-section-number">19.11</span> Inferencia mediante errores estandar robustos<a href="regresion-lineal-multiple.html#inferencia-mediante-errores-estandar-robustos" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Debido a la evidencia de heterocedasticidad, se utiliza una matriz de varianzas y covarianzas robusta HC3 para complementar la inferencia estadistica.</p>
-<div class="sourceCode" id="cb159"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb159-1"><a href="regresion-lineal-multiple.html#cb159-1" tabindex="-1"></a>V_robusta_rlm <span class="ot">&lt;-</span> sandwich<span class="sc">::</span><span class="fu">vcovHC</span>(</span>
-<span id="cb159-2"><a href="regresion-lineal-multiple.html#cb159-2" tabindex="-1"></a>  modelo_optimo_rlm,</span>
-<span id="cb159-3"><a href="regresion-lineal-multiple.html#cb159-3" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;HC3&quot;</span></span>
-<span id="cb159-4"><a href="regresion-lineal-multiple.html#cb159-4" tabindex="-1"></a>)</span>
-<span id="cb159-5"><a href="regresion-lineal-multiple.html#cb159-5" tabindex="-1"></a></span>
-<span id="cb159-6"><a href="regresion-lineal-multiple.html#cb159-6" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_optimo_rlm, <span class="at">vcov. =</span> V_robusta_rlm,</span>
-<span id="cb159-7"><a href="regresion-lineal-multiple.html#cb159-7" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes con errores estándar robustos (HC3)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb150"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb150-1"><a href="regresion-lineal-multiple.html#cb150-1" tabindex="-1"></a>V_robusta_rlm <span class="ot">&lt;-</span> sandwich<span class="sc">::</span><span class="fu">vcovHC</span>(</span>
+<span id="cb150-2"><a href="regresion-lineal-multiple.html#cb150-2" tabindex="-1"></a>  modelo_optimo_rlm,</span>
+<span id="cb150-3"><a href="regresion-lineal-multiple.html#cb150-3" tabindex="-1"></a>  <span class="at">type =</span> <span class="st">&quot;HC3&quot;</span></span>
+<span id="cb150-4"><a href="regresion-lineal-multiple.html#cb150-4" tabindex="-1"></a>)</span>
+<span id="cb150-5"><a href="regresion-lineal-multiple.html#cb150-5" tabindex="-1"></a></span>
+<span id="cb150-6"><a href="regresion-lineal-multiple.html#cb150-6" tabindex="-1"></a><span class="fu">tabla_coef</span>(modelo_optimo_rlm, <span class="at">vcov. =</span> V_robusta_rlm,</span>
+<span id="cb150-7"><a href="regresion-lineal-multiple.html#cb150-7" tabindex="-1"></a>           <span class="at">caption =</span> <span class="st">&quot;Coeficientes con errores estándar robustos (HC3)&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-hc3">Table 19.27: </span>Coeficientes con errores estándar robustos (HC3)
@@ -5109,19 +5108,19 @@ EquipmentWraps
 <p>Todos los coeficientes conservan su significancia individual bajo la inferencia robusta HC3, suponiendo independencia de las observaciones.</p>
 <div id="intervalos-de-confianza-robustos" class="section level3 hasAnchor" number="19.11.1">
 <h3><span class="header-section-number">19.11.1</span> Intervalos de confianza robustos<a href="regresion-lineal-multiple.html#intervalos-de-confianza-robustos" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb160"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb160-1"><a href="regresion-lineal-multiple.html#cb160-1" tabindex="-1"></a>ee_robusto_rlm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(V_robusta_rlm))</span>
-<span id="cb160-2"><a href="regresion-lineal-multiple.html#cb160-2" tabindex="-1"></a></span>
-<span id="cb160-3"><a href="regresion-lineal-multiple.html#cb160-3" tabindex="-1"></a>tabla_ic_robusto_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb160-4"><a href="regresion-lineal-multiple.html#cb160-4" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">names</span>(<span class="fu">coef</span>(modelo_optimo_rlm)),</span>
-<span id="cb160-5"><a href="regresion-lineal-multiple.html#cb160-5" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">coef</span>(modelo_optimo_rlm) <span class="sc">-</span></span>
-<span id="cb160-6"><a href="regresion-lineal-multiple.html#cb160-6" tabindex="-1"></a>    t_critico_rlm <span class="sc">*</span> ee_robusto_rlm),</span>
-<span id="cb160-7"><a href="regresion-lineal-multiple.html#cb160-7" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">coef</span>(modelo_optimo_rlm) <span class="sc">+</span></span>
-<span id="cb160-8"><a href="regresion-lineal-multiple.html#cb160-8" tabindex="-1"></a>    t_critico_rlm <span class="sc">*</span> ee_robusto_rlm),</span>
-<span id="cb160-9"><a href="regresion-lineal-multiple.html#cb160-9" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb160-10"><a href="regresion-lineal-multiple.html#cb160-10" tabindex="-1"></a>)</span>
-<span id="cb160-11"><a href="regresion-lineal-multiple.html#cb160-11" tabindex="-1"></a></span>
-<span id="cb160-12"><a href="regresion-lineal-multiple.html#cb160-12" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_ic_robusto_rlm,</span>
-<span id="cb160-13"><a href="regresion-lineal-multiple.html#cb160-13" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Intervalos de confianza robustos del 95% (HC3)&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb151"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb151-1"><a href="regresion-lineal-multiple.html#cb151-1" tabindex="-1"></a>ee_robusto_rlm <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(<span class="fu">diag</span>(V_robusta_rlm))</span>
+<span id="cb151-2"><a href="regresion-lineal-multiple.html#cb151-2" tabindex="-1"></a></span>
+<span id="cb151-3"><a href="regresion-lineal-multiple.html#cb151-3" tabindex="-1"></a>tabla_ic_robusto_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb151-4"><a href="regresion-lineal-multiple.html#cb151-4" tabindex="-1"></a>  <span class="at">Coeficiente =</span> <span class="fu">names</span>(<span class="fu">coef</span>(modelo_optimo_rlm)),</span>
+<span id="cb151-5"><a href="regresion-lineal-multiple.html#cb151-5" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">coef</span>(modelo_optimo_rlm) <span class="sc">-</span></span>
+<span id="cb151-6"><a href="regresion-lineal-multiple.html#cb151-6" tabindex="-1"></a>    t_critico_rlm <span class="sc">*</span> ee_robusto_rlm),</span>
+<span id="cb151-7"><a href="regresion-lineal-multiple.html#cb151-7" tabindex="-1"></a>  <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(<span class="fu">coef</span>(modelo_optimo_rlm) <span class="sc">+</span></span>
+<span id="cb151-8"><a href="regresion-lineal-multiple.html#cb151-8" tabindex="-1"></a>    t_critico_rlm <span class="sc">*</span> ee_robusto_rlm),</span>
+<span id="cb151-9"><a href="regresion-lineal-multiple.html#cb151-9" tabindex="-1"></a>  <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb151-10"><a href="regresion-lineal-multiple.html#cb151-10" tabindex="-1"></a>)</span>
+<span id="cb151-11"><a href="regresion-lineal-multiple.html#cb151-11" tabindex="-1"></a></span>
+<span id="cb151-12"><a href="regresion-lineal-multiple.html#cb151-12" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_ic_robusto_rlm,</span>
+<span id="cb151-13"><a href="regresion-lineal-multiple.html#cb151-13" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Intervalos de confianza robustos del 95% (HC3)&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-ic-robustos">Table 19.28: </span>Intervalos de confianza robustos del 95% (HC3)
@@ -5230,21 +5229,21 @@ EquipmentWraps
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb161"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb161-1"><a href="regresion-lineal-multiple.html#cb161-1" tabindex="-1"></a>ci_rob_rlm <span class="ot">&lt;-</span> lmtest<span class="sc">::</span><span class="fu">coefci</span>(</span>
-<span id="cb161-2"><a href="regresion-lineal-multiple.html#cb161-2" tabindex="-1"></a>  modelo_optimo_rlm,</span>
-<span id="cb161-3"><a href="regresion-lineal-multiple.html#cb161-3" tabindex="-1"></a>  <span class="at">vcov. =</span> V_robusta_rlm,</span>
-<span id="cb161-4"><a href="regresion-lineal-multiple.html#cb161-4" tabindex="-1"></a>  <span class="at">level =</span> <span class="fl">0.95</span></span>
-<span id="cb161-5"><a href="regresion-lineal-multiple.html#cb161-5" tabindex="-1"></a>)</span>
-<span id="cb161-6"><a href="regresion-lineal-multiple.html#cb161-6" tabindex="-1"></a></span>
-<span id="cb161-7"><a href="regresion-lineal-multiple.html#cb161-7" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
-<span id="cb161-8"><a href="regresion-lineal-multiple.html#cb161-8" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
-<span id="cb161-9"><a href="regresion-lineal-multiple.html#cb161-9" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(ci_rob_rlm),</span>
-<span id="cb161-10"><a href="regresion-lineal-multiple.html#cb161-10" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_rob_rlm[, <span class="dv">1</span>]),</span>
-<span id="cb161-11"><a href="regresion-lineal-multiple.html#cb161-11" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_rob_rlm[, <span class="dv">2</span>]),</span>
-<span id="cb161-12"><a href="regresion-lineal-multiple.html#cb161-12" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
-<span id="cb161-13"><a href="regresion-lineal-multiple.html#cb161-13" tabindex="-1"></a>  ),</span>
-<span id="cb161-14"><a href="regresion-lineal-multiple.html#cb161-14" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Verificación con coefci(): intervalos robustos del 95%&quot;</span></span>
-<span id="cb161-15"><a href="regresion-lineal-multiple.html#cb161-15" tabindex="-1"></a>)</span></code></pre></div>
+<div class="sourceCode" id="cb152"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb152-1"><a href="regresion-lineal-multiple.html#cb152-1" tabindex="-1"></a>ci_rob_rlm <span class="ot">&lt;-</span> lmtest<span class="sc">::</span><span class="fu">coefci</span>(</span>
+<span id="cb152-2"><a href="regresion-lineal-multiple.html#cb152-2" tabindex="-1"></a>  modelo_optimo_rlm,</span>
+<span id="cb152-3"><a href="regresion-lineal-multiple.html#cb152-3" tabindex="-1"></a>  <span class="at">vcov. =</span> V_robusta_rlm,</span>
+<span id="cb152-4"><a href="regresion-lineal-multiple.html#cb152-4" tabindex="-1"></a>  <span class="at">level =</span> <span class="fl">0.95</span></span>
+<span id="cb152-5"><a href="regresion-lineal-multiple.html#cb152-5" tabindex="-1"></a>)</span>
+<span id="cb152-6"><a href="regresion-lineal-multiple.html#cb152-6" tabindex="-1"></a></span>
+<span id="cb152-7"><a href="regresion-lineal-multiple.html#cb152-7" tabindex="-1"></a><span class="fu">tabla_bonita</span>(</span>
+<span id="cb152-8"><a href="regresion-lineal-multiple.html#cb152-8" tabindex="-1"></a>  <span class="fu">data.frame</span>(</span>
+<span id="cb152-9"><a href="regresion-lineal-multiple.html#cb152-9" tabindex="-1"></a>    <span class="at">Coeficiente =</span> <span class="fu">rownames</span>(ci_rob_rlm),</span>
+<span id="cb152-10"><a href="regresion-lineal-multiple.html#cb152-10" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite inferior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_rob_rlm[, <span class="dv">1</span>]),</span>
+<span id="cb152-11"><a href="regresion-lineal-multiple.html#cb152-11" tabindex="-1"></a>    <span class="st">`</span><span class="at">Límite superior</span><span class="st">`</span> <span class="ot">=</span> <span class="fu">as.numeric</span>(ci_rob_rlm[, <span class="dv">2</span>]),</span>
+<span id="cb152-12"><a href="regresion-lineal-multiple.html#cb152-12" tabindex="-1"></a>    <span class="at">check.names =</span> <span class="cn">FALSE</span></span>
+<span id="cb152-13"><a href="regresion-lineal-multiple.html#cb152-13" tabindex="-1"></a>  ),</span>
+<span id="cb152-14"><a href="regresion-lineal-multiple.html#cb152-14" tabindex="-1"></a>  <span class="at">caption =</span> <span class="st">&quot;Verificación con coefci(): intervalos robustos del 95%&quot;</span></span>
+<span id="cb152-15"><a href="regresion-lineal-multiple.html#cb152-15" tabindex="-1"></a>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-ic-robustos-verificacion">Table 19.29: </span>Verificación con coefci(): intervalos robustos del 95%
@@ -5367,51 +5366,51 @@ EquipmentWraps
 </div>
 <div id="comparacion-entre-regresion-simple-y-multiple" class="section level2 hasAnchor" number="19.13">
 <h2><span class="header-section-number">19.13</span> Comparacion entre regresion simple y multiple<a href="regresion-lineal-multiple.html#comparacion-entre-regresion-simple-y-multiple" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb162"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb162-1"><a href="regresion-lineal-multiple.html#cb162-1" tabindex="-1"></a>modelo_simple_original_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb162-2"><a href="regresion-lineal-multiple.html#cb162-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> upper_lower_total,</span>
-<span id="cb162-3"><a href="regresion-lineal-multiple.html#cb162-3" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
-<span id="cb162-4"><a href="regresion-lineal-multiple.html#cb162-4" tabindex="-1"></a>)</span>
-<span id="cb162-5"><a href="regresion-lineal-multiple.html#cb162-5" tabindex="-1"></a></span>
-<span id="cb162-6"><a href="regresion-lineal-multiple.html#cb162-6" tabindex="-1"></a>modelo_simple_transformado_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
-<span id="cb162-7"><a href="regresion-lineal-multiple.html#cb162-7" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> <span class="fu">sqrt</span>(upper_lower_total),</span>
-<span id="cb162-8"><a href="regresion-lineal-multiple.html#cb162-8" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
-<span id="cb162-9"><a href="regresion-lineal-multiple.html#cb162-9" tabindex="-1"></a>)</span>
-<span id="cb162-10"><a href="regresion-lineal-multiple.html#cb162-10" tabindex="-1"></a></span>
-<span id="cb162-11"><a href="regresion-lineal-multiple.html#cb162-11" tabindex="-1"></a>tabla_comparacion_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb162-12"><a href="regresion-lineal-multiple.html#cb162-12" tabindex="-1"></a>  <span class="at">Modelo =</span> <span class="fu">c</span>(</span>
-<span id="cb162-13"><a href="regresion-lineal-multiple.html#cb162-13" tabindex="-1"></a>    <span class="st">&quot;Regresion simple original&quot;</span>,</span>
-<span id="cb162-14"><a href="regresion-lineal-multiple.html#cb162-14" tabindex="-1"></a>    <span class="st">&quot;Regresion simple transformada&quot;</span>,</span>
-<span id="cb162-15"><a href="regresion-lineal-multiple.html#cb162-15" tabindex="-1"></a>    <span class="st">&quot;Regresion multiple original&quot;</span>,</span>
-<span id="cb162-16"><a href="regresion-lineal-multiple.html#cb162-16" tabindex="-1"></a>    <span class="st">&quot;Regresion multiple transformada&quot;</span></span>
-<span id="cb162-17"><a href="regresion-lineal-multiple.html#cb162-17" tabindex="-1"></a>  ),</span>
-<span id="cb162-18"><a href="regresion-lineal-multiple.html#cb162-18" tabindex="-1"></a>  <span class="at">R2 =</span> <span class="fu">c</span>(</span>
-<span id="cb162-19"><a href="regresion-lineal-multiple.html#cb162-19" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>r.squared,</span>
-<span id="cb162-20"><a href="regresion-lineal-multiple.html#cb162-20" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>r.squared,</span>
-<span id="cb162-21"><a href="regresion-lineal-multiple.html#cb162-21" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>r.squared,</span>
-<span id="cb162-22"><a href="regresion-lineal-multiple.html#cb162-22" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>r.squared</span>
-<span id="cb162-23"><a href="regresion-lineal-multiple.html#cb162-23" tabindex="-1"></a>  ),</span>
-<span id="cb162-24"><a href="regresion-lineal-multiple.html#cb162-24" tabindex="-1"></a>  <span class="at">R2_ajustado =</span> <span class="fu">c</span>(</span>
-<span id="cb162-25"><a href="regresion-lineal-multiple.html#cb162-25" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>adj.r.squared,</span>
-<span id="cb162-26"><a href="regresion-lineal-multiple.html#cb162-26" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>adj.r.squared,</span>
-<span id="cb162-27"><a href="regresion-lineal-multiple.html#cb162-27" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>adj.r.squared,</span>
-<span id="cb162-28"><a href="regresion-lineal-multiple.html#cb162-28" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>adj.r.squared</span>
-<span id="cb162-29"><a href="regresion-lineal-multiple.html#cb162-29" tabindex="-1"></a>  ),</span>
-<span id="cb162-30"><a href="regresion-lineal-multiple.html#cb162-30" tabindex="-1"></a>  <span class="at">Error_residual =</span> <span class="fu">c</span>(</span>
-<span id="cb162-31"><a href="regresion-lineal-multiple.html#cb162-31" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>sigma,</span>
-<span id="cb162-32"><a href="regresion-lineal-multiple.html#cb162-32" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>sigma,</span>
-<span id="cb162-33"><a href="regresion-lineal-multiple.html#cb162-33" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>sigma,</span>
-<span id="cb162-34"><a href="regresion-lineal-multiple.html#cb162-34" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>sigma</span>
-<span id="cb162-35"><a href="regresion-lineal-multiple.html#cb162-35" tabindex="-1"></a>  ),</span>
-<span id="cb162-36"><a href="regresion-lineal-multiple.html#cb162-36" tabindex="-1"></a>  <span class="at">AIC =</span> <span class="fu">c</span>(</span>
-<span id="cb162-37"><a href="regresion-lineal-multiple.html#cb162-37" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_simple_original_rlm),</span>
-<span id="cb162-38"><a href="regresion-lineal-multiple.html#cb162-38" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_simple_transformado_rlm),</span>
-<span id="cb162-39"><a href="regresion-lineal-multiple.html#cb162-39" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_completo),</span>
-<span id="cb162-40"><a href="regresion-lineal-multiple.html#cb162-40" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_optimo_rlm)</span>
-<span id="cb162-41"><a href="regresion-lineal-multiple.html#cb162-41" tabindex="-1"></a>  )</span>
-<span id="cb162-42"><a href="regresion-lineal-multiple.html#cb162-42" tabindex="-1"></a>)</span>
-<span id="cb162-43"><a href="regresion-lineal-multiple.html#cb162-43" tabindex="-1"></a></span>
-<span id="cb162-44"><a href="regresion-lineal-multiple.html#cb162-44" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_comparacion_rlm,</span>
-<span id="cb162-45"><a href="regresion-lineal-multiple.html#cb162-45" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Comparación de los modelos de regresión&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb153"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb153-1"><a href="regresion-lineal-multiple.html#cb153-1" tabindex="-1"></a>modelo_simple_original_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb153-2"><a href="regresion-lineal-multiple.html#cb153-2" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> upper_lower_total,</span>
+<span id="cb153-3"><a href="regresion-lineal-multiple.html#cb153-3" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb153-4"><a href="regresion-lineal-multiple.html#cb153-4" tabindex="-1"></a>)</span>
+<span id="cb153-5"><a href="regresion-lineal-multiple.html#cb153-5" tabindex="-1"></a></span>
+<span id="cb153-6"><a href="regresion-lineal-multiple.html#cb153-6" tabindex="-1"></a>modelo_simple_transformado_rlm <span class="ot">&lt;-</span> <span class="fu">lm</span>(</span>
+<span id="cb153-7"><a href="regresion-lineal-multiple.html#cb153-7" tabindex="-1"></a>  BestDeadliftKg <span class="sc">~</span> <span class="fu">sqrt</span>(upper_lower_total),</span>
+<span id="cb153-8"><a href="regresion-lineal-multiple.html#cb153-8" tabindex="-1"></a>  <span class="at">data =</span> df_nuevo</span>
+<span id="cb153-9"><a href="regresion-lineal-multiple.html#cb153-9" tabindex="-1"></a>)</span>
+<span id="cb153-10"><a href="regresion-lineal-multiple.html#cb153-10" tabindex="-1"></a></span>
+<span id="cb153-11"><a href="regresion-lineal-multiple.html#cb153-11" tabindex="-1"></a>tabla_comparacion_rlm <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb153-12"><a href="regresion-lineal-multiple.html#cb153-12" tabindex="-1"></a>  <span class="at">Modelo =</span> <span class="fu">c</span>(</span>
+<span id="cb153-13"><a href="regresion-lineal-multiple.html#cb153-13" tabindex="-1"></a>    <span class="st">&quot;Regresion simple original&quot;</span>,</span>
+<span id="cb153-14"><a href="regresion-lineal-multiple.html#cb153-14" tabindex="-1"></a>    <span class="st">&quot;Regresion simple transformada&quot;</span>,</span>
+<span id="cb153-15"><a href="regresion-lineal-multiple.html#cb153-15" tabindex="-1"></a>    <span class="st">&quot;Regresion multiple original&quot;</span>,</span>
+<span id="cb153-16"><a href="regresion-lineal-multiple.html#cb153-16" tabindex="-1"></a>    <span class="st">&quot;Regresion multiple transformada&quot;</span></span>
+<span id="cb153-17"><a href="regresion-lineal-multiple.html#cb153-17" tabindex="-1"></a>  ),</span>
+<span id="cb153-18"><a href="regresion-lineal-multiple.html#cb153-18" tabindex="-1"></a>  <span class="at">R2 =</span> <span class="fu">c</span>(</span>
+<span id="cb153-19"><a href="regresion-lineal-multiple.html#cb153-19" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>r.squared,</span>
+<span id="cb153-20"><a href="regresion-lineal-multiple.html#cb153-20" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>r.squared,</span>
+<span id="cb153-21"><a href="regresion-lineal-multiple.html#cb153-21" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>r.squared,</span>
+<span id="cb153-22"><a href="regresion-lineal-multiple.html#cb153-22" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>r.squared</span>
+<span id="cb153-23"><a href="regresion-lineal-multiple.html#cb153-23" tabindex="-1"></a>  ),</span>
+<span id="cb153-24"><a href="regresion-lineal-multiple.html#cb153-24" tabindex="-1"></a>  <span class="at">R2_ajustado =</span> <span class="fu">c</span>(</span>
+<span id="cb153-25"><a href="regresion-lineal-multiple.html#cb153-25" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb153-26"><a href="regresion-lineal-multiple.html#cb153-26" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb153-27"><a href="regresion-lineal-multiple.html#cb153-27" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>adj.r.squared,</span>
+<span id="cb153-28"><a href="regresion-lineal-multiple.html#cb153-28" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>adj.r.squared</span>
+<span id="cb153-29"><a href="regresion-lineal-multiple.html#cb153-29" tabindex="-1"></a>  ),</span>
+<span id="cb153-30"><a href="regresion-lineal-multiple.html#cb153-30" tabindex="-1"></a>  <span class="at">Error_residual =</span> <span class="fu">c</span>(</span>
+<span id="cb153-31"><a href="regresion-lineal-multiple.html#cb153-31" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_original_rlm)<span class="sc">$</span>sigma,</span>
+<span id="cb153-32"><a href="regresion-lineal-multiple.html#cb153-32" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_simple_transformado_rlm)<span class="sc">$</span>sigma,</span>
+<span id="cb153-33"><a href="regresion-lineal-multiple.html#cb153-33" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_completo)<span class="sc">$</span>sigma,</span>
+<span id="cb153-34"><a href="regresion-lineal-multiple.html#cb153-34" tabindex="-1"></a>    <span class="fu">summary</span>(modelo_optimo_rlm)<span class="sc">$</span>sigma</span>
+<span id="cb153-35"><a href="regresion-lineal-multiple.html#cb153-35" tabindex="-1"></a>  ),</span>
+<span id="cb153-36"><a href="regresion-lineal-multiple.html#cb153-36" tabindex="-1"></a>  <span class="at">AIC =</span> <span class="fu">c</span>(</span>
+<span id="cb153-37"><a href="regresion-lineal-multiple.html#cb153-37" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_simple_original_rlm),</span>
+<span id="cb153-38"><a href="regresion-lineal-multiple.html#cb153-38" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_simple_transformado_rlm),</span>
+<span id="cb153-39"><a href="regresion-lineal-multiple.html#cb153-39" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_completo),</span>
+<span id="cb153-40"><a href="regresion-lineal-multiple.html#cb153-40" tabindex="-1"></a>    <span class="fu">AIC</span>(modelo_optimo_rlm)</span>
+<span id="cb153-41"><a href="regresion-lineal-multiple.html#cb153-41" tabindex="-1"></a>  )</span>
+<span id="cb153-42"><a href="regresion-lineal-multiple.html#cb153-42" tabindex="-1"></a>)</span>
+<span id="cb153-43"><a href="regresion-lineal-multiple.html#cb153-43" tabindex="-1"></a></span>
+<span id="cb153-44"><a href="regresion-lineal-multiple.html#cb153-44" tabindex="-1"></a><span class="fu">tabla_bonita</span>(tabla_comparacion_rlm,</span>
+<span id="cb153-45"><a href="regresion-lineal-multiple.html#cb153-45" tabindex="-1"></a>             <span class="at">caption =</span> <span class="st">&quot;Comparación de los modelos de regresión&quot;</span>)</span></code></pre></div>
 <table class="table table-striped table-hover table-condensed" style="color: black; width: auto !important; margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:rlm-comparacion-r2">Table 19.30: </span>Comparación de los modelos de regresión
