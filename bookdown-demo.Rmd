@@ -1,0 +1,3229 @@
+--- 
+title: "Factores asociados al rendimiento en peso muerto en atletas de powerlifting: análisis estadístico"
+author: "Karla Paredes y Mauricio Orozco"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: " "
+---
+--- 
+title: "Factores asociados al rendimiento en peso muerto en atletas de powerlifting: análisis estadístico"
+author: "Karla Paredes y Mauricio Orozco"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+description: " "
+---
+
+
+```{r include=FALSE}
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
+
+
+
+
+
+<!--chapter:end:index.Rmd-->
+
+---
+title: "Introduccion"
+output: html_document
+date: "2026-09-18"
+---
+# Introducción
+
+# Introducción
+
+El powerlifting es una disciplina deportiva de fuerza cuyo objetivo consiste en levantar la mayor cantidad de peso posible en tres movimientos fundamentales: sentadilla, press de banca y peso muerto. El rendimiento de los atletas en estas pruebas se encuentra relacionado con diferentes características físicas, deportivas y competitivas, entre las que se destacan la edad, el sexo, el peso corporal y el tipo de equipamiento utilizado durante la competencia.
+
+El proyecto tiene como propósito realizar un análisis estadístico sobre una base de datos de powerlifting, conformada por 18.900 observaciones. Se establece como variable de respuesta el mejor levantamiento en peso muerto (BestDeadliftKg), con el fin de identificar los factores asociados a su comportamiento, cuantificar las relaciones existentes entre las variables y construir modelos estadísticos que permitan estimar dicho rendimiento.
+
+En una primera etapa, se realiza un análisis exploratorio de datos que comprende la identificación y corrección de inconsistencias, el tratamiento de valores faltantes, la caracterización de las variables y el estudio de sus distribuciones mediante herramientas gráficas y medidas estadísticas descriptivas. Asimismo, se desarrolla un proceso de ingeniería de características orientado a representar de manera conjunta el rendimiento obtenido en sentadilla y press de banca.
+
+Posteriormente, se aplican herramientas de estadística inferencial paramétrica y no paramétrica, considerando los supuestos correspondientes a cada procedimiento. Se estudian las diferencias en el rendimiento en peso muerto según el sexo y el equipamiento, la asociación entre variables categóricas y el grado de relación entre las variables cuantitativas mediante coeficientes de correlación.
+
+A partir de los resultados anteriores, se desarrolla un modelo de regresión lineal simple para estudiar la relación entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto. Se estiman los parámetros del modelo mediante el método de mínimos cuadrados, se evalúa su capacidad explicativa y se analizan los supuestos asociados a los errores.
+
+Finalmente, se construye un modelo de regresión lineal múltiple que permite estudiar simultáneamente la relación de diferentes variables explicativas con el rendimiento en peso muerto. Se analiza la multicolinealidad, la significancia global e individual de los coeficientes y la bondad de ajuste de los modelos considerados, incorporando transformaciones cuando estas permiten mejorar su ajuste.
+
+De esta manera, el proyecto integra herramientas de estadística descriptiva, inferencial y de modelación estadística para proporcionar una comprensión más amplia del rendimiento en powerlifting, reconociendo tanto la capacidad explicativa de los modelos obtenidos como las limitaciones asociadas a sus supuestos y a la naturaleza de los datos.
+
+
+<!--chapter:end:Introduccion.Rmd-->
+
+
+# Objetivos generales y especificos
+
+Placeholder
+
+
+## Pregunta problema
+## Objetivo general
+## Objetivos específicos
+
+<!--chapter:end:Objetivos.Rmd-->
+
+
+# Metodología
+
+Placeholder
+
+
+## Diseño de la investigación
+## Fuente de datos
+## Herramientas computacionales
+## Procedimiento metodológico
+### Etapa 1. Preparación y limpieza de datos
+### Etapa 2. Análisis exploratorio de datos
+### Etapa 3. Ingeniería de características
+### Etapa 4. Análisis de variables categóricas
+### Etapa 5. Estadística inferencial paramétrica y no paramétrica
+### Etapa 6. Análisis de correlación
+### Etapa 7. Regresión lineal simple
+### Etapa 8. Regresión lineal múltiple
+### Etapa 9. Comparación y selección del modelo
+## Consideraciones metodológicas
+
+<!--chapter:end:Metodologia.Rmd-->
+
+
+# Marco Teorico
+
+Placeholder
+
+
+## El powerlifting como deporte de fuerza
+## Técnica
+## Press de banca
+## Sentadilla
+## Peso muerto
+## Peso corporal y Categorías por peso
+## 1.8 Diferencias de fuerza asociadas al sexo
+## Fundamentos estadísticos
+### Análisis exploratorio de datos
+### Estadística paramétrica y no paramétrica
+### Tablas de contingencia
+### Coeficiente de correlación
+### Regresión lineal simple
+### Regresión lineal múltiple
+### Coeficiente de determinación
+### Inferencia estadística en los modelos de regresión
+### Supuestos de los modelos de regresión
+### Multicolinealidad
+### Transformación de variables
+### Selección de modelos
+
+<!--chapter:end:Marco_Teorico.Rmd-->
+
+# Dataset
+
+## Librerias
+```{r librerias, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(Amelia)
+library(nortest)
+library(moments)
+library(MASS)
+library(lmtest)
+library(sandwich)
+library(ggplot2)
+library(patchwork)
+library(GGally)
+library(reshape)
+library(car)
+library(sandwich)
+library(ggpubr)
+library(knitr) #Visualización de tablas.
+library(kableExtra) # Estilo
+options(scipen = 999) #Nos permite observar mejor números muy grandes en los diagramas.
+select <- dplyr::select
+```
+
+
+## Leer dataset
+```{r df}
+df<-read.csv("Data/X_train.csv")
+```
+
+## Mostrar las 10 primeras filas
+```{r primerasfilas}
+head(df, n=10) %>% 
+  kable(caption = " Primeras 5 observaciones del dataset") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+## Estructura de los datos
+```{r str}
+
+estructura <- data.frame(
+  "Variable" = names(df),
+  "Tipo de dato" = unname(sapply(df, class)),
+  "Valores faltantes" = unname(colSums(is.na(df))),
+  check.names = FALSE
+)
+
+knitr::kable(
+  estructura,
+  caption = "Estructura de las variables del conjunto de datos",
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+
+```
+
+El conjunto de datos contiene 18.900 observaciones y 9 variables. A partir de la tabla de estructura se identifican variables numéricas y de tipo carácter.
+
+Se observa que `BestSquatKg`, correspondiente al mejor levantamiento en sentadilla, aparece registrada como una variable de tipo carácter, aunque representa una medida cuantitativa. Por esta razón, será necesario revisar y corregir sus valores para convertirla a tipo numérico.  También se puede notar que la variable `Age` tiene 175 valores faltantes. 
+
+Asimismo, las variables `playerId` y `Name` se consideran identificadoras y no se incluirán en el análisis estadístico. Las variables `Sex` y `Equipment` se utilizarán como variables cualitativas.
+
+## Solucionar valores inconsistentes
+La variable 'BestSquatKg' está siendo leida como caracter (variable categórica) cuando en realidad es una variable numérica, lo que nos indica que hay una inconsistencia entre los datos. Y tambien presenta algunos valores negativos, lo cual es fisicamente imposible; en bases de datos de powerlifting, es una convención estándar del dominio: cuando un atleta falla sus 3 intentos en un levantamiento, el sistema registra el peso del mejor intento fallido como número negativo, en vez de dejarlo vacío. Como en nuestro estudio son relevantes los levantamientos que fueron exitosos, convertiremos esos valores a 'NA' y posteriormente reemplazaremos utilizando la funcion mutate para bajar las posibilidades de un sesgo mayor. 
+
+```{r corregirchar}
+# convertir a numérico
+issues<- df %>%
+  filter(is.na(as.numeric(BestSquatKg)) & !is.na(BestSquatKg))
+
+issues %>%
+  select(playerId, BestSquatKg)
+```
+
+```{r corregir.}
+df %>%
+  filter(str_detect(BestSquatKg, "\\.\\.")) %>%
+  select(playerId, BestSquatKg)
+
+df <- df %>%
+  mutate(
+    BestSquatKg = str_replace(BestSquatKg, "\\.\\.", "."),  # corrige el doble punto
+    BestSquatKg = as.numeric(BestSquatKg)
+  )
+
+df <- df %>% 
+  mutate(BestSquatKg = ifelse(BestSquatKg < 0, NA, BestSquatKg)) #eliminamos los valores negativos
+
+estructura_nueva <- data.frame(
+  "Variable" = names(df),
+  "Tipo de dato" = unname(sapply(df, class)),
+  "Valores faltantes" = unname(colSums(is.na(df))),
+  check.names = FALSE
+)
+knitr::kable(
+  estructura_nueva, format = "html",
+  caption = "Estructura de las variables del conjunto de datos",
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+La variable 'BestSquatKg' ahora es leida como numerica.
+
+## Verificamos si los niveles de las variables cualitativas tienen inconsistencias 
+```{r niveles}
+#Niveles
+unique(df$Sex)
+unique(df$Equipment)
+
+```
+No existen inconsistencias en los niveles (Por ejemplo, observaciones como "F" y "f" que indiquen el mismo nivel).
+
+## Forma directa de verificar si hay datos faltantes
+```{r Datos faltantes}
+df %>% 
+  summarise(across(everything(), ~ sum(is.na(.)),.names="NA_{.col}")) %>% 
+  kable(caption = " Verificar datos faltantes ") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+
+```
+
+## Imputacion de datos faltantes
+```{r Rellenar}
+ df %>%  #datos
+  mutate(across( #columnas
+    where(is.numeric), #seleccionar variables numericas
+    ~ ifelse(is.na(.),mean(.,na.rm=TRUE), .) #si hay un na, reemplazar, si no, dejar la variable
+  )) -> df #data limpiada
+```
+
+## Ver si hay datos faltantes nuevamente en el Data Frame limpiado
+```{r datos faltantes 2}
+df %>% 
+  summarise(across(everything(), ~ sum(is.na(.)),.names="NA_{.col}")) %>% 
+  kable(caption = " Verificar exito del dataset limpiado") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+
+```
+
+## Convertir las variables cualitativas en factor.
+```{r factor}
+df$Sex <- factor(df$Sex)
+df$Equipment <- factor(df$Equipment)
+```
+
+
+# Analisis exploratorio de BestDeadliftKg (target)
+
+```{r caracterizaciontarget}
+df %>% 
+  summarise(n=length(BestDeadliftKg),
+            Media=mean(BestDeadliftKg),
+            Ds=sd(BestDeadliftKg),
+            Mediana=median(BestDeadliftKg),
+            RIC=IQR(BestDeadliftKg),
+            Q1=quantile(BestDeadliftKg,0.25),
+            Q3=quantile(BestDeadliftKg,0.75),
+            Mínimo=min(BestDeadliftKg),
+            Máximo=max(BestDeadliftKg),
+            Asim=skewness(BestDeadliftKg),
+            Curtosis=kurtosis(BestDeadliftKg)) %>% 
+  kable(caption = "Caracterización") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+**1. Medidas de tendencia central:**
+
+Media = 201.1228 kg | Mediana = 204.12 kg
+
+Aquí la media y la mediana son muy cercanas entre sí (201.12 vs 204.12), con la media apenas por debajo de la mediana. Esta pequeña diferencia sugiere una distribución bastante simétrica, sin una asimetría marcada hacia ningún lado. El valor "típico" se ubica entonces alrededor de 201–204 kg.
+
+**2. Medidas de dispersión:**
+
+DS = 62.17163 kg | RIC = 97.6425 kg
+
+La desviación estándar representa cerca del 31% de la media, lo cual indica una dispersión moderada-alta. Esto es coherente con un contexto donde existen categorías o rangos amplios entre los distintos casos, por lo que se espera una variabilidad considerable en los valores.
+
+**3. Medidas de posición:**
+
+Q1 = 149.8575 kg | Q3 = 247.5 kg | Mínimo = 18.1 kg | Máximo = 408.23 kg
+
+El 50% central de los datos se ubica entre 149.8575 y 247.5 kg, un rango de unos 97.6425 kg, que corresponde al RIC. El rango total, sin embargo, es mucho más amplio (18.1 a 408.23 kg, casi 390 kg de diferencia), lo que muestra la presencia de valores extremos tanto por debajo como por encima del rango central.
+
+**4. Medidas de forma:**
+
+Asimetría = 0.1097141 | Curtosis = 2.333665
+
+Asimetría (0.1097141): es un valor muy cercano a 0, lo que indica una distribución prácticamente simétrica, con una leve tendencia hacia la derecha. Esto concuerda con lo observado en el punto 1, donde media y mediana son casi iguales.
+
+Curtosis (2.333665): al estar por debajo de 3, indica una distribución platicúrtica, es decir, más "achatada" que una distribución normal, con colas más ligeras y una concentración de datos menos pronunciada alrededor de la media. En conjunto, ambas medidas de forma sugieren una distribución cercana a la simetría, aunque más aplanada que la normal.
+
+
+## Grafico tipo histograma
+
+```{r}
+df %>% 
+  ggplot(aes(x=BestDeadliftKg))+
+geom_histogram(aes(y=after_stat(density)),
+                binwidth=14,
+                fill="#797bb0",
+                color="white",
+                alpha=0.6,)+
+  geom_density(color="darkblue",linewidth=1.2)+
+  labs(title='Distribucion del peso muerto levantado por cada individuo (kg)',
+       x='Peso muerto',
+       y='densidad')+
+  theme_bw()
+  
+```
+ 
+La distribución es aproximadamente simétrica (por su valor de asimetría), con una asimetría leve hacia la derecha (sesgo positivo pequeño). La mayor concentración de datos está entre los 150 y 250 kg aproximadamente, con el pico más alto ubicado alrededor de los 200-230 kg. Se observa también un pico secundario, más pequeño, cerca de los 130-150 kg, esto es coherente con la curtosis de 2.3337, que indica una distribución platicúrtica (ligeramente más aplanada que una normal, sin una concentración muy marcada en un solo punto). El valor de asimetría (0.1097), que al estar muy cerca de 0 confirma que el estiramiento hacia los valores altos es leve y no pronunciado.
+
+
+## Grafico de cajas y bigotes
+
+```{r Boxplot, message=FALSE}
+df %>% 
+  ggplot(aes(x = "", y = BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20, size=3, color='green3')+ #colocar un punto en la media
+  theme_bw()+
+  theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())
+```
+
+El boxplot muestra la caja central entre 149.86 y 247.5 kg (Q1-Q3), con la mediana muy cerca de la media y ligeramente por encima de ella, lo cual es consistente con la asimetría leve y casi simétrica ya identificada. Los bigotes van aproximadamente de 18 a 390 kg, y se observan algunos puntos atípicos por encima de 390 kg (hasta cerca de 400-410 kg), que corresponden a los valores más altos del peso muerto, probablemente de atletas en categorías de peso pesado o superpesado. Estos pocos outliers hacia arriba son coherentes con la ligera cola derecha observada en el histograma.
+
+
+# Variables independientes (caracteristicas)
+```{r Variables independientes}
+df %>%   
+  select(where(is.numeric),-BestDeadliftKg,-playerId) %>% 
+  pivot_longer(
+    cols=everything(), #llaves y valores para cambiar la posicion del encabezado
+    names_to='variable',
+    values_to='valor'
+    )  %>%
+  group_by(variable) %>% 
+  summarise(n=length(valor),
+            media=mean(valor),
+            sd=sd(valor),
+            mediana=median(valor),
+            RIC=IQR(valor),
+            Q1=quantile(valor,0.25),
+            Q3=quantile(valor,0.75),
+            minimo=min(valor),
+            maximo=max(valor),
+            asim=skewness(valor),
+            curtosis=kurtosis(valor)) %>% 
+  kable(caption = "Caracterización") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+### Veamos el análisis de cada variable independiente
+
+**Age (Edad)**
+
+Media = 29.66 años | Mediana = 26.5 años. La media está claramente por encima de la mediana, y con una asimetría alta (1.33) y curtosis elevada (4.74), esto indica una distribución bastante asimétrica hacia la derecha: la mayoría de competidores son jóvenes (20-30 años), pero hay una cola de atletas de mayor edad (hasta 83 años) que estira la media hacia arriba.
+
+**BestBenchKg (Press banca)**
+
+Media = 116.96 kg | Mediana = 115 kg, muy cercanas entre sí. Asimetría moderada (0.645) indica un sesgo positivo leve-moderado: la mayoría levanta entre 72.5 y 150 kg (RIC), con una cola hacia valores altos (hasta 425 kg). Curtosis cercana a 3 (3.62) sugiere una forma similar a la normal.
+
+**BestSquatKg (Sentadilla)**
+
+Media = 179.17 kg | Mediana = 175.0 kg, también cercanas. Asimetría moderada (0.605), similar al press banca: sesgo positivo leve, con la mayoría entre 125 y 222.5 kg y una cola hacia valores altos (hasta 500 kg). Curtosis (3.46) muy cercana a la normal.
+
+**BodyweightKg (Peso corporal)**
+
+Media = 85.43 kg | Mediana = 82.1 kg. Asimetría moderada-alta (0.795) muestra un sesgo positivo más marcado que en las otras variables: hay competidores con pesos corporales notablemente altos (hasta 201 kg, categoría superpesado) que estiran la distribución hacia la derecha. Curtosis (3.88) indica una distribución levemente más apuntada que la normal (leptocúrtica).
+
+
+## Graficos de las variables independientes
+
+```{r}
+# 'Age'
+  df %>% 
+  ggplot(aes(x =" ",y = Age))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p1
+
+# 'BestBenchKg'
+  df %>% 
+  ggplot(aes(x =" ",y = BestBenchKg ))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p2
+
+# 'BestSquatKg'
+  df %>% 
+  ggplot(aes(x =" ",y = BestSquatKg ))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p3
+  
+# 'BodyweightKg'
+  df %>% 
+  ggplot(aes(x =" ",y = BodyweightKg))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p4
+  
+  p1+p2+p3+p4
+```
+
+**Age (Edad)**
+
+La caja central va de 21.5 a 34.5 años (Q1-Q3), con la mediana (26.5) por debajo de la media (29.66 años), señal de sesgo hacia la derecha. Se observan numerosos puntos atípicos por encima de 55 años, extendiéndose hasta los 83 años, lo que confirma la asimetría positiva alta (1.33) ya identificada: la mayoría de competidores son jóvenes, pero hay una cola larga de atletas mayores.
+
+**BestBenchKg (Press banca)**
+
+La caja va de 72.5 a 150 kg, con la mediana (115) muy cerca de la media (116.96), reflejando la asimetría moderada. Hay bastantes outliers por encima de 270 kg, llegando hasta 425 kg, lo que genera una cola derecha notoria, aunque el cuerpo central de los datos está bien concentrado.
+
+**BestSquatKg (Sentadilla)**
+
+Comportamiento muy similar al press banca: caja entre 125 y 222.5 kg, mediana (175) y media (179.17) cercanas. Los outliers aparecen por encima de 370 kg y llegan hasta 500 kg, consistentes con la asimetría moderada (0.605) y una cola derecha por atletas de fuerza superior.
+
+**BodyweightKg (Peso corporal)**
+
+Caja entre 67.7 y 98.97 kg, con la mediana (82.1) por debajo de la media (85.43), y el punto de mayor cantidad de outliers de las cuatro variables, comenzando desde ~150 kg hasta 201 kg. Esto es coherente con la asimetría moderada-alta (0.795), la más marcada entre las tres variables de fuerza/peso, reflejando la presencia de categorías superpesadas.
+
+
+
+# Analisis Exploratorio Bivariado
+Realizaremos un análisis entre nuestra variable respuesta 'BestDeadliftKg' (mejor peso muerto) y las demás variales numéricas.
+
+
+## Peso muerto vs Edad
+
+```{r}
+df %>%
+  ggplot(aes(x=Age,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Edad',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la Edad y el Peso muerto')
+```
+
+El peso muerto no muestra una tendencia lineal clara con la edad: aumenta hasta los 20-35 años y luego disminuye, sugiriendo una relación no lineal
+
+## Peso muerto vs Mejor Sentadilla
+
+```{r}
+df %>%
+  ggplot(aes(x=BestSquatKg,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Mejor Sentadilla',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la Mejor Sentadilla y el Peso muerto')
+```
+
+Se observa una tendencia creciente y muy marcada: a mayor peso en sentadilla, mayor peso muerto, con poca dispersión entre los puntos.
+
+## Peso muerto vs Peso corporal
+
+```{r}
+df %>%
+  ggplot(aes(x=BodyweightKg,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Peso corporal',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el Peso corporal y el Peso muerto')
+```
+
+Existe una tendencia creciente, aunque con más dispersión que en los otros levantamientos, indicando una relación más débil.
+
+## Peso muerto vs Mejor press banca
+
+```{r}
+df %>%
+  ggplot(aes(x=BestBenchKg,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Mejor press banca',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre el Mejor Press Banca y el Peso muerto')
+```
+
+Se observa una tendencia creciente y bien definida, similar a la sentadilla.
+
+# Variables categoricas 'Sex' y 'Equipament'
+
+
+## Diagrama de barras: Frecuencia de la variable 'Sex'
+
+```{r tablaSex }
+tabla_sexo <- df %>% 
+  count(Sex,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_sexo %>% 
+  ggplot(aes(x=Sex,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribución de la variable Sex')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw()
+```
+
+Se observa que la muestra está compuesta mayoritariamente por atletas de sexo masculino (12,771; 67.6%), mientras que las mujeres representan el 32.4% (6,129), evidenciando un desbalance entre ambos grupos.
+
+
+## Comparacion entre peso muerto y sexo (tabla)
+
+```{r}
+df %>%
+  group_by(Sex) %>%
+  summarise(
+    n = n(),
+    promedio = mean(BestDeadliftKg),
+    mediana  = median(BestDeadliftKg),
+    ds       = sd(BestDeadliftKg)
+  )
+```
+### Comparacion entre peso muerto y sexo (Caja de bigotes)
+```{r biboxplot}
+df %>% 
+ggplot(aes(x=Sex, y=BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0", color="black",outlier.color="darkred")+
+  stat_summary(fun=mean, geom='point', shape=20, size=3, color="green")+
+  labs(title = "Peso muerto segun sexo", x = "Sexo", y = "Peso muerto (Kg)") +
+  theme_bw()
+```
+
+Los hombres presentan una mediana de peso muerto considerablemente más alta (230 kg) que las mujeres (137.5 kg), con mayor dispersión (DS=48.93 vs 29.89). La media (punto verde) se ubica cerca de la mediana en ambos grupos, indicando distribuciones relativamente simétricas, y se observan algunos outliers en rojo oscuro en ambos sexos.
+
+## Diagrama de barras: Frecuencia de la variable 'Equipament'
+
+```{r tablaEquipment }
+tabla_eq <- df %>% 
+  count(Equipment,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_eq %>% 
+  ggplot(aes(x=Equipment,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribucion de la variable Equipment')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw()
+```
+
+Se observa que la mayoría de los atletas compite en la modalidad Raw (12,277, 65%), seguida por Wraps (3,965, 21%) y Single-ply (2,317, 12.3%), mientras que Multi-ply representa una minoría muy reducida (341, 1.8%).
+
+## Comparacion entre peso muerto y equipo (tabla)
+
+```{r}
+df %>%
+  group_by(Equipment) %>%
+  summarise(
+    n = n(),
+    promedio = mean(BestDeadliftKg),
+    mediana  = median(BestDeadliftKg),
+    ds       = sd(BestDeadliftKg)
+  )
+```
+
+### Comparacion entre peso muerto y equipo (Caja de bigotes)
+
+```{r biboxplot1 }
+df %>% 
+ggplot(aes(x=Equipment, y=BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0", color="black",outlier.color="darkred")+
+  stat_summary(fun=mean, geom='point', shape=20, size=3, color="green")+
+  labs(title = "Peso muerto segun equipo", x = "Equipment", y = "Peso muerto (Kg)") +
+  theme_bw()
+```
+
+Se observa que Multi-ply presenta la mediana más alta de peso muerto, seguido de Wraps y Single-ply, mientras que Raw presenta la mediana más baja, coherente con el menor nivel de asistencia mecánica de esta modalidad. Multi-ply también muestra outliers en ambos extremos (uno muy alto y dos bajos), y su caja es más angosta, indicando menor dispersión que los demás grupos. La media (punto verde) se ubica cerca de la mediana en todos los casos, sugiriendo distribuciones relativamente simétricas dentro de cada equipo.
+
+# Variables independientes vs variables independientes:
+
+## variables numéricas vs numéricas
+
+```{r pares, echo=FALSE}
+# Age vs BestSquatKg
+df %>%
+  ggplot(aes(x = Age, y = BestSquatKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Edad vs Sentadilla") +
+  theme_bw() -> p_1
+
+# Age vs BestBenchKg
+df %>%
+  ggplot(aes(x = Age, y = BestBenchKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Edad vs Press banca") +
+  theme_bw()-> p_2
+
+# Age vs BodyweightKg
+df %>%
+  ggplot(aes(x = Age, y = BodyweightKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Edad vs Peso corporal") +
+  theme_bw()-> p_3
+
+# BestSquatKg vs BestBenchKg
+df %>%
+  ggplot(aes(x = BestSquatKg, y = BestBenchKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Sentadilla vs Press banca") +
+  theme_bw()-> p_4
+
+# BestSquatKg vs BodyweightKg
+df %>%
+  ggplot(aes(x = BestSquatKg, y = BodyweightKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Sentadilla vs Peso corporal") +
+  theme_bw()-> p_5
+
+# BestBenchKg vs BodyweightKg
+df %>%
+  ggplot(aes(x = BestBenchKg, y = BodyweightKg)) +
+  geom_point(alpha = 0.4, color = "darkblue") +
+  labs(title = "Press banca vs Peso corporal") +
+  theme_bw()-> p_6
+
+p_1+p_2+p_3+p_4+p_5+p_6
+
+```
+
+## Variables categoricas vs numéricas 
+
+### Sex vs variables numericas
+
+```{r sexo-todas, echo=FALSE}
+# Sex vs Age
+
+df %>%
+  ggplot(aes(x = Sex, y = Age, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Edad según sexo", x = "Sexo", y = "Edad") +
+  theme_bw() ->b1
+
+# Sex vs BestSquatKg
+df %>%
+  ggplot(aes(x = Sex, y = BestSquatKg, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor sentadilla según sexo", x = "Sexo", y = "Sentadilla (Kg)") +
+  theme_bw()->b2
+
+# Sex vs BodyweightKg
+df %>%
+  ggplot(aes(x = Sex, y = BodyweightKg, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Peso corporal según sexo", x = "Sexo", y = "Peso corporal (Kg)") +
+  theme_bw()->b3
+
+# Sex vs BestBenchKg
+df %>%
+  ggplot(aes(x = Sex, y = BestBenchKg, fill = Sex)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor press banca según sexo", x = "Sexo", y = "Press banca (Kg)") +
+  theme_bw()->b4
+
+b1+b2+b3+b4
+```
+
+### Equipamiento vs variables numericas
+
+
+```{r eq-todas, echo=FALSE}
+# Equipment vs Age
+df %>%
+  ggplot(aes(x = Equipment, y = Age, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Edad según equipo", x = "Equipment", y = "Edad") +
+  theme_bw()->e1
+
+# Equipment vs BestSquatKg
+df %>%
+  ggplot(aes(x = Equipment, y = BestSquatKg, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor sentadilla según equipo", x = "Equipment", y = "Sentadilla (Kg)") +
+  theme_bw()->e2
+
+# Equipment vs BodyweightKg
+df %>%
+  ggplot(aes(x = Equipment, y = BodyweightKg, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Peso corporal según equipo", x = "Equipment", y = "Peso corporal (Kg)") +
+  theme_bw()->e3
+
+# Equipment vs BestBenchKg
+df %>%
+  ggplot(aes(x = Equipment, y = BestBenchKg, fill = Equipment)) +
+  geom_boxplot(fill="#797bb0", color="black", outlier.color = "darkred") +
+  stat_summary(fun = mean, geom = "point", shape = 20, size = 3, color = "green3") +
+  labs(title = "Mejor press banca según equipo", x = "Equipment", y = "Press banca (Kg)") +
+  theme_bw()->e4
+
+e1+e2+e3+e4
+```
+
+### Equipamiento vs Sexo
+```{r eq-sexo, echo=FALSE}
+
+ggplot(df, aes(x = Sex, fill = Equipment)) +
+  geom_bar(position = "fill") +
+  scale_fill_manual(values = c(
+    "Raw" = "lightskyblue2",
+    "Wraps" = "steelblue4",
+    "Single-ply" = "lightskyblue3",
+    "Multi-ply" = "steelblue"
+  )) +
+  scale_y_continuous(
+    labels = scales::label_percent()
+  ) +
+  labs(
+    title = "Distribución porcentual del equipamiento según sexo",
+    x = "Sexo",
+    y = "Porcentaje",
+    fill = "Equipamiento"
+  ) +
+  theme_bw()
+
+```
+
+El gráfico muestra la distribución porcentual de los tipos de equipamiento utilizados por los atletas según su sexo.
+
+Se observa que el equipamiento **Raw** es el más utilizado en ambos grupos, con una proporción del 69.70 % en mujeres y del 62.68 % en hombres.
+
+Por otra parte, el equipamiento **Wraps** presenta una mayor proporción de uso en hombres (23.09 %) que en mujeres (16.58 %). En cuanto a **Single-ply**, las proporciones son similares, con un 12.84 % en mujeres y un 11.98 % en hombres.
+
+Finalmente, **Multi-ply** es el equipamiento menos frecuente en ambos sexos, con porcentajes inferiores al 3 %.
+
+
+# Ingenieria de caracterizacion (feature engineering)
+
+La ingeniería de características (feature engineering) es el proceso de crear nuevas variables a partir de las que ya tenemos, con el fin de que representen mejor la información del dataset. Esto es útil porque, como se vio en la sección anterior, existen variables (como BestSquatKg y BestBenchKg) se mueven de forma muy parecida entre sí (visto en el grafico correspondiente a estas variables), ya que en el fondo ambas miden la fuerza de levantamiento del atleta. Usarlas tal cual en un modelo puede generar redundancia, así que en este caso las vamos a utilizar para crear variables que combinen esta información y que aporten un dato más claro, como por ejemplo conocer cuánto puede levantar (con exito) realmente el atleta, en lugar de manejar los totales por separado.
+
+## Variables seleccionadas
+
+```{r fe_variables, echo=FALSE}
+p_4+p_5+p_6
+```
+
+Se seleccionaron estas variables debido a la tendencia creciente (comportamiento lineal) que se obtuvo en la seccion anterior, donde se comparó cada variable independiente con respecto a las demás. Estas variables son las que presentan mayor riesgo de estar midiendo lo mismo, es decir, generando una multicolinealidad. Esto sirve como base para justificar por qué se crearon variables nuevas en lugar de usar los totales originales.
+
+
+## Nuevas variables: 'upper_lower_total', 'ratio_squat_peso', 'ratio_bench_peso'
+
+```{r ingenieriacaracterizacion}
+df_nuevo <- df %>%
+  mutate(
+    # Fuerza combinada de tren superior + inferior
+    upper_lower_total = BestSquatKg + BestBenchKg,
+    
+    # ratio: cuánto pesa lo que levanta en sentadilla, relativo a su propio peso corporal
+    ratio_squat_peso = BestSquatKg / BodyweightKg,
+    
+    # Ratio: lo mismo para press banca
+    ratio_bench_peso = BestBenchKg / BodyweightKg
+  )
+```
+
+
+### Verificar si no hay valores nulos:
+
+```{r}
+df_nuevo %>%
+  summarise(across(everything(), ~ sum(is.na(.)),.names="NA_{.col}")) %>%
+  kable(caption = " Verificar datos faltantes ") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+
+## Realizamos el resumen estadistico de nuestras nuevas variables
+
+```{r caracterizacionnueva}
+df_nuevo %>% 
+  select(Age, BestDeadliftKg, upper_lower_total, ratio_squat_peso, ratio_bench_peso) %>% 
+  summary() %>%  
+kable(caption = " Dataset luego de realizar feature engineering") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"),
+                full_width = TRUE) %>%
+  scroll_box(width = "100%")
+```
+
+
+La variable upper_lower_total representa la fuerza combinada del tren superior e inferior del atleta, sumando su mejor sentadilla y su mejor press de banca. Esta variable presenta una media de 296.1 kg y una mediana de 292.5 kg.
+
+Los ratios ratio_squat_peso y ratio_bench_peso expresan cuántos kilogramos levanta el atleta por cada kilogramo de su propio peso corporal, permitiendo comparar la fuerza relativa entre atletas de distinto tamaño corporal. Se observa que la media de ratio_squat_peso es de 2.10, lo que indica que, en promedio, los atletas levantan aproximadamente 2.10 veces su propio peso corporal en sentadilla. La dispersión (DS = 0.61) sugiere que existe una variabilidad moderada en esta capacidad relativa entre los distintos atletas de la muestra.
+
+
+## Veamos los graficos de las variables de nuestro dataframe nuevo.
+
+```{r numericas_i, message=FALSE, echo=FALSE}
+# 'Age'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = Age))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p1
+
+# 'BestDeadliftkg'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = BestDeadliftKg))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p2
+  
+  # 'upper_lower_total'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = upper_lower_total))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p3
+  
+  # 'ratio_squat_peso'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = ratio_squat_peso))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p4
+  
+  # 'ratio_bench_peso'
+  df_nuevo %>% 
+  ggplot(aes(x =" ",y = ratio_bench_peso))+
+  geom_boxplot(fill="#797bb0",color="darkblue",
+               outlier.color='darkred')+
+  stat_summary(fun=mean, geom='point', shape=20,
+               size=3, color='green')+ 
+  theme_bw()+
+    theme(axis.title.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank())->p5
+  
+  p1+p2+p3+p4+p5
+```
+
+
+```{r categoricas_i, message=FALSE, echo=FALSE}
+
+tabla_sexo <- df_nuevo %>% 
+  count(Sex,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_sexo %>% 
+  ggplot(aes(x=Sex,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribución de la variable Sex')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw() ->g1
+
+tabla_eq <- df %>% 
+  count(Equipment,name="n") %>% 
+  mutate(Porcentaje=round((n/sum(n))*100,1),
+         Etiqueta= paste0(n,"(",Porcentaje,"%)"))
+tabla_eq %>% 
+  ggplot(aes(x=Equipment,y=n))+
+  geom_col(fill="#797bb0",width=0.6)+
+  geom_text(aes(label=Etiqueta),vjust=-0.5,size=4.5)+
+  facet_wrap(~'Distribución de la variable Equipment')+
+  scale_y_continuous(expand=expansion(mult=c(0,0.15)))+
+  theme_bw()->g2
+
+g1+g2
+```
+
+
+
+## Verificamos el éxito de la ingenieria de caracterizacion
+Comparamos las nuevas variables (y las que no fueron eliminadas) con respecto a nuestra variable respuesta ‘BestDeadliftKg’
+
+```{r, echo=FALSE}
+df_nuevo %>%
+  ggplot(aes(x=Age,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Edad',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la Edad y el Peso muerto') ->c1
+
+df_nuevo %>%
+  ggplot(aes(x=upper_lower_total ,y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='Fuerza combinada ',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Dispersion entre la fuerza combinada y el Peso muerto') ->c2 
+
+df_nuevo %>%
+  ggplot(aes(x=ratio_squat_peso, y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='En sentadilla',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Levantamiento (en sentadilla) relativo al peso corporal - Peso muerto') ->c3
+
+df_nuevo %>%
+  ggplot(aes(x=ratio_bench_peso, y=BestDeadliftKg))+
+  geom_point(alpha=0.4,color='darkblue')+
+  labs(x='En banca',y='Peso muerto')+
+  theme_bw()+
+  facet_grid(.~'Levantamiento (en banca) relativo al peso corporal -  Peso muerto') ->c4
+```
+```{r, echo=FALSE}
+c1
+```
+
+Muestra una relación no lineal y una asociación lineal prácticamente nula. La mayor concentración de datos y los valores máximos de peso muerto se ubican en el rango de 20 a 35 años. A partir de los 40–45 años se aprecia una tendencia decreciente en las marcas alcanzadas, junto con una menor densidad de competidores en edades avanzadas. 
+
+```{r, echo=FALSE}
+c2
+```
+
+Muestra una relación lineal positiva sumamente fuerte. A medida que aumenta la fuerza combinada del atleta (sentadilla + banca), el peso muerto levantado incrementa de manera directa y proporcional. Esta variable sintética sintetiza con alta precisión la capacidad de fuerza absoluta total del competidor. 
+
+```{r, echo=FALSE}
+c3
+```
+
+Presenta una tendencia ascendente moderada-alta. Refleja que los atletas con mayor fuerza relativa en el tren inferior (mayor ratio $\text{sentadilla}/\text{peso corporal}$) tienden a lograr marcas más altas en peso muerto.
+
+```{r, echo=FALSE}
+c4
+```
+
+Muestra una asociación positiva moderada-alta. Un mayor rendimiento relativo en el press de banca (ratio $\text{banca}/\text{peso corporal}$) se asocia con un desempeño superior en peso muerto, evidenciando que la fuerza relativa del tren superior guarda una relación estrecha con el levantamiento máximo. 
+
+
+# Tabla de contingencia
+
+Utilizaremos la prueba de independencia chi-cuadrado, ya que se cuenta con una única muestra de atletas (no poblaciones separadas y predefinidas), clasificada según dos variables categóricas: Sexo y Equipamiento. El objetivo es determinar si estas dos variables están asociadas entre sí o si, por el contrario, son independientes.
+
+$$H_0: \text{El sexo del atleta y el tipo de equipamiento utilizado son independientes}$$
+
+$$H_1: \text{El sexo del atleta y el tipo de equipamiento utilizado están asociados (no son independientes)}$$
+
+```{r}
+tabla <- table(df_nuevo$Sex, df_nuevo$Equipment)
+tabla
+```
+
+## Crear tabla de contingencia
+```{r}
+observados <- matrix(c(54, 4272, 787, 1016,
+                        287, 8005, 1530, 2949),
+                      nrow = 2, byrow = TRUE,
+                      dimnames = list(
+                        Sexo = c("F", "M"),
+                        Equipamiento = c("Multi-ply", "Raw", "Single-ply", "Wraps")
+                      )) 
+observados
+```
+
+## Totales por fila, columna y total general
+```{r}
+fila_totales <- rowSums(observados)
+col_totales <- colSums(observados)
+total_general <- sum(observados)
+
+fila_totales
+col_totales
+total_general
+```
+
+## Frecuencias esperadas bajo H0
+```{r}
+esperados <- outer(fila_totales, col_totales, FUN = function(f, c) f * c / total_general)
+dimnames(esperados) <- dimnames(observados)
+esperados
+```
+
+## Estadistico Chi-cuadrado
+```{r}
+chi_cuadrado <- sum((observados - esperados)^2 / esperados)
+chi_cuadrado
+
+df_gl <- (nrow(observados) - 1) * (ncol(observados) - 1)
+df_gl
+
+alpha <- 0.05
+valor_critico <- qchisq(1 - alpha, df_gl)
+valor_critico
+```
+
+## Conclusion
+```{r}
+# comparación
+rechaza_H0 <- chi_cuadrado > valor_critico
+
+if (rechaza_H0) {
+  print("Se rechaza H0: existe una asociacion significativa entre el sexo del atleta y el tipo de equipamiento utilizado.")
+} else {
+  print("No se rechaza H0: no hay evidencia suficiente para afirmar que el sexo y el equipamiento están asociados.")
+}
+```
+ 
+```{r}
+
+valor_p <- pchisq(chi_cuadrado, df_gl, lower.tail = FALSE)
+valor_p
+```
+
+## Verificamos con chisq.test
+```{r}
+chisq.test(observados)
+```
+
+```{r}
+chi_test <- chisq.test(tabla)
+chi_test$expected
+```
+Se aplicó la prueba de independencia chi-cuadrado para evaluar si el sexo del atleta y el tipo de equipamiento utilizado en competencia son independientes. El estadístico calculado ($χ²=160.55$, $gl=3$) supera ampliamente el valor crítico ($χ²=7.81$) para un nivel de significancia α=0.05, resultado que se confirma con un valor p prácticamente nulo. Por lo tanto, se rechaza H0, concluyendo que existe una asociación estadísticamente significativa entre el sexo del atleta y el tipo de equipamiento empleado.
+
+
+# Estadistica paramétrica y no paramétrica
+
+En esta sección realizaremos la estadistica inferencial para responder el objetivo general y los objetivos especificos.
+
+## ¿Existe una diferencia significativa en el peso muerto promedio entre atletas de sexo masculino y femenino?
+
+$$
+H_0: \mu_1 = \mu_2 \quad 
+\text {(el peso muerto promedio es igual entre hombres y mujeres)  } 
+\text{ vs } 
+$$
+$$
+\quad H_1: \mu_1 \neq \mu_2 \text { (el peso muerto promedio difiere entre hombres y mujeres)}
+$$
+
+### Verifiquemos supuestos de normalidad
+
+```{r}
+ks.test(df_nuevo$BestDeadliftKg, "pnorm", mean=mean(df_nuevo$BestDeadliftKg), sd=sd(df_nuevo$BestDeadliftKg))
+```
+La prueba de normalidad de Kolmogorov-Smirnov aplicada sobre la variable de rendimiento en peso muerto (BestDeadliftKg) indicó una desviación estadísticamente significativa de la distribución normal ($D = 0.058$, p < 0.001). En consecuencia, se rechazó la hipótesis nula de normalidad, justificando la selección de pruebas no paramétricas para la comparación de grupos.
+
+Por esta razon, procedemos a utilizar la prueba de Wilcox (para datos no pareados) y realizar la comparacion (utilizando la mediana).
+
+### comparación de grupos con método no paramétrico
+```{r}
+wilcox.test(BestDeadliftKg ~ Sex, data = df_nuevo)
+```
+
+La prueba de suma de rangos de Wilcoxon indicó una diferencia estadísticamente
+significativa en el rendimiento de peso muerto entre hombres y mujeres
+($W = 3967723$, p < 0.001). Dado que el $p\text{-valor} < \alpha$ ($0.05$), se rechaza
+la hipótesis nula $H_0$. Los resultados confirman que la mediana del peso muerto
+levantado por los hombres es significativamente mayor a la alcanzada por las mujeres.
+
+## ¿Existen diferencias significativas en el peso muerto promedio entre los distintos tipos de equipamiento utilizados por los atletas?
+
+
+$$
+H_0: \mu_1=\mu_2=\mu_3=\mu_4\\
+H_1: \exists\ i\neq j:\ \mu_i\neq\mu_j
+
+$$
+
+
+
+### Verifiquemos el supuesto de normalidad de la variable 'Equipment'
+
+```{r}
+df_nuevo %>%
+  group_by(Equipment) %>%
+  summarise(ks = ks.test(BestDeadliftKg, "pnorm", 
+                          mean = mean(BestDeadliftKg), 
+                          sd = sd(BestDeadliftKg))$p.value)
+```
+
+Se aplicó la prueba de Kolmogorov-Smirnov para evaluar el supuesto de normalidad de la variable BestDeadliftKg en cada categoría de Equipment. Los resultados muestran que el grupo Multi-ply presenta un valor $p = 0.069$, mayor al nivel de significancia $α = 0.05$, por lo que este grupo individualmente no presenta evidencia de desviación significativa de la normalidad. Sin embargo, los grupos Raw, Single-ply y Wraps presentaron valores p extremadamente pequeños (p < 0.001 en los tres casos), rechazando el supuesto de normalidad. Dado que no se cumple la normalidad en todos los grupos simultáneamente, se descarta el uso de ANOVA (paramétrico) y se opta por una alternativa no paramétrica, es decir, la prueba de Kruskal-Wallis (comprando medianas).
+
+### comparacion de grupos con método no paramétrico
+
+```{r}
+#como NO se cumplen los supuestos utilizamos Kruskal-Wallis
+kruskal.test(BestDeadliftKg ~ factor(Equipment), data = df)
+
+```
+
+El resultado ($χ²=626.13$, $gl=3$, p<0.001) indica que se rechaza la hipótesis nula, existiendo evidencia estadística suficiente para afirmar que al menos un tipo de equipamiento presenta un peso muerto con una distribución significativamente distinta a los demás. Al observar las medianas por grupo, se aprecia que Multi-ply presenta la mediana más alta (251.7 kg), seguido de Wraps (225 kg) y Single-ply (210 kg), mientras que Raw presenta la mediana más baja (195 kg), lo cual es coherente con el mayor nivel de asistencia mecánica que ofrece cada tipo de equipamiento.
+
+
+
+
+# Coeficiente de correlación
+
+En esta sección se analizará la relación entre pares de variables numéricas del estudio mediante un coeficiente de correlación. Se verificará el supuesto de normalidad de las variables seleccionadas, con el fin de determinar si corresponde aplicar el coeficiente de Pearson (en caso de cumplirse la normalidad) o el coeficiente de Spearman (en caso de no cumplirse la normalidad). Este análisis permitirá medir el grado y la dirección de la relación entre la variable respuesta BestDeadliftKg y las variables BodyweightKg y upper_lower_total, identificando así qué predictores presentan mayor relación con el rendimiento en peso muerto.
+
+## Correlación entre peso corporal y mejor peso muerto alcanzado
+
+### Veamos la distribucion entre ambas variables
+```{r}
+df_nuevo %>%
+  ggplot(aes(x = BodyweightKg, y = BestDeadliftKg)) +
+  geom_point(alpha = 0.3, color = 'darkblue') +
+  labs(x = 'Peso corporal (kg)', y = 'Mejor peso muerto (kg)',
+       title = 'Relación entre peso corporal y peso muerto máximo') +
+  theme_bw()
+```
+
+Se observa una tendencia creciente, es decir, a mayor peso corporal, mayor tiende a ser el peso muerto alcanzado (kg).
+
+### Supuesto de normalidad
+
+```{r}
+ks.test(df$BodyweightKg, "pnorm", mean = mean(df$BodyweightKg), sd = sd(df$BodyweightKg))
+ks.test(df$BestDeadliftKg, "pnorm", mean = mean(df$BestDeadliftKg), sd = sd(df$BestDeadliftKg))
+```
+Se aplicó la prueba de Kolmogorov-Smirnov para evaluar el supuesto de normalidad de las variables BodyweightKg y BestDeadliftKg, comparando su distribución contra una distribución normal con la misma media y desviación estándar de los datos. En ambos casos se obtuvo un valor p considerablemente menor a 0.05, por lo que se rechaza la hipótesis nula de normalidad para las dos variables. Es importante señalar que, dado que ambas variables presentan valores registrados con precisión limitada (decimales), se generaron múltiples observaciones con valores iguales, lo que produjo una advertencia de "empates"; esto no invalida el resultado, pero muestra una ligera desviación respecto al supuesto de continuidad exigido por esta prueba. En consecuencia, dado que ninguna de las dos variables cumple el supuesto de normalidad, se requiere aplicar el coeficiente de correlación de Spearman en lugar de Pearson para el análisis respectivo.
+
+
+### Coeficiente de correlación de Spearman
+
+$$
+H_0: ρs= 0 \quad \text{ (no hay relación monótona) vs } 
+$$
+$$
+\quad H_1: ρs \neq 0 \text { (existe relación monótona)}
+$$
+
+```{r}
+cor.test(df$BodyweightKg, df$BestDeadliftKg, method = "spearman", exact = FALSE)
+```
+
+El análisis de correlación de Spearman entre el peso corporal (BodyweightKg) y el mejor peso muerto alcanzado (BestDeadliftKg) mostró un coeficiente ρ=0.6701, lo que indica una correlación positiva moderada-alta; es decir, a mayor peso corporal del atleta, mayor tiende a ser el peso muerto máximo levantado. La prueba de significancia (S=371,210,431,086, p-valor<0.001) permitió rechazar la hipótesis nula de ausencia de relacion monotona, confirmando que la relación observada es estadísticamente significativa.
+
+
+## Correlación entre press banca + sentadilla y mejor peso muerto alcanzado.
+
+### Veamos la distribución entre ambas variables
+```{r}
+df_nuevo %>%
+  ggplot(aes(x = upper_lower_total, y = BestDeadliftKg)) +
+  geom_point(alpha = 0.3, color = 'darkblue') +
+  labs(x = 'Fuerza combinada (sentadilla + banca) en kg', y = 'Mejor peso muerto (kg)',
+       title = 'Relación entre fuerza combinada de tren superior/inferior y peso muerto') +
+  theme_bw()
+```
+
+Se observa una tendencia fuertemente creciente, con los puntos muy pegados a la línea de tendencia — mucho menos dispersos que en el gráfico anterior de BodyweightKg.
+
+### Supuesto de normalidad 
+
+```{r}
+ks.test(df_nuevo$upper_lower_total, "pnorm", mean = mean(df_nuevo$upper_lower_total), 
+        sd = sd(df_nuevo$upper_lower_total))
+ks.test(df_nuevo$BestDeadliftKg, "pnorm", mean = mean(df_nuevo$BestDeadliftKg), 
+        sd = sd(df_nuevo$BestDeadliftKg))
+```
+
+Comparando sus distribuciones contra una distribución normal con la misma media y desviación estándar de los datos, en ambos casos se obtuvo un valor p considerablemente menor a 0.05, por lo que se rechaza la hipótesis nula de normalidad para las dos variables. Por esta razon es necesario optar por el método de Spearman 
+
+### Coeficiente de correlación de Spearman
+
+
+$$
+H_0: ρs= 0 \quad \text{ (no hay relación monótona) vs } 
+$$
+$$
+\quad H_1: ρs \neq 0 \text { (existe relación monótona)}
+$$
+
+```{r}
+cor.test(df_nuevo$upper_lower_total, df_nuevo$BestDeadliftKg, method = "spearman")
+
+```
+El análisis de correlación de Spearman entre la fuerza combinada de tren superior e inferior (upper_lower_total) y el peso muerto máximo alcanzado (BestDeadliftKg) mostró un coeficiente ρ=0.9321, lo que indica una correlación positiva muy alta; es decir, a mayor fuerza combinada de sentadilla y press de banca, mayor es el peso muerto máximo levantado. La prueba de significancia (S=76,417,254,693, p-valor<0.001) permitió rechazar la hipótesis nula de ausencia de correlación, confirmando que la relación observada es estadísticamente significativa. Este resultado es más fuerte que el obtenido con BodyweightKg (ρ=0.6701), es coherente con la naturaleza de la variable upper_lower_total, ya que al combinar dos levantamientos que miden capacidades de fuerza muy parecidas a las del peso muerto, es esperable una asociación más estrecha con la variable respuesta.
+
+
+# Regresión Lineal Simple
+
+La regresión lineal simple (RLS) es un método estadístico que permite estudiar y cuantificar la relación lineal entre una variable explicativa y una variable respuesta mediante el método de mínimos cuadrados ordinarios. En este proyecto se aplica la regresión lineal simple para analizar cómo se relaciona la fuerza combinada de sentadilla y press de banca, considerada como variable explicativa $x$, con el mejor levantamiento en peso muerto, considerado como variable respuesta $y$.
+
+**¿Existe una relación lineal estadísticamente significativa entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto de los atletas de powerlifting?**
+
+
+El objetivo principal es determinar la dirección, magnitud y significancia estadística de esta relación, identificando si un aumento en la fuerza combinada está asociado con un incremento en el rendimiento en peso muerto.
+
+## Recapitulando los valores obtenidos:
+
+```{r echo=TRUE, message=FALSE}
+# Variables seleccionadas
+
+datos_rls <- df_nuevo %>%
+  select(upper_lower_total, BestDeadliftKg)
+
+# Número de observaciones
+nrow(datos_rls)
+
+# Correlación lineal de Pearson
+cor(datos_rls$upper_lower_total,
+    datos_rls$BestDeadliftKg,
+    method = "pearson")
+
+# Diagrama de dispersión con recta de regresión
+ggplot(datos_rls,
+       aes(x = upper_lower_total,
+           y = BestDeadliftKg)) +
+  geom_point(alpha = 0.2, color = "darkblue") +
+  labs(
+    title = "Fuerza combinada vs. peso muerto",
+    x = "Sentadilla + press de banca (kg)",
+    y = "Mejor peso muerto (kg)"
+  ) +
+  theme_bw()
+
+```
+
+El coeficiente de correlación lineal de Pearson entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto fue de $r=0.912)$, lo que indica una relación lineal positiva y fuerte entre ambas variables.
+
+Esto significa que los atletas con mayores registros de fuerza combinada tienden a alcanzar mayores marcas en peso muerto.
+
+El diagrama de dispersión muestra una tendencia creciente.
+
+## Estimación de minimos cuadrados
+
+```{r minimos-cuadrados}
+
+# Seleccionar las variables
+datos_rls <- df_nuevo %>%
+  select(upper_lower_total, BestDeadliftKg) %>%
+  filter(is.finite(upper_lower_total),
+         is.finite(BestDeadliftKg))
+
+X <- datos_rls$upper_lower_total
+Y <- datos_rls$BestDeadliftKg
+n <- length(Y)
+
+# 2. Calcular las medias
+x_bar <- mean(X)
+y_bar <- mean(Y)
+
+# 3. Calcular Sxx y Sxy
+Sxx <- sum((X - x_bar)^2)
+Sxy <- sum((X - x_bar) * (Y - y_bar))
+
+# 4. Estimar los coeficientes
+beta1 <- Sxy / Sxx
+beta0 <- y_bar - beta1 * x_bar
+
+# 5. Ajustar el modelo con lm()
+modelo_rls <- lm(
+  BestDeadliftKg ~ upper_lower_total,
+  data = datos_rls
+)
+
+# 6. Presentar resultados en tabla
+tabla_parametros <- data.frame(
+  Parametro = c("Intercepto (beta_0)",
+                "Pendiente (beta_1)"),
+  Estimacion = c(beta0, beta1)
+)
+
+knitr::kable(
+  format= "html",
+  tabla_parametros,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+El modelo ajustado es:
+$$ \hat y_i = 58.1713+0.4827x_i $$
+
+El intercepto estimado es $\hat{\beta}_0=58.1713$, lo que indica que cuando la fuerza combinada de sentadilla y press de banca es igual a cero, el valor esperado del mejor levantamiento en peso muerto es de 58.1713 kg.
+
+Sin embargo, dado que este valor de fuerza combinada se encuentra fuera del rango observado, el intercepto no tiene una interpretación practica real en el contexto del estudio.
+
+La pendiente estimada es $\hat{\beta}_1=0.4827$, lo que indica que, por cada kilogramo adicional en la fuerza combinada de sentadilla y press de banca, se espera que el mejor levantamiento en peso muerto aumente aproximadamente 0.4827 kg, según el modelo de regresión lineal simple ajustado.
+
+
+## Estimación de la varianza
+```{r}
+## estimación de sigma
+S2=summary(modelo_rls)$sigma
+
+# 1. Valores ajustados
+Y_hat <- fitted(modelo_rls)
+
+# 2. Residuos
+e <- residuals(modelo_rls)
+
+# 3. Suma de cuadrados de los errores
+SSE <- sum(e^2)
+
+# 4. Grados de libertad
+gl <- n - 2
+
+# 5. Estimación de la varianza
+MSE <- SSE / gl
+
+# 6. Error estándar de la regresión
+RSE <- sqrt(MSE)
+
+# 7. Tabla de resultados
+tabla_varianza <- data.frame(
+  Estadistico = c("SSE", "MSE", "RSE"),
+  Valor = c(SSE, MSE, RSE)
+)
+
+knitr::kable(
+  format= "html",
+  tabla_varianza,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+El cuadrado medio residual obtenido fue $MSE=647.1591$, que corresponde a la estimación de la varianza de los errores del modelo de regresión lineal simple.Por otra parte, se obtuvo un error estándar de la regresión de $RSE=25.4393$ kg, el cual representa una estimación de la desviación estándar de los errores del  delo.
+
+Este último resultado se expresa en kilogramos, las mismas unidades de la variable respuesta `BestDeadliftKg`.
+
+
+## Coeficiente de determinacion
+
+```{r}
+
+# PASO 4.3: COEFICIENTE DE DETERMINACIÓN
+
+# 1. Suma total de cuadrados
+SST <- sum((Y - y_bar)^2)
+
+# 2. Suma de cuadrados de regresión
+SSR <- SST - SSE
+
+# 3. Coeficiente de determinación
+R2 <- SSR / SST
+
+# 4. Verificar el resultado usando lm()
+R2_lm <- summary(modelo_rls)$r.squared
+
+# 5. Mostrar resultados en tabla
+tabla_ajuste <- data.frame(
+  Estadistico = c(
+    "SST",
+    "SSR",
+    "SSE",
+    "R cuadrado",
+    "R cuadrado con lm"
+  ),
+  Valor = c(
+    SST,
+    SSR,
+    SSE,
+    R2,
+    R2_lm
+  )
+)
+
+knitr::kable(
+  format= "html",
+  tabla_ajuste,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+El coeficiente de determinación obtenido fue $R^2=0.8326$, lo que indica que aproximadamente el 83.26 % de la variabilidad observada en el mejor levantamiento en peso muerto (`BestDeadliftKg`) es explicada por el modelo de regresión lineal simple que utiliza la fuerza combinada de sentadilla y press de banca (`upper_lower_total`) como variable explicativa. Esto implica que el 16.74 % restante de la variabilidad no es explicado por el modelo ajustado.
+
+Este resultado demuestra que el modelo explica una proporción elevada de la variabilidad de la variable respuesta.
+
+
+## Intervalos de confianza para el modelo de regresión lineal simple
+
+### Intervalo de confianza para la pendiente beta_1:
+
+```{r ic beta1}
+# Nivel de significancia
+alpha_ic <- 0.05
+
+# Información del modelo
+n_ic <- nobs(modelo_rls)
+gl_ic <- df.residual(modelo_rls)
+
+x_ic <- model.frame(modelo_rls)$upper_lower_total
+x_bar_ic <- mean(x_ic)
+
+Sxx_ic <- sum((x_ic - x_bar_ic)^2)
+
+# Estimación de sigma cuadrado
+sigma2_ic <- sum(resid(modelo_rls)^2) / gl_ic
+
+# Valor crítico t
+t_crit_ic <- qt(1 - alpha_ic/2, df = gl_ic)
+
+# Estimación de la pendiente
+b1_ic <- unname(coef(modelo_rls)[2])
+
+# Error estándar de beta1
+se_b1_ic <- sqrt(sigma2_ic / Sxx_ic)
+
+# Límites del intervalo
+LI_b1 <- b1_ic - t_crit_ic * se_b1_ic
+LS_b1 <- b1_ic + t_crit_ic * se_b1_ic
+
+# Tabla de resultados
+tabla_ic_b1 <- data.frame(
+  "Parámetro" = "Pendiente (beta1)",
+  "Estimación" = b1_ic,
+  "Error estándar" = se_b1_ic,
+  "Límite inferior" = LI_b1,
+  "Límite superior" = LS_b1,
+  check.names = FALSE
+)
+
+knitr::kable(
+  format= "html",
+  tabla_ic_b1,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+El intervalo de confianza del 95 % para la pendiente es:
+$$
+{\beta_1\in(0.4796,\ 0.4858)}
+$$
+
+Como ambos límites son positivos y el intervalo no contiene el valor cero, el procedimiento indica que la pendiente es estadísticamente diferente de cero.
+
+### Intervalo de confianza para el intercepto beta_0:
+
+```{r ic beta0}
+b0_ic <- unname(coef(modelo_rls)[1])
+
+# Error estándar del intercepto
+se_b0_ic <- sqrt(
+  sigma2_ic * (1/n_ic + x_bar_ic^2/Sxx_ic)
+)
+
+# Límites del intervalo
+LI_b0 <- b0_ic - t_crit_ic * se_b0_ic
+LS_b0 <- b0_ic + t_crit_ic * se_b0_ic
+
+# Tabla de resultados
+tabla_ic_b0 <- data.frame(
+  "Parámetro" = "Intercepto (beta0)",
+  "Estimación" = b0_ic,
+  "Error estándar" = se_b0_ic,
+  "Límite inferior" = LI_b0,
+  "Límite superior" = LS_b0,
+  check.names = FALSE
+)
+
+knitr::kable(
+  format= "html",
+  tabla_ic_b0,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+
+El intervalo obtenido es:
+$${\beta_0\in(57.1879,\ 59.1546)}$$
+
+Como el intervalo no contiene el cero, el procedimiento indica que el intercepto es significativamente diferente de cero.
+
+Sin embargo, no podemos darle una interpretación práctica directa, porque una fuerza combinada de cero kilogramos no se encuentra dentro del rango observado en nuestro estudio.
+
+
+## Intervalo de confianza para sigma^2
+
+```{r ic sigma2}
+
+alpha <- 0.05
+n <- nobs(modelo_rls)
+
+sigma <- summary(modelo_rls)$sigma
+
+gl <- n - 2
+
+lim_inf <- gl * sigma^2 / qchisq(1-alpha/2, gl)
+
+lim_sup <- gl * sigma^2 / qchisq(alpha/2, gl)
+
+# Tabla de resultados
+tabla_ic_sigma2 <- data.frame(
+  lim_inf = lim_inf,
+  sigma2_hat = sigma^2,
+  lim_sup = lim_sup
+)
+
+knitr::kable(
+  format= "html",
+  tabla_ic_sigma2,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+
+El resultado es:
+$${\sigma^2\in(634.3061,\ 660.4086)}$$
+
+Esto significa que, con una confianza del 95 %, estimamos que la varianza poblacional de los errores se encuentra entre 634.3061 y 660.4086 kg², bajo los supuestos de la regresión lineal simple.
+
+## Pruebas de hipótesis
+
+### Prueba de hipótesis para beta1
+
+$$
+H_0: \beta_1 = 0\\
+H_1: \beta_1 \neq 0
+$$
+```{r}
+alpha <- 0.05
+n <- nobs(modelo_rls)
+
+# Variable explicativa utilizada
+x <- model.frame(modelo_rls)$upper_lower_total
+x_bar <- mean(x)
+
+# Sxx
+Sxx <- sum((x - x_bar)^2)
+
+# Pendiente
+b1 <- unname(coef(modelo_rls)[2])
+
+# Estimación de sigma
+sigma_hat <- summary(modelo_rls)$sigma
+
+# Varianza y error estándar de beta1
+var_b1 <- sigma_hat^2 / Sxx
+se_b1 <- sqrt(var_b1)
+
+# H0: beta1 = 0 vs H1: beta1 != 0
+t_calc <- (b1 - 0) / se_b1
+gl <- n - 2
+
+# Valor p bilateral
+p_valor <- 2 * pt(-abs(t_calc), df = gl)
+
+# Tabla de resultados
+resultados_b1 <- data.frame(
+  beta1_hat = b1,
+  se_beta1 = se_b1,
+  estadistico_t = t_calc,
+  gl = gl,
+  p_value = format.pval(p_valor, digits = 4)
+)
+
+knitr::kable(
+  format= "html",
+  resultados_b1,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+Se realizó una prueba de hipótesis bilateral para determinar si la pendiente del modelo de regresión lineal simple es significativamente diferente de cero. Se obtuvo un estadístico $t=306.5628$, con 18898 grados de libertad y un valor $p<0.001$. Dado que el valor p es menor que el nivel de significancia $\alpha=0.05$, se rechaza la hipótesis nula $H_0:\beta_1=0$.
+
+Por lo tanto, existe evidencia estadísticamente significativa de una relación lineal entre la fuerza combinada de sentadilla y press de banca y el mejor levantamiento en peso muerto. Además, como la pendiente estimada es positiva ($\hat{\beta}_1=0.4827$), se concluye que, según el modelo ajustado, mayores valores de fuerza combinada están asociados con mayores valores esperados de peso muerto.
+
+
+### Prueba de hipótesis para beta0:
+
+$$
+H_0: \beta_0 = 0 \\
+H_1: \beta_0 \neq 0
+$$
+
+```{r}
+
+b0 <- unname(coef(modelo_rls)[1])
+
+# Varianza y error estándar de beta0
+var_b0 <- sigma_hat^2 * (1/n + x_bar^2/Sxx)
+se_b0 <- sqrt(var_b0)
+
+# H0: beta0 = 0 vs H1: beta0 != 0
+t_calc <- (b0 - 0) / se_b0
+gl <- n - 2
+
+# Valor p bilateral
+p_valor <- 2 * pt(-abs(t_calc), df = gl)
+
+# Tabla de resultados
+resultados_b0 <- data.frame(
+  beta0_hat = b0,
+  se_beta0 = se_b0,
+  estadistico_t = t_calc,
+  gl = gl,
+  p_value = format.pval(p_valor, digits = 4)
+)
+
+knitr::kable(
+  format= "html",
+  resultados_b0,
+  digits = 4,
+  row.names = FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+Se realizó una prueba de hipótesis bilateral para determinar si el intercepto del modelo de regresión lineal simple es significativamente diferente de cero.Se obtuvo un estadístico $t=115.9534$, con 18898 grados de libertad y un valor $p<0.001$. Como el valor p es menor que el nivel de significancia $\alpha=0.05$, se rechaza la hipótesis nula $H_0:\beta_0=0$.
+
+Por lo tanto, existe evidencia estadísticamente significativa de que el intercepto poblacional es diferente de cero.
+
+
+### Prueba de hipótesis para sigma^2
+
+$$
+H_0: \sigma^2 = \sigma_0^2\\
+H_1: \sigma^2 \neq \sigma_0^2
+$$
+
+Para la varianza de los errores del modelo se obtuvo una estimación de $\hat{\sigma}^2=647.1591$ kg² y un intervalo de confianza del 95 % de $(634.3061,\ 660.4086)$ kg². No se realizó una prueba de hipótesis para este parámetro, debido a que no se cuenra con un valor de referencia $\sigma_0^2$ previamente establecido que permita formular una hipótesis nula realmente fundamentada.
+
+En consecuencia, se presenta la estimación de la varianza y su intervalo de confianza, sujetos al cumplimiento de los supuestos del modelo de regresión lineal simple.
+
+
+# Análisis de los errores
+
+Para evaluar la adecuación del modelo de regresión lineal simple se analizan los supuestos de independencia, normalidad, media cero y varianza constante de los errores
+
+```{r errores, message=FALSE, warning=FALSE}
+
+r <- residuals(modelo_rls)
+alpha <- 0.05
+n <- nobs(modelo_rls)
+
+# Tabla resumen de los residuales
+resumen_residuales <- data.frame(
+  "Observaciones" = n,
+  "Media residual" = mean(r),
+  "Desviación residual" = sd(r),
+  "Mínimo" = min(r),
+  "Máximo" = max(r),
+  check.names = FALSE
+)
+knitr::kable(resumen_residuales, digits=4, row.names=FALSE, format= "html") %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+```
+
+## Supuestos de los errores
+
+El modelo supone que los errores son independientes, siguen una distribución normal con media cero y presentan varianza constante.
+
+### Independencia de los errores
+
+
+$$
+H_0: \rho=0\\
+H_1: \rho\neq0
+$$
+
+```{r independencia_grafica, warning=FALSE}
+df_resid <- data.frame(
+  Orden = seq_along(r),
+  Residuales = r
+)
+
+ggplot(df_resid, aes(x=Orden, y=Residuales)) +
+  geom_point(color="blue", alpha=0.35, size=0.6) +
+  geom_hline(yintercept=0, linetype="dashed", color="black") +
+  labs(title="Residuales vs orden de registro",
+       x="Orden de las observaciones (no necesariamente temporal)",
+       y="Residuales (kg)") +
+  theme_bw()
+```
+
+```{r durbin_watson, message=FALSE, warning=FALSE}
+
+dw <- car::durbinWatsonTest(modelo_rls, simulate=FALSE)
+dw_est <- as.numeric(dw$dw[1])
+dw_p <- if (is.null(dw$p)) NA_real_ else as.numeric(dw$p[1])
+
+tabla_dw <- data.frame(
+  "Estadístico Durbin-Watson" = dw_est,
+  "Valor p" = if (is.na(dw_p)) "No disponible" else
+    format.pval(dw_p, digits=4, eps=0.001),
+  check.names=FALSE
+)
+knitr::kable(tabla_dw, digits=4, row.names=FALSE, format= "html") %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+```
+
+Se obtuvo un estadístico de Durbin-Watson aproximadamente igual a 1.996, cercano al valor de referencia 2, que en observaciones ordenadas temporalmente sería compatible con la ausencia de autocorrelación de primer orden.Sin embargo, los datos del proyecto corresponden a registros de levantamientos de powerlifting y no constituyen una serie temporal con un orden cronológico definido. Por consiguiente, el resultado de Durbin-Watson no permite establecer la independencia de los errores. En este contexto, la independencia debe analizarse principalmente a partir de la estructura de los datos y del proceso de recolección, considerando especialmente la posible presencia de registros de un mismo atleta en diferentes competencias.
+
+Por lo tanto, con la información disponible, no es posible confirmar que se cumple el supuesto de independencia.
+
+## Normalidad de los errores
+
+
+$$
+H_0: \varepsilon_i \sim N(0,\sigma^2)\\
+H_1: \varepsilon_i \not\sim N(0,\sigma^2)
+$$
+
+```{r lilliefors, message=FALSE, warning=FALSE}
+
+prueba_lillie <- lillie.test(r)
+
+tabla_lillie <- data.frame(
+  "Observaciones" = length(r),
+  "Estadístico D" = unname(prueba_lillie$statistic),
+  "Valor p" = format.pval(prueba_lillie$p.value, digits=4, eps=0.001),
+  "Decisión" = if (prueba_lillie$p.value < alpha) "Rechazar H0" else "No rechazar H0",
+  check.names=FALSE
+)
+knitr::kable(
+  format= "html",
+  tabla_lillie,
+  digits=4,
+  row.names=FALSE
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options=c("striped", "hover"),
+    full_width=FALSE
+  )
+```
+
+```{r qqplot}
+qqnorm(r, main="Gráfico Q-Q de los residuales", cex=0.45, pch=16)
+qqline(r, col="blue", lwd=2)
+```
+
+La prueba de Lilliefors (Kolmogorov-Smirnov corregida), aplicada a los residuos del modelo, arrojó un valor p menor que 0.05, por lo tanto, se rechaza la hipótesis nula: existe evidencia de desviación respecto a la normalidad. En el gráfico Q-Q, las desviaciones de los puntos respecto a la recta de referencia, especialmente en las colas, permiten evaluar la importancia visual de esta falta de normalidad. Con un tamaño muestral tan elevado, una prueba formal puede ser sensible a desviaciones pequeñas.
+
+## Media cero de los errores
+
+$$
+H_0: \mu_{\varepsilon}=0\\
+H_1: \mu_{\varepsilon}\neq0
+$$
+```{r media_cero}
+
+media_res <- mean(r)
+
+prueba_media <- t.test(r, mu=0)
+
+tabla_media <- data.frame(
+  "Media de residuales" = media_res,
+  "Estadístico t" = unname(prueba_media$statistic),
+  "Valor p" = format.pval(prueba_media$p.value, digits=4),
+  check.names=FALSE
+)
+knitr::kable(tabla_media, digits=8, row.names=FALSE, format= "html") %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+```
+
+La media muestral de los residuales fue aproximadamente 0.
+
+## Varianza constante de los errores (homocedasticidad)
+
+$$
+H_0: \sigma^2\ \text{es constante}\\
+H_1: \sigma^2\ \text{no es constante}
+$$
+
+```{r homocedasticidad_grafica, warning=FALSE}
+# Residuales frente a valores ajustados (gráfico del profesor)
+diag_df <- data.frame(
+  Ajustados = fitted(modelo_rls),
+  Residuales = resid(modelo_rls),
+  ResStd = rstandard(modelo_rls)
+)
+
+ggplot(diag_df, aes(x=Ajustados, y=Residuales)) +
+  geom_point(size=0.6, alpha=0.3) +
+  geom_hline(yintercept=0, linetype="dashed") +
+  geom_smooth(method="loess", se=FALSE, span=0.9, color="blue") +
+  labs(title="Residuales vs valores ajustados",
+       x="Valores ajustados de peso muerto (kg)",
+       y="Residuales (kg)") +
+  theme_bw()
+```
+
+```{r bp, message=FALSE, warning=FALSE}
+
+bp <- lmtest::bptest(modelo_rls)
+
+tabla_bp <- data.frame(
+  "Prueba" = c("Breusch-Pagan (lmtest)"),
+  "Estadístico" = c(unname(bp$statistic)),
+  "Grados de libertad" = c(unname(bp$parameter)),
+  "Valor p" = c(format.pval(bp$p.value, digits=4, eps=0.001)),
+  check.names=FALSE
+)
+knitr::kable(tabla_bp, digits=4, row.names=FALSE, format= "html") %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+```
+
+La prueba de Breusch-Pagan presentó un valor p inferior a 0.001. Dado que este valor es menor que el nivel de significancia de 0.05, se rechaza la hipótesis nula de varianza constante. Por tanto, existe evidencia estadísticamente significativa de heterocedasticidad en los errores del modelo de regresión lineal simple. Esto indica que la variabilidad de los errores no permanece constante y representa una limitación para la inferencia estadística clásica.
+
+
+# Transformaciones para mejorar el ajuste del modelo
+
+Con el propósito de mejorar el ajuste de la regresión lineal simple, se decidió aplicar una transformación de raíz cuadrada a la variable explicativa (X), correspondiente a la fuerza combinada de sentadilla y press de banca. De esta manera, el nuevo modelo se expresa como:
+
+$$
+y_i=\beta_0+\beta_1\sqrt{x_i}+\varepsilon_i
+$$
+
+El modelo original presentó un coeficiente de determinación de (R^2=0.8326) y un error estándar residual de 25.4393 kg. Aunque estos resultados indican una elevada capacidad explicativa, el análisis de residuos reveló problemas de normalidad y heterocedasticidad, lo que limita la validez de la inferencia estadística clásica, por lo tanto, pasaremos a aplicar transformación. 
+
+
+```{r modelo_transformado_completo, echo=FALSE, message=FALSE, warning=FALSE}
+
+# ====================================================
+# MODELO TRANSFORMADO: Y ~ sqrt(X)
+# ====================================================
+
+# 1. DATOS Y AJUSTE DEL MODELO
+
+datos_transformados <- datos_rls[
+  is.finite(datos_rls$BestDeadliftKg) &
+  is.finite(datos_rls$upper_lower_total) &
+  datos_rls$upper_lower_total >= 0,
+]
+
+modelo_transformado <- lm(
+  BestDeadliftKg ~ sqrt(upper_lower_total),
+  data = datos_transformados
+)
+
+# 2. COEFICIENTES Y MEDIDAS DE AJUSTE
+
+resumen <- summary(modelo_transformado)
+coeficientes <- resumen$coefficients
+
+beta0 <- unname(coef(modelo_transformado)[1])
+beta1 <- unname(coef(modelo_transformado)[2])
+
+n <- nobs(modelo_transformado)
+gl <- df.residual(modelo_transformado)
+
+r <- residuals(modelo_transformado)
+y <- model.response(model.frame(modelo_transformado))
+
+SSE <- sum(r^2)
+SST <- sum((y - mean(y))^2)
+SSR <- SST - SSE
+MSE <- SSE / gl
+RSE <- sqrt(MSE)
+
+R2 <- resumen$r.squared
+R2_ajustado <- resumen$adj.r.squared
+
+# 3. INTERVALOS DE CONFIANZA DE LOS PARAMETROS
+
+ic_beta <- confint(modelo_transformado, level = 0.95)
+
+# Intervalo de confianza de sigma^2
+ic_sigma2 <- c(
+  gl * MSE / qchisq(0.975, gl),
+  gl * MSE / qchisq(0.025, gl)
+)
+
+# 4. PRUEBAS DE HIPOTESIS CLASICAS
+
+t_beta0 <- coeficientes[1, "t value"]
+t_beta1 <- coeficientes[2, "t value"]
+
+p_beta0 <- coeficientes[1, "Pr(>|t|)"]
+p_beta1 <- coeficientes[2, "Pr(>|t|)"]
+
+F_modelo <- unname(resumen$fstatistic[1])
+gl1 <- unname(resumen$fstatistic[2])
+gl2 <- unname(resumen$fstatistic[3])
+
+p_F <- pf(
+  F_modelo, gl1, gl2,
+  lower.tail = FALSE
+)
+
+# 5. INFERENCIA ROBUSTA PARA LA PENDIENTE (HC3)
+
+vcov_robusta <- sandwich::vcovHC(
+  modelo_transformado, type = "HC3"
+)
+
+se_robusto <- sqrt(diag(vcov_robusta))[2]
+
+z_robusto <- beta1 / se_robusto
+p_robusto <- 2 * pnorm(
+  abs(z_robusto), lower.tail = FALSE
+)
+
+ic_robusto <- beta1 + c(-1, 1) *
+  qnorm(0.975) * se_robusto
+
+# 6. ANALISIS DE LOS RESIDUOS
+
+# Normalidad: Lilliefors
+prueba_normalidad <- nortest::lillie.test(r)
+
+# Homocedasticidad: Breusch-Pagan
+prueba_bp <- lmtest::bptest(modelo_transformado)
+
+# Independencia: Durbin-Watson (solo exploratorio)
+prueba_dw <- lmtest::dwtest(modelo_transformado)
+
+# Estadisticos descriptivos
+media_r <- mean(r)
+desviacion_r <- sd(r)
+minimo_r <- min(r)
+maximo_r <- max(r)
+
+# 7. FUNCIONES PARA PRESENTAR RESULTADOS
+
+num <- function(x) sprintf("%.4f", as.numeric(x))
+
+intervalo <- function(x) {
+  sprintf("(%.4f, %.4f)", x[1], x[2])
+}
+
+valor_p <- function(p) {
+  if (p < 0.001) "< 0.001" else num(p)
+}
+
+decision <- function(p, conclusion_rechazo,
+                     conclusion_no_rechazo) {
+  if (p < 0.05) {
+    conclusion_rechazo
+  } else {
+    conclusion_no_rechazo
+  }
+}
+
+fila <- function(variable, valor) {
+  data.frame(
+    Variable = variable,
+    Valor = as.character(valor),
+    check.names = FALSE
+  )
+}
+
+# 8. TABLA COMPLETA DE RESULTADOS
+
+tabla_resultados <- do.call(rbind, list(
+
+  # MODELO
+  fila("Modelo",
+       "Y = beta0 + beta1 * sqrt(X)"),
+  fila("Observaciones", n),
+  fila("Intercepto (beta0)", num(beta0)),
+  fila("Pendiente (beta1)", num(beta1)),
+
+  # INTERVALOS DE CONFIANZA
+  fila("IC 95% de beta0",
+       intervalo(ic_beta[1, ])),
+  fila("IC 95% de beta1",
+       intervalo(ic_beta[2, ])),
+
+  # AJUSTE
+  fila("R2", num(R2)),
+  fila("R2 ajustado", num(R2_ajustado)),
+  fila("SST", num(SST)),
+  fila("SSR", num(SSR)),
+  fila("SSE", num(SSE)),
+  fila("MSE", num(MSE)),
+  fila("RSE (kg)", num(RSE)),
+  fila("IC 95% de sigma^2",
+       intervalo(ic_sigma2)),
+
+  # HIPOTESIS BETA0
+  fila("H0 para beta0", "beta0 = 0"),
+  fila("H1 para beta0", "beta0 != 0"),
+  fila("Estadistico t de beta0", num(t_beta0)),
+  fila("Valor p de beta0", valor_p(p_beta0)),
+  fila("Conclusion beta0",
+       decision(
+         p_beta0,
+         "Se rechaza H0: beta0 es distinto de cero",
+         "No se rechaza H0"
+       )),
+
+  # HIPOTESIS BETA1
+  fila("H0 para beta1", "beta1 = 0"),
+  fila("H1 para beta1", "beta1 != 0"),
+  fila("Estadistico t de beta1", num(t_beta1)),
+  fila("Valor p de beta1", valor_p(p_beta1)),
+  fila("Conclusion beta1",
+       decision(
+         p_beta1,
+         "Se rechaza H0: existe asociacion lineal en sqrt(X)",
+         "No se rechaza H0"
+       )),
+
+  # PRUEBA F
+  fila("Estadistico F", num(F_modelo)),
+  fila("Valor p de F", valor_p(p_F)),
+  fila("Conclusion prueba F",
+       decision(
+         p_F,
+         "Se rechaza H0: el modelo es significativo",
+         "No se rechaza H0"
+       )),
+
+  # INFERENCIA ROBUSTA
+  fila("Error estandar robusto HC3 de beta1",
+       num(se_robusto)),
+  fila("Valor p robusto de beta1",
+       valor_p(p_robusto)),
+  fila("IC robusto 95% de beta1",
+       intervalo(ic_robusto)),
+  fila("Conclusion robusta de beta1",
+       decision(
+         p_robusto,
+         "Existe evidencia de asociacion positiva",
+         "No hay evidencia suficiente de asociacion"
+       )),
+
+  # RESIDUOS
+  fila("Media residual", num(media_r)),
+  fila("Desviacion residual", num(desviacion_r)),
+  fila("Residuo minimo", num(minimo_r)),
+  fila("Residuo maximo", num(maximo_r)),
+
+  # NORMALIDAD
+  fila("Normalidad: prueba", "Lilliefors"),
+  fila("Normalidad: estadistico D",
+       num(prueba_normalidad$statistic)),
+  fila("Normalidad: valor p",
+       valor_p(prueba_normalidad$p.value)),
+  fila("Normalidad: conclusion",
+       decision(
+         prueba_normalidad$p.value,
+         "Se rechaza H0: no hay normalidad",
+         "No se rechaza la normalidad"
+       )),
+
+  # HOMOCEDASTICIDAD
+  fila("Homocedasticidad: prueba", "Breusch-Pagan"),
+  fila("Homocedasticidad: estadistico BP",
+       num(prueba_bp$statistic)),
+  fila("Homocedasticidad: valor p",
+       valor_p(prueba_bp$p.value)),
+  fila("Homocedasticidad: conclusion",
+       decision(
+         prueba_bp$p.value,
+         "Se rechaza H0: existe heterocedasticidad",
+         "No se rechaza la varianza constante"
+       )),
+
+  # MEDIA CERO
+  fila("Media cero: conclusion",
+       if (abs(media_r) < 1e-8) {
+         "Media residual cercana a cero por construccion"
+       } else {
+         "Revisar la media residual"
+       }),
+
+  # INDEPENDENCIA
+  fila("Independencia: estadistico DW",
+       num(prueba_dw$statistic)),
+  fila("Independencia: conclusion",
+       "No verificable sin un orden pertinente de las observaciones")
+))
+
+# 9. MOSTRAR LA TABLA 
+
+knitr::kable(
+  tabla_resultados,
+  row.names = FALSE, format= "html"
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover"),
+    full_width = FALSE
+  )
+
+```
+
+
+El modelo transformado mediante la raíz cuadrada de la fuerza combinada presentó un coeficiente de determinación de 0.8549, explicando aproximadamente el 85.49 % de la variabilidad observada en el mejor levantamiento en peso muerto. El error estándar residual fue de 23.6844 kg, lo que representa una mejora respecto al modelo original.
+
+La pendiente estimada fue positiva, con un valor aproximado de 16.7719. Su prueba de significancia clásica presentó un valor p inferior a 0.001, por lo que se rechazó la hipótesis nula de que el coeficiente es igual a cero. Esto indica una asociación positiva estadísticamente significativa entre la raíz cuadrada de la fuerza combinada y el rendimiento en peso muerto.
+
+Sin embargo, el análisis de residuos mostró evidencia de falta de normalidad y heterocedasticidad, por lo que no se cumplen todos los supuestos clásicos de regresión. Debido a esto, se complementó la inferencia de la pendiente mediante errores estándar robustos HC3.
+
+En conclusión, se selecciona el modelo con transformación de raíz cuadrada debido a su mayor capacidad explicativa y menor error estándar residual, conservando la variable respuesta en kilogramos. Sin embargo, se reconoce que la transformación no soluciona todos los problemas identificados en los residuos, por lo que sus resultados inferenciales deberán interpretarse con precaución.
+
+
+```{r rlm-helpers, echo=FALSE, message=FALSE, warning=FALSE}
+# Funciones auxiliares para presentar las tablas de la regresion multiple
+options(knitr.kable.NA = "")
+
+tabla_bonita <- function(x, caption = NULL, digits = 4) {
+  knitr::kable(x, format = "html", digits = digits,
+               caption = caption, row.names = FALSE) %>%
+    kableExtra::kable_styling(
+      bootstrap_options = c("striped", "hover", "condensed"),
+      full_width = FALSE
+    )
+}
+
+fmt_p <- function(p) ifelse(p < 0.001, "< 0.001", sprintf("%.4f", p))
+
+si_no <- function(x) ifelse(x, "Sí", "No")
+
+tabla_coef <- function(modelo, vcov. = NULL, caption = NULL) {
+  if (is.null(vcov.)) {
+    ct <- summary(modelo)$coefficients
+  } else {
+    ct <- unclass(lmtest::coeftest(modelo, vcov. = vcov.))
+  }
+  out <- data.frame(
+    Coeficiente = rownames(ct),
+    `Estimación` = as.numeric(ct[, 1]),
+    `Error estándar` = as.numeric(ct[, 2]),
+    `Estadístico t` = as.numeric(ct[, 3]),
+    `Valor p` = fmt_p(as.numeric(ct[, 4])),
+    check.names = FALSE
+  )
+  tabla_bonita(out, caption = caption)
+}
+
+tabla_ajuste_modelo <- function(modelo, caption = NULL) {
+  s <- summary(modelo)
+  f <- unname(s$fstatistic)
+  out <- data.frame(
+    Medida = c("R²", "R² ajustado", "Error estándar residual (kg)",
+               "Estadístico F", "GL numerador", "GL denominador",
+               "Valor p (F)"),
+    Valor = c(sprintf("%.4f", s$r.squared),
+              sprintf("%.4f", s$adj.r.squared),
+              sprintf("%.4f", s$sigma),
+              sprintf("%.2f", f[1]),
+              sprintf("%d", as.integer(f[2])),
+              sprintf("%d", as.integer(f[3])),
+              fmt_p(pf(f[1], f[2], f[3], lower.tail = FALSE)))
+  )
+  tabla_bonita(out, caption = caption)
+}
+
+tabla_vif <- function(modelo, caption = NULL) {
+  v <- car::vif(modelo)
+  if (is.matrix(v)) {
+    out <- data.frame(Variable = rownames(v),
+                      GVIF = as.numeric(v[, 1]),
+                      GL = as.numeric(v[, 2]),
+                      `GVIF^(1/(2·GL))` = as.numeric(v[, 3]),
+                      check.names = FALSE)
+  } else {
+    out <- data.frame(Variable = names(v), VIF = as.numeric(v))
+  }
+  tabla_bonita(out, caption = caption)
+}
+
+tabla_matriz <- function(m, caption = NULL, cientifica = FALSE, digits = 4) {
+  nombres <- dimnames(m)
+  if (cientifica) {
+    m <- matrix(format(as.vector(m), scientific = TRUE, digits = 3),
+                nrow = nrow(m))
+  } else {
+    m <- round(m, digits)
+  }
+  dimnames(m) <- nombres
+  if (is.null(colnames(m))) {
+    colnames(m) <- if (ncol(m) == 1) "Valor" else paste0("V", seq_len(ncol(m)))
+  }
+  knitr::kable(m, format = "html", caption = caption) %>%
+    kableExtra::kable_styling(
+      bootstrap_options = c("striped", "hover", "condensed"),
+      full_width = FALSE
+    ) %>%
+    kableExtra::scroll_box(width = "100%")
+}
+```
+
+
+# Regresion lineal multiple
+
+
+## Analisis de multicolinealidad
+
+
+### Matriz de correlaciones
+
+```{r rlm-correlaciones}
+correlaciones_rlm <- cor(df_nuevo[, c(
+  "Age",
+  "BestSquatKg",
+  "BestBenchKg",
+  "BodyweightKg"
+)])
+
+knitr::kable(
+  round(correlaciones_rlm, 4), format= "html",
+  caption = "Matriz de correlaciones entre predictores"
+) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = c("striped", "hover", "condensed"),
+    full_width = FALSE
+  )
+```
+
+La matriz de correlaciones muestra una asociacion positiva muy fuerte entre BestSquatKg y BestBenchKg, con un coeficiente de correlacion de 0.9057.
+
+Asimismo, el peso corporal presenta una correlacion de 0.6473 con el mejor levantamiento en sentadilla y de 0.6588 con el mejor press de banca.
+
+Por otro lado, la edad presenta correlaciones debiles con las demas variables cuantitativas.
+
+Estos resultados permiten identificar una posible problematica de multicolinealidad entre los levantamientos de sentadilla y press de banca, debido a que ambas variables representan capacidades fisicas estrechamente relacionadas.
+
+### Ajuste del modelo completo
+
+```{r rlm-completo}
+modelo_completo <- lm(
+  BestDeadliftKg ~ Age + BestSquatKg +
+    BestBenchKg + BodyweightKg + Sex + Equipment,
+  data = df_nuevo
+)
+
+tabla_coef(modelo_completo,
+           caption = "Coeficientes del modelo completo")
+
+tabla_ajuste_modelo(modelo_completo,
+                    caption = "Medidas de ajuste del modelo completo")
+```
+
+El modelo completo presenta un coeficiente de determinacion de 0.8712, lo que indica que aproximadamente el 87.12% de la variabilidad observada en peso muerto es explicada por el conjunto de predictores seleccionados.
+
+La variable Age presenta un valor p aproximado de 0.908, superior al nivel de significancia del 5%. Por tanto, bajo la inferencia clasica, no existe evidencia suficiente para afirmar que su coeficiente sea diferente de cero en este modelo.
+
+### Factor de inflacion de varianza
+
+```{r rlm-vif}
+tabla_vif(modelo_completo,
+          caption = "Factor de inflación de varianza del modelo completo")
+```
+
+Los resultados confirman la existencia de multicolinealidad importante entre BestSquatKg y BestBenchKg, cuyos valores VIF superan el umbral orientativo de 5.
+
+En contraste, Age y BodyweightKg presentan valores inferiores a dicho umbral.
+
+Esta situacion es coherente con la elevada correlacion observada entre ambos levantamientos y respalda la evaluacion de una alternativa que utilice la variable de fuerza combinada construida anteriormente.
+
+Para las variables categoricas con varios grados de libertad, el GVIF ajustado permite evaluar la inflacion de varianza teniendo en cuenta su dimensionalidad.
+
+## Seleccion del modelo
+
+
+```{r rlm-transformado}
+modelo_transformado_rlm <- lm(
+  BestDeadliftKg ~ sqrt(upper_lower_total) +
+    Age + BodyweightKg + Sex + Equipment,
+  data = df_nuevo
+)
+
+tabla_coef(modelo_transformado_rlm,
+           caption = "Coeficientes del modelo transformado")
+
+tabla_ajuste_modelo(modelo_transformado_rlm,
+                    caption = "Medidas de ajuste del modelo transformado")
+
+tabla_vif(modelo_transformado_rlm,
+          caption = "VIF / GVIF del modelo transformado")
+```
+
+El modelo transformado presenta un coeficiente de determinacion de 0.8744, superior al obtenido por el modelo completo con los levantamientos separados.
+
+La transformacion permite representar una relacion no lineal entre la fuerza combinada y el peso muerto, conservando la linealidad respecto a los coeficientes del modelo.
+
+En el modelo transformado, para las variables categoricas se evalua el GVIF ajustado, GVIF^(1/(2*Df)), cuyo umbral equivalente a un VIF de 5 es aproximadamente 2.24.
+
+Al reemplazar los levantamientos separados por la fuerza combinada, se elimina la multicolinealidad entre sentadilla y press de banca observada en el modelo completo.
+
+### Seleccion mediante el criterio AIC
+
+```{r rlm-stepwise}
+modelo_step_original <- MASS::stepAIC(
+  modelo_completo,
+  direction = "both",
+  trace = FALSE
+)
+
+modelo_step_transformado <- MASS::stepAIC(
+  modelo_transformado_rlm,
+  direction = "both",
+  trace = FALSE
+)
+```
+
+```{r rlm-comparacion-aic}
+aic_resultado <- AIC(
+  modelo_completo,
+  modelo_step_original,
+  modelo_transformado_rlm
+)
+
+tabla_aic <- data.frame(
+  Modelo = c("Modelo completo",
+             "Stepwise (original)",
+             "Modelo transformado"),
+  `Parámetros (gl)` = aic_resultado$df,
+  AIC = aic_resultado$AIC,
+  check.names = FALSE
+)
+
+tabla_bonita(tabla_aic, caption = "Comparación de modelos según el criterio AIC")
+```
+
+En el modelo original, el procedimiento Stepwise favorece la eliminacion de la variable Age, reduciendo ligeramente el criterio AIC.
+
+Sin embargo, el modelo transformado presenta un AIC considerablemente inferior, con una diferencia aproximada de 477.90 unidades respecto al modelo original reducido.
+
+Por tanto, se selecciona el modelo transformado, debido a que representa la alternativa mas favorable entre los modelos considerados segun el criterio AIC.
+
+En este modelo se conservan la edad, el peso corporal, el sexo, el equipamiento y la raiz cuadrada de la fuerza combinada.
+
+```{r rlm-modelo-optimo}
+modelo_optimo_rlm <- modelo_step_transformado
+
+tabla_bonita(
+  data.frame(
+    `Fórmula del modelo seleccionado` =
+      paste(deparse(formula(modelo_optimo_rlm)), collapse = " "),
+    check.names = FALSE
+  )
+)
+
+tabla_coef(modelo_optimo_rlm,
+           caption = "Coeficientes del modelo seleccionado")
+
+tabla_ajuste_modelo(modelo_optimo_rlm,
+                    caption = "Medidas de ajuste del modelo seleccionado")
+```
+
+## Estimacion matricial de los coeficientes
+
+### Construccion de la matriz de diseno
+
+```{r rlm-matriz-diseno}
+X_rlm <- model.matrix(modelo_optimo_rlm)
+
+y_rlm <- model.response(
+  model.frame(modelo_optimo_rlm)
+)
+
+tabla_matriz(head(X_rlm), digits = 3,
+             caption = "Primeras 6 filas de la matriz de diseño X")
+
+tabla_bonita(
+  data.frame(
+    Observación = 1:6,
+    `Peso muerto observado (kg)` = as.numeric(head(y_rlm)),
+    check.names = FALSE
+  ),
+  caption = "Primeros 6 valores del vector de respuesta y"
+)
+
+tabla_bonita(
+  data.frame(
+    Elemento = c("Filas de X (observaciones)",
+                 "Columnas de X (coeficientes)",
+                 "Longitud de y"),
+    Valor = c(nrow(X_rlm), ncol(X_rlm), length(y_rlm))
+  ),
+  caption = "Dimensiones de X y y"
+)
+```
+
+La matriz de diseno presenta dimensiones de 18900 por 8, correspondientes a las 18900 observaciones y los ocho coeficientes del modelo, incluyendo el intercepto.
+
+Las variables categoricas Sex y Equipment se representan mediante variables indicadoras.
+
+Las categorias de referencia son F para Sex y Multi-ply para Equipment, de acuerdo con el orden de los niveles de los factores.
+
+### Operaciones matriciales
+
+```{r rlm-operaciones}
+XtX_rlm <- t(X_rlm) %*% X_rlm
+
+XtX_inv_rlm <- solve(XtX_rlm)
+
+Xty_rlm <- t(X_rlm) %*% y_rlm
+
+tabla_matriz(XtX_rlm, digits = 2,
+             caption = "Matriz X'X")
+
+tabla_matriz(XtX_inv_rlm, cientifica = TRUE,
+             caption = "Matriz (X'X)^-1 (notación científica)")
+
+tabla_matriz(Xty_rlm, digits = 2,
+             caption = "Vector X'y")
+```
+
+La matriz $X^TX$ presenta dimensiones de 8 por 8, mientras que $X^Ty$ corresponde a un vector columna de dimension 8.
+
+### Estimacion de los coeficientes
+
+```{r rlm-beta}
+beta_hat_rlm <- XtX_inv_rlm %*% Xty_rlm
+
+tabla_bonita(
+  data.frame(
+    Coeficiente = rownames(beta_hat_rlm),
+    `Estimación matricial` = as.vector(beta_hat_rlm),
+    `Estimación con lm()` = as.vector(coef(modelo_optimo_rlm)),
+    check.names = FALSE
+  ),
+  caption = "Coeficientes estimados: método matricial vs lm()"
+)
+```
+
+### Interpretacion de los coeficientes
+
+Fuerza combinada: por cada incremento de una unidad en la raiz cuadrada de la fuerza combinada, el peso muerto esperado aumenta aproximadamente 16.1093 kg, manteniendo constantes las demas variables.
+
+Esto no equivale a un incremento de 16.1093 kg de peso muerto por cada kilogramo adicional de fuerza combinada, debido a la transformacion aplicada.
+
+Por ejemplo, pasar de 300 a 310 kg de fuerza combinada representa un incremento esperado aproximado de 4.61 kg en peso muerto.
+
+Edad: por cada ano adicional de edad, el peso muerto esperado disminuye aproximadamente 0.045 kg, manteniendo constantes las demas caracteristicas.
+
+Aunque la asociacion es negativa, su magnitud es pequena desde una perspectiva practica.
+
+Peso corporal: por cada kilogramo adicional de peso corporal, el peso muerto esperado aumenta aproximadamente 0.0284 kg, manteniendo constantes los demas predictores.
+
+Sexo: los participantes de la categoria M presentan un peso muerto esperado aproximadamente 11.60 kg superior al de los participantes de la categoria F, al comparar individuos con los mismos valores de los demas predictores.
+
+Equipamiento Raw: los deportistas de esta categoria presentan un peso muerto esperado aproximadamente 35.37 kg superior al de la categoria Multi-ply, manteniendo constantes las demas variables.
+
+Este resultado es condicional a la fuerza combinada de sentadilla y press de banca, la cual en Multi-ply se encuentra aumentada por el equipo utilizado. Por ello, a igual fuerza combinada, el peso muerto esperado resulta mayor en Raw.
+
+Equipamiento Single-ply: presenta una diferencia esperada positiva de aproximadamente 18.04 kg respecto a Multi-ply.
+
+Equipamiento Wraps: presenta una diferencia esperada positiva de aproximadamente 31.62 kg respecto a Multi-ply.
+
+Estas diferencias corresponden a asociaciones condicionadas por el modelo y no demuestran que utilizar determinado equipamiento produzca causalmente un aumento del rendimiento.
+
+El intercepto no presenta una interpretacion practica relevante, puesto que corresponde a un escenario con predictores numericos iguales a cero, ajeno a las condiciones habituales de los deportistas.
+
+## Analisis de varianza
+
+### Valores ajustados y residuos
+
+```{r rlm-residuos}
+y_hat_rlm <- X_rlm %*% beta_hat_rlm
+
+e_rlm <- y_rlm - y_hat_rlm
+
+tabla_bonita(
+  data.frame(
+    Observación = 1:6,
+    `Peso muerto observado (kg)` = as.numeric(head(y_rlm)),
+    `Peso muerto ajustado (kg)` = as.numeric(head(y_hat_rlm)),
+    `Residuo (kg)` = as.numeric(head(e_rlm)),
+    check.names = FALSE
+  ),
+  caption = "Primeras 6 observaciones: valor observado, ajustado y residuo"
+)
+```
+
+Los residuos corresponden a las diferencias entre el peso muerto observado y el estimado mediante el modelo.
+
+$$
+e_i=y_i-\hat{y}_i
+$$
+
+### Sumas de cuadrados
+
+
+```{r rlm-sumas}
+SCT_rlm <- sum((y_rlm - mean(y_rlm))^2)
+
+SCReg_rlm <- sum((y_hat_rlm - mean(y_rlm))^2)
+
+SCE_rlm <- sum(e_rlm^2)
+
+tabla_bonita(
+  data.frame(
+    `Suma de cuadrados` = c("SCT (total)", "SCReg (regresión)",
+                            "SCE (error)", "SCReg + SCE"),
+    `Valor (kg²)` = c(SCT_rlm, SCReg_rlm, SCE_rlm, SCReg_rlm + SCE_rlm),
+    check.names = FALSE
+  ),
+  caption = "Sumas de cuadrados del modelo",
+  digits = 2
+)
+```
+
+La variabilidad total observada en peso muerto corresponde a 73050523.00 kg cuadrados, de los cuales 63877896.10 son explicados por el modelo y 9172626.90 corresponden a la variabilidad residual.
+
+
+### Coeficiente de determinacion
+
+```{r rlm-r2}
+R2_rlm <- SCReg_rlm / SCT_rlm
+
+tabla_bonita(
+  data.frame(
+    Medida = c("R²", "R² ajustado"),
+    Valor = c(R2_rlm, summary(modelo_optimo_rlm)$adj.r.squared)
+  ),
+  caption = "Coeficiente de determinación del modelo seleccionado"
+)
+```
+
+El coeficiente de determinacion obtenido es:
+
+$$
+R^2=0.8744
+$$
+
+Esto significa que aproximadamente el 87.44% de la variabilidad observada en el rendimiento de peso muerto es explicada por el modelo seleccionado.
+
+El 12.56% restante corresponde a variabilidad no explicada por los predictores considerados.
+
+### Grados de libertad
+
+```{r rlm-gl}
+n_rlm <- length(y_rlm)
+
+k_rlm <- ncol(X_rlm) - 1
+
+gl_reg_rlm <- k_rlm
+
+gl_error_rlm <- n_rlm - k_rlm - 1
+
+gl_total_rlm <- n_rlm - 1
+
+tabla_bonita(
+  data.frame(
+    Fuente = c("Regresión", "Error", "Total"),
+    `Grados de libertad` = c(gl_reg_rlm, gl_error_rlm, gl_total_rlm),
+    check.names = FALSE
+  ),
+  caption = "Grados de libertad"
+)
+```
+
+Los grados de libertad correspondientes a regresion, error y total son 7, 18892 y 18899, respectivamente.
+
+Aunque se utilizan cinco variables explicativas conceptuales, existen siete coeficientes asociados a los predictores debido a la representacion de las variables categoricas mediante indicadores.
+
+### Cuadrados medios
+
+
+```{r rlm-cm}
+CMReg_rlm <- SCReg_rlm / gl_reg_rlm
+
+CME_rlm <- SCE_rlm / gl_error_rlm
+
+tabla_bonita(
+  data.frame(
+    `Cuadrado medio` = c("CM Regresión", "CM Error"),
+    Valor = c(CMReg_rlm, CME_rlm),
+    check.names = FALSE
+  ),
+  caption = "Cuadrados medios",
+  digits = 2
+)
+```
+
+El cuadrado medio de regresion obtenido es aproximadamente 9125413.73, mientras que el cuadrado medio del error es 485.53.
+
+### Tabla ANOVA
+
+```{r rlm-anova}
+F_rlm <- CMReg_rlm / CME_rlm
+
+p_global_rlm <- pf(
+  F_rlm,
+  gl_reg_rlm,
+  gl_error_rlm,
+  lower.tail = FALSE
+)
+
+tabla_anova_rlm <- data.frame(
+  Fuente = c("Regresion", "Error", "Total"),
+  SC = c(SCReg_rlm, SCE_rlm, SCT_rlm),
+  GL = c(gl_reg_rlm, gl_error_rlm, gl_total_rlm),
+  CM = c(CMReg_rlm, CME_rlm, NA),
+  F = c(F_rlm, NA, NA),
+  Valor_p = c(fmt_p(p_global_rlm), NA, NA)
+)
+
+tabla_bonita(tabla_anova_rlm, caption = "Tabla ANOVA del modelo múltiple",
+             digits = 2)
+```
+
+## Prueba de significancia global
+
+Se plantean las siguientes hipotesis:
+
+$$
+H_0:\beta_1=\beta_2=\cdots=\beta_7=0
+$$
+
+$$
+H_1:\exists j,\ \beta_j\neq0
+$$
+
+Se establece un nivel de significancia de:
+
+$$
+\alpha=0.05
+$$
+
+
+```{r rlm-prueba-global}
+alpha_rlm <- 0.05
+
+F_critico_rlm <- qf(
+  1 - alpha_rlm,
+  gl_reg_rlm,
+  gl_error_rlm
+)
+
+tabla_bonita(
+  data.frame(
+    Elemento = c("Estadístico F",
+                 "Valor crítico F (α = 0.05)",
+                 "Valor p",
+                 "Decisión"),
+    Valor = c(sprintf("%.2f", F_rlm),
+              sprintf("%.4f", F_critico_rlm),
+              fmt_p(p_global_rlm),
+              ifelse(F_rlm > F_critico_rlm,
+                     "Se rechaza H0", "No se rechaza H0"))
+  ),
+  caption = "Prueba de significancia global"
+)
+```
+
+El estadistico F obtenido es aproximadamente 18794.76, muy superior al valor critico, con un valor p inferior a 0.001.
+
+Bajo los supuestos clasicos del modelo, se rechaza la hipotesis nula y se concluye que existe evidencia estadistica de que al menos uno de los coeficientes asociados a los predictores es diferente de cero.
+
+Por tanto, la prueba clasica indica que el modelo es globalmente significativo. No obstante, esta conclusion debe complementarse con el diagnostico de los supuestos y la inferencia robusta.
+
+## Estimacion de la varianza residual
+
+```{r rlm-sigma}
+sigma2_hat_rlm <- CME_rlm
+
+tabla_bonita(
+  data.frame(
+    Estadístico = c("Varianza residual (kg²)",
+                    "Error estándar residual (kg)"),
+    Valor = c(sigma2_hat_rlm, sqrt(sigma2_hat_rlm))
+  ),
+  caption = "Estimación de la varianza residual"
+)
+```
+
+La varianza residual estimada bajo el modelo clasico es aproximadamente 485.53 kg cuadrados.
+
+El error estandar residual es aproximadamente 22.03 kg, lo que representa la escala de dispersion de las observaciones alrededor del modelo ajustado.
+
+Este resultado no debe interpretarse como un error maximo de prediccion.
+
+## Matriz de varianzas y covarianzas
+
+
+```{r rlm-var-cov}
+V_beta_rlm <- sigma2_hat_rlm * XtX_inv_rlm
+
+tabla_matriz(V_beta_rlm, cientifica = TRUE,
+             caption = "Matriz de varianzas y covarianzas de los coeficientes")
+```
+
+La matriz estimada presenta dimensiones de 8 por 8. Los elementos de la diagonal principal corresponden a las varianzas estimadas de los coeficientes, mientras que los elementos restantes representan las covarianzas entre estimadores.
+
+Esta matriz corresponde a la formulacion clasica que supone homocedasticidad.
+
+### Errores estandar
+
+
+```{r rlm-ee}
+ee_rlm <- sqrt(diag(V_beta_rlm))
+
+tabla_bonita(
+  data.frame(
+    Coeficiente = names(ee_rlm),
+    `Error estándar` = as.numeric(ee_rlm),
+    check.names = FALSE
+  ),
+  caption = "Errores estándar clásicos de los coeficientes"
+)
+```
+
+## Prueba de significancia individual
+
+Para cada coeficiente se plantean las hipotesis:
+
+$$
+H_0:\beta_j=0
+$$
+
+$$
+H_1:\beta_j\neq0
+$$
+
+
+```{r rlm-t}
+t_rlm <- as.vector(beta_hat_rlm) / ee_rlm
+
+p_individual_rlm <- 2 * pt(
+  abs(t_rlm),
+  df = gl_error_rlm,
+  lower.tail = FALSE
+)
+
+tabla_t_rlm <- data.frame(
+  Coeficiente = rownames(beta_hat_rlm),
+  `Estimación` = as.vector(beta_hat_rlm),
+  `Error estándar` = as.numeric(ee_rlm),
+  `Estadístico t` = as.numeric(t_rlm),
+  `Valor p` = fmt_p(p_individual_rlm),
+  check.names = FALSE
+)
+
+tabla_bonita(tabla_t_rlm,
+             caption = "Pruebas de significancia individual (inferencia clásica)")
+```
+
+
+Todos los coeficientes presentan valores p inferiores a 0.05 en el analisis.
+
+Es importante destacar que Age no resultaba significativa en el modelo original, pero presenta una asociacion estadisticamente significativa en el modelo transformado. Esto evidencia que la significancia individual depende de la especificacion del modelo y de las variables incluidas.
+
+## Intervalos de confianza
+
+
+```{r rlm-ic}
+t_critico_rlm <- qt(
+  0.975,
+  df = gl_error_rlm
+)
+
+lim_inf_rlm <- as.vector(beta_hat_rlm) -
+  t_critico_rlm * ee_rlm
+
+lim_sup_rlm <- as.vector(beta_hat_rlm) +
+  t_critico_rlm * ee_rlm
+
+tabla_ic_rlm <- data.frame(
+  Coeficiente = rownames(beta_hat_rlm),
+  `Límite inferior` = as.numeric(lim_inf_rlm),
+  `Límite superior` = as.numeric(lim_sup_rlm),
+  check.names = FALSE
+)
+
+tabla_bonita(tabla_ic_rlm,
+             caption = "Intervalos de confianza del 95% (clásicos)")
+```
+
+
+Ninguno de los intervalos de confianza contiene el cero.
+
+La edad presenta una asociacion negativa con el peso muerto, mientras que la fuerza combinada transformada, el peso corporal y los indicadores de sexo y equipamiento presentan asociaciones positivas respecto a sus correspondientes unidades o categorias de referencia.
+
+### Verificacion mediante las funciones de R
+
+```{r rlm-verificacion}
+tabla_coef(modelo_optimo_rlm,
+           caption = "Verificación con summary(): coeficientes del modelo seleccionado")
+
+tabla_ajuste_modelo(modelo_optimo_rlm,
+                    caption = "Verificación con summary(): medidas de ajuste")
+
+ci_lm_rlm <- confint(modelo_optimo_rlm, level = 0.95)
+
+tabla_bonita(
+  data.frame(
+    Coeficiente = rownames(ci_lm_rlm),
+    `Límite inferior` = as.numeric(ci_lm_rlm[, 1]),
+    `Límite superior` = as.numeric(ci_lm_rlm[, 2]),
+    check.names = FALSE
+  ),
+  caption = "Verificación con confint()"
+)
+
+tabla_matriz(vcov(modelo_optimo_rlm), cientifica = TRUE,
+             caption = "Verificación con vcov(): matriz de varianzas y covarianzas")
+```
+
+```{r rlm-verificacion-numerica}
+tabla_bonita(
+  data.frame(
+    Comparación = c("Coeficientes (matricial vs lm)",
+                    "Matriz de varianzas y covarianzas (matricial vs vcov)",
+                    "SCE (matricial vs lm)"),
+    `¿Coinciden?` = si_no(c(
+      isTRUE(all.equal(as.vector(beta_hat_rlm),
+                       as.vector(coef(modelo_optimo_rlm)))),
+      isTRUE(all.equal(V_beta_rlm,
+                       vcov(modelo_optimo_rlm),
+                       check.attributes = FALSE)),
+      isTRUE(all.equal(SCE_rlm,
+                       sum(residuals(modelo_optimo_rlm)^2)))
+    )),
+    check.names = FALSE
+  ),
+  caption = "Verificación numérica de la estimación matricial"
+)
+```
+
+Las comparaciones numericas confirman que la estimacion matricial coincide con los resultados obtenidos mediante las funciones de R.
+
+
+## Diagnostico de los supuestos
+
+### Analisis grafico de los residuos
+
+```{r rlm-diagnostico, fig.width=10, fig.height=8}
+par(mfrow = c(2, 2))
+
+plot(modelo_optimo_rlm)
+
+par(mfrow = c(1, 1))
+```
+
+### Normalidad de los residuos
+
+Se plantean las hipotesis:
+
+$$
+H_0:\text{Los errores siguen una distribucion normal}
+$$
+
+$$
+H_1:\text{Los errores no siguen una distribucion normal}
+$$
+
+```{r rlm-normalidad}
+qqnorm(
+  residuals(modelo_optimo_rlm),
+  main = "Grafico Q-Q de los residuos"
+)
+
+qqline(
+  residuals(modelo_optimo_rlm),
+  col = "red",
+  lwd = 2
+)
+
+jb_rlm <- moments::jarque.test(
+  residuals(modelo_optimo_rlm)
+)
+
+tabla_bonita(
+  data.frame(
+    Prueba = "Jarque-Bera",
+    `Estadístico JB` = as.numeric(jb_rlm$statistic),
+    `Grados de libertad` = 2,
+    `Valor p` = fmt_p(jb_rlm$p.value),
+    `Decisión` = ifelse(jb_rlm$p.value < 0.05,
+                        "Se rechaza H0", "No se rechaza H0"),
+    check.names = FALSE
+  ),
+  caption = "Prueba de normalidad de los residuos (Jarque-Bera)",
+  digits = 2
+)
+```
+
+```{r rlm-asimetria-curtosis}
+tabla_bonita(
+  data.frame(
+    Medida = c("Asimetría", "Curtosis"),
+    Valor = c(moments::skewness(residuals(modelo_optimo_rlm)),
+              moments::kurtosis(residuals(modelo_optimo_rlm)))
+  ),
+  caption = "Forma de la distribución de los residuos"
+)
+```
+
+La prueba de Jarque-Bera presenta un estadistico aproximado de 60921.93 y un valor p inferior a 0.001.
+
+Por tanto, se rechaza la hipotesis de normalidad.
+
+Los residuos presentan una asimetria aproximada de -0.659 y una curtosis de 11.696, lo cual evidencia desviaciones respecto a una distribucion normal, particularmente por la presencia de colas pesadas.
+
+Dado el elevado tamano de la muestra, la falta de normalidad no invalida automaticamente la estimacion por minimos cuadrados, pero exige precaucion al interpretar la inferencia clasica.
+
+### Homocedasticidad
+
+La homocedasticidad supone que la varianza de los errores permanece constante.
+
+$$
+H_0:Var(\varepsilon_i\mid X)=\sigma^2
+$$
+
+$$
+H_1:\text{La varianza de los errores no es constante}
+$$
+
+```{r rlm-breusch-pagan}
+bp_rlm <- lmtest::bptest(modelo_optimo_rlm)
+
+tabla_bonita(
+  data.frame(
+    Prueba = "Breusch-Pagan",
+    `Estadístico` = as.numeric(bp_rlm$statistic),
+    `Grados de libertad` = as.numeric(bp_rlm$parameter),
+    `Valor p` = format(bp_rlm$p.value, scientific = TRUE, digits = 3),
+    `Decisión` = ifelse(bp_rlm$p.value < 0.05,
+                        "Se rechaza H0 (heterocedasticidad)",
+                        "No se rechaza H0"),
+    check.names = FALSE
+  ),
+  caption = "Prueba de homocedasticidad (Breusch-Pagan)",
+  digits = 2
+)
+```
+
+La prueba de Breusch-Pagan presenta un estadistico aproximado de 494.88, con 7 grados de libertad y un valor p cercano a:
+
+$$
+p=1.01\times10^{-102}
+$$
+
+Como el valor p es considerablemente inferior a 0.05, se rechaza la hipotesis nula y se concluye que existe evidencia de heterocedasticidad.
+
+En consecuencia, la varianza residual no permanece constante para todas las observaciones.
+
+Este resultado es coherente con las dificultades identificadas durante el analisis de regresion lineal simple. La transformacion de los predictores mejora el ajuste, pero no elimina completamente los problemas asociados a la distribucion de los errores.
+
+## Inferencia mediante errores estandar robustos
+
+Debido a la evidencia de heterocedasticidad, se utiliza una matriz de varianzas y covarianzas robusta HC3 para complementar la inferencia estadistica.
+
+```{r rlm-hc3}
+V_robusta_rlm <- sandwich::vcovHC(
+  modelo_optimo_rlm,
+  type = "HC3"
+)
+
+tabla_coef(modelo_optimo_rlm, vcov. = V_robusta_rlm,
+           caption = "Coeficientes con errores estándar robustos (HC3)")
+```
+
+Al utilizar errores estandar robustos, se mantienen los coeficientes estimados por minimos cuadrados, pero se modifican sus errores estandar y valores p.
+
+En particular, BodyweightKg pasa de presentar un valor p clasico aproximado de 0.003 a un valor p robusto de 0.019.
+
+A pesar de este incremento, su asociacion continua siendo estadisticamente significativa al nivel del 5%.
+
+Todos los coeficientes conservan su significancia individual bajo la inferencia robusta HC3, suponiendo independencia de las observaciones.
+
+### Intervalos de confianza robustos
+
+```{r rlm-ic-robustos}
+ee_robusto_rlm <- sqrt(diag(V_robusta_rlm))
+
+tabla_ic_robusto_rlm <- data.frame(
+  Coeficiente = names(coef(modelo_optimo_rlm)),
+  `Límite inferior` = as.numeric(coef(modelo_optimo_rlm) -
+    t_critico_rlm * ee_robusto_rlm),
+  `Límite superior` = as.numeric(coef(modelo_optimo_rlm) +
+    t_critico_rlm * ee_robusto_rlm),
+  check.names = FALSE
+)
+
+tabla_bonita(tabla_ic_robusto_rlm,
+             caption = "Intervalos de confianza robustos del 95% (HC3)")
+```
+
+```{r rlm-ic-robustos-verificacion}
+ci_rob_rlm <- lmtest::coefci(
+  modelo_optimo_rlm,
+  vcov. = V_robusta_rlm,
+  level = 0.95
+)
+
+tabla_bonita(
+  data.frame(
+    Coeficiente = rownames(ci_rob_rlm),
+    `Límite inferior` = as.numeric(ci_rob_rlm[, 1]),
+    `Límite superior` = as.numeric(ci_rob_rlm[, 2]),
+    check.names = FALSE
+  ),
+  caption = "Verificación con coefci(): intervalos robustos del 95%"
+)
+```
+
+Todos los intervalos robustos excluyen el cero, manteniendo las conclusiones sobre la significancia individual de los coeficientes.
+
+## Independencia de las observaciones y limitaciones
+
+La independencia de los errores constituye un supuesto relevante para la inferencia estadistica.
+
+El conjunto de datos presenta 3009 registros adicionales con nombres de deportistas repetidos, aunque los identificadores playerId son unicos.
+
+La coincidencia de nombres no permite determinar por si sola que se trate del mismo deportista. Sin embargo, existe la posibilidad de que algunas observaciones correspondan a participaciones repetidas de una misma persona.
+
+Por tanto, no puede garantizarse completamente la independencia de las observaciones utilizando unicamente la informacion disponible.
+
+Asimismo, la imputacion mediante la media puede reducir artificialmente la variabilidad de los predictores afectados y los procedimientos de seleccion de modelos pueden introducir incertidumbre adicional en la inferencia.
+
+Los resultados deben interpretarse principalmente como evidencia exploratoria de asociaciones estadisticas.
+
+## Comparacion entre regresion simple y multiple
+
+```{r rlm-comparacion-r2}
+modelo_simple_original_rlm <- lm(
+  BestDeadliftKg ~ upper_lower_total,
+  data = df_nuevo
+)
+
+modelo_simple_transformado_rlm <- lm(
+  BestDeadliftKg ~ sqrt(upper_lower_total),
+  data = df_nuevo
+)
+
+tabla_comparacion_rlm <- data.frame(
+  Modelo = c(
+    "Regresion simple original",
+    "Regresion simple transformada",
+    "Regresion multiple original",
+    "Regresion multiple transformada"
+  ),
+  R2 = c(
+    summary(modelo_simple_original_rlm)$r.squared,
+    summary(modelo_simple_transformado_rlm)$r.squared,
+    summary(modelo_completo)$r.squared,
+    summary(modelo_optimo_rlm)$r.squared
+  ),
+  R2_ajustado = c(
+    summary(modelo_simple_original_rlm)$adj.r.squared,
+    summary(modelo_simple_transformado_rlm)$adj.r.squared,
+    summary(modelo_completo)$adj.r.squared,
+    summary(modelo_optimo_rlm)$adj.r.squared
+  ),
+  Error_residual = c(
+    summary(modelo_simple_original_rlm)$sigma,
+    summary(modelo_simple_transformado_rlm)$sigma,
+    summary(modelo_completo)$sigma,
+    summary(modelo_optimo_rlm)$sigma
+  ),
+  AIC = c(
+    AIC(modelo_simple_original_rlm),
+    AIC(modelo_simple_transformado_rlm),
+    AIC(modelo_completo),
+    AIC(modelo_optimo_rlm)
+  )
+)
+
+tabla_bonita(tabla_comparacion_rlm,
+             caption = "Comparación de los modelos de regresión")
+```
+
+La incorporacion de multiples predictores mejora la capacidad explicativa del modelo respecto a la regresion lineal simple original.
+
+El coeficiente de determinacion aumenta desde 0.8326 hasta 0.8744, lo cual representa una mejora aproximada de 4.18 puntos porcentuales en la proporcion de variabilidad explicada.
+
+Esta mejora combina dos efectos: la transformacion raiz cuadrada, que eleva el R2 de 0.8326 a 0.8549 (aproximadamente 2.23 puntos), y la inclusion de edad, peso corporal, sexo y equipamiento, que lo eleva de 0.8549 a 0.8744 (aproximadamente 1.95 puntos).
+
+El R2 ajustado coincide con el R2 hasta el cuarto decimal en todos los modelos, debido al elevado tamano de la muestra, por lo que la penalizacion por numero de parametros es practicamente nula.
+
+El error residual disminuye de 25.44 kg en la regresion simple original a 22.03 kg en la regresion multiple transformada, y el AIC desciende de 175971.9 a 170546.9, por lo que el modelo multiple transformado es el de mejor desempeño entre los cuatro comparados.
+
+
+
+# Presentacion del Proyecto (Video)
+
+<iframe width="560" height="315"
+  src="https://www.youtube.com/embed/X5kHLOJBO6E"
+  title="Presentacion del proyecto"
+  frameborder="0" allowfullscreen></iframe>
+
+<!--chapter:end:01-intro.Rmd-->
+
+
+# Conclusión
+
+Placeholder
+
+
+
+<!--chapter:end:Conclusion_Gen.Rmd-->
+
+---
+title: "Bibliografia"
+output: html_document
+date: "2026-09-19"
+---
+
+# Bibliografía
+
+Blatnik, J. A., Skinner, J. W., & McBride, J. M. (2012). Effect of supportive equipment on force, velocity, and power in the squat. *Journal of Strength and Conditioning Research, 26*(12), 3204–3208.
+
+De Oro Aguado, C. (2026). *Notas de métodos estadísticos*. https://cdeoroaguado.github.io/rbook_met_estad/
+
+Doncel, L. (2010). *Manual de powerlifting y otras modalidades de levantamiento de peso*. Visión Libros.
+
+Guillén Vitaller, O. (2018). *Análisis de las variables en powerlifting* [Trabajo de fin de grado, Universitat de Lleida, INEFC].
+
+León París, C. (2000). Influencia del sexo en la práctica deportiva. Biología de la mujer deportista. *Arbor, 165*(650), 249–263.
+
+<!--chapter:end:Bibliografia.Rmd-->
+
