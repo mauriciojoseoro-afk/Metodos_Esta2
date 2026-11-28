@@ -6,7 +6,7 @@ date: "2026-09-19"
 
 
 
-# Conclusión general
+# Conclusion general
 
 Este estudio permitió analizar integralmente los factores asociados al rendimiento en peso muerto de los atletas de powerlifting mediante la aplicación de herramientas de estadística descriptiva, inferencial y modelos de regresión lineal simple y múltiple, utilizando una base de datos conformada por 18.900 registros.
 
